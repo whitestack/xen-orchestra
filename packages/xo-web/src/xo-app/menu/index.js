@@ -553,10 +553,12 @@ export default class Menu extends Component {
                 <img src='../../assets/favicon_white.svg' className={styles.hiddenUncollapsed} height='30px'/>
                 <img src='../../assets/logo_white.svg' className={styles.hiddenCollapsed} height='30px'/>
               </a>
-              <a onClick={this._toggleCollapsed} href='#'>
-                <Icon icon='menu-collapse' size='lg' fixedWidth />
-              </a>
             </span>
+          </li>
+          <li>
+            <a className='nav-link text-xs-center' onClick={this._toggleCollapsed} href='#'>
+              <Icon icon='menu-collapse' size='lg' fixedWidth />
+            </a>
           </li>
           {map(items, (item, index) => item && <MenuLinkItem key={index} item={item} />)}
           <li>&nbsp;</li>
