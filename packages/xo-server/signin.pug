@@ -32,10 +32,11 @@ html
           color: #BE1621;
         }
       }
-  body(style = 'display: flex; flex-direction: column; padding-top: 4em; height: 100vh;')
-    div(style = 'margin: auto; width: 30em; padding: 1em;')
+  body(style = 'display: flex; flex-direction: column; padding-top: 20%; gap: 4em; min-height: 100vh;')
+    div(style = 'margin: auto; width: 30em;')
       img(src = 'assets/logo.svg')
-    div(style = 'margin: auto; width: 30em; background-color: rgba(255, 255, 255, 0.8); padding: 4em; border-radius: 2px;')
+      p(style = 'text-align: right; font-style: italic; font-weight: bold; opacity: 0.6;') hydron-1
+    div(style = 'margin: auto; width: 35em; background-color: rgba(255, 255, 255, 0.8); padding: 5em; border-radius: 4px;')
       if error
         p.error #{error}
       if otp
@@ -114,7 +115,6 @@ html
             form.action += h
         })
       })()
-    footer(style='display: grid; grid-template-columns: 1fr auto 1fr; color: white; background-color: #002263; padding: 10px 20px;')
-      p(style='text-align: left; font-weight: bold; margin: 0;') © 2025 Whitestack LLC and subsidiaries. All rights reserved.
-      p(style = 'text-align: center; font-style: italic; font-weight: bold; margin: 0;') hydron-1
-      img(src='assets/ws_white.png' style='justify-self: end; height: 30px;')
+    footer(style='display: flex; justify-content: space-between; align-items: center; color: white; background-color: #002263; padding: 10px 20px;')
+      img(src='assets/ws_white.png' style='height: 30px;')
+      p(style='text-align: rigth; font-weight: bold; margin: 0;') © 2025 Whitestack LLC and subsidiaries. All rights reserved.
