@@ -195,12 +195,6 @@ export default class TabXostor extends Component {
     }
   )
 
-  getXostorLicenseInfo = createSelector(
-    () => this.props.state.xostorLicenseInfoByXostorId,
-    () => this.props.sr,
-    (xostorLicenseInfoByXostorId, sr) => xostorLicenseInfoByXostorId?.[sr.id]
-  )
-
   render() {
     const resourceInfos = this.getResourceInfos()
 
