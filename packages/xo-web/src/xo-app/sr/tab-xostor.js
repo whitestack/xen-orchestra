@@ -202,40 +202,7 @@ export default class TabXostor extends Component {
   )
 
   render() {
-    if (getXoaPlan() === SOURCES) {
-      return (
-        <Container>
-          <h2 className='text-info'>{_('xostorAvailableInXoa')}</h2>
-          <p>
-            <TryXoa page='xostor' />
-          </p>
-        </Container>
-      )
-    }
-
     const resourceInfos = this.getResourceInfos()
-    const xostorLicenseInfo = this.getXostorLicenseInfo()
-
-    if (xostorLicenseInfo === undefined) {
-      return _('statusLoading')
-    }
-
-    if (!xostorLicenseInfo.supportEnabled) {
-      return (
-        <div>
-          <p>{_('manageXostorWarning')}</p>
-          <ul>
-            {xostorLicenseInfo.alerts
-              .filter(alert => alert.level === 'danger')
-              .map((alert, index) => (
-                <li key={index} className='text-danger'>
-                  {alert.render}
-                </li>
-              ))}
-          </ul>
-        </div>
-      )
-    }
 
     return (
       <Container>
