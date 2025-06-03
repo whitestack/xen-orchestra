@@ -38,6 +38,18 @@ const config: Config = {
             to: '/incremental_replication',
             from: '/continuous_replication',
           },
+          {
+            to: '/advanced#alerts',
+            from: '/alerts',
+          },
+          {
+            to: '/architecture#plugins',
+            from: '/plugins',
+          },
+          {
+            to: '/troubleshooting',
+            from: '/general-troubleshooting',
+          },
         ],
       },
     ],
@@ -131,7 +143,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/vatesfr/xen-orchestra',
             },
           ],
         },
