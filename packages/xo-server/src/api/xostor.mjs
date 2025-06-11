@@ -295,14 +295,6 @@ export async function destroy({ sr }) {
     await Task.run({ properties: { name: 'deletion of the storage', objectId: sr.uuid } }, () =>
       xapi.destroySr(sr._xapiId)
     )
-    await Task.run({ properties: { name: 'unbind attached licenses' } }, () =>
-      asyncEach(hosts, host => {
-        this.unbindLicense({
-          boundObjectId: host.id,
-          productId: 'xostor',
-        })
-      })
-    )
     await Task.run({ properties: { name: `destroy volume group on ${hosts.length} hosts` } }, () =>
       asyncEach(hosts, host => destroyVolumeGroup(xapi, host, true), { stopOnError: false })
     )
