@@ -74,7 +74,11 @@ const xcpVersion = computed(() => poolMaster.value?.software_version.product_ver
 
 watch(locale, newLocale => localStorage.setItem('lang', newLocale))
 
-const { id: localeSelectId } = useFormSelect(availableLocales, {
+const limitLocales = availableLocales.filter(locale =>
+  ["en", "es"].includes(locale)
+);
+
+const { id: localeSelectId } = useFormSelect(limitLocales, {
   model: locale,
   option: {
     label: locale => locales[locale]?.name ?? locale,

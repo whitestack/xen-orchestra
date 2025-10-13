@@ -118,6 +118,36 @@
           </div>
         </FormSection>
 
+        <FormSection :label="t('xoa-download')">
+          <div class="row">
+            <UiToggle v-model="enableDownloadAuth">{{ t('xoa-download-auth') }}</UiToggle>
+          </div>
+          <div class="row">
+            <VtsInputWrapper :label="t('xoa-download-url')">
+              <FormInput v-model="xoaDownloadUrl" required placeholder="http://download-xoa.whitestack.com" />
+            </VtsInputWrapper>
+          </div>
+          <div class="row">
+            <VtsInputWrapper :label="t('xoa-download-user')">
+              <FormInput
+                v-model="xoaDownloadUser"
+                :placeholder="t('username')"
+                :disabled="!enableDownloadAuth"
+                :required="enableDownloadAuth"
+              />
+            </VtsInputWrapper>
+            <VtsInputWrapper :label="t('xoa-download-pass')">
+              <FormInput
+                v-model="xoaDownloadPass"
+                type="password"
+                :placeholder="t('password')" 
+                :disabled="!enableDownloadAuth"
+                :required="enableDownloadAuth"
+              />
+            </VtsInputWrapper>
+          </div>
+        </FormSection>
+
         <FormSection :label="t('xoa-admin-account')">
           <div class="row">
             <VtsInputWrapper
@@ -313,6 +343,10 @@ const xoaPwdConfirm = ref('')
 const enableSshAccount = ref(true)
 const sshPwd = ref('')
 const sshPwdConfirm = ref('')
+const enableDownloadAuth = ref(false)
+const xoaDownloadUrl = ref('')
+const xoaDownloadUser = ref('')
+const xoaDownloadPass = ref('')
 
 async function deploy() {
   if (selectedSr.value === undefined || selectedNetwork.value === undefined) {
@@ -354,6 +388,16 @@ async function deploy() {
     return
   }
 
+  let downloadUrl = xoaDownloadUrl.value
+  if (enableDownloadAuth.value) {
+    if (xoaDownloadUser.value === '' || xoaDownloadPass.value === '') {
+      console.error('Missing XOA download credentials')
+      return
+    }
+    let [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://');
+    downloadUrl = `${downloadUrlProtocol}://${xoaDownloadUser.value}:${xoaDownloadPass.value}@${downloadUrlDomain}`
+  }
+
   deploying.value = true
 
   try {
@@ -361,7 +405,7 @@ async function deploy() {
 
     vmRef.value = (
       (await xapi.call('VM.import', [
-        'http://xoa.io/xva',
+        downloadUrl,
         selectedSr.value.$ref,
         false, // full_restore
         false, // force
