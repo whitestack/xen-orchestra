@@ -9,21 +9,6 @@
       />
     </template>
     <MenuItem icon="fa:gear" @click="openSettings">{{ t('settings') }}</MenuItem>
-    <MenuItem icon="fa:book" @click="openUrl('https://docs.xcp-ng.org?utm_campaign=xolite&utm_term=xcpdoc')">
-      {{ t('documentation-name', { name: 'XCP-ng' }) }}
-    </MenuItem>
-    <MenuItem
-      icon="fa:headset"
-      @click="openUrl('https://vates.tech/pricing-and-support?utm_campaign=xolite&utm_term=pricing')"
-    >
-      {{ t('professional-support') }}
-    </MenuItem>
-    <MenuItem
-      icon="fa:comments"
-      @click="openUrl('https://xcp-ng.org/forum/topic/4731/xen-orchestra-lite?utm_campaign=xolite&utm_term=forum')"
-    >
-      {{ t('access-forum') }}
-    </MenuItem>
     <MenuItem icon="fa:arrow-right-from-bracket" class="menu-item-logout" @click="logout">
       {{ t('log-out') }}
     </MenuItem>
@@ -50,9 +35,6 @@ const logout = () => {
   nextTick(() => router.push({ name: '/' }))
 }
 
-const openUrl = (url: string) => {
-  window.open(url, '_blank', 'noopener noreferrer')
-}
 const openSettings = () => router.push({ name: '/settings' })
 </script>
 
