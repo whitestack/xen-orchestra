@@ -12,20 +12,6 @@
               <code v-if="xoLiteGitHead">{{ `(${xoLiteGitHead.slice(0, 5)})` }}</code>
             </template>
           </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('news')">
-            <template #value>
-              <UiLink size="medium" href="https://xen-orchestra.com/blog/">
-                {{ t('news-name', { name: 'Xen Orchestra' }) }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('community')">
-            <template #value>
-              <UiLink size="medium" href="https://xcp-ng.org/forum/category/12/xen-orchestra">
-                {{ t('community-name', { name: 'Xen Orchestra' }) }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
           <!-- #TODO we dont have ofical documentation for xo-lite -->
           <!--
  <VtsQuickInfoRow :label="t('documentation')">
@@ -44,68 +30,16 @@
           <VtsQuickInfoRow :label="t('version')">
             <template #value>{{ `v${xcpVersion}` }}</template>
           </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('news')">
-            <template #value>
-              <UiLink size="medium" href="https://xcp-ng.org/blog/">
-                {{ t('news-name', { name: 'XCP-ng' }) }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('community')">
-            <template #value>
-              <UiLink size="medium" href="https://xcp-ng.org/forum">
-                {{ t('community-name', { name: 'XCP-ng' }) }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('documentation')">
-            <template #value>
-              <UiLink size="medium" href="https://xcp-ng.org/docs/">
-                {{ t('documentation-name', { name: 'XCP-ng' }) }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
-          <VtsQuickInfoRow :label="t('support')">
-            <template #value>
-              <UiLink size="medium" href="https://xcp-ng.com/">
-                {{ t('professional-support') }}
-              </UiLink>
-            </template>
-          </VtsQuickInfoRow>
         </VtsQuickInfoColumn>
       </VtsQuickInfoColumn>
     </VtsColumns>
-    <UiTitle>{{ t('appearance') }}</UiTitle>
-    <div class="options">
-      <div
-        v-for="colorModeOption in colorModeOptions"
-        :key="colorModeOption"
-        class="option"
-        :class="{ selected: uiStore.colorMode === colorModeOption }"
-        @click="uiStore.colorMode = colorModeOption"
-      >
-        <img v-if="colorModeOption === 'light'" src="../assets/color-mode-light.svg" :alt="t('dark-mode.disable')" />
-        <img v-else-if="colorModeOption === 'dark'" src="../assets/color-mode-dark.svg" :alt="t('dark-mode.enable')" />
-        <img v-else src="../assets/color-mode-auto.svg" :alt="t('dark-mode.auto')" />
-        <span>
-          <VtsIcon v-if="uiStore.colorMode === colorModeOption" name="fa:check" size="medium" />
-          {{ t(`theme-${colorModeOption}`) }}
-        </span>
-      </div>
-    </div>
     <UiTitle>{{ t('language') }}</UiTitle>
     <!-- for regular spacing using VtsQuickInfoRow even label template is not used for this -->
     <VtsQuickInfoRow>
       <template #label>
         <VtsSelect :id="localeSelectId" icon="fa:earth-americas" accent="brand" />
       </template>
-      <template #value>
-        <UiLink size="medium" href="https://translate.vates.tech/engage/xen-orchestra/">
-          {{ t('settings.missing-translations') }}
-        </UiLink>
-      </template>
     </VtsQuickInfoRow>
-    <UiInfo accent="info">{{ t('untranslated-text-helper') }}</UiInfo>
   </UiCard>
 </template>
 
@@ -114,19 +48,14 @@ import { usePageTitleStore } from '@/stores/page-title.store.ts'
 import { useHostStore } from '@/stores/xen-api/host.store.ts'
 import { usePoolStore } from '@/stores/xen-api/pool.store.ts'
 import VtsColumns from '@core/components/columns/VtsColumns.vue'
-import VtsIcon from '@core/components/icon/VtsIcon.vue'
 import VtsQuickInfoColumn from '@core/components/quick-info-column/VtsQuickInfoColumn.vue'
 import VtsQuickInfoRow from '@core/components/quick-info-row/VtsQuickInfoRow.vue'
 import VtsSelect from '@core/components/select/VtsSelect.vue'
 import UiCard from '@core/components/ui/card/UiCard.vue'
 import UiHeadBar from '@core/components/ui/head-bar/UiHeadBar.vue'
-import UiInfo from '@core/components/ui/info/UiInfo.vue'
-import UiLink from '@core/components/ui/link/UiLink.vue'
 import UiTitle from '@core/components/ui/title/UiTitle.vue'
 import { locales } from '@core/i18n.ts'
 import { useFormSelect } from '@core/packages/form-select'
-import { useUiStore } from '@core/stores/ui.store.ts'
-import type { BasicColorSchema } from '@vueuse/core'
 import { computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -145,11 +74,11 @@ const xcpVersion = computed(() => poolMaster.value?.software_version.product_ver
 
 watch(locale, newLocale => localStorage.setItem('lang', newLocale))
 
-const colorModeOptions = ['light', 'dark', 'auto'] as BasicColorSchema[]
+const limitLocales = availableLocales.filter(locale =>
+  ["en", "es"].includes(locale)
+);
 
-const uiStore = useUiStore()
-
-const { id: localeSelectId } = useFormSelect(availableLocales, {
+const { id: localeSelectId } = useFormSelect(limitLocales, {
   model: locale,
   option: {
     label: locale => locales[locale]?.name ?? locale,
