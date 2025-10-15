@@ -2,9 +2,8 @@ name: Build XO Lite
 
 on:
   push:
-    branches: ["dev/hydron/PRNEPHORA-20_Customizes_XO_Lite"]
-    # branches: [ "release/hydron" ]
-    # tags: [ "hydron-*" ]
+    branches: [ "release/hydron" ]
+    tags: [ "hydron-*" ]
   workflow_dispatch:
 
 jobs:
@@ -25,7 +24,7 @@ jobs:
           node-version: '22.x'
           cache: 'yarn'
 
-      - name: Prepare variables
+      - name: Prepare environment
         run: |
           VERSION=${GITHUB_REF##*/}
           TIMESTAMP=$(date +%s)
@@ -52,30 +51,7 @@ jobs:
         run: tar -c -z -f ${{ env.TARBALL }} --transform='s|^dist|xo-lite_${{ env.VERSION }}|' dist
         working-directory: '@xen-orchestra/lite'
 
-      # - name: Create release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: xo-lite_${{ env.VERSION }}
-      #     release_name: xo-lite_${{ env.VERSION }}
-      #     body: |
-      #       Whitestack XO Lite
-      #     draft: false
-      #     prerelease: false
-
-      # - name: Upload release asset
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ${{ env.TARBALL }}
-      #     asset_name: xo-lite_${{ env.VERSION }}.tar.gz
-      #     asset_content_type: application/gzip
-
-      - name: Release
+      - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           name: xo-lite_${{ env.VERSION }}
