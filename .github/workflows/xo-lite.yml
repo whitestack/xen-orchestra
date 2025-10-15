@@ -25,10 +25,11 @@ jobs:
           node-version: '22.x'
           cache: 'yarn'
 
-      - name: Set variables
+      - name: Prepare variables
         run: |
           VERSION=${GITHUB_REF##*/}
           TIMESTAMP=$(date +%s)
+          mkdir /tmp/xo-lite_${TIMESTAMP}
           TARBALL=/tmp/xo-lite_${TIMESTAMP}/xo-lite_${VERSION}.tar.gz
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "TARBALL=${TARBALL}" >> $GITHUB_ENV
