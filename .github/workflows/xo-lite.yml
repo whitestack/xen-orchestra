@@ -2,8 +2,8 @@ name: Build XO Lite
 
 on:
   push:
-    branches: [ "release/hydron" ]
-    tags: [ "hydron-*" ]
+    branches: ['release/hydron']
+    tags: ['hydron-*']
   workflow_dispatch:
 
 jobs:
@@ -55,7 +55,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           name: xo-lite_${{ env.VERSION }}
-          tag_name: xo-lite_${{ env.VERSION }}
+          tag_name: ${{ env.VERSION }}
           body: Whitestack XO Lite
           files: ${{ env.TARBALL }}
           draft: false
