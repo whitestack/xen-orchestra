@@ -2,7 +2,7 @@ name: Build XO Lite
 
 on:
   push:
-    branches: ['*']
+    branches: ["*"]
     # branches: [ "release/hydron" ]
     # tags: [ "hydron-*" ]
   workflow_dispatch:
