@@ -61,9 +61,7 @@ jobs:
           tag_name: xo-lite_${{ env.VERSION }}
           release_name: xo-lite_${{ env.VERSION }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            Whitestack XO Lite
           draft: false
           prerelease: false
 
