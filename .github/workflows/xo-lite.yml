@@ -48,7 +48,8 @@ jobs:
         working-directory: '@xen-orchestra/lite'
 
       - name: Generate tarball
-        run: tar -c -z -f ${{ env.TARBALL }} --transform='s|^dist|xo-lite_${version}|' dist
+        run: tar -c -z -f ${{ env.TARBALL }} --transform='s|^dist|xo-lite_${{ env.VERSION }}|' dist
+        working-directory: '@xen-orchestra/lite'
 
       - name: Create release
         id: create_release
