@@ -33,7 +33,11 @@ jobs:
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
           echo "TARBALL=${TARBALL}" >> $GITHUB_ENV
 
-      - run: yarn build:xo-lite
+      - name: Build XO dependencies
+        run: yarn
+
+      - name: Build XO Lite dependencies
+        run: yarn build:xo-lite
 
       - name: Build XO Lite
         run: yarn vite build --base=/ --outDir dist
