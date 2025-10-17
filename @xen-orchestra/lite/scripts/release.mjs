@@ -92,7 +92,7 @@ const ghApiCall = async (path, method = 'GET', data) => {
     opts.body = typeof data === 'object' ? JSON.stringify(data) : data
   }
 
-  const res = await fetch('https://api.github.com/repos/vatesfr/xen-orchestra' + path, opts)
+  const res = await fetch('https://api.github.com/repos/whitestack/xen-orchestra' + path, opts)
 
   if (res.status === 404 || res.status === 422) {
     return
@@ -124,7 +124,7 @@ const ghApiUploadReleaseAsset = async (releaseId, assetName, file) => {
   }
 
   const res = await fetch(
-    `https://uploads.github.com/repos/vatesfr/xen-orchestra/releases/${releaseId}/assets?name=${encodeURIComponent(
+    `https://uploads.github.com/repos/whitestack/xen-orchestra/releases/${releaseId}/assets?name=${encodeURIComponent(
       assetName
     )}`,
     opts

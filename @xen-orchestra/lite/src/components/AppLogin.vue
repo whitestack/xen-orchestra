@@ -2,6 +2,7 @@
   <div class="app-login form-container">
     <div class="card">
       <img alt="XO Lite" src="../assets/logo-title.svg" />
+      <h2>XO Lite</h2><br />
       <PoolOverrideWarning />
       <p v-if="isHostIsSlaveErr(error)" class="error">
         <VtsIcon name="fa:exclamation-circle" size="medium" />
@@ -141,6 +142,10 @@ h1 {
   font-weight: 900;
   line-height: 7.2rem;
   margin-bottom: 4.2rem;
+}
+
+h2 {
+  text-align: center;
 }
 
 img {
