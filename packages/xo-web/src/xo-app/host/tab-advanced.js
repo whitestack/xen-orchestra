@@ -28,7 +28,7 @@ import {
   disableHost,
   editHost,
   editPusb,
-  enableAdvancedLiveTelemetry,
+  // enableAdvancedLiveTelemetry,
   enableHost,
   forgetHost,
   hidePcis,
@@ -36,8 +36,8 @@ import {
   isHyperThreadingEnabledHost,
   isPciHidden,
   isPciPassthroughAvailable,
-  isNetDataInstalledOnHost,
-  getPlugin,
+  // isNetDataInstalledOnHost,
+  // getPlugin,
   getSmartctlHealth,
   getSmartctlInformation,
   restartHost,
@@ -280,6 +280,7 @@ MultipathableSrs.propTypes = {
 export default class extends Component {
   async componentDidMount() {
     const { host } = this.props
+    /*
     const plugin = await getPlugin('netdata')
     const isNetDataPluginCorrectlySet = plugin !== undefined && plugin.loaded
     this.setState({ isNetDataPluginCorrectlySet })
@@ -288,6 +289,7 @@ export default class extends Component {
         isNetDataPluginInstalledOnHost: await isNetDataInstalledOnHost(host),
       })
     }
+    */
 
     const smartctlHealth = await getSmartctlHealth(host).catch(console.error)
     const isSmartctlHealthEnabled = smartctlHealth != null
@@ -394,6 +396,7 @@ export default class extends Component {
       ),
     }).then(memory => setControlDomainMemory(this.props.host.id, memory), noop)
 
+  /*
   _accessAdvancedLiveTelemetry = () => window.open(`./netdata/host/${encodeURIComponent(this.props.host.hostname)}/`)
 
   _enableAdvancedLiveTelemetry = async host => {
@@ -402,18 +405,20 @@ export default class extends Component {
       isNetDataPluginInstalledOnHost: await isNetDataInstalledOnHost(host),
     })
   }
+  */
 
   render() {
     const { controlDomain, host, pcis, pgpus, pusbs, schedGran } = this.props
     const {
       isHtEnabled,
-      isNetDataPluginInstalledOnHost,
-      isNetDataPluginCorrectlySet,
+      // isNetDataPluginInstalledOnHost,
+      // isNetDataPluginCorrectlySet,
       isSmartctlHealthEnabled,
       unhealthyDevicesAlerts,
       smartctlUnhealthyDevices,
     } = this.state
 
+    /*
     const _isXcpNgHost = host.productBrand === 'XCP-ng'
 
     const telemetryButton = isNetDataPluginInstalledOnHost ? (
@@ -434,18 +439,19 @@ export default class extends Component {
         labelId='enableAdvancedLiveTelemetry'
       />
     )
+    */
 
     return (
       <Container>
         <Row>
           <Col className='text-xs-right'>
-            {!isNetDataPluginCorrectlySet ? (
+            {/* {!isNetDataPluginCorrectlySet ? (
               <Tooltip content={_('pluginNetDataIsNecessary')}>{telemetryButton}</Tooltip>
             ) : !_isXcpNgHost ? (
               <Tooltip content={_('xcpOnlyFeature')}>{telemetryButton}</Tooltip>
             ) : (
               telemetryButton
-            )}
+            )} */}
             <TabButton
               btnStyle='warning'
               handler={downloadLogs}
@@ -725,26 +731,6 @@ export default class extends Component {
               data-isPciPassthroughAvailable={this.state.isPciPassthroughAvailable}
               stateUrlParam='s_pcis'
             />
-            <h3>{_('licenseHostSettingsLabel')}</h3>
-            <table className='table'>
-              <tbody>
-                <tr>
-                  <th>{_('hostLicenseType')}</th>
-                  <td>{host.license_params.sku_type}</td>
-                </tr>
-                <tr>
-                  <th>{_('hostLicenseSocket')}</th>
-                  <td>{host.license_params.sockets}</td>
-                </tr>
-                <tr>
-                  <th>{_('hostLicenseExpiry')}</th>
-                  <td>
-                    <FormattedTime value={host.license_expiry * 1000} day='numeric' month='long' year='numeric' />
-                    <br />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
             <h3>{_('supplementalPacks')}</h3>
             <table className='table'>
               <tbody>

@@ -38,143 +38,13 @@ import {
   setPoolMaster,
   setRemoteSyslogHost,
   setRemoteSyslogHosts,
-  subscribeHvSupportedVersions,
   subscribePlugins,
-  subscribeXcpngLicenses,
   synchronizeNetbox,
 } from 'xo'
-import { injectState, provideState } from 'reaclette'
 import { SelectSuspendSr } from 'select-suspend-sr'
-import { satisfies } from 'semver'
-
-import decorate from '../../common/apply-decorators'
-import PoolBindLicenseModal from '../../common/xo/pool-bind-licenses-modal/ index'
 import { confirm } from '../../common/modal'
-import { error } from '../../common/notification'
-import { Host, Pool } from '../../common/render-xo-item'
 import { isAdmin } from '../../common/selectors'
-import { ENTERPRISE, SOURCES, getXoaPlan } from '../../common/xoa-plans'
-
-const BindLicensesButton = decorate([
-  addSubscriptions({
-    hvSupportedVersions: subscribeHvSupportedVersions,
-    xcpLicenses: subscribeXcpngLicenses,
-  }),
-  connectStore({
-    hosts: createGetObjectsOfType('host'),
-  }),
-  provideState({
-    effects: {
-      async handleBindLicense() {
-        const { poolHosts, xcpLicenses } = this.props
-
-        if (xcpLicenses.length < poolHosts.length) {
-          return error(_('licensesBinding'), _('notEnoughXcpngLicenses'))
-        }
-
-        const hostsWithoutLicense = poolHosts.filter(host => {
-          const license = this.state.xcpngLicenseByBoundObjectId?.[host.id]
-          return license === undefined || license.expires < Date.now()
-        })
-        const licenseIdByHost = await confirm({
-          body: <PoolBindLicenseModal hosts={hostsWithoutLicense} />,
-          icon: 'connect',
-          title: _('licensesBinding'),
-        })
-        const licensesByHost = {}
-
-        // Pass values into a Set in order to remove duplicated licenseId
-        const nLicensesToBind = new Set(values(licenseIdByHost)).size
-
-        if (nLicensesToBind !== hostsWithoutLicense.length) {
-          return error(_('licensesBinding'), _('allHostsMustBeBound'))
-        }
-
-        const fullySupportedPoolIds = []
-        const unsupportedXcpngHostIds = []
-        forEach(licenseIdByHost, (licenseId, hostId) => {
-          const license = this.state.xcpngLicenseById[licenseId]
-          const boundHost = this.props.hosts[license.boundObjectId]
-          const hostToBind = this.props.hosts[hostId]
-          const poolId = boundHost?.$pool
-          const poolLicenseInfo = this.state.poolLicenseInfoByPoolId[poolId]
-          licensesByHost[hostId] = license
-
-          if (poolLicenseInfo !== undefined && poolLicenseInfo.supportLevel === 'total' && poolLicenseInfo.nHosts > 1) {
-            fullySupportedPoolIds.push(poolId)
-          }
-
-          if (!satisfies(hostToBind.version, this.props.hvSupportedVersions['XCP-ng'])) {
-            unsupportedXcpngHostIds.push(hostToBind.id)
-          }
-        })
-
-        if (fullySupportedPoolIds.length !== 0) {
-          await confirm({
-            body: (
-              <div>
-                <p>{_('confirmRebindLicenseFromFullySupportedPool')}</p>
-                <ul>
-                  {fullySupportedPoolIds.map(poolId => (
-                    <li key={poolId}>
-                      <Pool id={poolId} link newTab />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ),
-            title: _('licensesBinding'),
-          })
-        }
-
-        if (unsupportedXcpngHostIds.length !== 0) {
-          await confirm({
-            body: (
-              <div>
-                <p>{_('confirmBindingOnUnsupportedHost', { nLicenses: unsupportedXcpngHostIds.length })}</p>
-                <ul>
-                  {unsupportedXcpngHostIds.map(hostId => (
-                    <li key={hostId}>
-                      <Host id={hostId} link newTab />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ),
-            title: _('licensesBinding'),
-          })
-        }
-
-        await this.effects.bindXcpngLicenses(licensesByHost)
-      },
-    },
-    computed: {
-      isBindLicenseAvailable: (state, props) =>
-        getXoaPlan() !== SOURCES && state.poolLicenseInfoByPoolId[props.pool.id].supportLevel !== 'total',
-      isXcpngPool: (_, { poolHosts }) => poolHosts[0].productBrand === 'XCP-ng',
-    },
-  }),
-  injectState,
-  ({ effects, state }) => (
-    <ActionButton
-      btnStyle='primary'
-      disabled={!state.isXcpngPool || !state.isBindLicenseAvailable}
-      handler={effects.handleBindLicense}
-      icon='connect'
-      tooltip={
-        getXoaPlan() === SOURCES
-          ? _('poolSupportSourceUsers')
-          : !state.isXcpngPool
-            ? _('poolSupportXcpngOnly')
-            : state.isBindLicenseAvailable
-              ? undefined
-              : _('poolLicenseAlreadyFullySupported')
-      }
-    >
-      {_('bindXcpngLicenses')}
-    </ActionButton>
-  ),
-])
+import { ENTERPRISE, getXoaPlan } from '../../common/xoa-plans'
 
 @connectStore(() => ({
   master: createGetObjectsOfType('host').find((_, { pool }) => ({
@@ -384,7 +254,7 @@ export default class TabAdvanced extends Component {
   )
 
   render() {
-    const { backupNetwork, hosts, isAdmin, gpuGroups, pool, hostsByMultipathing, migrationNetwork } = this.props
+    const { backupNetwork, hosts, gpuGroups, pool, hostsByMultipathing, migrationNetwork } = this.props
     const { state } = this
     const { editRemoteSyslog } = state
     const { enabled: hostsEnabledMultipathing, disabled: hostsDisabledMultipathing } = hostsByMultipathing
@@ -589,12 +459,6 @@ export default class TabAdvanced extends Component {
             </Col>
           </Row>
         </Container>
-        {isAdmin && (
-          <div>
-            <h3>{_('licenses')}</h3>
-            <BindLicensesButton poolHosts={hosts} pool={pool} />
-          </div>
-        )}
         <h3 className='mt-1 mb-1'>{_('poolGpuGroups')}</h3>
         <Container>
           <Row>

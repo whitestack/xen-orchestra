@@ -39,7 +39,6 @@ import styles from './index.css'
 
 import BulkIcons from '../../common/bulk-icons'
 import { LICENSE_WARNING_BODY } from '../host/license-warning'
-import { getXoaPlan, SOURCES } from '../../common/xoa-plans'
 
 @addSubscriptions(props => ({
   hvSupportedVersions: subscribeHvSupportedVersions,
@@ -100,42 +99,6 @@ export default class HostItem extends Component {
   _stop = () => stopHost(this.props.item)
   _toggleExpanded = () => this.setState({ expanded: !this.state.expanded })
   _onSelect = () => this.props.onSelect(this.props.item.id)
-  _getProSupportStatus = () => {
-    const { state: reacletteState, item: host } = this.props
-    if (host.productBrand !== 'XCP-ng') {
-      return
-    }
-
-    const { supportLevel } = reacletteState.poolLicenseInfoByPoolId[host.$poolId]
-    const license = reacletteState.xcpngLicenseByBoundObjectId?.[host.id]
-    if (license !== undefined) {
-      license.expires = license.expires ?? Infinity
-    }
-
-    let level = 'warning'
-    let message = 'hostNoSupport'
-
-    if (getXoaPlan() === SOURCES) {
-      message = 'poolSupportSourceUsers'
-      level = 'warning'
-    }
-
-    if (supportLevel === 'total') {
-      message = 'hostSupportEnabled'
-      level = 'success'
-    }
-
-    if (supportLevel === 'partial' && (license === undefined || license.expires < Date.now())) {
-      message = 'hostNoLicensePartialProSupport'
-      level = 'danger'
-    }
-
-    return {
-      level,
-      icon: <Icon icon='menu-support' className={`text-${level}`} />,
-      message,
-    }
-  }
   _getAreHostsVersionsEqual = () => this.props.state.areHostsVersionsEqualByPool[this.props.item.$pool]
 
   _getAlerts = createSelector(
@@ -198,18 +161,6 @@ export default class HostItem extends Component {
           render: (
             <span>
               <Icon icon='alarm' /> {_('licenseRestrictionsModalTitle')} {LICENSE_WARNING_BODY}
-            </span>
-          ),
-        })
-      }
-
-      const proSupportStatus = this._getProSupportStatus()
-      if (proSupportStatus !== undefined && proSupportStatus.level !== 'success') {
-        alerts.push({
-          level: proSupportStatus.level,
-          render: (
-            <span>
-              {proSupportStatus.icon} {_(proSupportStatus.message)}
             </span>
           ),
         })
@@ -283,7 +234,6 @@ export default class HostItem extends Component {
 
   render() {
     const { container, expandAll, item: host, nVms, selected, hostState } = this.props
-    const proSupportStatus = this._getProSupportStatus()
     return (
       <div className={styles.item}>
         <BlockLink to={`/hosts/${host.id}`}>
@@ -318,10 +268,6 @@ export default class HostItem extends Component {
                 )}
                 &nbsp;
                 <BulkIcons alerts={this._getAlerts()} />
-                &nbsp;
-                {proSupportStatus?.level === 'success' && (
-                  <Tooltip content={_(proSupportStatus.message)}>{proSupportStatus.icon}</Tooltip>
-                )}
               </EllipsisContainer>
             </Col>
             <Col mediumSize={3} className='hidden-lg-down'>

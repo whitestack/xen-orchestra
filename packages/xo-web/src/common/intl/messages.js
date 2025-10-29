@@ -316,7 +316,7 @@ const messages = {
   backedUpVms: 'Backed up VMs',
   notBackedUpVms: 'Not backed up VMs',
   homeFetchingData: 'Fetching data…',
-  homeWelcome: 'Welcome to Xen Orchestra!',
+  homeWelcome: 'Welcome to Whitestack XOA!',
   homeWelcomeText: 'Add your XCP-ng hosts or pools',
   homeConnectServerText: 'Some XCP-ng hosts have been registered but are not connected',
   homeHelp: 'Want some help?',

@@ -337,6 +337,7 @@ export default class Menu extends Component {
           },
         ],
       },
+      /*
       {
         to: isAdmin ? 'xoa/update' : 'xoa/notifications',
         icon: 'menu-xoa',
@@ -370,6 +371,7 @@ export default class Menu extends Component {
           },
         ],
       },
+      */
       isAdmin && {
         to: '/settings/servers',
         icon: 'menu-settings',
@@ -463,6 +465,7 @@ export default class Menu extends Component {
           },
         ],
       },
+      /*
       isAdmin && {
         to: '/proxies',
         icon: 'proxy',
@@ -484,7 +487,7 @@ export default class Menu extends Component {
           ) : null,
         ],
       },
-      isAdmin && { to: '/about', icon: 'menu-about', label: 'aboutPage' },
+      */
       {
         to: '/tasks',
         icon: 'task',
@@ -548,15 +551,15 @@ export default class Menu extends Component {
       <div className={classNames('xo-menu', this.state.collapsed && styles.collapsed)}>
         <ul className='nav nav-sidebar nav-pills nav-stacked' ref='content'>
           <li>
-            <span>
+            <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <a className={styles.brand} href='#'>
-                <span className={styles.hiddenUncollapsed}>XO</span>
-                <span className={styles.hiddenCollapsed}>Xen Orchestra</span>
+                <img src='../../assets/favicon_white.svg' className={styles.hiddenUncollapsed} height='30px'/>
+                <img src='../../assets/logo_white.svg' className={styles.hiddenCollapsed} height='30px'/>
               </a>
             </span>
           </li>
           <li>
-            <a className='nav-link' onClick={this._toggleCollapsed} href='#'>
+            <a className='nav-link text-xs-center' onClick={this._toggleCollapsed} href='#'>
               <Icon icon='menu-collapse' size='lg' fixedWidth />
             </a>
           </li>
@@ -587,44 +590,10 @@ export default class Menu extends Component {
               </Link>
             </li>
           )}
-          {(isAdmin || +process.env.XOA_PLAN === 5) && (
-            <li className='nav-item xo-menu-item'>
-              <Link className='nav-link' style={{ display: 'flex' }} to='/about'>
-                {+process.env.XOA_PLAN === 5 ? (
-                  <span>
-                    <span className={classNames(styles.hiddenCollapsed, 'text-warning')}>
-                      <Icon icon='alarm' size='lg' fixedWidth /> {_('noSupport')}
-                    </span>
-                    <span className={classNames(styles.hiddenUncollapsed, 'text-warning')}>
-                      <Icon icon='alarm' size='lg' fixedWidth />
-                    </span>
-                  </span>
-                ) : +process.env.XOA_PLAN === 1 ? (
-                  <span>
-                    <span className={classNames(styles.hiddenCollapsed, 'text-warning')}>
-                      <Icon icon='info' size='lg' fixedWidth /> {_('freeUpgrade')}
-                    </span>
-                    <span className={classNames(styles.hiddenUncollapsed, 'text-warning')}>
-                      <Icon icon='info' size='lg' fixedWidth />
-                    </span>
-                  </span>
-                ) : (
-                  <span>
-                    <span className={classNames(styles.hiddenCollapsed, 'text-success')}>
-                      <Icon icon='info' size='lg' fixedWidth /> {getXoaPlan()}
-                    </span>
-                    <span className={classNames(styles.hiddenUncollapsed, 'text-success')}>
-                      <Icon icon='info' size='lg' fixedWidth />
-                    </span>
-                  </span>
-                )}
-              </Link>
-            </li>
-          )}
           <li>&nbsp;</li>
           <li>&nbsp;</li>
           <li className='nav-item xo-menu-item'>
-            <a className='nav-link' onClick={this._signOut} href='#'>
+            <a className='nav-link text-xs-center' onClick={this._signOut} href='#'>
               <Icon icon='sign-out' size='lg' fixedWidth />
               <span className={styles.hiddenCollapsed}> {_('signOut')}</span>
             </a>

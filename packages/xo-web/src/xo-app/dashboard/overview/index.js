@@ -437,7 +437,7 @@ class DefaultCard extends Component {
             </Card>
           </Col>
         </Row>
-        {props.isAdmin && (
+        {/* {props.isAdmin && (
           <Row>
             <Col>
               <Card>
@@ -467,7 +467,7 @@ class DefaultCard extends Component {
           <Col>
             <PatchesCard hosts={this._getHosts()} />
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     )
   }

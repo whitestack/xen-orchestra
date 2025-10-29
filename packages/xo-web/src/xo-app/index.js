@@ -12,13 +12,10 @@ import Shortcuts from 'shortcuts'
 import themes from 'themes'
 import _, { IntlProvider } from 'intl'
 // TODO: Replace all `getXoaPlan` by `getXoaPlan` from "xoa-plans"
-import { addSubscriptions, connectStore, getXoaPlan, noop, routes } from 'utils'
-import { blockXoaAccess, isTrialRunning } from 'xoa-updater'
+import { connectStore, getXoaPlan, noop, routes } from 'utils'
 import { checkXoa, clearXoaCheckCache } from 'xo'
 import { forEach, groupBy, keyBy, pick } from 'lodash'
-import { Host as HostItem } from 'render-xo-item'
 import { Notification } from 'notification'
-import { productId2Plan } from 'xoa-plans'
 import { provideState } from 'reaclette'
 import { ShortcutManager } from 'react-shortcuts'
 import { ThemeProvider } from 'styled-components'
@@ -53,17 +50,7 @@ import Xostor from './xostor'
 import Import from './import'
 
 import keymap, { help } from '../keymap'
-import Tooltip from '../common/tooltip'
 import { createCollectionWrapper, createGetObjectsOfType } from '../common/selectors'
-import {
-  bindXcpngLicense,
-  rebindLicense,
-  subscribeXcpngLicenses,
-  subscribeXostorLicenses,
-  subscribeSelfLicenses,
-} from '../common/xo'
-import { SOURCES } from '../common/xoa-plans'
-import { getLicenseNearExpiration } from '../common/xoa-updater'
 
 const shortcutManager = new ShortcutManager(keymap)
 
@@ -92,32 +79,6 @@ const BODY_STYLE = {
   width: '100%',
 }
 
-const WrapperIconPoolLicense = ({ children }) => (
-  <a href='https://xcp-ng.com' rel='noreferrer noopener' target='_blank'>
-    {children}
-  </a>
-)
-
-export const ICON_POOL_LICENSE = {
-  total: tooltip => (
-    <Tooltip content={tooltip}>
-      <WrapperIconPoolLicense>
-        <Icon icon='pro-support' className='text-success' />
-      </WrapperIconPoolLicense>
-    </Tooltip>
-  ),
-  partial: () => (
-    <WrapperIconPoolLicense>
-      <Icon icon='alarm' className='text-warning' />
-    </WrapperIconPoolLicense>
-  ),
-  any: () => (
-    <WrapperIconPoolLicense>
-      <Icon icon='alarm' className='text-warning' />
-    </WrapperIconPoolLicense>
-  ),
-}
-
 @routes('home', {
   about: About,
   backup: Backup,
@@ -143,11 +104,6 @@ export const ICON_POOL_LICENSE = {
   hub: Hub,
   proxies: Proxies,
 })
-@addSubscriptions({
-  xcpLicenses: subscribeXcpngLicenses,
-  xostorLicenses: subscribeXostorLicenses,
-  selfLicences: subscribeSelfLicenses,
-})
 @connectStore(state => {
   const getHosts = createGetObjectsOfType('host')
   const getXostors = createGetObjectsOfType('SR').filter([sr => sr.SR_type === 'linstor'])
@@ -155,8 +111,6 @@ export const ICON_POOL_LICENSE = {
     vm => vm.vulnerabilities?.xsa468?.reason === 'pv-driver-version-vulnerable' && !vm.tags.includes('HIDE_XSA468'),
   ])
   return {
-    trialState: state.xoaTrialState,
-    registerNeeded: state.xoaUpdaterState === 'registerNeeded',
     signedUp: !!state.user,
     hosts: getHosts(state),
     xsa468VulnerableVms: getXsa468VulnerableVms(state),
@@ -173,75 +127,14 @@ export const ICON_POOL_LICENSE = {
     refreshXoaStatus() {
       this.state.checkXoaCount += 1
     },
-    async bindXcpngLicenses(_, xcpngLicensesByHost) {
-      await Promise.all(
-        map(xcpngLicensesByHost, ({ productId, id, boundObjectId }, hostId) =>
-          boundObjectId !== undefined
-            ? rebindLicense(productId, id, boundObjectId, hostId)
-            : bindXcpngLicense(id, hostId)
-        )
-      )
-    },
   },
   computed: {
-    // In case a host have more than 1 license, it's an issue.
-    // poolLicenseInfoByPoolId can be impacted because the license expiration check may not yield the right information.
-    xcpngLicenseByBoundObjectId: (_, { xcpLicenses }) =>
-      xcpLicenses === undefined ? undefined : keyBy(xcpLicenses, 'boundObjectId'),
-    xostorLicensesByBoundObjectId: (_, { xostorLicenses }) =>
-      xostorLicenses === undefined ? undefined : groupBy(xostorLicenses, 'boundObjectId'),
-    xcpngLicenseById: (_, { xcpLicenses }) => keyBy(xcpLicenses, 'id'),
     hostsByPoolId: createCollectionWrapper((_, { hosts }) =>
       groupBy(
         map(hosts, host => pick(host, ['$poolId', 'id', 'version'])),
         '$poolId'
       )
     ),
-    poolLicenseInfoByPoolId: ({ hostsByPoolId, xcpngLicenseByBoundObjectId }) => {
-      const poolLicenseInfoByPoolId = {}
-
-      forEach(hostsByPoolId, (hosts, poolId) => {
-        const nHosts = hosts.length
-        let earliestExpirationDate
-        let nHostsUnderLicense = 0
-
-        if (getXoaPlan() === SOURCES.name) {
-          poolLicenseInfoByPoolId[poolId] = {
-            nHostsUnderLicense,
-            icon: () => <Icon icon='unknown-status' className='text-warning' />,
-            nHosts,
-          }
-          return
-        }
-
-        for (const host of hosts) {
-          const license = xcpngLicenseByBoundObjectId?.[host.id]
-          if (license === undefined) {
-            continue
-          }
-          license.expires = license.expires ?? Infinity
-
-          if (license.expires > Date.now()) {
-            nHostsUnderLicense++
-            if (earliestExpirationDate === undefined || license.expires < earliestExpirationDate) {
-              earliestExpirationDate = license.expires
-            }
-          }
-        }
-
-        const supportLevel = nHostsUnderLicense === 0 ? 'any' : nHostsUnderLicense === nHosts ? 'total' : 'partial'
-
-        poolLicenseInfoByPoolId[poolId] = {
-          earliestExpirationDate,
-          icon: ICON_POOL_LICENSE[supportLevel],
-          nHosts,
-          nHostsUnderLicense,
-          supportLevel,
-        }
-      })
-
-      return poolLicenseInfoByPoolId
-    },
     xoaStatus: {
       get({ checkXoaCount }) {
         // To avoid aggressive minification which would remove destructuration
@@ -253,78 +146,6 @@ export const ICON_POOL_LICENSE = {
     isXoaStatusOk: ({ xoaStatus }) => !xoaStatus.includes('✖'),
     areHostsVersionsEqualByPool: ({ hostsByPoolId }) =>
       mapValues(hostsByPoolId, hosts => every(hosts, host => host.version === hosts[0].version)),
-    xostorLicenseInfoByXostorId: (
-      { xcpngLicenseByBoundObjectId, xostorLicensesByBoundObjectId, hostsByPoolId },
-      { xostors }
-    ) => {
-      if (xcpngLicenseByBoundObjectId === undefined || xostorLicensesByBoundObjectId === undefined) {
-        return
-      }
-      const xostorLicenseInfoByXostorId = {}
-      const now = Date.now()
-
-      forEach(xostors, xostor => {
-        const xostorId = xostor.id
-        const hosts = hostsByPoolId[xostor.$pool]
-
-        const alerts = []
-        let supportEnabled = true
-
-        hosts.forEach(host => {
-          const hostId = host.id
-          const xostorLicenses = xostorLicensesByBoundObjectId[hostId]
-
-          if (xostorLicenses === undefined) {
-            supportEnabled = false
-            alerts.push({
-              level: 'danger',
-              render: <p>{_('hostHasNoXostorLicense', { host: <HostItem id={hostId} /> })}</p>,
-            })
-          }
-
-          if (xostorLicenses?.length > 1) {
-            alerts.push({
-              level: 'warning',
-              render: (
-                <p>
-                  {_('hostBoundToMultipleXostorLicenses', { host: <HostItem id={hostId} /> })}
-                  <br />
-                  {xostorLicenses.map(license => license.id.slice(-4)).join(',')}
-                </p>
-              ),
-            })
-          }
-
-          const expiredXostorLicenses = xostorLicenses?.filter(license => license.expires < now)
-          if (expiredXostorLicenses?.length > 0) {
-            let level = 'warning'
-            if (expiredXostorLicenses.length === xostorLicenses.length) {
-              supportEnabled = false
-              level = 'danger'
-            }
-            alerts.push({
-              level,
-              render: (
-                <p>
-                  {_('licenseExpiredXostorWarning', {
-                    licenseIds: expiredXostorLicenses.map(license => license.id.slice(-4)).join(','),
-                    nLicenseIds: expiredXostorLicenses.length,
-                    host: <HostItem id={hostId} />,
-                  })}
-                </p>
-              ),
-            })
-          }
-        })
-
-        xostorLicenseInfoByXostorId[xostorId] = {
-          alerts,
-          supportEnabled,
-        }
-      })
-
-      return xostorLicenseInfoByXostorId
-    },
   },
 })
 export default class XoApp extends Component {
@@ -336,52 +157,8 @@ export default class XoApp extends Component {
   }
   getChildContext = () => ({ shortcuts: shortcutManager })
 
-  state = {
-    dismissedSourceBanner: Boolean(cookies.get('dismissedSourceBanner')),
-    dismissedTrialBanner: Boolean(cookies.get('dismissedTrialBanner')),
-  }
-
-  displayOpenSourceDisclaimer() {
-    const previousDisclaimer = cookies.get('previousDisclaimer')
-    const now = Math.floor(Date.now() / 1e3)
-    const oneWeekAgo = now - 7 * 24 * 3600
-    if (!previousDisclaimer || previousDisclaimer < oneWeekAgo) {
-      alert(
-        _('disclaimerTitle'),
-        <div>
-          <p>{_('disclaimerText1')}</p>
-          <p>
-            {_('disclaimerText2')}{' '}
-            <a
-              href='https://vates.tech/deploy/?pk_campaign=xoa_source_upgrade&pk_kwd=ossmodal'
-              target='_blank'
-              rel='noreferrer'
-            >
-              XOA (turnkey appliance)
-            </a>
-          </p>
-          <p>{_('disclaimerText3')}</p>
-        </div>
-      )
-      cookies.set('previousDisclaimer', now)
-    }
-  }
-
-  dismissSourceBanner = () => {
-    cookies.set('dismissedSourceBanner', true, { expires: 1 }) // 1 day
-    this.setState({ dismissedSourceBanner: true })
-  }
-
-  dismissTrialBanner = () => {
-    cookies.set('dismissedTrialBanner', true, { expires: 1 })
-    this.setState({ dismissedTrialBanner: true })
-  }
-
   componentDidMount() {
     this.refs.bodyWrapper.style.minHeight = this.refs.menu.getWrappedInstance().height + 'px'
-    if (+process.env.XOA_PLAN === 5) {
-      this.displayOpenSourceDisclaimer()
-    }
   }
 
   componentDidUpdate(prev) {
@@ -449,70 +226,13 @@ export default class XoApp extends Component {
   }
 
   render() {
-    const { signedUp, trialState, registerNeeded, xsa468VulnerableVms } = this.props
-    const { pathname } = this.context.router.location
-    const licenseNearExpiration = this.props.selfLicences && getLicenseNearExpiration(this.props.selfLicences, trialState)
-    // If we are under expired or unstable trial (signed up only)
-    const blocked =
-      signedUp &&
-      (blockXoaAccess(trialState) || licenseNearExpiration?.blocked === true) &&
-      !(pathname.startsWith('/xoa/') || pathname === '/backup/restore')
-    const plan = getXoaPlan()
+    const { signedUp, xsa468VulnerableVms } = this.props
 
     return (
       <IntlProvider>
         <ThemeProvider theme={themes.base}>
-          <DocumentTitle title='Xen Orchestra'>
+          <DocumentTitle title='Whitestack XOA'>
             <div>
-              {plan !== 'Community' && registerNeeded && (
-                <div className='alert alert-danger mb-0'>
-                  {_('notRegisteredDisclaimerInfo')}{' '}
-                  <a href='https://xen-orchestra.com/#!/signup' rel='noopener noreferrer' target='_blank'>
-                    {_('notRegisteredDisclaimerCreateAccount')}
-                  </a>{' '}
-                  <Link to='/xoa/update'>{_('notRegisteredDisclaimerRegister')}</Link>
-                </div>
-              )}
-              {plan === 'Community' && !this.state.dismissedSourceBanner && (
-                <div className='alert alert-danger mb-0'>
-                  <a
-                    href='https://vates.tech/deploy/?pk_campaign=xo_source_banner'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {_('disclaimerText3')}
-                  </a>{' '}
-                  <a
-                    href='https://docs.xen-orchestra.com/installation#banner-and-warnings'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {_('disclaimerText4')}
-                  </a>
-                  <button className='close' onClick={this.dismissSourceBanner}>
-                    &times;
-                  </button>
-                </div>
-              )}
-              {isTrialRunning(trialState.trial) && !this.state.dismissedTrialBanner && (
-                <div className='alert alert-info mb-0'>
-                  {_('trialLicenseInfo', {
-                    edition: getXoaPlan(productId2Plan[trialState.trial.productId]),
-                    date: new Date(trialState.trial.end),
-                  })}
-                  <button className='close' onClick={this.dismissTrialBanner}>
-                    &times;
-                  </button>
-                </div>
-              )}
-              {licenseNearExpiration && (
-                <div className={`alert alert-info mb-0 ${licenseNearExpiration.popupClass ?? 'alert-info'}`}>
-                  {_(licenseNearExpiration.strCode, {
-                    duration: licenseNearExpiration.textDuration,
-                    date: new Date(licenseNearExpiration.license.expires),
-                  })}
-                </div>
-              )}
               {Object.keys(xsa468VulnerableVms).length > 0 && (
                 <div className='alert alert-danger mb-0'>
                   IMPORTANT! Some of your VMs are vulnerable.{' '}
@@ -529,7 +249,7 @@ export default class XoApp extends Component {
                 <Menu ref='menu' />
                 <div ref='bodyWrapper' style={BODY_WRAPPER_STYLE}>
                   <div style={BODY_STYLE}>
-                    {blocked ? <XoaUpdates /> : signedUp ? this.props.children : <p>Still loading</p>}
+                    {signedUp ? this.props.children : <p>Still loading</p>}
                   </div>
                 </div>
                 <Modal />
