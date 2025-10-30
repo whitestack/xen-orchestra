@@ -385,7 +385,7 @@ class NoObjectsWithoutServers extends Component {
                 </Col>
                 <Col mediumSize={6}>
                   <a
-                    href='https://xen-orchestra.com/#!/member/support'
+                    href='https://whitestack.com/nephora-virtualization/'
                     rel='noopener noreferrer'
                     target='_blank'
                     className='btn btn-link'

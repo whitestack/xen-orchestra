@@ -394,7 +394,7 @@ async function deploy() {
       console.error('Missing XOA download credentials')
       return
     }
-    let [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://');
+    const [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://');
     downloadUrl = `${downloadUrlProtocol}://${xoaDownloadUser.value}:${xoaDownloadPass.value}@${downloadUrlDomain}`
   }
 

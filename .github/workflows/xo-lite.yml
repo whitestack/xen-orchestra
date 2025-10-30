@@ -2,8 +2,8 @@ name: Build XO Lite
 
 on:
   push:
-    branches: [ "release/hydron" ]
-    tags: [ "hydron-*" ]
+    branches: ['release/hydron']
+    tags: ['hydron-*']
   workflow_dispatch:
 
 jobs:
@@ -26,11 +26,11 @@ jobs:
 
       - name: Prepare environment
         run: |
-          VERSION=${GITHUB_REF##*/}
+          TAG=${GITHUB_REF##*/}
           TIMESTAMP=$(date +%s)
           mkdir /tmp/xo-lite_${TIMESTAMP}
-          TARBALL=/tmp/xo-lite_${TIMESTAMP}/xo-lite_${VERSION}.tar.gz
-          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          TARBALL=/tmp/xo-lite_${TIMESTAMP}/xo-lite_${TAG}.tar.gz
+          echo "TAG=${TAG}" >> $GITHUB_ENV
           echo "TARBALL=${TARBALL}" >> $GITHUB_ENV
 
       - name: Build XO dependencies
@@ -48,14 +48,20 @@ jobs:
         working-directory: '@xen-orchestra/lite'
 
       - name: Generate tarball
-        run: tar -c -z -f ${{ env.TARBALL }} --transform='s|^dist|xo-lite_${{ env.VERSION }}|' dist
+        run: tar -c -z -f ${{ env.TARBALL }} --transform='s|^dist|xo-lite_${{ env.TAG }}|' dist
         working-directory: '@xen-orchestra/lite'
+
+      - name: Delete latest release and tag
+        if: startsWith(github.ref, 'refs/heads/release/')
+        run: gh release delete ${TAG} --cleanup-tag
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          name: ${{ env.VERSION }}
-          tag_name: ${{ env.VERSION }}
+          name: ${{ env.TAG }}
+          tag_name: ${{ env.TAG }}
           body: Whitestack XO Lite
           files: ${{ env.TARBALL }}
           draft: false
