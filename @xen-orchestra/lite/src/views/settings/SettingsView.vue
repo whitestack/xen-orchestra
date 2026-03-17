@@ -5,7 +5,7 @@
       <UiCardTitle>{{ $t('about') }}</UiCardTitle>
       <div class="sections">
         <div>
-          <h5>XOA</h5>
+          <h5>Xen Orchestra Lite</h5>
           <UiKeyValueList>
             <UiKeyValueRow>
               <template #key>{{ $t('version') }}</template>
