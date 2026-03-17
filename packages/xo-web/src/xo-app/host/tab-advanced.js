@@ -596,7 +596,7 @@ export default class extends Component {
                   </td>
                 </tr>
                 <tr>
-                  <th>{_('hostXenServerVersion')}</th>
+                  <th>{_('hostNephoraComputeEngineVersion')}</th>
                   <Copiable tagName='td' data={host.version}>
                     {host.license_params.sku_marketing_name} {host.version} ({host.license_params.sku_type})
                   </Copiable>

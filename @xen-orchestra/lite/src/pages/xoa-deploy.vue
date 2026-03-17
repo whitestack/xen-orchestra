@@ -1,7 +1,7 @@
 <template>
   <TitleBar icon="fa:download">{{ t('deploy-xoa') }}</TitleBar>
   <div v-if="deploying" class="status">
-    <img src="@/assets/xo.svg" width="300" alt="Xen Orchestra" />
+    <img src="@/assets/xo.svg" width="300" alt="Nephora Conductor" />
 
     <!-- Error -->
     <template v-if="error !== undefined">
@@ -366,7 +366,7 @@ async function deploy() {
 
   if (xoaUser.value === '' || xoaPwd.value === '') {
     // Should not happen
-    console.error('Missing XOA credentials')
+    console.error('Missing NCA credentials')
     return
   }
 
@@ -378,7 +378,7 @@ async function deploy() {
 
   if (enableSshAccount.value && sshPwd.value === '') {
     // Should not happen
-    console.error('Missing XOA credentials')
+    console.error('Missing NCA credentials')
     return
   }
 

@@ -331,7 +331,7 @@ export default class Backups {
             return backupsByRemote
           },
           {
-            description: 'list XO metadata backups',
+            description: 'list NC metadata backups',
             params: {
               remotes: {
                 type: 'object',

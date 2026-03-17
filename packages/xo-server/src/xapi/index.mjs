@@ -1228,7 +1228,7 @@ export default class Xapi extends XapiBase {
   // =================================================================
 
   @decorateWith(deferrable)
-  async createNetwork($defer, { name, description = 'Created with Xen Orchestra', pifId, mtu, vlan }) {
+  async createNetwork($defer, { name, description = 'Created with Nephora Conductor', pifId, mtu, vlan }) {
     const networkRef = await this.call('network.create', {
       name_label: name,
       name_description: description,
@@ -1430,7 +1430,7 @@ export default class Xapi extends XapiBase {
     }
     const vdi = await this._getOrWaitObject(
       await this.VDI_create({
-        name_label: 'XO CloudConfigDrive',
+        name_label: 'NC CloudConfigDrive',
         SR: sr.$ref,
         virtual_size: buffer.length,
       })
@@ -1498,7 +1498,7 @@ export default class Xapi extends XapiBase {
   async assertConsistentHostServerTime(hostRef) {
     if (!(await this.isHostServerTimeConsistent(hostRef))) {
       throw new Error(
-        `host server time and XOA date are not consistent with each other (${ms(
+        `host server time and NCA date are not consistent with each other (${ms(
           await this._getHostServerTimeShift(hostRef)
         )})`
       )

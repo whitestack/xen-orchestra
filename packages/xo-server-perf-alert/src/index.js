@@ -182,7 +182,7 @@ export const configurationSchema = {
   properties: {
     baseUrl: {
       type: 'string',
-      title: 'Xen Orchestra URL',
+      title: 'Nephora Conductor URL',
       description: 'URL used in alert messages to quickly get to the VMs (ex: https://xoa.company.tld/ )',
     },
     hostMonitors: {
@@ -738,10 +738,10 @@ ${entriesWithMissingStats.map(({ listItem }) => listItem).join('\n')}`
     if (this._configuration.toEmails !== undefined && this._xo.sendEmail !== undefined) {
       this._xo.sendEmail({
         to: this._configuration.toEmails,
-        subject: `[Xen Orchestra] − Performance Alert ${subjectSuffix}`,
+        subject: `[Nephora Conductor] − Performance Alert ${subjectSuffix}`,
         markdown:
           markdownBody +
-          `\n\n\nSent from Xen Orchestra [perf-alert plugin](${this._configuration.baseUrl}#/settings/plugins)\n`,
+          `\n\n\nSent from Nephora Conductor [perf-alert plugin](${this._configuration.baseUrl}#/settings/plugins)\n`,
       })
     } else {
       throw new Error('The email alert system has a configuration issue.')

@@ -44,7 +44,7 @@ exports.configurationSchema = {
         userInfoURL: { title: 'User info URL', type: 'string' },
         usernameField: {
           default: 'username',
-          description: 'Field to use as the XO username (e.g. `displayName`, `username` or `email`)',
+          description: 'Field to use as the NC username (e.g. `displayName`, `username` or `email`)',
           title: 'Username field',
           type: 'string',
         },

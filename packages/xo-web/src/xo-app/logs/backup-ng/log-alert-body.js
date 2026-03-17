@@ -238,7 +238,7 @@ const PoolTask = ({ children, className, task }) => (
 
 const XoTask = ({ children, className, task }) => (
   <li className={className}>
-    <Icon icon='menu-xoa' /> XO <TaskStateInfos status={task.status} />
+    <Icon icon='menu-xoa' /> NC <TaskStateInfos status={task.status} />
     <TaskWarnings warnings={task.warnings} />
     <TaskInfos infos={task.infos} />
     {children}

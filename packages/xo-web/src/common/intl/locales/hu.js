@@ -125,7 +125,7 @@ export default {
   // Original text: "About"
   aboutPage: 'Információ',
 
-  // Original text: "About XO {xoaPlan}"
+  // Original text: "About NC {xoaPlan}"
   aboutXoaPlan: 'Liszensz: {xoaPlan}',
 
   // Original text: "New"
@@ -221,14 +221,14 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'Adatok betöltése…',
 
-  // Original text: "Welcome on Xen Orchestra!"
+  // Original text: "Welcome on Nephora Conductor!"
   homeWelcome: 'Üdvözöljük a Felhőben!',
 
-  // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: 'Hozzáadása your XCP-ng kiszolgálók or pools',
+  // Original text: "Add your NCE hosts or pools"
+  homeWelcomeText: 'Hozzáadása your NCE kiszolgálók or pools',
 
-  // Original text: "Some XCP-ng hosts have been registered but are not connected"
-  homeConnectServerText: 'Some XCP-ng hosts have been registered but are not connected',
+  // Original text: "Some NCE hosts have been registered but are not connected"
+  homeConnectServerText: 'Some NCE hosts have been registered but are not connected',
 
   // Original text: "Want some help?"
   homeHelp: 'Segítségre van szüksége?',
@@ -689,11 +689,11 @@ export default {
   // Original text: "Local remote selected"
   localRemoteWarningTitle: 'Lokális távoli kiválasztva',
 
-  // Original text: "Warning: local remotes will use limited XOA disk space. Only for advanced users."
+  // Original text: "Warning: local remotes will use limited NCA disk space. Only for advanced users."
   localRemoteWarningMessage:
     'Figyelmeztetés: lokális távoli mentés korlátozott rendszer helyet használ. Kizárólag haladó felhasználóknak ajánlott, ha biztos benne, hogy ez a szervere elérhetőségét nem befolyásolja!.',
 
-  // Original text: "Warning: this feature works only with XenServer 6.5 or newer."
+  // Original text: "Warning: this feature works only with Nephora Compute Engine 6.5 or newer."
   backupVersionWarning: 'Figyelmeztetés: 6.5 vagy újabb Xen támogatás szükséges!',
 
   // Original text: "VMs"
@@ -1707,7 +1707,7 @@ export default {
   // Original text: "Tip:"
   tipLabel: 'Tip:',
 
-  // Original text: "Due to a XenServer issue, non-US keyboard layouts aren't well supported. Switch your own layout to US to workaround it."
+  // Original text: "Due to a Nephora Compute Engine issue, non-US keyboard layouts aren't well supported. Switch your own layout to US to workaround it."
   tipConsoleLabel:
     'Rendszerkompatibilitás miatt egyedül amerikai (US) billentyűzetkiosztás működik a legstabilabban, ennek használata javasolt.',
 
@@ -2538,8 +2538,8 @@ export default {
   // Original text: "No pending tasks"
   noTasks: 'Nincsenek függő feladatok',
 
-  // Original text: "Currently, there are not any pending XenServer tasks"
-  xsTasks: 'Jelenleg nincsenek függő XenServer feladatok',
+  // Original text: "Currently, there are not any pending Nephora Compute Engine tasks"
+  xsTasks: 'Jelenleg nincsenek függő Nephora Compute Engine feladatok',
 
   // Original text: "Schedules"
   backupSchedules: 'Időzítések',
@@ -2828,30 +2828,30 @@ export default {
   // Original text: "Previous SR Usage"
   existingSrModalTitle: 'Előző Adattároló használata',
 
-  // Original text: "This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingSrModalText:
-    'This path has been previously used as a Storage by a XenServer Host. All data will be lost if you choose to continue the Storage Creation.',
+    'This path has been previously used as a Storage by a Nephora Compute Engine Host. All data will be lost if you choose to continue the Storage Creation.',
 
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: 'Előző LUN használat',
 
-  // Original text: "This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingLunModalText:
-    'This LUN has been previously used as a Storage by a XenServer Host. All data will be lost if you choose to continue the Storage Creation.',
+    'This LUN has been previously used as a Storage by a Nephora Compute Engine Host. All data will be lost if you choose to continue the Storage Creation.',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: 'Replace current registration?',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'Your XO appliance is already registered to {email}, do you want to Elfelejt and replace this registration ?',
+    'Your NC appliance is already registered to {email}, do you want to Elfelejt and replace this registration ?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Ready for trial?',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
   trialReadyModalText:
-    'During the trial period, XOA need to have a working internet Ceonnection This limitation does not apply for our paid plans!',
+    'During the trial period, NCA need to have a working internet Ceonnection This limitation does not apply for our paid plans!',
 
   // Original text: "Host"
   serverHost: 'Kiszolgáló',
@@ -2997,8 +2997,8 @@ export default {
   // Original text: "No host selected to be added"
   addHostNoHostMessage: 'Nincs Kiszolgáló kiválasztva amihez hozzá lehetne adni',
 
-  // Original text: "Xen Orchestra"
-  xenOrchestra: 'CLOUDXO',
+  // Original text: "Nephora Conductor"
+  xenOrchestra: 'CLOUDNC',
 
   // Original text: "No pro support provided!"
   noProSupport: 'Nincsen pro-szupport!',
@@ -3042,8 +3042,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: 'Pro support included',
 
-  // Original text: "Access your XO Account"
-  xoAccount: 'Access your XO Account',
+  // Original text: "Access your NC Account"
+  xoAccount: 'Access your NC Account',
 
   // Original text: "Report a problem"
   openTicket: 'Report a problem',
@@ -3142,8 +3142,8 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: 'Your trial has been ended. Contact us or downgrade to Free Verzió',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
-  trialLocked: 'Your xoa-upDátumr service appears to be down. Your XOA cannot run fully without reaching this service.',
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
+  trialLocked: 'Your xoa-upDátumr service appears to be down. Your NCA cannot run fully without reaching this service.',
 
   // Original text: "No update information available"
   noUpdateInfo: 'No upDátum information available',
@@ -3151,14 +3151,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: 'UpDátum information may be available',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: 'Your XOA is up-to-Dátum',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: 'Your NCA is up-to-Dátum',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: 'You need to upDate your XOA (new Verzió is available)',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: 'You need to upDate your NCA (new Verzió is available)',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: 'Your XOA is not registered for upDates',
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: 'Your NCA is not registered for upDates',
 
   // Original text: "Can't fetch update information"
   updaterError: "Can't fetch upDátum information",
@@ -3166,15 +3166,15 @@ export default {
   // Original text: "Upgrade successful"
   promptUpgradeReloadTitle: 'Upgrade successful',
 
-  // Original text: "Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
+  // Original text: "Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
   promptUpgradeReloadMessage:
-    'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?',
+    'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?',
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Xen Orchestra from the sources',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Nephora Conductor from the sources',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: "You are using XO from the sources! That's great for a personal/non-profit használat.",
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: "You are using NC from the sources! That's great for a personal/non-profit használat.",
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: "If you are a company, it's better to use it with our appliance + pro support included:",
@@ -3491,7 +3491,7 @@ export default {
   // Original text: 'XOSAN'
   xosanTitle: undefined,
 
-  // Original text: 'Xen Orchestra SAN SR'
+  // Original text: 'Nephora Conductor SAN SR'
   xosanSrTitle: undefined,
 
   // Original text: 'Select local SRs (lvm)'
@@ -3551,7 +3551,7 @@ export default {
   // Original text: 'Installing XOSAN. Please wait…'
   xosanInstalling: undefined,
 
-  // Original text: 'You need XenServer 7.0 to install XOSAN'
+  // Original text: 'You need Nephora Compute Engine 7.0 to install XOSAN'
   xosanBadVersion: undefined,
 
   // Original text: 'No XOSAN available for Community Edition'

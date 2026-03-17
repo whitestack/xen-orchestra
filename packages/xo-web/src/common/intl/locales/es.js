@@ -140,7 +140,7 @@ export default {
   // Original text: "About"
   aboutPage: 'Acerca de',
 
-  // Original text: 'About XO {xoaPlan}'
+  // Original text: 'About NC {xoaPlan}'
   aboutXoaPlan: undefined,
 
   // Original text: "New"
@@ -236,11 +236,11 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'Recuperando datos…',
 
-  // Original text: "Welcome on Xen Orchestra!"
-  homeWelcome: '¡Bienvenido a Xen Orchestra!',
+  // Original text: "Welcome on Nephora Conductor!"
+  homeWelcome: '¡Bienvenido a Nephora Conductor!',
 
   // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: 'Añade tus hosts/pools de XenServer',
+  homeWelcomeText: 'Añade tus hosts/pools de Nephora Compute Engine',
 
   // Original text: 'Some XCP-ng hosts have been registered but are not connected'
   homeConnectServerText: undefined,
@@ -722,10 +722,10 @@ export default {
   // Original text: 'Local remote selected'
   localRemoteWarningTitle: undefined,
 
-  // Original text: 'Warning: local remotes will use limited XOA disk space. Only for advanced users.'
+  // Original text: 'Warning: local remotes will use limited NCA disk space. Only for advanced users.'
   localRemoteWarningMessage: undefined,
 
-  // Original text: 'Warning: this feature works only with XenServer 6.5 or newer.'
+  // Original text: 'Warning: this feature works only with Nephora Compute Engine 6.5 or newer.'
   backupVersionWarning: undefined,
 
   // Original text: 'VMs'
@@ -2646,8 +2646,8 @@ export default {
   // Original text: "No pending tasks"
   noTasks: 'No hay tareas pendientes',
 
-  // Original text: "Currently, there are not any pending XenServer tasks"
-  xsTasks: 'Ahora mismo no hay tareas de XenServer pendientes',
+  // Original text: "Currently, there are not any pending Nephora Compute Engine tasks"
+  xsTasks: 'Ahora mismo no hay tareas de Nephora Compute Engine pendientes',
 
   // Original text: 'Schedules'
   backupSchedules: undefined,
@@ -2980,29 +2980,29 @@ export default {
   // Original text: "Previous SR Usage"
   existingSrModalTitle: 'Uso anterior del SR',
 
-  // Original text: "This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingSrModalText:
-    'Esta ruta ya ha sido utilizada anteriormente como Almacenamiento por un host XenServer. Todos los datos existentes se perderán si continuas con la creación del SR.',
+    'Esta ruta ya ha sido utilizada anteriormente como Almacenamiento por un host Nephora Compute Engine. Todos los datos existentes se perderán si continuas con la creación del SR.',
 
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: 'Uso anterior de la LUN',
 
-  // Original text: "This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingLunModalText:
-    'Esta LUN ya ha sido utilizada anteriormente como Almacenamiento por un host XenServer. Todos los datos existentes se perderán si continuas con la creación del SR.',
+    'Esta LUN ya ha sido utilizada anteriormente como Almacenamiento por un host Nephora Compute Engine. Todos los datos existentes se perderán si continuas con la creación del SR.',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: '¿Reemplazar el registro actual?',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
-  alreadyRegisteredModalText: 'Tu XOA ya está registrado en {email}, ¿quieres olvidar y reemplazar este registro?',
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  alreadyRegisteredModalText: 'Tu NCA ya está registrado en {email}, ¿quieres olvidar y reemplazar este registro?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: '¿Preparado para el periodo de prueba?',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
   trialReadyModalText:
-    'Durante el periodo de prueba, XOA necesita conexión a Internet. Esta limitación no aplica a los planes de pago',
+    'Durante el periodo de prueba, NCA necesita conexión a Internet. Esta limitación no aplica a los planes de pago',
 
   // Original text: 'Label'
   serverLabel: undefined,
@@ -3178,8 +3178,8 @@ export default {
   // Original text: 'No host selected to be added'
   addHostNoHostMessage: undefined,
 
-  // Original text: "Xen Orchestra"
-  xenOrchestra: 'Xen Orchestra',
+  // Original text: "Nephora Conductor"
+  xenOrchestra: 'Nephora Conductor',
 
   // Original text: "No pro support provided!"
   noProSupport: '¡Sin soporte Pro!',
@@ -3223,8 +3223,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: 'Soporte Pro incluído',
 
-  // Original text: "Access your XO Account"
-  xoAccount: 'Entra en tu cuenta XO',
+  // Original text: "Access your NC Account"
+  xoAccount: 'Entra en tu cuenta NC',
 
   // Original text: "Report a problem"
   openTicket: 'Reportar un problema',
@@ -3325,9 +3325,9 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: 'Tu periodo de prueba ha terminado. Contacta con nosotros o vuelve a la Edición Libre',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
   trialLocked:
-    'Tu servicio xoa-updater parece estar caído. XOA no puede funcionar correctamente sin contactar con este servicio',
+    'Tu servicio xoa-updater parece estar caído. NCA no puede funcionar correctamente sin contactar con este servicio',
 
   // Original text: "No update information available"
   noUpdateInfo: 'No hay información de actualización',
@@ -3335,14 +3335,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: 'Podría haber información de actualización disponible',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: 'Tu XOA está al día',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: 'Tu NCA está al día',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: 'Necesitas actualizar tu XOA (hay disponible una nueva versión)',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: 'Necesitas actualizar tu NCA (hay disponible una nueva versión)',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: 'Tu XOA no está registrado para recibir actualizaciones',
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: 'Tu NCA no está registrado para recibir actualizaciones',
 
   // Original text: "Can't fetch update information"
   updaterError: 'No se puede obtener la información de actualización',
@@ -3350,14 +3350,14 @@ export default {
   // Original text: 'Upgrade successful'
   promptUpgradeReloadTitle: undefined,
 
-  // Original text: 'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
+  // Original text: 'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
   promptUpgradeReloadMessage: undefined,
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Xen Orchestra desde código fuente',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Nephora Conductor desde código fuente',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: '¡Estás utilizando XO a partir del código fuente! Estupendo para un uso personal/sin ánimo de lucro',
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: '¡Estás utilizando NC a partir del código fuente! Estupendo para un uso personal/sin ánimo de lucro',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: 'Si eres una empresa, es mejor utilizarlo con nuestro appliance con soporte Pro incluído',
@@ -3686,7 +3686,7 @@ export default {
   // Original text: 'XOSAN'
   xosanTitle: undefined,
 
-  // Original text: 'Xen Orchestra SAN SR'
+  // Original text: 'Nephora Conductor SAN SR'
   xosanSrTitle: undefined,
 
   // Original text: 'Select local SRs (lvm)'
@@ -3782,7 +3782,7 @@ export default {
   // Original text: 'Install {pack} v{version}?'
   xosanInstallPack: undefined,
 
-  // Original text: 'No compatible XOSAN pack found for your XenServer versions.'
+  // Original text: 'No compatible XOSAN pack found for your Nephora Compute Engine versions.'
   xosanNoPackFound: undefined,
 
   // Original text: 'At least one of these version requirements must be satisfied by all the hosts in this pool:'

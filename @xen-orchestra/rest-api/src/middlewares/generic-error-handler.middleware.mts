@@ -53,7 +53,7 @@ export default function genericErrorHandler(error: unknown, req: Request, res: R
     statusCode = 409
   } else {
     if (error.name === 'XapiError') {
-      responseError.info = 'This is a XenServer/XCP-ng error, not an XO error'
+      responseError.info = 'This is a Nephora Compute Engine error, not an NC error'
     }
     statusCode = 500
     log.error(error)

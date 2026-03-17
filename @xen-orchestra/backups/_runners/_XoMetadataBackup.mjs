@@ -51,7 +51,7 @@ export class XoMetadataBackup {
       ([remoteId, adapter]) =>
         Task.run(
           {
-            name: `Starting XO metadata backup for the remote (${remoteId}). (${job.id})`,
+            name: `Starting NC metadata backup for the remote (${remoteId}). (${job.id})`,
             data: {
               id: remoteId,
               type: 'remote',

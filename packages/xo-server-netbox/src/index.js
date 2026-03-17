@@ -83,7 +83,7 @@ class Netbox {
 
   load() {
     const synchronize = ({ pools }) => this.#synchronize(pools)
-    synchronize.description = 'Synchronize XO pools with Netbox'
+    synchronize.description = 'Synchronize NC pools with Netbox'
     synchronize.params = {
       pools: { type: 'array', optional: true, items: { type: 'string' } },
     }
@@ -112,12 +112,12 @@ class Netbox {
     await this.#checkCustomFields()
 
     const randomSuffix = Math.random().toString(36).slice(2, 11)
-    const name = '[TMP] Xen Orchestra Netbox plugin test - ' + randomSuffix
+    const name = '[TMP] Nephora Conductor Netbox plugin test - ' + randomSuffix
     await this.#request('/virtualization/cluster-types/', 'POST', {
       name,
       slug: 'xo-test-' + randomSuffix,
       description:
-        "This type has been created by Xen Orchestra's Netbox plugin test. If it hasn't been properly deleted, you may delete it manually.",
+        "This type has been created by Nephora Conductor's Netbox plugin test. If it hasn't been properly deleted, you may delete it manually.",
     })
     const nbClusterTypes = await this.#request(`/virtualization/cluster-types/?name=${encodeURIComponent(name)}`)
 
@@ -268,7 +268,7 @@ class Netbox {
           custom_fields: { uuid: xoUser.id },
           name,
           slug: slugify(name),
-          description: 'XO user',
+          description: 'NC user',
         }
       }
 
@@ -375,7 +375,7 @@ class Netbox {
       nbClusterType = await this.#request('/virtualization/cluster-types/', 'POST', {
         name: CLUSTER_TYPE,
         slug: slugify(CLUSTER_TYPE),
-        description: 'Created by Xen Orchestra',
+        description: 'Created by Nephora Conductor',
       })
     } else {
       nbClusterType = nbClusterTypes[0]
@@ -437,7 +437,7 @@ class Netbox {
     if (isEmpty(nbClusters)) {
       // Stop the synchronization if no pools could be found. Most likely, the
       // objects are not fetched or the pools have been disconnected.
-      log.warn('Pools not found in XO', { pools: xoPools })
+      log.warn('Pools not found in NC', { pools: xoPools })
       return
     }
 
@@ -528,7 +528,7 @@ class Netbox {
             name: tag,
             slug,
             color: '2598d9',
-            description: 'XO tag',
+            description: 'NC tag',
           })
           nbTags[nbTag.id] = nbTag
         }

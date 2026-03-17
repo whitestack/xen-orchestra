@@ -114,7 +114,7 @@ Or something like this if you also want to filter by group:
     },
     userIdAttribute: {
       title: 'ID attribute',
-      description: 'Attribute used to map LDAP user to XO user. Must be unique. e.g.: `dn`',
+      description: 'Attribute used to map LDAP user to NC user. Must be unique. e.g.: `dn`',
       type: 'string',
     },
     groups: {
@@ -134,12 +134,12 @@ Or something like this if you also want to filter by group:
         },
         idAttribute: {
           title: 'ID attribute',
-          description: 'Attribute used to map LDAP group to XO group. Must be unique. e.g.: `gid`',
+          description: 'Attribute used to map LDAP group to NC group. Must be unique. e.g.: `gid`',
           type: 'string',
         },
         displayNameAttribute: {
           title: 'Display name attribute',
-          description: "Attribute used to determine the group's name in XO. e.g.: `cn`",
+          description: "Attribute used to determine the group's name in NC. e.g.: `cn`",
           type: 'string',
         },
         membersMapping: {
@@ -434,7 +434,7 @@ class AuthLdap {
           const xoUser = xoUsers.find(user => user.authProviders.ldap.id === ldapUser[this._userIdAttribute])
           if (xoUser === undefined) {
             logger.debug(
-              `LDAP user ${ldapUser[this._userIdAttribute]} belongs to group ${groupLdapName} but the corresponding XO user could not be found`
+              `LDAP user ${ldapUser[this._userIdAttribute]} belongs to group ${groupLdapName} but the corresponding NC user could not be found`
             )
             continue
           }
@@ -443,7 +443,7 @@ class AuthLdap {
           const userIdIndex = xoGroupMembers.findIndex(id => id === xoUser.id)
           if (userIdIndex !== -1) {
             logger.debug(
-              `LDAP user ${ldapUser[this._userIdAttribute]} belongs to group ${groupLdapName} and is already a member of the corresponding XO group ${xoGroup.name}`
+              `LDAP user ${ldapUser[this._userIdAttribute]} belongs to group ${groupLdapName} and is already a member of the corresponding NC group ${xoGroup.name}`
             )
             xoGroupMembers.splice(userIdIndex, 1)
             continue

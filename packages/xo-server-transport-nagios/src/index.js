@@ -18,7 +18,7 @@ const serviceDescription = `Service name on Nagios.
 
 Leave empty if the host name equals the backup job name (the default configuration).
 
-Otherwise, you could choose a custom name but the template \`{job.name}\` must e included. For example: \`{job.name}-Xen Orchestra\`.`
+Otherwise, you could choose a custom name but the template \`{job.name}\` must e included. For example: \`{job.name}-Nephora Conductor\`.`
 
 export const configurationSchema = {
   type: 'object',
@@ -145,7 +145,7 @@ class XoServerNagios {
   test({ VmNameLabel, jobName }) {
     return this._sendPassiveCheck(
       {
-        message: 'The server-nagios plugin for Xen Orchestra server seems to be working fine, nicely done :)',
+        message: 'The server-nagios plugin for Nephora Conductor server seems to be working fine, nicely done :)',
         status: OK,
       },
       VmNameLabel,

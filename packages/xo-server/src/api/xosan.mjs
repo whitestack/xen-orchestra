@@ -736,7 +736,7 @@ async function createNewDisk(xapi, sr, vm, diskSize) {
   const newDisk = await xapi._getOrWaitObject(
     await xapi.VDI_create(
       {
-        name_description: 'Created by XO',
+        name_description: 'Created by NC',
         name_label: 'xosan_data',
         SR: sr.$ref,
         virtual_size: createVdiSize,

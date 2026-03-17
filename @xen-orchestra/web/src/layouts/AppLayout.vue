@@ -13,7 +13,7 @@
         variant="tertiary"
         @click="openUrl('/', true)"
       >
-        XO 5
+        NC 5
       </UiButton>
       <QuickTaskButton />
       <AccountMenu />

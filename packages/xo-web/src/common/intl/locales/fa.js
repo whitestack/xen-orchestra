@@ -142,8 +142,8 @@ export default {
   // Original text: 'Jobs'
   jobsPage: 'کارها',
 
-  // Original text: 'XOA'
-  xoaPage: 'XOA',
+  // Original text: 'NCA'
+  xoaPage: 'NCA',
 
   // Original text: 'Updates'
   updatePage: 'به روز رسانی ها',
@@ -184,8 +184,8 @@ export default {
   // Original text: 'About'
   aboutPage: 'درباره',
 
-  // Original text: 'About XO {xoaPlan}'
-  aboutXoaPlan: 'درباره XO {xoaPlan}',
+  // Original text: 'About NC {xoaPlan}'
+  aboutXoaPlan: 'درباره NC {xoaPlan}',
 
   // Original text: 'New'
   newMenu: 'جدید',
@@ -274,8 +274,8 @@ export default {
   // Original text: 'User'
   userPage: 'کاربر',
 
-  // Original text: 'XOA'
-  xoa: 'XOA',
+  // Original text: 'NCA'
+  xoa: 'NCA',
 
   // Original text: 'No support'
   noSupport: 'بدون پشتیبانی',
@@ -292,14 +292,14 @@ export default {
   // Original text: 'Fetching data…'
   homeFetchingData: 'واکشی داده…',
 
-  // Original text: 'Welcome to Xen Orchestra!'
-  homeWelcome: 'به Xen Orchestra خوش آمدید!',
+  // Original text: 'Welcome to Nephora Conductor!'
+  homeWelcome: 'به Nephora Conductor خوش آمدید!',
 
-  // Original text: 'Add your XenServer hosts or pools'
-  homeWelcomeText: 'میزبان ها یا استخرهای XenServer خود را اضافه کنید',
+  // Original text: 'Add your Nephora Compute Engine hosts or pools'
+  homeWelcomeText: 'میزبان ها یا استخرهای Nephora Compute Engine خود را اضافه کنید',
 
-  // Original text: 'Some XenServers have been registered but are not connected'
-  homeConnectServerText: 'برخی از XenServer ها ثبت شده اند اما متصل نشده اند',
+  // Original text: 'Some Nephora Compute Engines have been registered but are not connected'
+  homeConnectServerText: 'برخی از Nephora Compute Engine ها ثبت شده اند اما متصل نشده اند',
 
   // Original text: 'Want some help?'
   homeHelp: 'احتیاج به کمک دارید؟',
@@ -1085,11 +1085,11 @@ export default {
   // Original text: 'Local remote selected'
   localRemoteWarningTitle: 'ریموت محلی انتخاب شده است',
 
-  // Original text: 'Warning: local remotes will use limited XOA disk space. Only for advanced users.'
-  localRemoteWarningMessage: 'هشدار: ریموت‌های محلی از فضای محدود دیسک XOA استفاده می‌کنند. فقط برای کاربران حرفه ای.',
+  // Original text: 'Warning: local remotes will use limited NCA disk space. Only for advanced users.'
+  localRemoteWarningMessage: 'هشدار: ریموت‌های محلی از فضای محدود دیسک NCA استفاده می‌کنند. فقط برای کاربران حرفه ای.',
 
-  // Original text: 'Warning: this feature works only with XenServer 6.5 or newer.'
-  backupVersionWarning: 'هشدار: این ویژگی فقط با XenServer 6.5 یا جدیدتر کار می کند.',
+  // Original text: 'Warning: this feature works only with Nephora Compute Engine 6.5 or newer.'
+  backupVersionWarning: 'هشدار: این ویژگی فقط با Nephora Compute Engine 6.5 یا جدیدتر کار می کند.',
 
   // Original text: 'VMs'
   editBackupVmsTitle: 'ماشین های مجازی',
@@ -3318,8 +3318,8 @@ export default {
   // Original text: 'No pending tasks'
   noTasks: 'هیچ کار در حال انتظاری وجود ندارد',
 
-  // Original text: 'Currently, there are not any pending XenServer tasks'
-  xsTasks: 'در حال حاضر، هیچ کار در حال انتظاری برای XenServer وجود ندارد',
+  // Original text: 'Currently, there are not any pending Nephora Compute Engine tasks'
+  xsTasks: 'در حال حاضر، هیچ کار در حال انتظاری برای Nephora Compute Engine وجود ندارد',
 
   // Original text: 'Cancel'
   cancelTask: 'لغو کردن',
@@ -3858,30 +3858,30 @@ export default {
   // Original text: 'Previous SR Usage'
   existingSrModalTitle: 'استفاده قبلی از مخزن ذخیره سازی (SR)',
 
-  // Original text: 'This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.'
+  // Original text: 'This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.'
   existingSrModalText:
-    'این مسیر قبلاً به عنوان یک ذخیره ساز توسط یک میزبان XenServer استفاده شده است. اگر ادامه ایجاد مخزن ذخیره سازی (SR) را انتخاب کنید، همه داده ها از بین خواهند رفت.',
+    'این مسیر قبلاً به عنوان یک ذخیره ساز توسط یک میزبان Nephora Compute Engine استفاده شده است. اگر ادامه ایجاد مخزن ذخیره سازی (SR) را انتخاب کنید، همه داده ها از بین خواهند رفت.',
 
   // Original text: 'Previous LUN Usage'
   existingLunModalTitle: 'استفاده قبلی از LUN',
 
-  // Original text: 'This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.'
+  // Original text: 'This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.'
   existingLunModalText:
-    'این LUN قبلاً به عنوان یک ذخیره ساز توسط یک میزبان XenServer استفاده شده است. اگر ادامه ایجاد مخزن ذخیره سازی (SR) را انتخاب کنید، همه داده ها از بین خواهند رفت.',
+    'این LUN قبلاً به عنوان یک ذخیره ساز توسط یک میزبان Nephora Compute Engine استفاده شده است. اگر ادامه ایجاد مخزن ذخیره سازی (SR) را انتخاب کنید، همه داده ها از بین خواهند رفت.',
 
   // Original text: 'Replace current registration?'
   alreadyRegisteredModal: 'ثبت نام فعلی جایگزین شود؟',
 
-  // Original text: 'Your XO appliance is already registered to {email}, do you want to forget and replace this registration?'
+  // Original text: 'Your NC appliance is already registered to {email}, do you want to forget and replace this registration?'
   alreadyRegisteredModalText:
-    'دستگاه XO شما قبلاً با {email} ثبت شده است، آیا می خواهید این ثبت نام را فراموش کرده و جایگزین کنید؟',
+    'دستگاه NC شما قبلاً با {email} ثبت شده است، آیا می خواهید این ثبت نام را فراموش کرده و جایگزین کنید؟',
 
   // Original text: 'Ready for trial?'
   trialReadyModal: 'آماده برای آزمایش؟',
 
-  // Original text: 'During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!'
+  // Original text: 'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!'
   trialReadyModalText:
-    'در طول دوره آزمایشی، XOA باید یک اتصال اینترنتی فعال داشته باشد. این محدودیت برای طرح های پولی ما اعمال نمی شود!',
+    'در طول دوره آزمایشی، NCA باید یک اتصال اینترنتی فعال داشته باشد. این محدودیت برای طرح های پولی ما اعمال نمی شود!',
 
   // Original text: 'Cancel task{nTasks, plural, one {} other {s}}'
   cancelTasksModalTitle: 'لغو کار{nTasks, plural, one {} other {s}}',
@@ -4096,14 +4096,14 @@ export default {
   // Original text: 'No host selected to be added'
   addHostNoHostMessage: 'هیچ میزبانی برای اضافه شدن انتخاب نشده است',
 
-  // Original text: 'Xen Orchestra'
-  xenOrchestra: 'Xen Orchestra',
+  // Original text: 'Nephora Conductor'
+  xenOrchestra: 'Nephora Conductor',
 
-  // Original text: 'Xen Orchestra server'
-  xenOrchestraServer: 'سرور Xen Orchestra',
+  // Original text: 'Nephora Conductor server'
+  xenOrchestraServer: 'سرور Nephora Conductor',
 
-  // Original text: 'Xen Orchestra web client'
-  xenOrchestraWeb: 'سرویس گیرنده وب Xen Orchestra',
+  // Original text: 'Nephora Conductor web client'
+  xenOrchestraWeb: 'سرویس گیرنده وب Nephora Conductor',
 
   // Original text: 'No pro support provided!'
   noProSupport: 'هیچ پشتیبانی حرفه ای ارائه نمی شود!',
@@ -4147,8 +4147,8 @@ export default {
   // Original text: 'Pro support included'
   proSupportIncluded: 'شامل پشتیبانی حرفه ای',
 
-  // Original text: 'Access your XO Account'
-  xoAccount: 'به حساب XO خود دسترسی پیدا کنید',
+  // Original text: 'Access your NC Account'
+  xoAccount: 'به حساب NC خود دسترسی پیدا کنید',
 
   // Original text: 'Report a problem'
   openTicket: 'گزارش یک مشکل',
@@ -4255,9 +4255,9 @@ export default {
   // Original text: 'Your trial has been ended. Contact us or downgrade to Free version'
   trialConsumed: 'نسخه آزمایشی شما به پایان رسیده است. با ما تماس بگیرید یا به نسخه رایگان برگردید',
 
-  // Original text: 'Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service.'
+  // Original text: 'Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service.'
   trialLocked:
-    'به نظر می رسد سرویس xoa-updater شما از کار افتاده است. XOA شما بدون دسترسی به این سرویس نمی تواند به طور کامل اجرا شود.',
+    'به نظر می رسد سرویس xoa-updater شما از کار افتاده است. NCA شما بدون دسترسی به این سرویس نمی تواند به طور کامل اجرا شود.',
 
   // Original text: 'No update information available'
   noUpdateInfo: 'اطلاعات به روز رسانی در دسترس نیست',
@@ -4265,14 +4265,14 @@ export default {
   // Original text: 'Update information may be available'
   waitingUpdateInfo: 'اطلاعات به روز رسانی ممکن است در دسترس باشد',
 
-  // Original text: 'Your XOA is up-to-date'
-  upToDate: 'XOA شما به روز است',
+  // Original text: 'Your NCA is up-to-date'
+  upToDate: 'NCA شما به روز است',
 
-  // Original text: 'You need to update your XOA (new version is available)'
-  mustUpgrade: 'شما باید XOA خود را به روز کنید (نسخه جدید در دسترس است)',
+  // Original text: 'You need to update your NCA (new version is available)'
+  mustUpgrade: 'شما باید NCA خود را به روز کنید (نسخه جدید در دسترس است)',
 
-  // Original text: 'Your XOA is not registered for updates'
-  registerNeeded: 'XOA شما برای به‌روزرسانی‌ها ثبت نشده است',
+  // Original text: 'Your NCA is not registered for updates'
+  registerNeeded: 'NCA شما برای به‌روزرسانی‌ها ثبت نشده است',
 
   // Original text: "Can't fetch update information"
   updaterError: 'نمی توان اطلاعات به روز رسانی را دریافت کرد',
@@ -4280,9 +4280,9 @@ export default {
   // Original text: 'Upgrade successful'
   promptUpgradeReloadTitle: 'ارتقا با موفقیت انجام شد',
 
-  // Original text: 'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now?'
+  // Original text: 'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now?'
   promptUpgradeReloadMessage:
-    'XOA شما با موفقیت ارتقا یافته است و مرورگر شما باید برنامه را دوباره بارگیری کند. آیا می خواهید اکنون بارگیری مجدد را انجام دهید؟',
+    'NCA شما با موفقیت ارتقا یافته است و مرورگر شما باید برنامه را دوباره بارگیری کند. آیا می خواهید اکنون بارگیری مجدد را انجام دهید؟',
 
   // Original text: 'Upgrade warning'
   upgradeWarningTitle: 'هشدار ارتقا',
@@ -4291,11 +4291,11 @@ export default {
   upgradeWarningMessage:
     'شما چند کار پشتیبان گیری در حال انجام دارید. اگر همین الان ارتقا دهید، این کارها قطع می شود! آیا مطمئن هستید که میخواهید ادامه دهید؟',
 
-  // Original text: 'Xen Orchestra from the sources'
-  disclaimerTitle: 'Xen Orchestra از منابع',
+  // Original text: 'Nephora Conductor from the sources'
+  disclaimerTitle: 'Nephora Conductor از منابع',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'شما از XO از منابع استفاده می کنید! این برای استفاده شخصی/غیرانتفاعی عالی است.',
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: 'شما از NC از منابع استفاده می کنید! این برای استفاده شخصی/غیرانتفاعی عالی است.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2:
@@ -4704,8 +4704,8 @@ export default {
   // Original text: 'XOSAN'
   xosanTitle: 'XOSAN',
 
-  // Original text: 'Xen Orchestra SAN SR'
-  xosanSrTitle: 'مخزن ذخیره سازی (SR) از نوع SAN برای Xen Orchestra',
+  // Original text: 'Nephora Conductor SAN SR'
+  xosanSrTitle: 'مخزن ذخیره سازی (SR) از نوع SAN برای Nephora Conductor',
 
   // Original text: 'Select local SRs (lvm)'
   xosanAvailableSrsTitle: 'انتخاب مخزن های ذخیره سازی (SR) محلی (lvm)',
@@ -4890,8 +4890,8 @@ export default {
   // Original text: 'XOSAN is not available at the moment'
   xosanNotAvailable: 'در حال حاضر XOSAN در دسترس نیست',
 
-  // Original text: 'No compatible XOSAN pack found for your XenServer versions.'
-  xosanNoPackFound: 'هیچ بسته XOSAN سازگاری برای نسخه‌های XenServer شما یافت نشد.',
+  // Original text: 'No compatible XOSAN pack found for your Nephora Compute Engine versions.'
+  xosanNoPackFound: 'هیچ بسته XOSAN سازگاری برای نسخه‌های Nephora Compute Engine شما یافت نشد.',
 
   // Original text: 'Some XOSAN Virtual Machines are not running'
   xosanVmsNotRunning: 'برخی از ماشین های مجازی XOSAN در حال اجرا نیستند',
@@ -5011,9 +5011,9 @@ export default {
   xosanUnregisteredDisclaimer:
     'شما ثبت نام نکرده اید و بنابراین نمی توانید مخزن های ذخیره سازی (SR) XOSAN خود را ایجاد یا مدیریت کنید. {link}',
 
-  // Original text: 'In order to create a XOSAN SR, you need to use the Xen Orchestra Appliance and buy a XOSAN license on {link}.'
+  // Original text: 'In order to create a XOSAN SR, you need to use the Nephora Conductor Appliance and buy a XOSAN license on {link}.'
   xosanSourcesDisclaimer:
-    'برای ایجاد یک مخزن ذخیره سازی (SR) XOSAN باید از دستگاه Xen Orchestra استفاده کنید و یک مجوز XOSAN در {link} خریداری کنید.',
+    'برای ایجاد یک مخزن ذخیره سازی (SR) XOSAN باید از دستگاه Nephora Conductor استفاده کنید و یک مجوز XOSAN در {link} خریداری کنید.',
 
   // Original text: 'Register now!'
   registerNow: 'اکنون ثبت نام کنید!',
@@ -5100,11 +5100,11 @@ export default {
   // Original text: 'expires on {date}'
   expiresOn: 'در {date} منقضی می شود',
 
-  // Original text: 'Install XOA plugin first'
-  xosanInstallXoaPlugin: 'ابتدا افزونه XOA را نصب کنید',
+  // Original text: 'Install NCA plugin first'
+  xosanInstallXoaPlugin: 'ابتدا افزونه NCA را نصب کنید',
 
-  // Original text: 'Load XOA plugin first'
-  xosanLoadXoaPlugin: 'ابتدا افزونه XOA را بارگیری کنید',
+  // Original text: 'Load NCA plugin first'
+  xosanLoadXoaPlugin: 'ابتدا افزونه NCA را بارگیری کنید',
 
   // Original text: '{seconds, plural, one {# second} other {# seconds}}'
   secondsFormat: '{seconds, plural, one {# second} other {# seconds}}',

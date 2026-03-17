@@ -59,8 +59,8 @@ export default {
   // Original text: 'SR'
   sr: 'SR',
 
-  // Original text: 'Try XOA for free and deploy it here.'
-  tryXoa: 'Prova XOA gratuitamente e distribuiscilo.',
+  // Original text: 'Try NCA for free and deploy it here.'
+  tryXoa: 'Prova NCA gratuitamente e distribuiscilo.',
 
   // Original text: 'Not installed'
   notInstalled: 'Non installato',
@@ -320,8 +320,8 @@ export default {
   // Original text: 'Jobs'
   jobsPage: 'Processi',
 
-  // Original text: 'XOA'
-  xoaPage: 'XOA',
+  // Original text: 'NCA'
+  xoaPage: 'NCA',
 
   // Original text: 'Updates'
   updatePage: 'Aggiornamenti',
@@ -368,8 +368,8 @@ export default {
   // Original text: 'About'
   aboutPage: 'Informazioni',
 
-  // Original text: 'About XO {xoaPlan}'
-  aboutXoaPlan: 'Informazioni su XO {xoaPlan}',
+  // Original text: 'About NC {xoaPlan}'
+  aboutXoaPlan: 'Informazioni su NC {xoaPlan}',
 
   // Original text: 'New'
   newMenu: 'Nuovo',
@@ -443,8 +443,8 @@ export default {
   // Original text: 'Pool metadata'
   poolMetadata: 'Metadati del pool',
 
-  // Original text: 'XO config'
-  xoConfig: 'XO config',
+  // Original text: 'NC config'
+  xoConfig: 'NC config',
 
   // Original text: 'Backup VMs'
   backupVms: 'VM di backup',
@@ -467,8 +467,8 @@ export default {
   // Original text: 'User'
   userPage: 'Utente',
 
-  // Original text: 'XOA'
-  xoa: 'XOA',
+  // Original text: 'NCA'
+  xoa: 'NCA',
 
   // Original text: 'No support'
   noSupport: 'Senza supporto',
@@ -476,11 +476,11 @@ export default {
   // Original text: 'Free upgrade!'
   freeUpgrade: 'Aggiornamento gratuito!',
 
-  // Original text: 'Check XOA'
-  checkXoa: 'Controlla XOA',
+  // Original text: 'Check NCA'
+  checkXoa: 'Controlla NCA',
 
-  // Original text: 'XOA check'
-  xoaCheck: 'Controllo XOA',
+  // Original text: 'NCA check'
+  xoaCheck: 'Controllo NCA',
 
   // Original text: 'Close tunnel'
   closeTunnel: 'Chiudi tunnel',
@@ -491,8 +491,8 @@ export default {
   // Original text: 'Open tunnel'
   openTunnel: 'Tunnel aperto',
 
-  // Original text: 'The XOA check and the support tunnel are available in XOA.'
-  supportCommunity: 'Il controllo XOA e il tunnel di supporto sono disponibili in XOA.',
+  // Original text: 'The NCA check and the support tunnel are available in NCA.'
+  supportCommunity: 'Il controllo NCA e il tunnel di supporto sono disponibili in NCA.',
 
   // Original text: 'Support tunnel'
   supportTunnel: 'Tunnel di supporto',
@@ -509,14 +509,14 @@ export default {
   // Original text: 'Fetching data…'
   homeFetchingData: 'Recupero dei dati…',
 
-  // Original text: 'Welcome to Xen Orchestra!'
-  homeWelcome: 'Benvenuti in Xen Orchestra!',
+  // Original text: 'Welcome to Nephora Conductor!'
+  homeWelcome: 'Benvenuti in Nephora Conductor!',
 
-  // Original text: 'Add your XCP-ng hosts or pools'
-  homeWelcomeText: 'Aggiungi i tuoi hosts o pools XCP-ng',
+  // Original text: 'Add your NCE hosts or pools'
+  homeWelcomeText: 'Aggiungi i tuoi hosts o pools NCE',
 
-  // Original text: 'Some XCP-ng hosts have been registered but are not connected'
-  homeConnectServerText: 'Alcuni XCP-ng hosts sono stati registrati ma non sono collegati',
+  // Original text: 'Some NCE hosts have been registered but are not connected'
+  homeConnectServerText: 'Alcuni NCE hosts sono stati registrati ma non sono collegati',
 
   // Original text: 'Want some help?'
   homeHelp: 'Vuoi un aiuto?',
@@ -701,8 +701,8 @@ export default {
   // Original text: 'Shared {type}'
   srSharedType: 'Condiviso {type}',
 
-  // Original text: 'Host time and XOA time are not consistent with each other'
-  warningHostTimeTooltip: "L'ora dello host e l'ora XOA non sono coerenti tra loro",
+  // Original text: 'Host time and NCA time are not consistent with each other'
+  warningHostTimeTooltip: "L'ora dello host e l'ora NCA non sono coerenti tra loro",
 
   // Original text: 'Name'
   snapshotVmsName: 'Nome',
@@ -731,8 +731,8 @@ export default {
   // Original text: 'GZIP (very slow)'
   chooseCompressionGzipOption: 'GZIP (molto lento)',
 
-  // Original text: 'Zstd (fast, XCP-ng only)'
-  chooseCompressionZstdOption: 'Zstd (veloce, solo XCP-ng)',
+  // Original text: 'Zstd (fast, NCE only)'
+  chooseCompressionZstdOption: 'Zstd (veloce, solo NCE)',
 
   // Original text: 'State'
   state: 'Stato',
@@ -1357,18 +1357,18 @@ export default {
   vmsOnThinProvisionedSrTip:
     "Suggerimento: la creazione di VMs su deposito thin provisioning consumerà meno spazio. Fare clic sull'icona per ottenere maggiori informazioni.",
 
-  // Original text: 'Delta Backup and Continuous Replication require at least XenServer 6.5.'
-  deltaBackupOnOutdatedXenServerWarning: 'Delta Backup e Replica Continua richiedono almeno XenServer 6.5.',
+  // Original text: 'Delta Backup and Continuous Replication require at least Nephora Compute Engine 6.5.'
+  deltaBackupOnOutdatedXenServerWarning: 'Delta Backup e Replica Continua richiedono almeno Nephora Compute Engine 6.5.',
 
   // Original text: 'Click for more information about the backup methods.'
   backupNgLinkToDocumentationMessage: 'Fare clic per ulteriori informazioni sui metodi di backup.',
 
-  // Original text: 'Warning: Local remotes will use limited XOA disk space. Only for advanced users.'
+  // Original text: 'Warning: Local remotes will use limited NCA disk space. Only for advanced users.'
   localRemoteWarningMessage:
-    'Avvertenza: i remoti locali utilizzeranno uno spazio su disco XOA limitato. Solo per utenti esperti.',
+    'Avvertenza: i remoti locali utilizzeranno uno spazio su disco NCA limitato. Solo per utenti esperti.',
 
-  // Original text: 'Warning: This feature works only with XenServer 6.5 or newer.'
-  backupVersionWarning: 'Avviso: questa funzione è disponibile solo con XenServer 6.5 o versioni successive.',
+  // Original text: 'Warning: This feature works only with Nephora Compute Engine 6.5 or newer.'
+  backupVersionWarning: 'Avviso: questa funzione è disponibile solo con Nephora Compute Engine 6.5 o versioni successive.',
 
   // Original text: 'VMs'
   editBackupVmsTitle: 'VMs',
@@ -2025,8 +2025,8 @@ export default {
   // Original text: 'License restrictions'
   licenseRestrictions: 'Limitazioni della licenza',
 
-  // Original text: 'Warning: You are using a Free XenServer license'
-  licenseRestrictionsModalTitle: 'Avviso: stai usando una licenza XenServer gratuita',
+  // Original text: 'Warning: You are using a Free Nephora Compute Engine license'
+  licenseRestrictionsModalTitle: 'Avviso: stai usando una licenza Nephora Compute Engine gratuita',
 
   // Original text: 'Some functionality is restricted.'
   actionsRestricted: 'Alcune funzionalità sono limitate.',
@@ -2034,8 +2034,8 @@ export default {
   // Original text: 'You can:'
   counterRestrictionsOptions: 'Puoi:',
 
-  // Original text: 'upgrade to XCP-ng for free to get rid of these restrictions'
-  counterRestrictionsOptionsXcp: 'aggiornare a XCP-ng gratuitamente per sbarazzarsi di queste restrizioni',
+  // Original text: 'upgrade to NCE for free to get rid of these restrictions'
+  counterRestrictionsOptionsXcp: 'aggiornare a NCE gratuitamente per sbarazzarsi di queste restrizioni',
 
   // Original text: 'or get a commercial Citrix license'
   counterRestrictionsOptionsXsLicense: 'o ottenere una licenza Citrix commerciale',
@@ -2229,8 +2229,8 @@ export default {
   // Original text: 'Hyper-threading (SMT)'
   hyperThreading: 'Hyper-threading (SMT)',
 
-  // Original text: 'HT detection is only available on XCP-ng 7.6 and higher'
-  hyperThreadingNotAvailable: 'Il rilevamento HT è disponibile solo su XCP-ng 7.6 e versioni successive',
+  // Original text: 'HT detection is only available on NCE 7.6 and higher'
+  hyperThreadingNotAvailable: 'Il rilevamento HT è disponibile solo su NCE 7.6 e versioni successive',
 
   // Original text: 'Address'
   hostAddress: 'Indirizzo',
@@ -2483,9 +2483,9 @@ export default {
   // Original text: 'Release'
   patchRelease: 'pubblicazione',
 
-  // Original text: 'An error occurred while fetching the patches. Please make sure the updater plugin is installed by running `yum install xcp-ng-updater` on the host.'
+  // Original text: 'An error occurred while fetching the patches. Please make sure the updater plugin is installed by running `yum install NCE-updater` on the host.'
   updatePluginNotInstalled:
-    "Assicurati che il plugin di aggiornamento sia installato eseguendo `yum install xcp-ng-updater` sull'host.",
+    "Assicurati che il plugin di aggiornamento sia installato eseguendo `yum install NCE-updater` sull'host.",
 
   // Original text: 'Show changelog'
   showChangelog: 'Mostra il log delle modifiche',
@@ -3182,9 +3182,9 @@ export default {
   // Original text: 'default (bios)'
   vmDefaultBootFirmwareLabel: 'predefinitio (bios)',
 
-  // Original text: "You're about to change your boot firmware. This is still experimental in CH/XCP-ng 8.0. Are you sure you want to continue?"
+  // Original text: "You're about to change your boot firmware. This is still experimental in CH/NCE 8.0. Are you sure you want to continue?"
   vmBootFirmwareWarningMessage:
-    'Stai per cambiare il firmware di avvio. Questo è ancora sperimentale in CH/XCP-ng 8.0. Sei sicuro di voler continuare?',
+    'Stai per cambiare il firmware di avvio. Questo è ancora sperimentale in CH/NCE 8.0. Sei sicuro di voler continuare?',
 
   // Original text: 'Long click to add a name'
   vmHomeNamePlaceholder: 'Fai clic lungo per aggiungere un nome',
@@ -3894,8 +3894,8 @@ export default {
   // Original text: 'Pool retention'
   poolMetadataRetention: 'Ritenzione del pool',
 
-  // Original text: 'XO retention'
-  xoMetadataRetention: 'Ritenzione XO',
+  // Original text: 'NC retention'
+  xoMetadataRetention: 'Ritenzione NC',
 
   // Original text: 'Get remote'
   getRemote: 'Ottieni remoto',
@@ -4405,22 +4405,22 @@ export default {
   // Original text: 'Previous LUN Usage'
   existingLunModalTitle: 'Utilizzo LUN precedente',
 
-  // Original text: 'This LUN has been previously used as storage by a XenServer host. All data will be lost if you choose to continue with the SR creation.'
+  // Original text: 'This LUN has been previously used as storage by a Nephora Compute Engine host. All data will be lost if you choose to continue with the SR creation.'
   existingLunModalText: 'Tutti i dati andranno persi se si sceglie di continuare con la creazione di SR.',
 
   // Original text: 'Replace current registration?'
   alreadyRegisteredModal: 'Sostituisci la registrazione attuale?',
 
-  // Original text: 'Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?'
+  // Original text: 'Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?'
   alreadyRegisteredModalText:
-    "L'appliance XO è già registrata su {email}, vuoi dimenticare e sostituire questa registrazione?",
+    "L'appliance NC è già registrata su {email}, vuoi dimenticare e sostituire questa registrazione?",
 
   // Original text: 'Ready for trial?'
   trialReadyModal: 'Pronto per il processo?',
 
-  // Original text: 'During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!'
+  // Original text: 'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!'
   trialReadyModalText:
-    'Durante il periodo di prova, XOA deve disporre di una connessione Internet funzionante. Questa limitazione non si applica ai nostri piani a pagamento!',
+    'Durante il periodo di prova, NCA deve disporre di una connessione Internet funzionante. Questa limitazione non si applica ai nostri piani a pagamento!',
 
   // Original text: 'Cancel task{nTasks, plural, one {} other {s}}'
   cancelTasksModalTitle: 'Annulla attività',
@@ -4598,8 +4598,8 @@ export default {
   // Original text: 'Advanced Live Telemetry successfully enabled'
   enableAdvancedLiveTelemetrySuccess: 'Telemetria live avanzata abilitata correttamente',
 
-  // Original text: 'This feature is only XCP-ng compatible'
-  xcpOnlyFeature: 'Questa funzione è compatibile solo con XCP-ng',
+  // Original text: 'This feature is only NCE compatible'
+  xcpOnlyFeature: 'Questa funzione è compatibile solo con NCE',
 
   // Original text: 'Forget host'
   forgetHostModalTitle: "Dimentica l'host",
@@ -4697,8 +4697,8 @@ export default {
   // Original text: 'Want to use in production?'
   productionUse: 'Vuoi usare in produzione?',
 
-  // Original text: 'Get pro support with the Xen Orchestra Appliance at {website}'
-  getSupport: 'Ottieni supporto professionale con Xen Orchestra Appliance su {website}',
+  // Original text: 'Get pro support with the Nephora Conductor Appliance at {website}'
+  getSupport: 'Ottieni supporto professionale con Nephora Conductor Appliance su {website}',
 
   // Original text: 'Bug Tracker'
   bugTracker: 'Bug Tracker',
@@ -4733,8 +4733,8 @@ export default {
   // Original text: 'Pro support included'
   proSupportIncluded: 'Supporto professionale incluso',
 
-  // Original text: 'Access your XO Account'
-  xoAccount: 'Accedi al tuo XO Account',
+  // Original text: 'Access your NC Account'
+  xoAccount: 'Accedi al tuo NC Account',
 
   // Original text: 'Report a problem'
   openTicket: 'Segnala un problema',
@@ -4828,8 +4828,8 @@ export default {
   // Original text: 'Your trial has been ended. Contact us or downgrade to Free version'
   trialConsumed: 'Contattaci o effettua il downgrade alla versione gratuita',
 
-  // Original text: 'Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service.'
-  trialLocked: 'Il tuo XOA non può funzionare completamente senza connettersi a questo servizio.',
+  // Original text: 'Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service.'
+  trialLocked: 'Il tuo NCA non può funzionare completamente senza connettersi a questo servizio.',
 
   // Original text: 'No update information available'
   noUpdateInfo: 'Nessuna informazione di aggiornamento disponibile',
@@ -4837,14 +4837,14 @@ export default {
   // Original text: 'Update information may be available'
   waitingUpdateInfo: "Informazioni sull'aggiornamento potrebbero essere disponibili",
 
-  // Original text: 'Your XOA is up-to-date'
-  upToDate: 'Il tuo XOA è aggiornato',
+  // Original text: 'Your NCA is up-to-date'
+  upToDate: 'Il tuo NCA è aggiornato',
 
-  // Original text: 'You need to update your XOA (new version is available)'
-  mustUpgrade: 'Devi aggiornare il tuo XOA (è disponibile una nuova versione)',
+  // Original text: 'You need to update your NCA (new version is available)'
+  mustUpgrade: 'Devi aggiornare il tuo NCA (è disponibile una nuova versione)',
 
-  // Original text: 'Your XOA is not registered for updates'
-  registerNeeded: 'Il tuo XOA non è registrato per gli aggiornamenti',
+  // Original text: 'Your NCA is not registered for updates'
+  registerNeeded: 'Il tuo NCA non è registrato per gli aggiornamenti',
 
   // Original text: "Can't fetch update information"
   updaterError: 'Impossibile recuperare le informazioni di aggiornamento',
@@ -4852,9 +4852,9 @@ export default {
   // Original text: 'Upgrade successful'
   promptUpgradeReloadTitle: 'Aggiornamento eseguito correttamente',
 
-  // Original text: 'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
+  // Original text: 'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
   promptUpgradeReloadMessage:
-    "Il tuo XOA è stato aggiornato correttamente e il tuo browser deve ricaricare l'applicazione. Vuoi ricaricare ora?",
+    "Il tuo NCA è stato aggiornato correttamente e il tuo browser deve ricaricare l'applicazione. Vuoi ricaricare ora?",
 
   // Original text: 'Upgrade warning'
   upgradeWarningTitle: 'Avviso di aggiornamento',
@@ -4878,17 +4878,17 @@ export default {
   // Original text: 'Change channel'
   changeChannel: 'Cambia canale',
 
-  // Original text: 'The Web updater, the release channels and the proxy settings are available in XOA.'
-  updaterCommunity: "L'aggiornamento Web, i canali di rilascio e le impostazioni proxy sono disponibili in XOA.",
+  // Original text: 'The Web updater, the release channels and the proxy settings are available in NCA.'
+  updaterCommunity: "L'aggiornamento Web, i canali di rilascio e le impostazioni proxy sono disponibili in NCA.",
 
-  // Original text: 'XOA build:'
-  xoaBuild: 'XOA build:',
+  // Original text: 'NCA build:'
+  xoaBuild: 'NCA build:',
 
-  // Original text: 'Xen Orchestra from the sources'
-  disclaimerTitle: 'Stai usando XO dai sorgenti!',
+  // Original text: 'Nephora Conductor from the sources'
+  disclaimerTitle: 'Stai usando NC dai sorgenti!',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Stai usando XO dai sorgenti! È fantastico per un uso personale/non lucrativo.',
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: 'Stai usando NC dai sorgenti! È fantastico per un uso personale/non lucrativo.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: "Se sei un'azienda, è meglio utilizzarlo con il nostro supporto appliance + pro incluso:",
@@ -4896,14 +4896,14 @@ export default {
   // Original text: 'This version is not bundled with any support nor updates. Use it with caution.'
   disclaimerText3: 'Questa versione non è fornita con alcun supporto né aggiornamento. Usalo con cautela.',
 
-  // Original text: 'You are not registered. Your XOA may not be up to date.'
-  notRegisteredDisclaimerInfo: 'Non sei registrato Il tuo XOA potrebbe non essere aggiornato.',
+  // Original text: 'You are not registered. Your NCA may not be up to date.'
+  notRegisteredDisclaimerInfo: 'Non sei registrato Il tuo NCA potrebbe non essere aggiornato.',
 
   // Original text: 'Click here to create an account.'
   notRegisteredDisclaimerCreateAccount: 'Clicca qui per creare un account.',
 
-  // Original text: 'Click here to register and update your XOA.'
-  notRegisteredDisclaimerRegister: 'Fai clic qui per registrarti e aggiornare il tuo XOA.',
+  // Original text: 'Click here to register and update your NCA.'
+  notRegisteredDisclaimerRegister: 'Fai clic qui per registrarti e aggiornare il tuo NCA.',
 
   // Original text: 'Connect PIF'
   connectPif: 'Collega PIF',
@@ -5058,11 +5058,11 @@ export default {
   // Original text: 'Message'
   logMessage: 'Messaggio',
 
-  // Original text: 'Use XCP-ng to get rid of restrictions'
-  logSuggestXcpNg: 'Usa XCP-ng per sbarazzarti delle restrizioni',
+  // Original text: 'Use NCE to get rid of restrictions'
+  logSuggestXcpNg: 'Usa NCE per sbarazzarti delle restrizioni',
 
-  // Original text: 'This is a XenServer/XCP-ng error'
-  logXapiError: 'Questo è un errore XenServer/XCP-ng',
+  // Original text: 'This is a Nephora Compute Engine'
+  logXapiError: 'Questo è un errore Nephora Compute Engine',
 
   // Original text: 'Error'
   logError: 'Errore',
@@ -5402,8 +5402,8 @@ export default {
   // Original text: 'Create'
   xosanCreate: 'Creare',
 
-  // Original text: 'XOSAN is available in XOA'
-  xosanCommunity: 'XOSAN è disponibile in XOA',
+  // Original text: 'XOSAN is available in NCA'
+  xosanCommunity: 'XOSAN è disponibile in NCA',
 
   // Original text: 'New'
   xosanNew: 'Nuovo',
@@ -5488,14 +5488,14 @@ export default {
   // Original text: 'Scanning SR…'
   xosanState_scanningSr: 'Scansione SR…',
 
-  // Original text: 'Install XOA plugin first'
-  xosanInstallCloudPlugin: 'Installare prima il plugin XOA',
+  // Original text: 'Install NCA plugin first'
+  xosanInstallCloudPlugin: 'Installare prima il plugin NCA',
 
-  // Original text: 'Load XOA plugin first'
-  xosanLoadCloudPlugin: 'Carica prima il plugin XOA',
+  // Original text: 'Load NCA plugin first'
+  xosanLoadCloudPlugin: 'Carica prima il plugin NCA',
 
-  // Original text: 'No compatible XOSAN pack found for your XenServer versions.'
-  xosanNoPackFound: 'Nessun pacchetto XOSAN compatibile trovato per le tue versioni XenServer.',
+  // Original text: 'No compatible XOSAN pack found for your Nephora Compute Engine versions.'
+  xosanNoPackFound: 'Nessun pacchetto XOSAN compatibile trovato per le tue versioni Nephora Compute Engine.',
 
   // Original text: 'Some XOSAN Virtual Machines are not running'
   xosanVmsNotRunning: 'Alcune VMs XOSAN non sono in esecuzione',
@@ -5612,8 +5612,8 @@ export default {
   // Original text: 'Hub'
   hubPage: 'Hub',
 
-  // Original text: 'Hub is available in XOA'
-  hubCommunity: 'Hub è disponibile in XOA',
+  // Original text: 'Hub is available in NCA'
+  hubCommunity: 'Hub è disponibile in NCA',
 
   // Original text: 'The selected pool has no default SR'
   noDefaultSr: 'Il pool selezionato non ha SR predefinito',
@@ -5733,9 +5733,9 @@ export default {
   xosanUnregisteredDisclaimer:
     'Non sei registrato e pertanto non sarai in grado di creare o gestire i tuoi XOSAN SR. {link}',
 
-  // Original text: 'In order to create a XOSAN SR, you need to use the Xen Orchestra Appliance and buy a XOSAN license on {link}.'
+  // Original text: 'In order to create a XOSAN SR, you need to use the Nephora Conductor Appliance and buy a XOSAN license on {link}.'
   xosanSourcesDisclaimer:
-    'Per creare un XOSAN SR, è necessario utilizzare Xen Orchestra Appliance e acquistare una licenza XOSAN su {link}.',
+    'Per creare un XOSAN SR, è necessario utilizzare Nephora Conductor Appliance e acquistare una licenza XOSAN su {link}.',
 
   // Original text: 'Register now!'
   registerNow: 'Iscriviti ora!',
@@ -5792,11 +5792,11 @@ export default {
   // Original text: 'License has expired.'
   licenseHasExpired: 'La licenza è scaduta.',
 
-  // Original text: 'License bound to another XOA'
-  licenseBoundToOtherXoa: 'Licenza vincolata a un altro XOA',
+  // Original text: 'License bound to another NCA'
+  licenseBoundToOtherXoa: 'Licenza vincolata a un altro NCA',
 
-  // Original text: 'This license is active on this XOA'
-  licenseBoundToThisXoa: 'Questa licenza è attiva su questo XOA',
+  // Original text: 'This license is active on this NCA'
+  licenseBoundToThisXoa: 'Questa licenza è attiva su questo NCA',
 
   // Original text: 'License expires on {date}.'
   licenseExpiresDate: 'La licenza scade il {date}.',
@@ -5825,16 +5825,16 @@ export default {
   // Original text: 'expires on {date}'
   expiresOn: 'scade il {date}',
 
-  // Original text: 'Install XOA plugin first'
-  xosanInstallXoaPlugin: 'Installare prima il plugin XOA',
+  // Original text: 'Install NCA plugin first'
+  xosanInstallXoaPlugin: 'Installare prima il plugin NCA',
 
-  // Original text: 'Load XOA plugin first'
-  xosanLoadXoaPlugin: 'Carica prima il plugin XOA',
+  // Original text: 'Load NCA plugin first'
+  xosanLoadXoaPlugin: 'Carica prima il plugin NCA',
 
   // Original text: 'Activate license'
   bindXoaLicense: 'Attiva la licenza',
 
-  // Original text: 'Are you sure you want to activate this license on your XOA? This action is not reversible!'
+  // Original text: 'Are you sure you want to activate this license on your NCA? This action is not reversible!'
   bindXoaLicenseConfirm: 'Questa azione non è reversibile!',
 
   // Original text: 'activate {licenseType} license'

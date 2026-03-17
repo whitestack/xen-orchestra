@@ -139,7 +139,7 @@ const BODY_STYLE = {
       get({ checkXoaCount }) {
         // To avoid aggressive minification which would remove destructuration
         noop(checkXoaCount)
-        return getXoaPlan() === 'Community' ? '' : checkXoa().catch(() => 'XOA status not available')
+        return getXoaPlan() === 'Community' ? '' : checkXoa().catch(() => 'NCA status not available')
       },
       placeholder: '',
     },
@@ -231,7 +231,7 @@ export default class XoApp extends Component {
     return (
       <IntlProvider>
         <ThemeProvider theme={themes.base}>
-          <DocumentTitle title='Whitestack XOA'>
+          <DocumentTitle title='Whitestack NCA'>
             <div>
               {Object.keys(xsa468VulnerableVms).length > 0 && (
                 <div className='alert alert-danger mb-0'>

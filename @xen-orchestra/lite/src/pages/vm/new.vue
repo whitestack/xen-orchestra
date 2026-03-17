@@ -464,7 +464,7 @@ const addStorageEntry = () => {
 
   vmState.vdis.push({
     name_label: (vmState.name || 'disk') + '_' + generateRandomString(4),
-    name_description: 'Created by XO',
+    name_description: 'Created by NC',
     SR: pool.value!.default_SR,
     type: 'system',
     size: 0,
@@ -648,7 +648,7 @@ const getVdis = (template: XenApiVm) => {
 
   vdis.push({
     name_label: (vmState.name || 'disk') + '_' + generateRandomString(4),
-    name_description: 'Created by XO',
+    name_description: 'Created by NC',
     size: bytesToGiB(Number(size)),
     SR: defaultSr.value,
   })

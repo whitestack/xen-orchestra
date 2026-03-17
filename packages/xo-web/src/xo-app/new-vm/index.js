@@ -640,7 +640,7 @@ export default class NewVm extends BaseComponent {
       VDIs: map(template.template_info.disks, disk => {
         return {
           ...disk,
-          name_description: disk.name_description || 'Created by XO',
+          name_description: disk.name_description || 'Created by NC',
           name_label: (name_label || 'disk') + '_' + generateReadableRandomString(5),
           SR: this._getDefaultSr(template),
         }
@@ -886,7 +886,7 @@ export default class NewVm extends BaseComponent {
       VDIs: [
         ...state.VDIs,
         {
-          name_description: 'Created by XO',
+          name_description: 'Created by NC',
           name_label: (state.name_label || 'disk') + '_' + generateReadableRandomString(5),
           SR: this._getDefaultSr(template),
           type: 'system',

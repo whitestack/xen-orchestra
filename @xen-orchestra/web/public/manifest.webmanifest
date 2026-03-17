@@ -1,9 +1,9 @@
 {
-  "name": "Xen Orchestra",
-  "short_name": "XenOrchestra",
+  "name": "Nephora Conductor",
+  "short_name": "NephoraConductor",
   "start_url": "./",
   "display": "standalone",
-  "description": "The centralized management, orchestration, backup and cloud-enabler platform for XCP-ng.",
+  "description": "The centralized management, orchestration, backup and cloud-enabler platform for NCE.",
   "icons": [
     {
       "src": "favicon.svg",

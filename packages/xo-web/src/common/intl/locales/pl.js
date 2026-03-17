@@ -209,11 +209,11 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'Fetching data…',
 
-  // Original text: "Welcome on Xen Orchestra!"
-  homeWelcome: 'Witaj w Xen Orchestra!',
+  // Original text: "Welcome on Nephora Conductor!"
+  homeWelcome: 'Witaj w Nephora Conductor!',
 
   // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: 'Dodaj serwery XenServer lub pule',
+  homeWelcomeText: 'Dodaj serwery Nephora Compute Engine lub pule',
 
   // Original text: "Want some help?"
   homeHelp: 'Potrzebujesz pomocy?',
@@ -608,8 +608,8 @@ export default {
   // Original text: "Local remote selected"
   localRemoteWarningTitle: 'Local remote selected',
 
-  // Original text: "Warning: local remotes will use limited XOA disk space. Only for advanced users."
-  localRemoteWarningMessage: 'Warning: local remotes will use limited XOA disk space. Only for advanced users.',
+  // Original text: "Warning: local remotes will use limited NCA disk space. Only for advanced users."
+  localRemoteWarningMessage: 'Warning: local remotes will use limited NCA disk space. Only for advanced users.',
 
   // Original text: "VMs"
   editBackupVmsTitle: 'VMs',
@@ -2331,7 +2331,7 @@ export default {
   // Original text: "No pending tasks"
   noTasks: 'Brak oczekujących zadań',
 
-  // Original text: "Currently, there are not any pending XenServer tasks"
+  // Original text: "Currently, there are not any pending Nephora Compute Engine tasks"
   xsTasks: 'Aktualnie, nie ma żadnych oczekujących zadań na HyperVisorze',
 
   // Original text: "Schedules"
@@ -2579,30 +2579,30 @@ export default {
   // Original text: "Previous SR Usage"
   existingSrModalTitle: 'Previous SR Usage',
 
-  // Original text: "This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingSrModalText:
-    'This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.',
+    'This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.',
 
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: 'Previous LUN Usage',
 
-  // Original text: "This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingLunModalText:
-    'This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.',
+    'This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: 'Replace current registration?',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?',
+    'Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Ready for trial?',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
   trialReadyModalText:
-    'During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!',
+    'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!',
 
   // Original text: "Host"
   serverHost: 'Host',
@@ -2728,8 +2728,8 @@ export default {
   // Original text: "No host selected to be added"
   addHostNoHostMessage: 'No host selected to be added',
 
-  // Original text: "Xen Orchestra"
-  xenOrchestra: 'Xen Orchestra',
+  // Original text: "Nephora Conductor"
+  xenOrchestra: 'Nephora Conductor',
 
   // Original text: "No pro support provided!"
   noProSupport: 'No pro support provided!',
@@ -2773,8 +2773,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: 'Pro support included',
 
-  // Original text: "Acces your XO Account"
-  xoAccount: 'Acces your XO Account',
+  // Original text: "Acces your NC Account"
+  xoAccount: 'Acces your NC Account',
 
   // Original text: "Report a problem"
   openTicket: 'Raportuj problem',
@@ -2873,8 +2873,8 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: 'Twoja wersja demonstracyjna właśnie się zakończyła. Skontaktuj się z nami żeby pobrać darmową wersję',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
-  trialLocked: 'Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service.',
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
+  trialLocked: 'Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service.',
 
   // Original text: "No update information available"
   noUpdateInfo: 'No update information available',
@@ -2882,14 +2882,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: 'Update information may be available',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: 'Twoje XOA jest aktualne',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: 'Twoje NCA jest aktualne',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: 'You need to update your XOA (new version is available)',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: 'You need to update your NCA (new version is available)',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: 'Your XOA is not registered for updates',
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: 'Your NCA is not registered for updates',
 
   // Original text: "Can't fetch update information"
   updaterError: 'Nie mogę pobrać aktualizacji',
@@ -2897,15 +2897,15 @@ export default {
   // Original text: "Upgrade successful"
   promptUpgradeReloadTitle: 'Aktualizacja zakończona sukcesem',
 
-  // Original text: "Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
+  // Original text: "Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
   promptUpgradeReloadMessage:
-    'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?',
+    'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?',
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Xen Orchestra z źródeł',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Nephora Conductor z źródeł',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Używasz XO z źródeł!. To dobre rozwiązanie tylko do prywatnego/nieprodukcyjnego użytku',
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: 'Używasz NC z źródeł!. To dobre rozwiązanie tylko do prywatnego/nieprodukcyjnego użytku',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: "If you are a company, it's better to use it with our appliance + pro support included:",
