@@ -164,11 +164,11 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: '获取数据',
 
-  // Original text: "Welcome on Xen Orchestra!"
-  homeWelcome: '欢迎使用Xen Orchestra',
+  // Original text: "Welcome on Nephora Conductor!"
+  homeWelcome: '欢迎使用Nephora Conductor',
 
   // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: '添加您的XenServer主机或资源池',
+  homeWelcomeText: '添加您的Nephora Compute Engine主机或资源池',
 
   // Original text: "Want some help?"
   homeHelp: '需要帮助？',
@@ -1097,8 +1097,8 @@ export default {
   // Original text: "suspended"
   powerStateSuspended: '已暂停',
 
-  // Original text: "No Xen tools detected"
-  vmStatus: '没有检测到Xen Tools',
+  // Original text: "No Nephora VM tools detected"
+  vmStatus: '没有检测到Nephora VM Tools',
 
   // Original text: "No IPv4 record"
   vmName: '没有IPv4记录',
@@ -1115,8 +1115,8 @@ export default {
   // Original text: "Not running"
   vmNotRunning: '没有运行',
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: '没有检测到Xen Tools',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: '没有检测到Nephora VM Tools',
 
   // Original text: "No IPv4 record"
   noIpv4Record: '没有IPv4记录',
@@ -1292,8 +1292,8 @@ export default {
   // Original text: "Convert"
   vmConvertButton: '转换',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen 设置',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora 设置',
 
   // Original text: "Guest OS"
   guestOsLabel: '客户操作系统',
@@ -1316,8 +1316,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'PV参数',
 
-  // Original text: "Xen tools status"
-  xenToolsStatus: 'Xen tools状态',
+  // Original text: "Nephora VM tools status"
+  xenToolsStatus: 'Nephora VM tools状态',
 
   // Original text: "{status}"
   xenToolsStatusValue: '{status}',
@@ -1760,8 +1760,8 @@ export default {
   // Original text: "No pending tasks"
   noTasks: '没有等待中的任务',
 
-  // Original text: "Currently, there are not any pending XenServer tasks"
-  xsTasks: '当前，没有任何等待中的XenServer任务',
+  // Original text: "Currently, there are not any pending Nephora Compute Engine tasks"
+  xsTasks: '当前，没有任何等待中的Nephora Compute Engine任务',
 
   // Original text: "List Remote"
   listRemote: '列出远程',
@@ -1965,26 +1965,26 @@ export default {
   // Original text: "Previous SR Usage"
   existingSrModalTitle: '之前存储库的使用情况',
 
-  // Original text: "This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
-  existingSrModalText: '这条路径之前已经被一台XenServer主机用来连接存储。如果你选择继续创建存储库，所有的数据将丢失。',
+  // Original text: "This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
+  existingSrModalText: '这条路径之前已经被一台Nephora Compute Engine主机用来连接存储。如果你选择继续创建存储库，所有的数据将丢失。',
 
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: '之前LUN使用情况',
 
-  // Original text: "This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
-  existingLunModalText: '这个LUN之前已经被一台XenServer主机使用。如果你选择继续创建存储库，所有的数据将丢失。',
+  // Original text: "This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
+  existingLunModalText: '这个LUN之前已经被一台Nephora Compute Engine主机使用。如果你选择继续创建存储库，所有的数据将丢失。',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: '替换当前的注册？',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
-  alreadyRegisteredModalText: '你的XO设备已经注册给{email}，你确定要删除并替换这个注册信息？',
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  alreadyRegisteredModalText: '你的Nephora Conductor设备已经注册给{email}，你确定要删除并替换这个注册信息？',
 
   // Original text: "Ready for trial?"
   trialReadyModal: '准备试用？',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
-  trialReadyModalText: '在试用期内，XOA需要Internet连接才能正常使用，如果您正式付费将不受此限制',
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  trialReadyModalText: '在试用期内，NCA需要Internet连接才能正常使用，如果您正式付费将不受此限制',
 
   // Original text: "Host"
   serverHost: '主机',
@@ -2061,8 +2061,8 @@ export default {
   // Original text: "Are you sure you want to delete this network?"
   deleteNetworkConfirm: '你确定要删除此网络',
 
-  // Original text: "Xen Orchestra"
-  xenOrchestra: 'Xen Orchestra',
+  // Original text: "Nephora Conductor"
+  xenOrchestra: 'Nephora Conductor',
 
   // Original text: "No pro support provided!"
   noProSupport: '不提供专业支持！',
@@ -2106,8 +2106,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: '包含专业支持',
 
-  // Original text: "Acces your XO Account"
-  xoAccount: '进入你的XO账户',
+  // Original text: "Acces your NC Account"
+  xoAccount: '进入你的Nephora Conductor账户',
 
   // Original text: "Report a problem"
   openTicket: '报告一个问题',
@@ -2175,8 +2175,8 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: '你的使用已经结束，联系我们或下载免费版本',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
-  trialLocked: '你的xoa-更新服务已停止。没有此服务你的XOA不能完全正常运行',
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
+  trialLocked: '你的xoa-更新服务已停止。没有此服务你的NCA不能完全正常运行',
 
   // Original text: "No update information available"
   noUpdateInfo: '没有更新信息可用',
@@ -2184,14 +2184,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: '更新信息可能可用',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: '你的XOA是最新的',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: '你的NCA是最新的',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: '你需要更新你的XOA（有新版本可用）',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: '你需要更新你的NCA（有新版本可用）',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: '你的XOA没有注册更新',
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: '你的NCA没有注册更新',
 
   // Original text: "Can't fetch update information"
   updaterError: '不能获取更新信息',
@@ -2199,14 +2199,14 @@ export default {
   // Original text: "Upgrade successful"
   promptUpgradeReloadTitle: '更新成功',
 
-  // Original text: "Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
-  promptUpgradeReloadMessage: '你的XOA已经成功更新，你的浏览器必须重新加载，你要现在重新加载吗？',
+  // Original text: "Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
+  promptUpgradeReloadMessage: '你的NCA已经成功更新，你的浏览器必须重新加载，你要现在重新加载吗？',
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Xen Orchestra 源码版',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Nephora Conductor 源码版',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: '你在使用XO的源码版！这非常适合个人/非商业用途',
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: '你在使用Nephora Conductor的源码版！这非常适合个人/非商业用途',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: '如果你是一个公司，建议使用我们的设备结合专业的支持',

@@ -97,7 +97,7 @@ disableMergeWorker = false
 #
 # https://en.wikipedia.org/wiki/File-system_permissions#Numeric_notation
 dirMode = 0o700
-snapshotNameLabelTpl = '[XO Backup {job.name}] {vm.name_label}'
+snapshotNameLabelTpl = '[Nephora Conductor Backup {job.name}] {vm.name_label}'
 
 # Delay for which backups listing on a remote is cached
 listingDebounce = '1 min'
@@ -223,12 +223,12 @@ proxyName = 'Proxy {date}'
 
 licenseProductId = 'xo-proxy'
 
-vmName = 'XOA Proxy {date}'
+vmName = 'NCA Proxy {date}'
 
 # The duration for which we can wait for the VM networks to be defined
 vmNetworksTimeout = '5 min'
 
-vmTag = 'XOA Proxy'
+vmTag = 'NCA Proxy'
 
 # The duration for which we can wait for the XOA to be upgraded
 xoaUpgradeTimeout = '5 min'

@@ -35,11 +35,11 @@ const usage = () => {
     `Usage: ./release.mjs
     [--help|-h - show this message]
 
-    [--version X.Y.Z - XO Lite version - default: package.json version (${version})]
+    [--version X.Y.Z - NC Lite version - default: package.json version (${version})]
     [--dist /path/to/folder - build destination folder - default: dist]
 
     [
-      --build - whether to build XO Lite or not
+      --build - whether to build NC Lite or not
       [--base url - base URL for assets - default: "/" or "lite.xen-orchestra.com/dist" if --deploy is passed]
     ]
 
@@ -262,7 +262,7 @@ if (ghRelease) {
 if (build) {
   step('Build')
 
-  console.log(`Building XO Lite ${version} into ${dist}`)
+  console.log(`Building Nephora Conductor Lite ${version} into ${dist}`)
 
   $.verbose = true
   await within(async () => {
@@ -420,12 +420,12 @@ if (ghRelease) {
 if (deploy) {
   step('Deploy')
 
-  console.log(`Deploying XO Lite from ${dist} to ${DEPLOY_SERVER}`)
+  console.log(`Deploying Nephora Conductor Lite from ${dist} to ${DEPLOY_SERVER}`)
 
   await $`rsync -r --delete ${dist}/ ${username}@${DEPLOY_SERVER}:xo-lite`
 
   console.log(`
-  XO Lite files sent to server
+  Nephora Conductor Lite files sent to server
 
   → Connect to the server using:
   \tssh ${username}@${DEPLOY_SERVER}

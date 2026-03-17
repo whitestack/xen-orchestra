@@ -908,7 +908,7 @@ class UsageReportPlugin {
     await Promise.all([
       xo.sendEmail({
         to: this._conf.emails,
-        subject: `[Xen Orchestra] Xo Report - ${currDate}`,
+        subject: `[Nephora Conductor] Xo Report - ${currDate}`,
         markdown: `Hi there,
 
   You have chosen to receive your xo report ${this._conf.periodicity}.

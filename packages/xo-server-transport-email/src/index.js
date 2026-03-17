@@ -206,10 +206,10 @@ class TransportEmailPlugin {
   test({ to }) {
     return this._sendEmail({
       to,
-      subject: '[Xen Orchestra] Test of transport-email plugin',
+      subject: '[Nephora Conductor] Test of transport-email plugin',
       markdown: `Hi there,
 
-The \`transport-email\` plugin for *Xen Orchestra* server seems to be working fine, nicely done :)
+The \`transport-email\` plugin for *Nephora Conductor* server seems to be working fine, nicely done :)
 `,
       attachments: [
         {

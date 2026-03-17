@@ -46,7 +46,7 @@ export const noContentResp = {
 
 export const internalServerErrorResp = {
   status: 500,
-  description: 'Internal server error, XenServer/XCP-ng error',
+  description: 'Internal server error, Nephora Compute Engine error',
 } as const
 
 export const resourceAlreadyExists = {

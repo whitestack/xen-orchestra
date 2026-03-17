@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Xen Orchestra − Usage Report − {{style.currDate}}</title>
+  <title>Nephora Conductor − Usage Report − {{style.currDate}}</title>
   <style>
     html, body {
       font-family: 'Legacy',sans-serif;
@@ -127,7 +127,7 @@
 
     <div id="pageHeader">
       <div class="logo">
-        <img src="{{style.imgXo}}" alt= "Xo Logo"> <label>XOA</label>
+        <img src="{{style.imgXo}}" alt= "Xo Logo"> <label>NCA</label>
       </div>
       <div class="date">
           <span>{{#if style.prevDate}} {{style.prevDate}} {{else}} 0000-00-00 {{/if}}</span> - <span>{{style.currDate}}</span>

@@ -1,7 +1,7 @@
 # systemd service for XO-Server.
 
 [Unit]
-Description= XO Server
+Description= Nephora Conductor Server
 After=network-online.target
 
 [Service]

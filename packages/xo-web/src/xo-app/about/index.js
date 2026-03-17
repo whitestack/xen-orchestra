@@ -84,7 +84,7 @@ export default class About extends Component {
                   <Col mediumSize={6}>
                     <Icon icon='git' size={4} />
                     <h4>
-                      Xen Orchestra, commit{' '}
+                      Nephora Conductor, commit{' '}
                       <a
                         href={'https://github.com/vatesfr/xen-orchestra/commit/' + COMMIT_ID}
                         target='_blank'

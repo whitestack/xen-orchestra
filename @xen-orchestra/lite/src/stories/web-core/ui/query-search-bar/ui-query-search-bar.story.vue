@@ -80,12 +80,12 @@ const data = [
   },
   {
     id: '192bd01f-bf2d-129c-5223-61c9a2e114e7',
-    name_label: 'XOA Proxy QA',
+    name_label: '<NCA> Proxy QA',
     power_state: 'Running',
   },
   {
     id: 'ffc4f734-d4dc-1d11-bf82-8b583c9c8d89',
-    name_label: 'XOA-DW (DornerWorks)',
+    name_label: 'NCA-DW (DornerWorks)',
     power_state: 'Running',
   },
   {
@@ -100,7 +100,7 @@ const data = [
   },
   {
     id: '5dac984b-d89a-6316-2c0c-fe1299a26f77',
-    name_label: 'YA XOA test',
+    name_label: 'YA NCA test',
     power_state: 'Running',
   },
   {

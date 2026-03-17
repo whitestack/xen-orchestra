@@ -13,7 +13,7 @@ export function openDatastore(dataStoreName, { esxi, dataStoreToHandlers = {}, .
     })
     return new DatastoreSoapEsxi(dataStoreName, { esxi, ...otherOptions })
   }
-  info(`use XO remote to read  datastore ${dataStoreName}`, {
+  info(`use NC remote to read  datastore ${dataStoreName}`, {
     dataStoreName,
     dataStoreToHandlers: Object.keys(dataStoreToHandlers),
   })

@@ -143,8 +143,8 @@ export default {
   // Original text: "Jobs"
   jobsPage: 'İşler',
 
-  // Original text: "XOA"
-  xoaPage: 'XOA',
+  // Original text: "NCA"
+  xoaPage: 'NCA',
 
   // Original text: "Updates"
   updatePage: 'Güncellemeler',
@@ -182,8 +182,8 @@ export default {
   // Original text: "About"
   aboutPage: 'Hakkında',
 
-  // Original text: "About XO {xoaPlan}"
-  aboutXoaPlan: 'XO {xoaPlan} hakkında',
+  // Original text: "About NC {xoaPlan}"
+  aboutXoaPlan: 'NC {xoaPlan} hakkında',
 
   // Original text: "New"
   newMenu: 'Yeni',
@@ -272,8 +272,8 @@ export default {
   // Original text: "User"
   userPage: 'Kullanıcı',
 
-  // Original text: "XOA"
-  xoa: 'XOA',
+  // Original text: "NCA"
+  xoa: 'NCA',
 
   // Original text: "No support"
   noSupport: 'Destek yok',
@@ -290,14 +290,14 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'Veri getiriliyor...',
 
-  // Original text: "Welcome to Xen Orchestra!"
-  homeWelcome: "Xen Orchestra'ya Hoşgeldiniz!",
+  // Original text: "Welcome to Nephora Conductor!"
+  homeWelcome: "Nephora Conductor'ya Hoşgeldiniz!",
 
   // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: 'XenServer sunucu veya havuzunu ekle',
+  homeWelcomeText: 'Nephora Compute Engine sunucu veya havuzunu ekle',
 
   // Original text: "Some XCP-ng hosts have been registered but are not connected"
-  homeConnectServerText: "Bazı XenServer'lar kayıtlı ama bağlı değil",
+  homeConnectServerText: "Bazı Nephora Compute Engine'lar kayıtlı ama bağlı değil",
 
   // Original text: "Want some help?"
   homeHelp: 'Yardım ister misin?',
@@ -1078,12 +1078,12 @@ export default {
   // Original text: "Local remote selected"
   localRemoteWarningTitle: 'Yerel hedef seçildi',
 
-  // Original text: "Warning: local remotes will use limited XOA disk space. Only for advanced users."
+  // Original text: "Warning: local remotes will use limited NCA disk space. Only for advanced users."
   localRemoteWarningMessage:
-    "Uyarı: yerel hedef XOA'nın disk alını ile sınırlıdır. Sadece ileri seviye kullanıcılar içindir.",
+    "Uyarı: yerel hedef NCA'nın disk alını ile sınırlıdır. Sadece ileri seviye kullanıcılar içindir.",
 
-  // Original text: "Warning: this feature works only with XenServer 6.5 or newer."
-  backupVersionWarning: 'Uyarı: Bu özellik yalnızca Xenserver 6.5 ve daha yeni sürümlerinde çalışır.',
+  // Original text: "Warning: this feature works only with Nephora Compute Engine 6.5 or newer."
+  backupVersionWarning: 'Uyarı: Bu özellik yalnızca Nephora Compute Engine 6.5 ve daha yeni sürümlerinde çalışır.',
 
   // Original text: "VMs"
   editBackupVmsTitle: "VM'ler",
@@ -2183,8 +2183,8 @@ export default {
   // Original text: "Halted {ago}"
   vmHaltedSince: 'Durduruldu {ago}',
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: 'Xen tool tespit edilmedi',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: 'Nephora VM tools tespit edilmedi',
 
   // Original text: "No IPv4 record"
   noIpv4Record: 'IPv4 kaydı yok',
@@ -2543,8 +2543,8 @@ export default {
   // Original text: "Share"
   vmShareButton: 'Paylaş',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen ayarları',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora ayarları',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Konuk OS',
@@ -2573,8 +2573,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'PV argümanları',
 
-  // Original text: "Xen tools version"
-  xenToolsStatus: 'Xen tools sürümü',
+  // Original text: "Nephora VM tools version"
+  xenToolsStatus: 'Nephora VM tools sürümü',
 
   // Original text: 'Not installed'
   xenToolsNotInstalled: undefined,
@@ -3274,8 +3274,8 @@ export default {
   // Original text: "No pending tasks"
   noTasks: 'Bekleyen görev yok',
 
-  // Original text: "Currently, there are not any pending XenServer tasks"
-  xsTasks: 'Şu anda bekleyen hiç XenServer görevi yok',
+  // Original text: "Currently, there are not any pending Nephora Compute Engine tasks"
+  xsTasks: 'Şu anda bekleyen hiç Nephora Compute Engine görevi yok',
 
   // Original text: "Cancel"
   cancelTask: 'İptal',
@@ -3784,30 +3784,30 @@ export default {
   // Original text: "Previous SR Usage"
   existingSrModalTitle: 'Önceki SR kullanımı',
 
-  // Original text: "This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingSrModalText:
-    'Bu yol XenServer sunucusu tarafından bir SR olarak kullanılmış. SR oluşturmaya devam ederseniz tüm veri kaybolacak.',
+    'Bu yol Nephora Compute Engine sunucusu tarafından bir SR olarak kullanılmış. SR oluşturmaya devam ederseniz tüm veri kaybolacak.',
 
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: 'Önceki LUN kullanımı',
 
-  // Original text: "This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation."
+  // Original text: "This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation."
   existingLunModalText:
-    'Bu LUN XenServer sunucusu tarafından bir SR olarak kullanılmış. SR oluşturmaya devam ederseniz tüm veri kaybolacak.',
+    'Bu LUN Nephora Compute Engine sunucusu tarafından bir SR olarak kullanılmış. SR oluşturmaya devam ederseniz tüm veri kaybolacak.',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: 'Mevcut kaydı değiştir?',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'XO kurulumunuz zaten {email} adresine kayıtlı, Bunu unutmak ve değiştirmek istiyor musunuz?',
+    'Nephora Conductor kurulumunuz zaten {email} adresine kayıtlı, Bunu unutmak ve değiştirmek istiyor musunuz?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Deneme için hazır mısınız?',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
   trialReadyModalText:
-    'Deneme sürecinde XOA bir internet bağlantısı gerektirir. Bu limit satın alınan sürümlerde yoktur!',
+    'Deneme sürecinde NCA bir internet bağlantısı gerektirir. Bu limit satın alınan sürümlerde yoktur!',
 
   // Original text: "Cancel task{nTasks, plural, one {} other {s}}"
   cancelTasksModalTitle: 'Görev iptel et',
@@ -4005,8 +4005,8 @@ export default {
   // Original text: "No host selected to be added"
   addHostNoHostMessage: 'Eklemek için bir sunucu seçilmedi',
 
-  // Original text: "Xen Orchestra"
-  xenOrchestra: 'Xen Orchestra',
+  // Original text: "Nephora Conductor"
+  xenOrchestra: 'Nephora Conductor',
 
   // Original text: "No pro support provided!"
   noProSupport: 'Hiçbir profesyonel destek verilmez!',
@@ -4050,8 +4050,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: 'Profesyonel destek dahildir',
 
-  // Original text: "Access your XO Account"
-  xoAccount: 'XO hesabınıza erişin',
+  // Original text: "Access your NC Account"
+  xoAccount: 'Nephora Conductor hesabınıza erişin',
 
   // Original text: "Report a problem"
   openTicket: 'Bir problemi raporlayın',
@@ -4159,8 +4159,8 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: 'Denemeniz süreniz sona erdi. Bize ulaşın veya Ücretsiz sürüme geçin.',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
-  trialLocked: "Xoa-updater hizmetiniz çalışmıyor gibi görünüyor. XOA'nız bu servise ulaşmadan tamamen çalışamaz.",
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
+  trialLocked: "Xoa-updater hizmetiniz çalışmıyor gibi görünüyor. NCA'nız bu servise ulaşmadan tamamen çalışamaz.",
 
   // Original text: "No update information available"
   noUpdateInfo: 'Güncelleme bilgisi mevcut değil',
@@ -4168,14 +4168,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: 'Güncelleme bilgileri mevcut olabilir',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: 'XOA güncel',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: 'NCA güncel',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: 'XOA güncellenmeli (yeni versiyon kullanıma hazır)',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: 'NCA güncellenmeli (yeni versiyon kullanıma hazır)',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: "XOA'nız güncellemeler için kayıtlı değil",
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: "NCA'nız güncellemeler için kayıtlı değil",
 
   // Original text: "Can't fetch update information"
   updaterError: 'Güncelleme bilgisi alınamıyor',
@@ -4183,9 +4183,9 @@ export default {
   // Original text: "Upgrade successful"
   promptUpgradeReloadTitle: 'Yükseltme başarılı',
 
-  // Original text: "Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
+  // Original text: "Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
   promptUpgradeReloadMessage:
-    "XOA'nız başarıyla yükseltildi ve tarayıcınız uygulamayı yeniden yüklemelidir. Şimdi yeniden yüklemek istiyor musunuz?",
+    "NCA'nız başarıyla yükseltildi ve tarayıcınız uygulamayı yeniden yüklemelidir. Şimdi yeniden yüklemek istiyor musunuz?",
 
   // Original text: "Upgrade warning"
   upgradeWarningTitle: 'Yükseltme uyarısı',
@@ -4194,11 +4194,11 @@ export default {
   upgradeWarningMessage:
     'Devam eden bazı yedekleme işleriniz var. Şimdi yükseltirseniz, bu işler kesilecektir! Devam etmek istediğinize emin misiniz?',
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Kaynak koddan Xen Orchestra',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Kaynak koddan Nephora Conductor',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: "XO'yu kaynak koddan kullanıyorsunuz! Kişisel/kar amacı gütmeyen kullanım için mükemmeldir.",
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
+  disclaimerText1: "Nephora Conductor'yu kaynak koddan kullanıyorsunuz! Kişisel/kar amacı gütmeyen kullanım için mükemmeldir.",
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: 'Bir şirket iseniz, bizim hazır uygulamamızı kullanmanız daha iyidir + pro destek dahil:',
@@ -4601,8 +4601,8 @@ export default {
   // Original text: "XOSAN"
   xosanTitle: 'XOSAN',
 
-  // Original text: "Xen Orchestra SAN SR"
-  xosanSrTitle: 'Xen Orchestra SAN SR',
+  // Original text: "Nephora Conductor SAN SR"
+  xosanSrTitle: 'Nephora Conductor SAN SR',
 
   // Original text: "Select local SRs (lvm)"
   xosanAvailableSrsTitle: "Yerel SR'leri seçin (lvm)",
@@ -4771,10 +4771,10 @@ export default {
   xosanState_scanningSr: 'SR taranıyor...',
 
   // Original text: "Install cloud plugin first"
-  xosanInstallCloudPlugin: 'Önce XOA eklentisini kurun',
+  xosanInstallCloudPlugin: 'Önce NCA eklentisini kurun',
 
   // Original text: "Load cloud plugin first"
-  xosanLoadCloudPlugin: 'Önce XOA eklentisini yükleyin',
+  xosanLoadCloudPlugin: 'Önce NCA eklentisini yükleyin',
 
   // Original text: "Register your appliance first"
   xosanRegister: "Önce XOSAN'ın kaydını yapın",
@@ -4785,8 +4785,8 @@ export default {
   // Original text: "XOSAN is not available at the moment"
   xosanNotAvailable: 'XOSAN şuan kullanılabilir değil',
 
-  // Original text: "No compatible XOSAN pack found for your XenServer versions."
-  xosanNoPackFound: 'XenServer sürümünüz ile uyumlu XOSAN paketi bulunamadı.',
+  // Original text: "No compatible XOSAN pack found for your Nephora Compute Engine versions."
+  xosanNoPackFound: 'Nephora Compute Engine sürümünüz ile uyumlu XOSAN paketi bulunamadı.',
 
   // Original text: "Some XOSAN Virtual Machines are not running"
   xosanVmsNotRunning: 'Bazı XOSAN Sanal Makinaları çalışmıyor',
@@ -4905,9 +4905,9 @@ export default {
   // Original text: "You are not registered and therefore will not be able to create or manage your XOSAN SRs. {link}"
   xosanUnregisteredDisclaimer: 'Kayıtlı değilsiniz ve bu nedenle XOSAN SR oluşturamaz veya yönetemezsiniz. {Link}',
 
-  // Original text: "In order to create a XOSAN SR, you need to use the Xen Orchestra Appliance and buy a XOSAN license on {link}."
+  // Original text: "In order to create a XOSAN SR, you need to use the Nephora Conductor Appliance and buy a XOSAN license on {link}."
   xosanSourcesDisclaimer:
-    "Bir XOSAN SR oluşturmak için, XOA kullanmanız ve {link} 'ten bir XOSAN lisansı satın almanız gerekir.",
+    "Bir XOSAN SR oluşturmak için, NCA kullanmanız ve {link} 'ten bir XOSAN lisansı satın almanız gerekir.",
 
   // Original text: "Register now!"
   registerNow: 'Şimdi kaydol!',
@@ -4994,11 +4994,11 @@ export default {
   // Original text: "expires on {date}"
   expiresOn: '{date} tarihinde bitecek',
 
-  // Original text: "Install XOA plugin first"
-  xosanInstallXoaPlugin: 'Önce XOA eklentisini kurun',
+  // Original text: "Install NCA plugin first"
+  xosanInstallXoaPlugin: 'Önce NCA eklentisini kurun',
 
-  // Original text: "Load XOA plugin first"
-  xosanLoadXoaPlugin: 'Önce XOA eklentisini yükleyin',
+  // Original text: "Load NCA plugin first"
+  xosanLoadXoaPlugin: 'Önce NCA eklentisini yükleyin',
 
   // Original text: '{seconds, plural, one {# second} other {# seconds}}'
   secondsFormat: undefined,

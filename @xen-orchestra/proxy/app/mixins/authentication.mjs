@@ -39,7 +39,7 @@ export default class Authentication {
     }
 
     app.api.addMethod('authentication.setToken', setToken, {
-      description: 'change the authentication token used by this XO Proxy',
+      description: 'change the authentication token used by this Nephora Conductor Proxy',
       params: {
         token: {
           type: 'string',

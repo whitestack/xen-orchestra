@@ -19,7 +19,7 @@ export class AddOtpModal extends PureComponent {
   constructor(props, context) {
     super(props, context)
 
-    qrcode.toDataURL(authenticator.keyuri(props.user.email, 'Xen Orchestra', props.secret), (err, url) => {
+    qrcode.toDataURL(authenticator.keyuri(props.user.email, 'Nephora Conductor', props.secret), (err, url) => {
       if (err) {
         return console.warn('error while generating QR code', err)
       }

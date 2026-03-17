@@ -206,7 +206,7 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'מקבל נתונים, נא להמתין…',
 
-  // Original text: "Welcome on Xen Orchestra!"
+  // Original text: "Welcome on Nephora Conductor!"
   homeWelcome: 'ברוכים הבאים',
 
   // Original text: "Add your XCP-ng hosts or pools"
@@ -605,7 +605,7 @@ export default {
   // Original text: 'Local remote selected'
   localRemoteWarningTitle: undefined,
 
-  // Original text: 'Warning: local remotes will use limited XOA disk space. Only for advanced users.'
+  // Original text: 'Warning: local remotes will use limited NCA disk space. Only for advanced users.'
   localRemoteWarningMessage: undefined,
 
   // Original text: 'VMs'
@@ -1436,7 +1436,7 @@ export default {
   // Original text: 'suspended'
   powerStateSuspended: undefined,
 
-  // Original text: 'No Xen tools detected'
+  // Original text: 'No Nephora VM tools detected'
   vmStatus: undefined,
 
   // Original text: 'No IPv4 record'
@@ -1454,7 +1454,7 @@ export default {
   // Original text: 'Not running'
   vmNotRunning: undefined,
 
-  // Original text: 'No Xen tools detected'
+  // Original text: 'No Nephora VM tools detected'
   noToolsDetected: undefined,
 
   // Original text: 'No IPv4 record'
@@ -1757,7 +1757,7 @@ export default {
   // Original text: 'Convert'
   vmConvertButton: undefined,
 
-  // Original text: 'Xen settings'
+  // Original text: 'Nephora settings'
   xenSettingsLabel: undefined,
 
   // Original text: 'Guest OS'
@@ -1787,7 +1787,7 @@ export default {
   // Original text: 'PV args'
   pvArgsLabel: undefined,
 
-  // Original text: 'Xen tools status'
+  // Original text: 'Nephora VM tools status'
   xenToolsStatus: undefined,
 
   // Original text: '{status}'
@@ -2327,7 +2327,7 @@ export default {
   // Original text: 'No pending tasks'
   noTasks: undefined,
 
-  // Original text: 'Currently, there are not any pending XenServer tasks'
+  // Original text: 'Currently, there are not any pending Nephora Compute Engine tasks'
   xsTasks: undefined,
 
   // Original text: 'Schedules'
@@ -2570,13 +2570,13 @@ export default {
   // Original text: 'Previous SR Usage'
   existingSrModalTitle: undefined,
 
-  // Original text: 'This path has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.'
+  // Original text: 'This path has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.'
   existingSrModalText: undefined,
 
   // Original text: 'Previous LUN Usage'
   existingLunModalTitle: undefined,
 
-  // Original text: 'This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.'
+  // Original text: 'This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.'
   existingLunModalText: undefined,
 
   // Original text: 'Replace current registration?'
@@ -2588,7 +2588,7 @@ export default {
   // Original text: 'Ready for trial?'
   trialReadyModal: undefined,
 
-  // Original text: 'During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!'
+  // Original text: 'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!'
   trialReadyModalText: undefined,
 
   // Original text: 'Host'
@@ -2714,7 +2714,7 @@ export default {
   // Original text: 'No host selected to be added'
   addHostNoHostMessage: undefined,
 
-  // Original text: 'Xen Orchestra'
+  // Original text: 'Nephora Conductor'
   xenOrchestra: undefined,
 
   // Original text: 'No pro support provided!'
@@ -2858,7 +2858,7 @@ export default {
   // Original text: 'Your trial has been ended. Contact us or downgrade to Free version'
   trialConsumed: undefined,
 
-  // Original text: 'Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service.'
+  // Original text: 'Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service.'
   trialLocked: undefined,
 
   // Original text: 'No update information available'
@@ -2867,13 +2867,13 @@ export default {
   // Original text: 'Update information may be available'
   waitingUpdateInfo: undefined,
 
-  // Original text: 'Your XOA is up-to-date'
+  // Original text: 'Your NCA is up-to-date'
   upToDate: undefined,
 
-  // Original text: 'You need to update your XOA (new version is available)'
+  // Original text: 'You need to update your NCA (new version is available)'
   mustUpgrade: undefined,
 
-  // Original text: 'Your XOA is not registered for updates'
+  // Original text: 'Your NCA is not registered for updates'
   registerNeeded: undefined,
 
   // Original text: "Can't fetch update information"
@@ -2882,10 +2882,10 @@ export default {
   // Original text: 'Upgrade successful'
   promptUpgradeReloadTitle: undefined,
 
-  // Original text: 'Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
+  // Original text: 'Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?'
   promptUpgradeReloadMessage: undefined,
 
-  // Original text: 'Xen Orchestra from the sources'
+  // Original text: 'Nephora Conductor from the sources'
   disclaimerTitle: undefined,
 
   // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."

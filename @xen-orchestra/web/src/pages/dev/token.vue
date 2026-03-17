@@ -1,7 +1,7 @@
 <template>
   <div class="token">
     <form @submit.prevent="handleSubmit">
-      Enter XO 5 token:
+      Enter Nephora Conductor 5 token:
       <input v-model="token" />
       <button type="submit">Register token</button>
     </form>

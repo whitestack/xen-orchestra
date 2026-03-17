@@ -10,7 +10,7 @@
         size="medium"
       />
       <RouterLink :to="logoRoute" class="logo-container">
-        <img v-if="uiStore.isMobile" alt="XO Lite" src="../assets/logo.svg" />
+        <img v-if="uiStore.isMobile" alt="Nephora Conductor Lite" src="../assets/logo.svg" />
         <TextLogo v-else />
       </RouterLink>
     </div>

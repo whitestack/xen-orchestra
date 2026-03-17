@@ -34,7 +34,7 @@ export const configurationSchema = {
     },
     usernameField: {
       title: 'Username field',
-      description: `Field to use as the XO username
+      description: `Field to use as the Nephora Conductor username
 
 You should try \`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress\` if you are using Microsoft Azure Active Directory.
       `,

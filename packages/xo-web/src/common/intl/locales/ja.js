@@ -167,7 +167,7 @@ export default {
   // Original text: 'Subdirectory'
   subdirectory: undefined,
 
-  // Original text: 'Try XOA for free and deploy it here.'
+  // Original text: 'Try NCA for free and deploy it here.'
   tryXoa: undefined,
 
   // Original text: 'Not installed'
@@ -413,7 +413,7 @@ export default {
   // Original text: 'Advanced tag creation'
   advancedTagCreation: undefined,
 
-  // Original text: 'Available in XOA Premium'
+  // Original text: 'Available in NCA Premium'
   availableXoaPremium: undefined,
 
   // Original text: 'Detach'
@@ -425,13 +425,13 @@ export default {
   // Original text: 'Delete custom field'
   deleteCustomField: undefined,
 
-  // Original text: 'Only available to XOA users'
+  // Original text: 'Only available to NCA users'
   onlyAvailableXoaUsers: undefined,
 
   // Original text: 'Remove color'
   removeColor: undefined,
 
-  // Original text: 'XCP-ng'
+  // Original text: 'NCE'
   xcpNg: undefined,
 
   // Original text: 'No file selected'
@@ -557,7 +557,7 @@ export default {
   // Original text: "Jobs"
   jobsPage: 'ジョブ',
 
-  // Original text: 'XOA'
+  // Original text: 'NCA'
   xoaPage: undefined,
 
   // Original text: "Updates"
@@ -603,10 +603,10 @@ export default {
   settingsIpsPage: 'IPアドレス',
 
   // Original text: "About"
-  aboutPage: 'XOについて',
+  aboutPage: 'Nephora Conductorについて',
 
-  // Original text: "About XO {xoaPlan}"
-  aboutXoaPlan: 'XO {xoaPlan} プランについて',
+  // Original text: "About NC {xoaPlan}"
+  aboutXoaPlan: 'Nephora Conductor {xoaPlan} プランについて',
 
   // Original text: "New"
   newMenu: '新規作成',
@@ -674,13 +674,13 @@ export default {
   // Original text: 'Pool metadata'
   poolMetadata: undefined,
 
-  // Original text: 'XO config'
+  // Original text: 'NC config'
   xoConfig: undefined,
 
   // Original text: 'VM Backup & Replication'
   backupVms: undefined,
 
-  // Original text: 'XO config & Pool metadata Backup'
+  // Original text: 'NC config & Pool metadata Backup'
   backupMetadata: undefined,
 
   // Original text: 'Backup mode and source remote are required'
@@ -710,7 +710,7 @@ export default {
   // Original text: "User"
   userPage: 'ユーザー',
 
-  // Original text: 'XOA'
+  // Original text: 'NCA'
   xoa: undefined,
 
   // Original text: "No support"
@@ -719,10 +719,10 @@ export default {
   // Original text: "Free upgrade!"
   freeUpgrade: 'フリーアップグレード',
 
-  // Original text: 'Check XOA'
+  // Original text: 'Check NCA'
   checkXoa: undefined,
 
-  // Original text: 'XOA check'
+  // Original text: 'NCA check'
   xoaCheck: undefined,
 
   // Original text: 'Close tunnel'
@@ -731,16 +731,16 @@ export default {
   // Original text: 'Create a support ticket'
   createSupportTicket: undefined,
 
-  // Original text: 'Restart XO Server'
+  // Original text: 'Restart NC Server'
   restartXoServer: undefined,
 
-  // Original text: 'Restarting XO Server will interrupt any backup job or XO task that is currently running. Xen Orchestra will also be unavailable for a few seconds. Are you sure you want to restart XO Server?'
+  // Original text: 'Restarting NC Server will interrupt any backup job or NC task that is currently running. Nephora Conductor will also be unavailable for a few seconds. Are you sure you want to restart NC Server?'
   restartXoServerConfirm: undefined,
 
   // Original text: 'Open tunnel'
   openTunnel: undefined,
 
-  // Original text: 'The XOA check and the support tunnel are available in XOA.'
+  // Original text: 'The NCA check and the support tunnel are available in NCA.'
   supportCommunity: undefined,
 
   // Original text: 'Support tunnel'
@@ -755,7 +755,7 @@ export default {
   // Original text: "Edit my settings {username}"
   editUserProfile: '{username} 設定の変更',
 
-  // Original text: 'XenServer Client ID'
+  // Original text: 'Nephora Compute Engine Client ID'
   xsClientId: undefined,
 
   // Original text: 'Upload Client ID file'
@@ -764,7 +764,7 @@ export default {
   // Original text: 'Forget Client ID'
   forgetClientId: undefined,
 
-  // Original text: 'Are you sure you want to forget your XenServer Client ID?'
+  // Original text: 'Are you sure you want to forget your Nephora Compute Engine Client ID?'
   forgetXsCredentialsConfirm: undefined,
 
   // Original text: 'Could not forget Client ID'
@@ -791,14 +791,14 @@ export default {
   // Original text: "Fetching data…"
   homeFetchingData: 'データ取得中……',
 
-  // Original text: "Welcome to Xen Orchestra!"
-  homeWelcome: 'Xen Orchestraへようこそ!',
+  // Original text: "Welcome to Nephora Conductor!"
+  homeWelcome: 'Nephora Conductorへようこそ!',
 
-  // Original text: "Add your XCP-ng hosts or pools"
-  homeWelcomeText: 'XCP-ngのホスト、プールの追加',
+  // Original text: "Add your NCE hosts or pools"
+  homeWelcomeText: 'Nephora ConductorEのホスト、プールの追加',
 
-  // Original text: "Some XCP-ng hosts have been registered but are not connected"
-  homeConnectServerText: '追加済みのXCP-ngホストに接続出来ません',
+  // Original text: "Some NCE hosts have been registered but are not connected"
+  homeConnectServerText: '追加済みのNephora ConductorEホストに接続出来ません',
 
   // Original text: "Want some help?"
   homeHelp: 'サポートが必要ですか？',
@@ -962,7 +962,7 @@ export default {
   // Original text: "Shared {type}"
   srSharedType: '共有{type}',
 
-  // Original text: 'Host time and XOA time are not consistent with each other'
+  // Original text: 'Host time and NCA time are not consistent with each other'
   warningHostTimeTooltip: undefined,
 
   // Original text: 'Not all hosts within {pool} have the same version'
@@ -998,7 +998,7 @@ export default {
   // Original text: 'GZIP (very slow)'
   chooseCompressionGzipOption: undefined,
 
-  // Original text: 'Zstd (fast, XCP-ng only)'
+  // Original text: 'Zstd (fast, NCE only)'
   chooseCompressionZstdOption: undefined,
 
   // Original text: 'State'
@@ -1631,15 +1631,15 @@ export default {
   // Original text: 'Tip: Creating VMs on thin-provisioned storage will consume less space. Please click on the icon to get more information'
   vmsOnThinProvisionedSrTip: undefined,
 
-  // Original text: 'Delta Backup and Continuous Replication require at least XenServer 6.5.'
+  // Original text: 'Delta Backup and Continuous Replication require at least Nephora Compute Engine 6.5.'
   deltaBackupOnOutdatedXenServerWarning: undefined,
 
   // Original text: 'Click for more information about the backup methods.'
   backupNgLinkToDocumentationMessage: undefined,
 
-  // Original text: "Warning: Local remotes will use limited XOA disk space. Only for advanced users."
+  // Original text: "Warning: Local remotes will use limited NCA disk space. Only for advanced users."
   localRemoteWarningMessage:
-    '注意：ローカルリモートは、限定されたXOAディスク空間を利用します。アドバンスユーザのみの機能です。',
+    '注意：ローカルリモートは、限定されたNCAディスク空間を利用します。アドバンスユーザのみの機能です。',
 
   // Original text: "VMs"
   editBackupVmsTitle: 'VMs',
@@ -1689,7 +1689,7 @@ export default {
   // Original text: 'Use NBD + CBT to transfer disk if available'
   preferNbd: undefined,
 
-  // Original text: 'A network accessible by XO or the proxy must have NBD enabled. Storage must support Change Block Tracking (CBT) to use it in a backup'
+  // Original text: 'A network accessible by NC or the proxy must have NBD enabled. Storage must support Change Block Tracking (CBT) to use it in a backup'
   preferNbdInformation: undefined,
 
   // Original text: 'Number of NBD connection per disk'
@@ -1908,7 +1908,7 @@ export default {
   // Original text: 'Encrypt all new data sent to this remote'
   remoteEncryptionKey: undefined,
 
-  // Original text: "You won't be able to get your data back if you lose the encryption key. The encryption key is saved in the XO config backup, they should be secured correctly. Be careful, if you saved it on an encrypted remote, then you won't be able to access it without the remote encryption key."
+  // Original text: "You won't be able to get your data back if you lose the encryption key. The encryption key is saved in the NC config backup, they should be secured correctly. Be careful, if you saved it on an encrypted remote, then you won't be able to access it without the remote encryption key."
   remoteEncryptionKeyStorageLocation: undefined,
 
   // Original text: 'Encryption'
@@ -2070,7 +2070,7 @@ export default {
   // Original text: 'Install and configure the auth-ldap plugin first'
   ldapPluginNotConfigured: undefined,
 
-  // Original text: 'Are you sure you want to synchronize LDAP groups with XO? This may delete XO groups and their ACLs.'
+  // Original text: 'Are you sure you want to synchronize LDAP groups with NC? This may delete NC groups and their ACLs.'
   syncLdapGroupsWarning: undefined,
 
   // Original text: "Create"
@@ -2445,7 +2445,7 @@ export default {
   // Original text: 'Earliest expiration: {dateString}'
   earliestExpirationDate: undefined,
 
-  // Original text: 'No XCP-ng Pro support enabled on this pool'
+  // Original text: 'No NCE Pro support enabled on this pool'
   poolNoSupport: undefined,
 
   // Original text: 'Only {nHostsLicense, number} host{nHostsLicense, plural, one {} other {s}} under license on {nHosts, number} host{nHosts, plural, one {} other {s}}. This means this pool is not supported at all until you license all its hosts.'
@@ -2472,7 +2472,7 @@ export default {
   // Original text: 'License restrictions'
   licenseRestrictions: undefined,
 
-  // Original text: 'Warning: You are using a Free XenServer license'
+  // Original text: 'Warning: You are using a Free Nephora Compute Engine license'
   licenseRestrictionsModalTitle: undefined,
 
   // Original text: 'Some functionality is restricted.'
@@ -2481,7 +2481,7 @@ export default {
   // Original text: 'You can:'
   counterRestrictionsOptions: undefined,
 
-  // Original text: 'upgrade to XCP-ng for free to get rid of these restrictions'
+  // Original text: 'upgrade to NCE for free to get rid of these restrictions'
   counterRestrictionsOptionsXcp: undefined,
 
   // Original text: 'or get a commercial Citrix license'
@@ -2547,10 +2547,10 @@ export default {
   // Original text: 'Logging host'
   poolRemoteSyslogPlaceHolder: undefined,
 
-  // Original text: 'XCP-ng Pro Support not available for source users'
+  // Original text: 'NCE Pro Support not available for source users'
   poolSupportSourceUsers: undefined,
 
-  // Original text: 'Only available for pool of XCP-ng hosts'
+  // Original text: 'Only available for pool of NCE hosts'
   poolSupportXcpngOnly: undefined,
 
   // Original text: 'The pool is already fully supported'
@@ -2643,7 +2643,7 @@ export default {
   // Original text: 'NBD Connection'
   nbdConnection: undefined,
 
-  // Original text: 'Insecure NBD Connection (not allowed through XO)'
+  // Original text: 'Insecure NBD Connection (not allowed through NC)'
   insecureNbdConnection: undefined,
 
   // Original text: "Rolling pool update can only work when there's multiple hosts in a pool with a shared storage"
@@ -2691,13 +2691,13 @@ export default {
   // Original text: 'Hardware-assisted virtualization is not enabled on this host'
   hostHvmDisabled: undefined,
 
-  // Original text: 'This host does not have an active license, even though it is in a pool with licensed hosts. In order for XCP-ng Pro Support to be enabled on a pool, all hosts within the pool must have an active license'
+  // Original text: 'This host does not have an active license, even though it is in a pool with licensed hosts. In order for NCE Pro Support to be enabled on a pool, all hosts within the pool must have an active license'
   hostNoLicensePartialProSupport: undefined,
 
-  // Original text: 'No XCP-ng Pro Support enabled on this host'
+  // Original text: 'No NCE Pro Support enabled on this host'
   hostNoSupport: undefined,
 
-  // Original text: 'XCP-ng Pro Support enabled on this host'
+  // Original text: 'NCE Pro Support enabled on this host'
   hostSupportEnabled: undefined,
 
   // Original text: 'This host version is no longer maintained'
@@ -2727,7 +2727,7 @@ export default {
   // Original text: "Restart toolstack"
   restartHostAgent: 'Restart toolstack',
 
-  // Original text: 'As the XOA is hosted on the host that is scheduled for a reboot, it will also be restarted. Consequently, XO won\'t be able to resume VMs, and VMs with the "Protect from accidental shutdown" option enabled will not have this option reactivated automatically.'
+  // Original text: 'As the NCA is hosted on the host that is scheduled for a reboot, it will also be restarted. Consequently, NC won\'t be able to resume VMs, and VMs with the "Protect from accidental shutdown" option enabled will not have this option reactivated automatically.'
   smartRebootBypassCurrentVmCheck: undefined,
 
   // Original text: 'Smart reboot'
@@ -2824,7 +2824,7 @@ export default {
   // Original text: 'Hyper-threading (SMT)'
   hyperThreading: undefined,
 
-  // Original text: 'HT detection is only available on XCP-ng 7.6 and higher'
+  // Original text: 'HT detection is only available on NCE 7.6 and higher'
   hyperThreadingNotAvailable: undefined,
 
   // Original text: 'Download system logs'
@@ -2929,7 +2929,7 @@ export default {
   // Original text: 'No certificates installed on this host'
   hostNoCertificateInstalled: undefined,
 
-  // Original text: 'Only available for XCP-ng 8.3.0 or higher'
+  // Original text: 'Only available for NCE 8.3.0 or higher'
   'onlyAvailableXcp8.3OrHigher': undefined,
 
   // Original text: 'PCI Devices'
@@ -3202,10 +3202,10 @@ export default {
   // Original text: 'High Availability must be disabled'
   highAvailabilityNotDisabledTooltip: undefined,
 
-  // Original text: 'In order to install XenServer updates, you first need to configure your XenServer Client ID. See {link}.'
+  // Original text: 'In order to install Nephora Compute Engine updates, you first need to configure your Nephora Compute Engine Client ID. See {link}.'
   xsCredentialsMissing: undefined,
 
-  // Original text: 'Missing XenServer Client ID'
+  // Original text: 'Missing Nephora Compute Engine Client ID'
   xsCredentialsMissingShort: undefined,
 
   // Original text: "Default SR"
@@ -3275,7 +3275,7 @@ export default {
   availableForUefiOnly: undefined,
 
   // Original text: "No Xen tools detected"
-  noToolsDetected: '仮想マシン(VM)に準仮想ドライバ(Xen tools)がインストールされていません',
+  noToolsDetected: '仮想マシン(VM)に準仮想ドライバ(Nephora VM tools)がインストールされていません',
 
   // Original text: "Management agent {version} detected"
   managementAgentDetected: '管理エージェント {version} のインストールを認識中',
@@ -3343,7 +3343,7 @@ export default {
   // Original text: 'Enabling this will allow the VM to automatically install Citrix PV drivers from Windows Update. This only includes drivers, the Citrix management agent must still be separately installed.'
   windowsToolsModalMessage: undefined,
 
-  // Original text: 'If you have previously installed XCP-ng tools instead of Citrix tools, this option will break your VM.'
+  // Original text: 'If you have previously installed NCE tools instead of Citrix tools, this option will break your VM.'
   windowsToolsModalWarning: undefined,
 
   // Original text: 'Edit VM notes'
@@ -3931,8 +3931,8 @@ export default {
   // Original text: 'Share'
   vmShareButton: undefined,
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen settings',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora settings',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Guest OS',
@@ -4142,7 +4142,7 @@ export default {
   // Original text: 'default (bios)'
   vmDefaultBootFirmwareLabel: undefined,
 
-  // Original text: "You're about to change your boot firmware. This is still experimental in CH/XCP-ng 8.0. Are you sure you want to continue?"
+  // Original text: "You're about to change your boot firmware. This is still experimental in CH/NCE 8.0. Are you sure you want to continue?"
   vmBootFirmwareWarningMessage: undefined,
 
   // Original text: 'Error on restarting and setting the VM: {vm}'
@@ -4749,7 +4749,7 @@ export default {
   // Original text: 'Destroy cloud config drive after first boot'
   destroyCloudConfigVdiAfterBoot: undefined,
 
-  // Original text: 'VTPM is only supported on pools running XCP-ng/XS 8.3 or later.'
+  // Original text: 'VTPM is only supported on pools running NCE/XS 8.3 or later.'
   vtpmNotSupported: undefined,
 
   // Original text: 'This template requires a VTPM, if you proceed, the VM will likely not be able to boot.'
@@ -4980,7 +4980,7 @@ export default {
   // Original text: 'Pool tasks'
   poolTasks: undefined,
 
-  // Original text: 'XO tasks'
+  // Original text: 'NC tasks'
   xoTasks: undefined,
 
   // Original text: 'Cancel'
@@ -5049,7 +5049,7 @@ export default {
   // Original text: 'Pool retention'
   poolMetadataRetention: undefined,
 
-  // Original text: 'XO retention'
+  // Original text: 'NC retention'
   xoMetadataRetention: undefined,
 
   // Original text: "Get remote"
@@ -5614,23 +5614,23 @@ export default {
   // Original text: "Previous LUN Usage"
   existingLunModalTitle: 'Previous LUN Usage',
 
-  // Original text: "This LUN has been previously used as storage by a XenServer host. All data will be lost if you choose to continue with the SR creation."
+  // Original text: "This LUN has been previously used as storage by a Nephora Compute Engine host. All data will be lost if you choose to continue with the SR creation."
   existingLunModalText:
-    'This LUN has been previously used as a Storage by a XenServer host. All data will be lost if you choose to continue the SR creation.',
+    'This LUN has been previously used as a Storage by a Nephora Compute Engine host. All data will be lost if you choose to continue the SR creation.',
 
   // Original text: "Replace current registration?"
   alreadyRegisteredModal: 'Replace current registration?',
 
-  // Original text: "Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?"
+  // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'Your XO appliance is already registered to {email}, do you want to forget and replace this registration ?',
+    'Your Nephora Conductor appliance is already registered to {email}, do you want to forget and replace this registration ?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Ready for trial?',
 
-  // Original text: "During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!"
+  // Original text: "During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!"
   trialReadyModalText:
-    'During the trial period, XOA need to have a working internet connection. This limitation does not apply for our paid plans!',
+    'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!',
 
   // Original text: 'Cancel task{nTasks, plural, one {} other {s}}'
   cancelTasksModalTitle: undefined,
@@ -5827,7 +5827,7 @@ export default {
   // Original text: 'Advanced Live Telemetry successfully enabled'
   enableAdvancedLiveTelemetrySuccess: undefined,
 
-  // Original text: 'This feature is only XCP-ng compatible'
+  // Original text: 'This feature is only NCE compatible'
   xcpOnlyFeature: undefined,
 
   // Original text: "Forget host"
@@ -5939,7 +5939,7 @@ export default {
   // Original text: 'Want to use in production?'
   productionUse: undefined,
 
-  // Original text: 'Get pro support with the Xen Orchestra Appliance at {website}'
+  // Original text: 'Get pro support with the Nephora Conductor Appliance at {website}'
   getSupport: undefined,
 
   // Original text: "Bug Tracker"
@@ -5975,8 +5975,8 @@ export default {
   // Original text: "Pro support included"
   proSupportIncluded: 'Pro support included',
 
-  // Original text: "Access your XO Account"
-  xoAccount: 'Access your XO Account',
+  // Original text: "Access your NC Account"
+  xoAccount: 'Access your Nephora Conductor Account',
 
   // Original text: "Report a problem"
   openTicket: 'Report a problem',
@@ -5984,7 +5984,7 @@ export default {
   // Original text: "Problem? Open a ticket!"
   openTicketText: 'Problem? Open a ticket!',
 
-  // Original text: 'Your Xen Orchestra is up to date'
+  // Original text: 'Your Nephora Conductor is up to date'
   xoUpToDate: undefined,
 
   // Original text: 'You are not up to date with master. {nBehind} commit{nBehind, plural, one {} other {s}} behind {nAhead, plural, =0 {} other {and {nAhead, number} commit{nAhead, plural, one {} other {s}} ahead}}'
@@ -6074,8 +6074,8 @@ export default {
   // Original text: "Your trial has been ended. Contact us or downgrade to Free version"
   trialConsumed: 'Your trial has been ended. Contact us or downgrade to Free version',
 
-  // Original text: "Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service."
-  trialLocked: 'Your xoa-updater service appears to be down. Your XOA cannot run fully without reaching this service.',
+  // Original text: "Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service."
+  trialLocked: 'Your xoa-updater service appears to be down. Your NCA cannot run fully without reaching this service.',
 
   // Original text: "No update information available"
   noUpdateInfo: 'No update information available',
@@ -6083,14 +6083,14 @@ export default {
   // Original text: "Update information may be available"
   waitingUpdateInfo: 'Update information may be available',
 
-  // Original text: "Your XOA is up-to-date"
-  upToDate: 'Your XOA is up-to-date',
+  // Original text: "Your NCA is up-to-date"
+  upToDate: 'Your NCA is up-to-date',
 
-  // Original text: "You need to update your XOA (new version is available)"
-  mustUpgrade: 'You need to update your XOA (new version is available)',
+  // Original text: "You need to update your NCA (new version is available)"
+  mustUpgrade: 'You need to update your NCA (new version is available)',
 
-  // Original text: "Your XOA is not registered for updates"
-  registerNeeded: 'Your XOA is not registered for updates',
+  // Original text: "Your NCA is not registered for updates"
+  registerNeeded: 'Your NCA is not registered for updates',
 
   // Original text: "Can't fetch update information"
   updaterError: "Can't fetch update information",
@@ -6098,8 +6098,8 @@ export default {
   // Original text: "Upgrade successful"
   promptUpgradeReloadTitle: 'Upgrade successful',
 
-  // Original text: "Your XOA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
-  promptUpgradeReloadMessage: 'XOAは正常にアップデートされました。ブラウザでのリロードが必要です。リロードしますか？',
+  // Original text: "Your NCA has successfully upgraded, and your browser must reload the application. Do you want to reload now ?"
+  promptUpgradeReloadMessage: 'NCAは正常にアップデートされました。ブラウザでのリロードが必要です。リロードしますか？',
 
   // Original text: 'Upgrade warning'
   upgradeWarningTitle: undefined,
@@ -6122,16 +6122,16 @@ export default {
   // Original text: 'Change channel'
   changeChannel: undefined,
 
-  // Original text: 'The Web updater, the release channels and the proxy settings are available in XOA.'
+  // Original text: 'The Web updater, the release channels and the proxy settings are available in NCA.'
   updaterCommunity: undefined,
 
-  // Original text: 'XOA build:'
+  // Original text: 'NCA build:'
   xoaBuild: undefined,
 
-  // Original text: "Xen Orchestra from the sources"
-  disclaimerTitle: 'Xen Orchestra (ソースコードベースの開発版)',
+  // Original text: "Nephora Conductor from the sources"
+  disclaimerTitle: 'Nephora Conductor (ソースコードベースの開発版)',
 
-  // Original text: "You are using XO from the sources! That's great for a personal/non-profit usage."
+  // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
   disclaimerText1:
     'このバージョンは、ソースコードよりインストールされた開発版です！ 個人や、非営利での利用に最適です。',
 
@@ -6145,13 +6145,13 @@ export default {
   // Original text: "Why do I see this message?"
   disclaimerText4: 'なぜこのメッセージが表示されますか？',
 
-  // Original text: 'You are not registered. Your XOA may not be up to date.'
+  // Original text: 'You are not registered. Your NCA may not be up to date.'
   notRegisteredDisclaimerInfo: undefined,
 
   // Original text: 'Click here to create an account.'
   notRegisteredDisclaimerCreateAccount: undefined,
 
-  // Original text: 'Click here to register and update your XOA.'
+  // Original text: 'Click here to register and update your NCA.'
   notRegisteredDisclaimerRegister: undefined,
 
   // Original text: "Connect PIF"
@@ -6341,10 +6341,10 @@ export default {
   // Original text: "Message"
   logMessage: 'Message',
 
-  // Original text: 'Use XCP-ng to get rid of restrictions'
+  // Original text: 'Use NCE to get rid of restrictions'
   logSuggestXcpNg: undefined,
 
-  // Original text: 'This is a XenServer/XCP-ng error'
+  // Original text: 'This is a Nephora Compute Engine/NCE error'
   logXapiError: undefined,
 
   // Original text: "Error"
@@ -6645,16 +6645,16 @@ export default {
   // Original text: 'All the VDIs attached to a VM must either be on a shared SR or on the same host (local SR) for the VM to be able to start.'
   migrateVdiMessage: undefined,
 
-  // Original text: 'Backed up XO Configs'
+  // Original text: 'Backed up NC Configs'
   backedUpXoConfigs: undefined,
 
-  // Original text: 'Manage XO Config Cloud Backup'
+  // Original text: 'Manage NC Config Cloud Backup'
   manageXoConfigCloudBackup: undefined,
 
-  // Original text: 'Select XO config'
+  // Original text: 'Select NC config'
   selectXoConfig: undefined,
 
-  // Original text: 'XO Config Cloud Backup'
+  // Original text: 'NC Config Cloud Backup'
   xoConfigCloudBackup: undefined,
 
   // Original text: 'Your encrypted configuration is securely stored inside your Vates account and backed up once a day'
@@ -6732,7 +6732,7 @@ export default {
   // Original text: "Create"
   xosanCreate: 'Create',
 
-  // Original text: "XOSAN is available in XOA"
+  // Original text: "XOSAN is available in NCA"
   xosanCommunity: 'No XOSAN available for Community Edition',
 
   // Original text: 'New'
@@ -6816,17 +6816,17 @@ export default {
   // Original text: 'Scanning SR…'
   xosanState_scanningSr: undefined,
 
-  // Original text: 'XOSAN cannot be installed on XCP-ng yet. Incoming XOSANv2 will be compatible with XCP-ng: {link}.'
+  // Original text: 'XOSAN cannot be installed on NCE yet. Incoming XOSANv2 will be compatible with NCE: {link}.'
   xosanXcpngWarning: undefined,
 
-  // Original text: "Install XOA plugin first"
+  // Original text: "Install NCA plugin first"
   xosanInstallCloudPlugin: 'Install cloud plugin first',
 
-  // Original text: "Load XOA plugin first"
+  // Original text: "Load NCA plugin first"
   xosanLoadCloudPlugin: 'Load cloud plugin first',
 
-  // Original text: "No compatible XOSAN pack found for your XenServer versions."
-  xosanNoPackFound: 'No compatible XOSAN pack found for your XenServer versions.',
+  // Original text: "No compatible XOSAN pack found for your Nephora Compute Engine versions."
+  xosanNoPackFound: 'No compatible XOSAN pack found for your Nephora Compute Engine versions.',
 
   // Original text: 'Some XOSAN Virtual Machines are not running'
   xosanVmsNotRunning: undefined,
@@ -6945,7 +6945,7 @@ export default {
   // Original text: 'By default, the management network will be used'
   byDefaultManagementNetworkUsed: undefined,
 
-  // Original text: 'Unable to fetch physical disks from non-XCP-ng host'
+  // Original text: 'Unable to fetch physical disks from non-NCE host'
   cantFetchDisksFromNonXcpngHost: undefined,
 
   // Original text: 'Create interface'
@@ -6963,7 +6963,7 @@ export default {
   // Original text: 'The disk has existing partition'
   diskHasExistingPartition: undefined,
 
-  // Original text: 'Disk incompatible with XOSTOR'
+  // Original text: 'Disk incompatible with NDS'
   diskIncompatibleXostor: undefined,
 
   // Original text: 'The disk is Read-Only'
@@ -6981,10 +6981,10 @@ export default {
   // Original text: 'Some fields are missing'
   fieldsMissing: undefined,
 
-  // Original text: 'More than 1 XOSTOR license on {host}'
+  // Original text: 'More than 1 NDS license on {host}'
   hostBoundToMultipleXostorLicenses: undefined,
 
-  // Original text: 'No XOSTOR license on {host}'
+  // Original text: 'No NDS license on {host}'
   hostHasNoXostorLicense: undefined,
 
   // Original text: 'Hosts do not have the same number of disks'
@@ -7008,16 +7008,16 @@ export default {
   // Original text: 'This is "tapdev" disk'
   isTapdevDisk: undefined,
 
-  // Original text: 'License attached to an unknown XOSTOR'
+  // Original text: 'License attached to an unknown NDS'
   licenseBoundUnknownXostor: undefined,
 
-  // Original text: 'No XOSTOR attached'
+  // Original text: 'No NDS attached'
   licenseNotBoundXostor: undefined,
 
   // Original text: 'License{nLicenseIds, plural, one {} other {s}} {licenseIds} ha{nLicenseIds, plural, one {s} other {ve}} expired on {host}'
   licenseExpiredXostorWarning: undefined,
 
-  // Original text: 'To manage this XOSTOR storage, you must resolve the following issues:'
+  // Original text: 'To manage this NDS storage, you must resolve the following issues:'
   manageXostorWarning: undefined,
 
   // Original text: 'The network does not have PIFs'
@@ -7026,22 +7026,22 @@ export default {
   // Original text: 'Networks'
   networks: undefined,
 
-  // Original text: 'Not an XCP-ng pool'
+  // Original text: 'Not an NCE pool'
   notXcpPool: undefined,
 
-  // Original text: 'No XOSTOR found'
+  // Original text: 'No NDS found'
   noXostorFound: undefined,
 
   // Original text: 'Number of hosts'
   numberOfHosts: undefined,
 
-  // Original text: '{object} does not meet XOSTOR requirements. Refer to the documentation.'
+  // Original text: '{object} does not meet NDS requirements. Refer to the documentation.'
   objectDoesNotMeetXostorRequirements: undefined,
 
-  // Original text: 'Only show {type} that meet XOSTOR requirements'
+  // Original text: 'Only show {type} that meet NDS requirements'
   onlyShowXostorRequirements: undefined,
 
-  // Original text: 'Pool already has a XOSTOR'
+  // Original text: 'Pool already has a NDS'
   poolAlreadyHasXostor: undefined,
 
   // Original text: 'Not recent enough. Current version: {version}'
@@ -7089,13 +7089,13 @@ export default {
   // Original text: 'Wrong number of hosts'
   wrongNumberOfHosts: undefined,
 
-  // Original text: 'XOSTOR'
+  // Original text: 'NDS'
   xostor: undefined,
 
-  // Original text: 'XOSTOR is available in XOA'
+  // Original text: 'NDS is available in NCA'
   xostorAvailableInXoa: undefined,
 
-  // Original text: 'XOSTOR creation'
+  // Original text: 'NDS creation'
   xostorCreation: undefined,
 
   // Original text: 'At least one disk is required'
@@ -7113,7 +7113,7 @@ export default {
   // Original text: 'Hub'
   hubPage: undefined,
 
-  // Original text: 'Hub is available in XOA'
+  // Original text: 'Hub is available in NCA'
   hubCommunity: undefined,
 
   // Original text: 'The selected pool has no default SR'
@@ -7284,10 +7284,10 @@ export default {
   // Original text: 'Bound (Plan (ID), expiration date, host - pool)'
   boundSelectLicense: undefined,
 
-  // Original text: 'Bind XCP-ng licenses'
+  // Original text: 'Bind NCE licenses'
   bindXcpngLicenses: undefined,
 
-  // Original text: 'You are about to bind {nLicenses, number} professional support license{nLicenses, plural, one {} other {s}} on older and unsupported XCP-ng version{nLicenses, plural, one {} other {s}}. Are you sure you want to continue?'
+  // Original text: 'You are about to bind {nLicenses, number} professional support license{nLicenses, plural, one {} other {s}} on older and unsupported NCE version{nLicenses, plural, one {} other {s}}. Are you sure you want to continue?'
   confirmBindingOnUnsupportedHost: undefined,
 
   // Original text: 'The following pools will no longer be fully supported'
@@ -7299,19 +7299,19 @@ export default {
   // Original text: 'Licenses binding'
   licensesBinding: undefined,
 
-  // Original text: 'Not enough XCP-ng licenses'
+  // Original text: 'Not enough NCE licenses'
   notEnoughXcpngLicenses: undefined,
 
   // Original text: 'Not bound (Plan (ID), expiration date)'
   notBoundSelectLicense: undefined,
 
-  // Original text: "To bind an XCP-ng license, go to the pool's Advanced tab."
+  // Original text: "To bind an NCE license, go to the pool's Advanced tab."
   xcpngLicensesBindingAvancedView: undefined,
 
   // Original text: 'You are not registered and therefore will not be able to create or manage your XOSAN SRs. {link}'
   xosanUnregisteredDisclaimer: undefined,
 
-  // Original text: 'In order to create a XOSAN SR, you need to use the Xen Orchestra Appliance and buy a XOSAN license on {link}.'
+  // Original text: 'In order to create a XOSAN SR, you need to use the Nephora Conductor Appliance and buy a XOSAN license on {link}.'
   xosanSourcesDisclaimer: undefined,
 
   // Original text: 'Register now!'
@@ -7374,10 +7374,10 @@ export default {
   // Original text: 'License has expired.'
   licenseHasExpired: undefined,
 
-  // Original text: 'License bound to another XOA'
+  // Original text: 'License bound to another NCA'
   licenseBoundToOtherXoa: undefined,
 
-  // Original text: 'This license is active on this XOA'
+  // Original text: 'This license is active on this NCA'
   licenseBoundToThisXoa: undefined,
 
   // Original text: 'License expires on {date}.'
@@ -7410,19 +7410,19 @@ export default {
   // Original text: 'expires on {date}'
   expiresOn: undefined,
 
-  // Original text: 'Install XOA plugin first'
+  // Original text: 'Install NCA plugin first'
   xosanInstallXoaPlugin: undefined,
 
-  // Original text: 'Load XOA plugin first'
+  // Original text: 'Load NCA plugin first'
   xosanLoadXoaPlugin: undefined,
 
   // Original text: 'Activate license'
   bindXoaLicense: undefined,
 
-  // Original text: 'Move license to this XOA'
+  // Original text: 'Move license to this NCA'
   rebindXoaLicense: undefined,
 
-  // Original text: 'Are you sure you want to activate this license on your XOA? This action is not reversible!'
+  // Original text: 'Are you sure you want to activate this license on your NCA? This action is not reversible!'
   bindXoaLicenseConfirm: undefined,
 
   // Original text: 'activate {licenseType} license'
@@ -7449,7 +7449,7 @@ export default {
   // Original text: 'Unknown proxy VM.'
   proxyUnknownVm: undefined,
 
-  // Original text: 'XOSTOR Pro Support enabled'
+  // Original text: 'NDS Pro Support enabled'
   xostorProSupportEnabled: undefined,
 
   // Original text: 'Only available to Enterprise users'
@@ -7566,7 +7566,7 @@ export default {
   // Original text: 'Some proxies need to be upgraded. Click here to get more information.'
   upgradeNeededForProxies: undefined,
 
-  // Original text: 'XO Proxy: a concrete guide'
+  // Original text: 'NC Proxy: a concrete guide'
   xoProxyConcreteGuide: undefined,
 
   // Original text: '{n, number} prox{n, plural, one {y} other {ies}} ha{n, plural, one {s} other {ve}} error{n, plural, one {} other {s}}'

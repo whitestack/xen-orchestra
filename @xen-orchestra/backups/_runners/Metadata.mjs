@@ -109,7 +109,7 @@ export const Metadata = class MetadataBackupRunner extends Abstract {
           promises.push(
             runTask(
               {
-                name: `Starting XO metadata backup. (${job.id})`,
+                name: `Starting Nephora Conductor metadata backup. (${job.id})`,
                 data: {
                   type: 'xo',
                 },

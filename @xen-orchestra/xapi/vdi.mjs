@@ -261,7 +261,7 @@ class Vdi {
     }
     if (stream.length === undefined) {
       throw new Error(
-        'Trying to import a VDI without a length field. Please report this error to the Xen Orchestra team.'
+        'Trying to import a VDI without a length field. Please report this error to the Nephora Conductor team.'
       )
     }
 

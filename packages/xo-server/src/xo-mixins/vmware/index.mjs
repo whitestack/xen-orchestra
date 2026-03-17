@@ -122,7 +122,7 @@ export default class MigrateVm {
     const isRunning = powerState !== 'poweredOff'
 
     if (isRunning && !stopSource) {
-      Task.warning(`Data after the last snapshot on vmware won't be migrated to XCP-ng`)
+      Task.warning(`Data after the last snapshot on vmware won't be migrated to NCE`)
     }
     const chainsByNodes = await Task.run(
       { properties: { name: `build disks and snapshots chains for ${vmId}` } },

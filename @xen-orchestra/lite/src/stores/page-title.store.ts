@@ -2,7 +2,7 @@ import { useTitle } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed, type MaybeRefOrGetter, onBeforeUnmount, reactive, toRef, watch } from 'vue'
 
-const PAGE_TITLE_SUFFIX = 'XO Lite'
+const PAGE_TITLE_SUFFIX = 'Nephora Conductor Lite'
 
 interface PageTitleConfig {
   object: { name_label: string } | undefined

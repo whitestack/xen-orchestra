@@ -15,7 +15,7 @@ const XOSTOR_DEPENDENCIES = ['xcp-ng-release-linstor', MAIN_XOSTOR_DEPENDENCY]
 
 function checkIfLinstorSr(sr) {
   if (sr.SR_type !== 'linstor') {
-    throw new Error('Not a XOSTOR storage')
+    throw new Error('Not a NDS storage')
   }
 }
 
@@ -42,7 +42,7 @@ async function installOrUpdateDependencies(host, method = 'install') {
     {
       properties: {
         dependencies: XOSTOR_DEPENDENCIES,
-        name: `${method} XOSTOR dependencies on ${host.name_label}`,
+        name: `${method} NDS dependencies on ${host.name_label}`,
         objectId: host.uuid,
       },
     },
@@ -65,7 +65,7 @@ export async function installDependencies({ host }) {
   await installOrUpdateDependencies.call(this, host)
   await this.getXapiObject(host).$restartAgent()
 }
-installDependencies.description = 'Install XOSTOR dependencies'
+installDependencies.description = 'Install NDS dependencies'
 installDependencies.permission = 'admin'
 installDependencies.params = {
   host: { type: 'string' },
@@ -77,7 +77,7 @@ installDependencies.resolve = {
 export function updateDependencies({ host }) {
   return installOrUpdateDependencies.call(this, host, 'update')
 }
-updateDependencies.description = 'Update XOSTOR dependencies'
+updateDependencies.description = 'Update NDS dependencies'
 updateDependencies.permission = 'admin'
 updateDependencies.params = {
   host: { type: 'string' },
@@ -143,7 +143,7 @@ export async function formatDisks({ disks, force, host, ignoreFileSystems, provi
     }
   )
 }
-formatDisks.description = 'Format disks for a XOSTOR use'
+formatDisks.description = 'Format disks for a NDS use'
 formatDisks.permission = 'admin'
 formatDisks.params = {
   disks: { type: 'array', items: { type: 'string' } },
@@ -166,7 +166,7 @@ export const create = defer(async function (
     await this.checkPermissions([[preferredInterface.networkId, 'operate']])
   }
 
-  const task = await this.tasks.create({ name: `creation of XOSTOR: ${name}`, type: 'xo:xostor:create' })
+  const task = await this.tasks.create({ name: `creation of NDS: ${name}`, type: 'xo:xostor:create' })
   return task.run(async () => {
     Object.entries(disksByHost).forEach(([hostId, disks]) => {
       if (disks.length === 0) {
@@ -260,10 +260,10 @@ export const create = defer(async function (
   })
 })
 
-create.description = 'Create a XOSTOR storage'
+create.description = 'Create a NDS storage'
 create.permission = 'admin'
 create.params = {
-  description: { type: 'string', optional: true, default: 'From XO-server' },
+  description: { type: 'string', optional: true, default: 'From Nephora Conductor-server' },
   disksByHost: { type: 'object' },
   force: { type: 'boolean', optional: true, default: false },
   ignoreFileSystems: { type: 'boolean', optional: true, default: false },
@@ -283,7 +283,7 @@ create.params = {
 // Also called by sr.destroy if sr.SR_type === 'linstor'
 export async function destroy({ sr }) {
   const task = this.tasks.create({
-    name: `deletion of XOSTOR: ${sr.name_label}`,
+    name: `deletion of NDS: ${sr.name_label}`,
     objectId: sr.uuid,
     type: 'xo:xostor:destroy',
   })
@@ -300,7 +300,7 @@ export async function destroy({ sr }) {
     )
   })
 }
-destroy.description = 'Destroy a XOSTOR storage'
+destroy.description = 'Destroy a NDS storage'
 destroy.permission = 'admin'
 destroy.params = {
   sr: { type: 'string' },
@@ -315,7 +315,7 @@ export async function set({ sr, preferredInterface }) {
     await this.getXapi(sr).xostor_setPreferredInterface(sr._xapiRef, preferredInterface)
   }
 }
-set.description = 'Changes the properties of an existing XOSTOR storage'
+set.description = 'Changes the properties of an existing NDS storage'
 set.params = {
   sr: { type: 'string' },
   preferredInterface: {

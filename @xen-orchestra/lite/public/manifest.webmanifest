@@ -1,9 +1,9 @@
 {
-  "name": "XO Lite",
-  "short_name": "XOLite",
+  "name": "NC Lite",
+  "short_name": "NCLite",
   "start_url": "/",
   "display": "standalone",
-  "description": "Integrated local and lightweight solution to manage a local XCP-ng pool.",
+  "description": "Integrated local and lightweight solution to manage a local NCE pool.",
   "icons": [
     {
       "src": "favicon.svg",

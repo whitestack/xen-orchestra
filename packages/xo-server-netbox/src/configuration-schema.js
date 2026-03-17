@@ -1,6 +1,6 @@
 const configurationSchema = {
   description:
-    'Synchronize pools managed by Xen Orchestra with Netbox. Configuration steps and supported versions: https://docs.xen-orchestra.com/advanced#netbox.',
+    'Synchronize pools managed by Nephora Conductor with Netbox. Configuration steps and supported versions: https://docs.xen-orchestra.com/advanced#netbox.',
   type: 'object',
   properties: {
     endpoint: {
@@ -31,7 +31,7 @@ const configurationSchema = {
       type: 'boolean',
       title: 'Synchronize users',
       description:
-        'Synchronize XO users as Netbox tenants and bind VM creators. For this to work, you need to assign the `uuid` custom field to the type "Tenancy > tenant".',
+        'Synchronize Nephora Conductor users as Netbox tenants and bind VM creators. For this to work, you need to assign the `uuid` custom field to the type "Tenancy > tenant".',
     },
     syncInterval: {
       type: 'number',

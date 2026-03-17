@@ -18,7 +18,7 @@ import VtsStackedBarWithLegend, {
 } from '@core/components/stacked-bar-with-legend/VtsStackedBarWithLegend.vue'
 
 const segments: StackedBarWithLegendProps['segments'] = [
-  { value: 10.5, unit: 'GB', accent: 'info', label: 'XO backups' },
+  { value: 10.5, unit: 'GB', accent: 'info', label: 'Nephora Conductor backups' },
   { value: 6.5, unit: 'GB', accent: 'warning', label: 'Other' },
 ]
 </script>

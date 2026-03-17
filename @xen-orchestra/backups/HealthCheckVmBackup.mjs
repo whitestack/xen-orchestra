@@ -63,7 +63,7 @@ export class HealthCheckVmBackup {
         await xapi.waitObjectState(restoredVm.guest_metrics, gm => gm?.PV_drivers_detected, {
           timeout: remainingTimeout,
           timeoutMessage: refOrUuid =>
-            `timeout reached while waiting for ${refOrUuid} to report the driver version through the Xen tools. Please check or update the Xen tools.`,
+            `timeout reached while waiting for ${refOrUuid} to report the driver version through the Nephora VM tools. Please check or update the Nephora VM tools.`,
         })
 
         const guestToolsReady = new Date()
