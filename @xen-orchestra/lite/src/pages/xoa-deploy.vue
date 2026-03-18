@@ -391,7 +391,7 @@ async function deploy() {
   let downloadUrl = xoaDownloadUrl.value
   if (enableDownloadAuth.value) {
     if (xoaDownloadUser.value === '' || xoaDownloadPass.value === '') {
-      console.error('Missing XOA download credentials')
+      console.error('Missing NCA download credentials')
       return
     }
     const [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://');

@@ -1697,8 +1697,8 @@ export default {
   // Original text: "suspended"
   powerStateSuspended: 'suspendida',
 
-  // Original text: "No Xen tools detected"
-  vmStatus: 'Xen Tools no detectado',
+  // Original text: "No Nephora VM tools detected"
+  vmStatus: 'Nephora VM Tools no detectado',
 
   // Original text: "No IPv4 record"
   vmName: 'Sin registro IPv4',
@@ -1718,8 +1718,8 @@ export default {
   // Original text: 'Halted {ago}'
   vmHaltedSince: undefined,
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: 'Xen Tools no detectado',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: 'Nephora VM Tools no detectado',
 
   // Original text: "No IPv4 record"
   noIpv4Record: 'Sin registro IPv4',
@@ -2042,8 +2042,8 @@ export default {
   // Original text: "Convert"
   vmConvertButton: 'Convertir',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Configuraciones de Xen',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Configuraciones de Nephora',
 
   // Original text: "Guest OS"
   guestOsLabel: 'SO Invitado',
@@ -2072,8 +2072,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'Argumentos PV',
 
-  // Original text: "Xen tools status"
-  xenToolsStatus: 'Estado de Xen Tools',
+  // Original text: "Nephora VM tools status"
+  xenToolsStatus: 'Estado de Nephora VM Tools',
 
   // Original text: "{status}"
   xenToolsStatusValue: '{status}',

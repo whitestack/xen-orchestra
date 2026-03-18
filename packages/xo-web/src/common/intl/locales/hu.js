@@ -694,7 +694,7 @@ export default {
     'Figyelmeztetés: lokális távoli mentés korlátozott rendszer helyet használ. Kizárólag haladó felhasználóknak ajánlott, ha biztos benne, hogy ez a szervere elérhetőségét nem befolyásolja!.',
 
   // Original text: "Warning: this feature works only with Nephora Compute Engine 6.5 or newer."
-  backupVersionWarning: 'Figyelmeztetés: 6.5 vagy újabb Xen támogatás szükséges!',
+  backupVersionWarning: 'Figyelmeztetés: 6.5 vagy újabb Nephora Compute Engine támogatás szükséges!',
 
   // Original text: "VMs"
   editBackupVmsTitle: 'VPS-ek',
@@ -1635,8 +1635,8 @@ export default {
   // Original text: "suspended"
   powerStateSuspended: 'Felfüggesztett',
 
-  // Original text: "No Xen tools detected"
-  vmStatus: 'No Xen tools detected',
+  // Original text: "No Nephora VM tools detected"
+  vmStatus: 'No Nephora VM tools detected',
 
   // Original text: "No IPv4 record"
   vmName: 'No IPv4 record',
@@ -1653,8 +1653,8 @@ export default {
   // Original text: "Not running"
   vmNotRunning: 'Nem fut',
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: 'No Xen tools detected',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: 'No Nephora VM tools detected',
 
   // Original text: "No IPv4 record"
   noIpv4Record: 'No IPv4 record',
@@ -1966,8 +1966,8 @@ export default {
   // Original text: "Convert"
   vmConvertButton: 'Konvertálás',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen beállítások',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora beállítások',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Vendég OS',
@@ -1996,8 +1996,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'PV args',
 
-  // Original text: "Xen tools status"
-  xenToolsStatus: 'Xen tools Állapot',
+  // Original text: "Nephora VM tools status"
+  xenToolsStatus: 'Nephora VM tools Állapot',
 
   // Original text: "{status}"
   xenToolsStatusValue: '{Állapot}',

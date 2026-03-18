@@ -1436,7 +1436,7 @@ export default {
   // Original text: 'suspended'
   powerStateSuspended: undefined,
 
-  // Original text: 'No Xen tools detected'
+  // Original text: 'No Nephora VM tools detected'
   vmStatus: undefined,
 
   // Original text: 'No IPv4 record'
@@ -1454,7 +1454,7 @@ export default {
   // Original text: 'Not running'
   vmNotRunning: undefined,
 
-  // Original text: 'No Xen tools detected'
+  // Original text: 'No Nephora VM tools detected'
   noToolsDetected: undefined,
 
   // Original text: 'No IPv4 record'
@@ -1757,7 +1757,7 @@ export default {
   // Original text: 'Convert'
   vmConvertButton: undefined,
 
-  // Original text: 'Xen settings'
+  // Original text: 'Nephora settings'
   xenSettingsLabel: undefined,
 
   // Original text: 'Guest OS'
@@ -1787,7 +1787,7 @@ export default {
   // Original text: 'PV args'
   pvArgsLabel: undefined,
 
-  // Original text: 'Xen tools status'
+  // Original text: 'Nephora VM tools status'
   xenToolsStatus: undefined,
 
   // Original text: '{status}'

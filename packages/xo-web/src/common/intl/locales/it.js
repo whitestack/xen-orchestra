@@ -2593,8 +2593,8 @@ export default {
   // Original text: 'Halted {ago}'
   vmHaltedSince: 'Arrestato {ago}',
 
-  // Original text: 'No Xen tools detected'
-  noToolsDetected: 'Non sono stati rilevati strumenti Xen',
+  // Original text: 'No Nephora VM tools detected'
+  noToolsDetected: 'Non sono stati rilevati strumenti Nephora VM',
 
   // Original text: 'No IPv4 record'
   noIpv4Record: 'Nessun record IPv4',
@@ -3016,8 +3016,8 @@ export default {
   // Original text: 'Share'
   vmShareButton: 'Condividere',
 
-  // Original text: 'Xen settings'
-  xenSettingsLabel: 'Impostazioni Xen',
+  // Original text: 'Nephora settings'
+  xenSettingsLabel: 'Impostazioni Nephora',
 
   // Original text: 'Guest OS'
   guestOsLabel: 'Sistema operativo guest',
@@ -3052,8 +3052,8 @@ export default {
   // Original text: 'PV args'
   pvArgsLabel: 'Args PV',
 
-  // Original text: 'Xen tools version'
-  xenToolsStatus: 'Versione degli strumenti Xen',
+  // Original text: 'Nephora VM tools version'
+  xenToolsStatus: 'Versione degli strumenti Nephora VM',
 
   // Original text: 'Not installed'
   xenToolsNotInstalled: 'Non installato',

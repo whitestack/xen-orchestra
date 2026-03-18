@@ -2196,8 +2196,8 @@ export default {
   // Original text: 'Halted {ago}'
   vmHaltedSince: 'متوقف شده {ago}',
 
-  // Original text: 'No Xen tools detected'
-  noToolsDetected: 'Xen tools شناسایی نشد',
+  // Original text: 'No Nephora VM tools detected'
+  noToolsDetected: 'Nephora VM tools شناسایی نشد',
 
   // Original text: 'No IPv4 record'
   noIpv4Record: 'رکورد IPv4 وجود ندارد',
@@ -2572,8 +2572,8 @@ export default {
   // Original text: 'Share'
   vmShareButton: 'اشتراک گذاری',
 
-  // Original text: 'Xen settings'
-  xenSettingsLabel: 'تنظیمات Xen',
+  // Original text: 'Nephora settings'
+  xenSettingsLabel: 'تنظیمات Nephora',
 
   // Original text: 'Guest OS'
   guestOsLabel: 'سیستم عامل مهمان',
@@ -2602,8 +2602,8 @@ export default {
   // Original text: 'PV args'
   pvArgsLabel: 'آرگومان های PV',
 
-  // Original text: 'Xen tools version'
-  xenToolsStatus: 'نسخه Xen tools',
+  // Original text: 'Nephora VM tools version'
+  xenToolsStatus: 'نسخه Nephora VM tools',
 
   // Original text: 'Not installed'
   xenToolsNotInstalled: 'نصب نشده',

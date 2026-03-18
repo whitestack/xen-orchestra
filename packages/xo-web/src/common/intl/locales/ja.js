@@ -3275,7 +3275,7 @@ export default {
   availableForUefiOnly: undefined,
 
   // Original text: "No Xen tools detected"
-  noToolsDetected: '仮想マシン(VM)に準仮想ドライバ(Xen tools)がインストールされていません',
+  noToolsDetected: '仮想マシン(VM)に準仮想ドライバ(Nephora VM tools)がインストールされていません',
 
   // Original text: "Management agent {version} detected"
   managementAgentDetected: '管理エージェント {version} のインストールを認識中',
@@ -3931,8 +3931,8 @@ export default {
   // Original text: 'Share'
   vmShareButton: undefined,
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen settings',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora settings',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Guest OS',

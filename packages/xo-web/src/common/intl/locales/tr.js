@@ -2183,8 +2183,8 @@ export default {
   // Original text: "Halted {ago}"
   vmHaltedSince: 'Durduruldu {ago}',
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: 'Xen tool tespit edilmedi',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: 'Nephora VM tools tespit edilmedi',
 
   // Original text: "No IPv4 record"
   noIpv4Record: 'IPv4 kaydı yok',
@@ -2543,8 +2543,8 @@ export default {
   // Original text: "Share"
   vmShareButton: 'Paylaş',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen ayarları',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora ayarları',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Konuk OS',
@@ -2573,8 +2573,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'PV argümanları',
 
-  // Original text: "Xen tools version"
-  xenToolsStatus: 'Xen tools sürümü',
+  // Original text: "Nephora VM tools version"
+  xenToolsStatus: 'Nephora VM tools sürümü',
 
   // Original text: 'Not installed'
   xenToolsNotInstalled: undefined,

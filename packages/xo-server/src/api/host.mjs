@@ -264,7 +264,7 @@ export async function restartAgent({ bypassBackupCheck = false, host }) {
   return this.getXapiObject(host).$restartAgent()
 }
 
-restartAgent.description = 'restart the Xen agent on the host'
+restartAgent.description = 'restart the Nephora agent on the host'
 
 restartAgent.params = {
   bypassBackupCheck: {

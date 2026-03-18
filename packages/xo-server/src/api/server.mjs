@@ -10,7 +10,7 @@ export async function add({ autoConnect = true, ...props }) {
   return server.id
 }
 
-add.description = 'register a new Xen server'
+add.description = 'register a new Nephora server'
 
 add.permission = 'admin'
 
@@ -48,7 +48,7 @@ export async function remove({ id }) {
   await this.unregisterXenServer(id)
 }
 
-remove.description = 'unregister a Xen server'
+remove.description = 'unregister a Nephora server'
 
 remove.permission = 'admin'
 
@@ -66,7 +66,7 @@ export function getAll() {
   return this.getAllXenServers()
 }
 
-getAll.description = 'returns all the registered Xen server'
+getAll.description = 'returns all the registered Nephora server'
 
 getAll.permission = 'admin'
 
@@ -76,7 +76,7 @@ export async function set({ id, ...props }) {
   await this.updateXenServer(id, props)
 }
 
-set.description = 'changes the properties of a Xen server'
+set.description = 'changes the properties of a Nephora server'
 
 set.permission = 'admin'
 
@@ -120,7 +120,7 @@ export async function enable({ id }) {
   await this.connectXenServer(id)
 }
 
-enable.description = 'enable a Xen server'
+enable.description = 'enable a Nephora server'
 
 enable.permission = 'admin'
 
@@ -136,7 +136,7 @@ export async function disable({ id }) {
   await this.disconnectXenServer(id)
 }
 
-disable.description = 'disable a Xen server'
+disable.description = 'disable a Nephora server'
 
 disable.permission = 'admin'
 

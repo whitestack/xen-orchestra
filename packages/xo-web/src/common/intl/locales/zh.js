@@ -1097,8 +1097,8 @@ export default {
   // Original text: "suspended"
   powerStateSuspended: '已暂停',
 
-  // Original text: "No Xen tools detected"
-  vmStatus: '没有检测到Xen Tools',
+  // Original text: "No Nephora VM tools detected"
+  vmStatus: '没有检测到Nephora VM Tools',
 
   // Original text: "No IPv4 record"
   vmName: '没有IPv4记录',
@@ -1115,8 +1115,8 @@ export default {
   // Original text: "Not running"
   vmNotRunning: '没有运行',
 
-  // Original text: "No Xen tools detected"
-  noToolsDetected: '没有检测到Xen Tools',
+  // Original text: "No Nephora VM tools detected"
+  noToolsDetected: '没有检测到Nephora VM Tools',
 
   // Original text: "No IPv4 record"
   noIpv4Record: '没有IPv4记录',
@@ -1292,8 +1292,8 @@ export default {
   // Original text: "Convert"
   vmConvertButton: '转换',
 
-  // Original text: "Xen settings"
-  xenSettingsLabel: 'Xen 设置',
+  // Original text: "Nephora settings"
+  xenSettingsLabel: 'Nephora 设置',
 
   // Original text: "Guest OS"
   guestOsLabel: '客户操作系统',
@@ -1316,8 +1316,8 @@ export default {
   // Original text: "PV args"
   pvArgsLabel: 'PV参数',
 
-  // Original text: "Xen tools status"
-  xenToolsStatus: 'Xen tools状态',
+  // Original text: "Nephora VM tools status"
+  xenToolsStatus: 'Nephora VM tools状态',
 
   // Original text: "{status}"
   xenToolsStatusValue: '{status}',

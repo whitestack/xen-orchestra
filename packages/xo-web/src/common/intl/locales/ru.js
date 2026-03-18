@@ -3853,7 +3853,7 @@ export default {
   vmShareButton: undefined,
 
   // Original text: "Xen settings"
-  xenSettingsLabel: 'Конфигурация Xen',
+  xenSettingsLabel: 'Конфигурация Nephora',
 
   // Original text: "Guest OS"
   guestOsLabel: 'Гостевая ОС',
