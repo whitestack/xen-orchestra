@@ -262,7 +262,7 @@ if (ghRelease) {
 if (build) {
   step('Build')
 
-  console.log(`Building NC Lite ${version} into ${dist}`)
+  console.log(`Building Nephora Conductor Lite ${version} into ${dist}`)
 
   $.verbose = true
   await within(async () => {
@@ -420,12 +420,12 @@ if (ghRelease) {
 if (deploy) {
   step('Deploy')
 
-  console.log(`Deploying NC Lite from ${dist} to ${DEPLOY_SERVER}`)
+  console.log(`Deploying Nephora Conductor Lite from ${dist} to ${DEPLOY_SERVER}`)
 
   await $`rsync -r --delete ${dist}/ ${username}@${DEPLOY_SERVER}:xo-lite`
 
   console.log(`
-  NC Lite files sent to server
+  Nephora Conductor Lite files sent to server
 
   → Connect to the server using:
   \tssh ${username}@${DEPLOY_SERVER}

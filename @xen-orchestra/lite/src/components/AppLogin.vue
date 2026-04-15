@@ -1,8 +1,8 @@
 <template>
   <div class="app-login form-container">
     <div class="card">
-      <img alt="NC Lite" src="../assets/logo-title.svg" />
-      <h2>NC Lite</h2><br />
+      <img alt="Nephora Conductor Lite" src="../assets/logo-title.svg" />
+      <h2>Nephora Conductor Lite</h2><br />
       <PoolOverrideWarning />
       <p v-if="isHostIsSlaveErr(error)" class="error">
         <VtsIcon name="fa:exclamation-circle" size="medium" />

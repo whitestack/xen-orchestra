@@ -10,7 +10,7 @@ export default class MigrateVm {
   #createWarmBackup(sourceVmId, srId, jobId) {
     const app = this._app
     const config = {
-      snapshotNameLabelTpl: '[NC warm migration {job.name}] {vm.name_label}',
+      snapshotNameLabelTpl: '[Nephora Conductor warm migration {job.name}] {vm.name_label}',
     }
     const job = {
       type: 'backup',

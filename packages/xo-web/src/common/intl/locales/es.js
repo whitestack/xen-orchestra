@@ -3224,7 +3224,7 @@ export default {
   proSupportIncluded: 'Soporte Pro incluído',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'Entra en tu cuenta NC',
+  xoAccount: 'Entra en tu cuenta Nephora Conductor',
 
   // Original text: "Report a problem"
   openTicket: 'Reportar un problema',
@@ -3357,7 +3357,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor desde código fuente',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: '¡Estás utilizando NC a partir del código fuente! Estupendo para un uso personal/sin ánimo de lucro',
+  disclaimerText1: '¡Estás utilizando Nephora Conductor a partir del código fuente! Estupendo para un uso personal/sin ánimo de lucro',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: 'Si eres una empresa, es mejor utilizarlo con nuestro appliance con soporte Pro incluído',

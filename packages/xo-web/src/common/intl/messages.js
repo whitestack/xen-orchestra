@@ -245,7 +245,7 @@ const messages = {
   settingsCloudConfigsPage: 'Cloud configs',
   settingsIpsPage: 'IPs',
   aboutPage: 'About',
-  aboutXoaPlan: 'About NC {xoaPlan}',
+  aboutXoaPlan: 'About Nephora Conductor {xoaPlan}',
   newMenu: 'New',
   taskMenu: 'Tasks',
   taskPage: 'Tasks',
@@ -268,9 +268,9 @@ const messages = {
   continuousReplication: 'Continuous Replication',
   backupType: 'Backup type',
   poolMetadata: 'Pool metadata',
-  xoConfig: 'NC config',
+  xoConfig: 'Nephora Conductor config',
   backupVms: 'VM Backup & Replication',
-  backupMetadata: 'NC config & Pool metadata Backup',
+  backupMetadata: 'Nephora Conductor config & Pool metadata Backup',
   backupModeSourceRemoteRequired: 'Backup mode and source remote are required',
   mirrorBackup: 'Mirror backup',
   mirrorBackupVms: 'VM Mirror Backup',
@@ -289,9 +289,9 @@ const messages = {
   xoaCheck: 'NCA check',
   closeTunnel: 'Close tunnel',
   createSupportTicket: 'Create a support ticket',
-  restartXoServer: 'Restart NC Server',
+  restartXoServer: 'Restart Nephora Conductor Server',
   restartXoServerConfirm:
-    'Restarting NC Server will interrupt any backup job or NC task that is currently running. Nephora Conductor will also be unavailable for a few seconds. Are you sure you want to restart NC Server?',
+    'Restarting Nephora Conductor Server will interrupt any backup job or Nephora Conductor task that is currently running. Nephora Conductor will also be unavailable for a few seconds. Are you sure you want to restart Nephora Conductor Server?',
   openTunnel: 'Open tunnel',
   supportCommunity: 'The NCA check and the support tunnel are available in NCA.',
   supportTunnel: 'Support tunnel',
@@ -643,7 +643,7 @@ const messages = {
   customTag: 'Custom tag',
   editJobNotFound: "The job you're trying to edit wasn't found",
   preferNbd: 'Use NBD to transfer disk if available',
-  preferNbdInformation: 'A network accessible by NC or the proxy must have NBD enabled.',
+  preferNbdInformation: 'A network accessible by Nephora Conductor or the proxy must have NBD enabled.',
   nbdConcurrency: 'Number of NBD connection per disk',
   cbtDestroySnapshotData: 'Purge snapshot data when using CBT.',
   cbtDestroySnapshotDataInformation:
@@ -752,7 +752,7 @@ const messages = {
   remoteEncryptionMustUseVhd: 'Delta backup must use VHD saved as blocks',
   remoteEncryptionKey: 'Encrypt all new data sent to this remote',
   remoteEncryptionKeyStorageLocation:
-    "You won't be able to get your data back if you lose the encryption key. The encryption key is saved in the NC config backup, they should be secured correctly. Be careful, if you saved it on an encrypted remote, then you won't be able to access it without the remote encryption key.",
+    "You won't be able to get your data back if you lose the encryption key. The encryption key is saved in the Nephora Conductor config backup, they should be secured correctly. Be careful, if you saved it on an encrypted remote, then you won't be able to access it without the remote encryption key.",
   encryption: 'Encryption',
   remoteEncryptionLegacy:
     'A legacy encryption algorithm is used ({algorithm}), please create a new remote with the recommended algorithm {recommendedAlgorithm}',
@@ -817,7 +817,7 @@ const messages = {
   syncLdapGroups: 'Synchronize LDAP groups',
   ldapPluginNotConfigured: 'Install and configure the auth-ldap plugin first',
   syncLdapGroupsWarning:
-    'Are you sure you want to synchronize LDAP groups with NC? This may delete NC groups and their ACLs.',
+    'Are you sure you want to synchronize LDAP groups with Nephora Conductor? This may delete Nephora Conductor groups and their ACLs.',
   createGroupButton: 'Create',
   deleteGroup: 'Delete group',
   deleteGroupConfirm: 'Are you sure you want to delete this group?',
@@ -1041,7 +1041,7 @@ const messages = {
   networkAutomaticTooltip: 'Network(s) selected by default for new VMs',
   noNbdConnection: 'No NBD Connection',
   nbdConnection: 'NBD Connection',
-  insecureNbdConnection: 'Insecure NBD Connection (not allowed through NC)',
+  insecureNbdConnection: 'Insecure NBD Connection (not allowed through Nephora Conductor)',
   // ----- Pool patches tab -----
   multiHostPoolUpdate: "Rolling pool update can only work when there's multiple hosts in a pool with a shared storage",
   nVmsRunningOnLocalStorage:
@@ -1089,7 +1089,7 @@ const messages = {
   disableHostLabel: 'Disable',
   restartHostAgent: 'Restart toolstack',
   smartRebootBypassCurrentVmCheck:
-    'As the NCA is hosted on the host that is scheduled for a reboot, it will also be restarted. Consequently, NC won\'t be able to resume VMs, and VMs with the "Protect from accidental shutdown" option enabled will not have this option reactivated automatically.',
+    'As the NCA is hosted on the host that is scheduled for a reboot, it will also be restarted. Consequently, Nephora Conductor won\'t be able to resume VMs, and VMs with the "Protect from accidental shutdown" option enabled will not have this option reactivated automatically.',
   smartRebootHostLabel: 'Smart reboot',
   smartRebootHostTooltip: 'Suspend resident VMs, reboot host and resume VMs automatically',
   forceRebootHostLabel: 'Force reboot',
@@ -1949,7 +1949,7 @@ const messages = {
 
   // ---- Tasks ---
   poolTasks: 'Pool tasks',
-  xoTasks: 'NC tasks',
+  xoTasks: 'Nephora Conductor tasks',
   cancelTask: 'Cancel',
   destroyTask: 'Destroy',
   cancelTasks: 'Cancel selected tasks',
@@ -2197,7 +2197,7 @@ const messages = {
     'This LUN has been previously used as storage by a Nephora Compute Engine host. All data will be lost if you choose to continue with the SR creation.',
   alreadyRegisteredModal: 'Replace current registration?',
   alreadyRegisteredModalText:
-    'Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?',
+    'Your Nephora Conductor appliance is already registered to {email}, do you want to forget and replace this registration ?',
   trialReadyModal: 'Ready for trial?',
   trialReadyModalText:
     'During the trial period, NCA need to have a working internet connection. This limitation does not apply for our paid plans!',
@@ -2343,7 +2343,7 @@ const messages = {
   documentation: 'Documentation',
   documentationText: 'Read our official doc',
   proSupportIncluded: 'Pro support included',
-  xoAccount: 'Access your NC Account',
+  xoAccount: 'Access your Nephora Conductor Account',
   openTicket: 'Report a problem',
   openTicketText: 'Problem? Open a ticket!',
   xoUpToDate: 'Your Nephora Conductor is up to date',
@@ -2404,7 +2404,7 @@ const messages = {
 
   // ----- OS Disclaimer -----
   disclaimerTitle: 'Nephora Conductor from the sources',
-  disclaimerText1: "You are using NC from the sources! That's great for a personal/non-profit usage.",
+  disclaimerText1: "You are using Nephora Conductor from the sources! That's great for a personal/non-profit usage.",
   disclaimerText2: "If you are a company, it's better to use it with our appliance + pro support included:",
   disclaimerText3: 'This version is not bundled with any support nor updates. Use it with caution.',
   disclaimerText4: 'Why do I see this message?',
@@ -2606,10 +2606,10 @@ const messages = {
     'All the VDIs attached to a VM must either be on a shared SR or on the same host (local SR) for the VM to be able to start.',
 
   // ----- XO cloud config -----
-  backedUpXoConfigs: 'Backed up NC Configs',
-  manageXoConfigCloudBackup: 'Manage NC Config Cloud Backup',
-  selectXoConfig: 'Select NC config',
-  xoConfigCloudBackup: 'NC Config Cloud Backup',
+  backedUpXoConfigs: 'Backed up Nephora Conductor Configs',
+  manageXoConfigCloudBackup: 'Manage Nephora Conductor Config Cloud Backup',
+  selectXoConfig: 'Select Nephora Conductor config',
+  xoConfigCloudBackup: 'Nephora Conductor Config Cloud Backup',
   xoConfigCloudBackupTips:
     'Your encrypted configuration is securely stored inside your Vates account and backed up once a day',
   xoCloudConfigEnterPassphrase: 'Passphrase is required to encrypt backups',
@@ -2981,7 +2981,7 @@ const messages = {
     'The upgrade will interrupt {nJobs, number} running backup job{nJobs, plural, one {} other {s}}. Do you want to continue?',
   proxiesNeedUpgrade: 'Some proxies need to be upgraded.',
   upgradeNeededForProxies: 'Some proxies need to be upgraded. Click here to get more information.',
-  xoProxyConcreteGuide: 'NC Proxy: a concrete guide',
+  xoProxyConcreteGuide: 'Nephora Conductor Proxy: a concrete guide',
   someProxiesHaveErrors:
     '{n, number} prox{n, plural, one {y} other {ies}} ha{n, plural, one {s} other {ve}} error{n, plural, one {} other {s}}',
 

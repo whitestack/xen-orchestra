@@ -144,7 +144,7 @@ export default {
   aboutPage: 'À propos',
 
   // Original text: "About NC {xoaPlan}"
-  aboutXoaPlan: 'À propos de NC {xoaPlan}',
+  aboutXoaPlan: 'À propos de Nephora Conductor {xoaPlan}',
 
   // Original text: "New"
   newMenu: 'Nouveau',
@@ -742,7 +742,7 @@ export default {
 
   // Original text: "Warning: local remotes will use limited NCA disk space. Only for advanced users."
   localRemoteWarningMessage:
-    "Attention : utiliser un emplacement local limite l'espace pour NC. Restreignez ceci aux utilisateurs avancés.",
+    "Attention : utiliser un emplacement local limite l'espace pour Nephora Conductor. Restreignez ceci aux utilisateurs avancés.",
 
   // Original text: "Warning: this feature works only with Nephora Compute Engine 6.5 or newer."
   backupVersionWarning: "Attention : cette fonctionnalité ne fonctionne qu'avec Nephora Compute Engine 6.5 et plus récent.",
@@ -3301,7 +3301,7 @@ export default {
   proSupportIncluded: 'Support professionel inclus',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'Accéder à votre compte NC',
+  xoAccount: 'Accéder à votre compte Nephora Conductor',
 
   // Original text: "Report a problem"
   openTicket: 'Signaler un problème',
@@ -3435,7 +3435,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor depuis les sources',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: "Vous utilisez NC depuis les sources. C'est parfait pour un usage personnel ou non lucratif.",
+  disclaimerText1: "Vous utilisez Nephora Conductor depuis les sources. C'est parfait pour un usage personnel ou non lucratif.",
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2:

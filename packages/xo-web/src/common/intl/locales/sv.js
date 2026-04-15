@@ -3001,7 +3001,7 @@ export default {
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'Din NC appliance är redan registrerad till {email}. Vill du ersätta denna regitreringen?',
+    'Din Nephora Conductor appliance är redan registrerad till {email}. Vill du ersätta denna regitreringen?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Redo för testperiod?',
@@ -3234,7 +3234,7 @@ export default {
   proSupportIncluded: 'Pro support inkluderad',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'Använd ditt NC-konto',
+  xoAccount: 'Använd ditt Nephora Conductor-konto',
 
   // Original text: "Report a problem"
   openTicket: 'Rapportera ett problem',
@@ -3365,10 +3365,10 @@ export default {
   disclaimerTitle: 'Nephora Conductor från källkod',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Du använder NC från källkod! Det är fantastiskt för personligt/ideelt användande.',
+  disclaimerText1: 'Du använder Nephora Conductor från källkod! Det är fantastiskt för personligt/ideelt användande.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
-  disclaimerText2: 'Om ni är ett företag är det bättre att använda vår NC Appliance + Pro support inkluderad:',
+  disclaimerText2: 'Om ni är ett företag är det bättre att använda vår Nephora Conductor Appliance + Pro support inkluderad:',
 
   // Original text: "This version is not bundled with any support nor updates. Use it with caution for critical tasks."
   disclaimerText3:

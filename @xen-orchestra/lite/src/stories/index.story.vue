@@ -51,7 +51,7 @@ const componentsWithProps = Object.fromEntries(
 const componentPaths = Object.keys(componentsWithProps)
 
 function pathToOptionLabel(path: string) {
-  return path.replace('../web-core/lib/components/', '[NC Web Core] ').replace('/src/components/', '[NC Lite] ')
+  return path.replace('../web-core/lib/components/', '[Nephora Conductor Web Core] ').replace('/src/components/', '[Nephora Conductor Lite] ')
 }
 
 const lines = ref<string[]>([])

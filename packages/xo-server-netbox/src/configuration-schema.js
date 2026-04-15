@@ -31,7 +31,7 @@ const configurationSchema = {
       type: 'boolean',
       title: 'Synchronize users',
       description:
-        'Synchronize NC users as Netbox tenants and bind VM creators. For this to work, you need to assign the `uuid` custom field to the type "Tenancy > tenant".',
+        'Synchronize Nephora Conductor users as Netbox tenants and bind VM creators. For this to work, you need to assign the `uuid` custom field to the type "Tenancy > tenant".',
     },
     syncInterval: {
       type: 'number',

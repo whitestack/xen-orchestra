@@ -68,7 +68,7 @@ export function getAllObjects({ filter, limit, ndjson = false }) {
     : this.getObjects({ filter, limit })
 }
 
-getAllObjects.description = 'Returns all NC objects'
+getAllObjects.description = 'Returns all Nephora Conductor objects'
 
 getAllObjects.params = {
   filter: { type: ['object', 'string'], optional: true },

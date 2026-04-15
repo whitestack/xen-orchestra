@@ -327,9 +327,9 @@
   "vms-status.running": "Operativo",
   "vms-status.suspended": "Sospeso",
   "vms-status.unknown": "Sconosciuto",
-  "xo-backups": "Backup NC",
+  "xo-backups": "Backup Nephora Conductor",
   "xo-lite-under-construction": "NCLite è in costruzione",
-  "xo-replications": "Repliche NC",
+  "xo-replications": "Repliche Nephora Conductor",
   "xoa-ssh-account": "Account NCA SSH",
   "you-are-currently-on": "Ti trovi in: {0}",
   "zstd": "zstd"

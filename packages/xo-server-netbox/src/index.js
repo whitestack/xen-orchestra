@@ -83,7 +83,7 @@ class Netbox {
 
   load() {
     const synchronize = ({ pools }) => this.#synchronize(pools)
-    synchronize.description = 'Synchronize NC pools with Netbox'
+    synchronize.description = 'Synchronize Nephora Conductor pools with Netbox'
     synchronize.params = {
       pools: { type: 'array', optional: true, items: { type: 'string' } },
     }
@@ -268,7 +268,7 @@ class Netbox {
           custom_fields: { uuid: xoUser.id },
           name,
           slug: slugify(name),
-          description: 'NC user',
+          description: 'Nephora Conductor user',
         }
       }
 
@@ -437,7 +437,7 @@ class Netbox {
     if (isEmpty(nbClusters)) {
       // Stop the synchronization if no pools could be found. Most likely, the
       // objects are not fetched or the pools have been disconnected.
-      log.warn('Pools not found in NC', { pools: xoPools })
+      log.warn('Pools not found in Nephora Conductor', { pools: xoPools })
       return
     }
 
@@ -528,7 +528,7 @@ class Netbox {
             name: tag,
             slug,
             color: '2598d9',
-            description: 'NC tag',
+            description: 'Nephora Conductor tag',
           })
           nbTags[nbTag.id] = nbTag
         }

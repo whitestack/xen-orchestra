@@ -1978,7 +1978,7 @@ export default {
   alreadyRegisteredModal: '替换当前的注册？',
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
-  alreadyRegisteredModalText: '你的NC设备已经注册给{email}，你确定要删除并替换这个注册信息？',
+  alreadyRegisteredModalText: '你的Nephora Conductor设备已经注册给{email}，你确定要删除并替换这个注册信息？',
 
   // Original text: "Ready for trial?"
   trialReadyModal: '准备试用？',
@@ -2107,7 +2107,7 @@ export default {
   proSupportIncluded: '包含专业支持',
 
   // Original text: "Acces your NC Account"
-  xoAccount: '进入你的NC账户',
+  xoAccount: '进入你的Nephora Conductor账户',
 
   // Original text: "Report a problem"
   openTicket: '报告一个问题',
@@ -2206,7 +2206,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor 源码版',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: '你在使用NC的源码版！这非常适合个人/非商业用途',
+  disclaimerText1: '你在使用Nephora Conductor的源码版！这非常适合个人/非商业用途',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: '如果你是一个公司，建议使用我们的设备结合专业的支持',

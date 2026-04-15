@@ -460,7 +460,7 @@ const addStorageEntry = () => {
 
   vmState.vdis.push({
     name_label: (vmState.name || 'disk') + '_' + generateRandomString(4),
-    name_description: 'Created by NC',
+    name_description: 'Created by Nephora Conductor',
     sr: defaultSr.value,
     size: 0,
   })
@@ -511,7 +511,7 @@ const filteredSrs = computed(() => {
 const getVmTemplateVdis = (template: XoVmTemplate) =>
   (template.template_info?.disks ?? []).map((disk, index) => ({
     name_label: `${vmState?.name || 'disk'}_${index}_${generateRandomString(4)}`,
-    name_description: 'Created by NC',
+    name_description: 'Created by Nephora Conductor',
     size: bytesToGiB(disk.size),
     sr: defaultSr.value,
   }))

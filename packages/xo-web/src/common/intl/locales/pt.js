@@ -2591,7 +2591,7 @@ export default {
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'O seu NC appliance já foi registrado com o e-mail {email}, você tem certeza que gostaria de substituir este registro?',
+    'O seu Nephora Conductor appliance já foi registrado com o e-mail {email}, você tem certeza que gostaria de substituir este registro?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Pronto para iniciar o teste (trial)?',
@@ -2769,7 +2769,7 @@ export default {
   proSupportIncluded: 'Suporte Pro incluído',
 
   // Original text: "Acces your NC Account"
-  xoAccount: 'Acesse sua conta NC',
+  xoAccount: 'Acesse sua conta Nephora Conductor',
 
   // Original text: "Report a problem"
   openTicket: 'Enviar um problema',
@@ -2902,7 +2902,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor versão Open-Source',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Você está usando NC Open-Source! Isso é ótimo para um uso pessoal / sem fins lucrativos.',
+  disclaimerText1: 'Você está usando Nephora Conductor Open-Source! Isso é ótimo para um uso pessoal / sem fins lucrativos.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: 'Se você é uma empresa, é melhor usá-lo com o nosso sistema appliance + suporte pro inclusos:',

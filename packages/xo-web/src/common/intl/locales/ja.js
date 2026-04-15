@@ -603,10 +603,10 @@ export default {
   settingsIpsPage: 'IPアドレス',
 
   // Original text: "About"
-  aboutPage: 'NCについて',
+  aboutPage: 'Nephora Conductorについて',
 
   // Original text: "About NC {xoaPlan}"
-  aboutXoaPlan: 'NC {xoaPlan} プランについて',
+  aboutXoaPlan: 'Nephora Conductor {xoaPlan} プランについて',
 
   // Original text: "New"
   newMenu: '新規作成',
@@ -795,10 +795,10 @@ export default {
   homeWelcome: 'Nephora Conductorへようこそ!',
 
   // Original text: "Add your NCE hosts or pools"
-  homeWelcomeText: 'NCEのホスト、プールの追加',
+  homeWelcomeText: 'Nephora ConductorEのホスト、プールの追加',
 
   // Original text: "Some NCE hosts have been registered but are not connected"
-  homeConnectServerText: '追加済みのNCEホストに接続出来ません',
+  homeConnectServerText: '追加済みのNephora ConductorEホストに接続出来ません',
 
   // Original text: "Want some help?"
   homeHelp: 'サポートが必要ですか？',
@@ -5623,7 +5623,7 @@ export default {
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?',
+    'Your Nephora Conductor appliance is already registered to {email}, do you want to forget and replace this registration ?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Ready for trial?',
@@ -5976,7 +5976,7 @@ export default {
   proSupportIncluded: 'Pro support included',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'Access your NC Account',
+  xoAccount: 'Access your Nephora Conductor Account',
 
   // Original text: "Report a problem"
   openTicket: 'Report a problem',

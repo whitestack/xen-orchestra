@@ -1430,7 +1430,7 @@ export default class Xapi extends XapiBase {
     }
     const vdi = await this._getOrWaitObject(
       await this.VDI_create({
-        name_label: 'NC CloudConfigDrive',
+        name_label: 'Nephora Conductor CloudConfigDrive',
         SR: sr.$ref,
         virtual_size: buffer.length,
       })

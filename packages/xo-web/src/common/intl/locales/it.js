@@ -369,7 +369,7 @@ export default {
   aboutPage: 'Informazioni',
 
   // Original text: 'About NC {xoaPlan}'
-  aboutXoaPlan: 'Informazioni su NC {xoaPlan}',
+  aboutXoaPlan: 'Informazioni su Nephora Conductor {xoaPlan}',
 
   // Original text: 'New'
   newMenu: 'Nuovo',
@@ -444,7 +444,7 @@ export default {
   poolMetadata: 'Metadati del pool',
 
   // Original text: 'NC config'
-  xoConfig: 'NC config',
+  xoConfig: 'Nephora Conductor config',
 
   // Original text: 'Backup VMs'
   backupVms: 'VM di backup',
@@ -3895,7 +3895,7 @@ export default {
   poolMetadataRetention: 'Ritenzione del pool',
 
   // Original text: 'NC retention'
-  xoMetadataRetention: 'Ritenzione NC',
+  xoMetadataRetention: 'Ritenzione Nephora Conductor',
 
   // Original text: 'Get remote'
   getRemote: 'Ottieni remoto',
@@ -4413,7 +4413,7 @@ export default {
 
   // Original text: 'Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?'
   alreadyRegisteredModalText:
-    "L'appliance NC è già registrata su {email}, vuoi dimenticare e sostituire questa registrazione?",
+    "L'appliance Nephora Conductor è già registrata su {email}, vuoi dimenticare e sostituire questa registrazione?",
 
   // Original text: 'Ready for trial?'
   trialReadyModal: 'Pronto per il processo?',
@@ -4734,7 +4734,7 @@ export default {
   proSupportIncluded: 'Supporto professionale incluso',
 
   // Original text: 'Access your NC Account'
-  xoAccount: 'Accedi al tuo NC Account',
+  xoAccount: 'Accedi al tuo Nephora Conductor Account',
 
   // Original text: 'Report a problem'
   openTicket: 'Segnala un problema',
@@ -4888,7 +4888,7 @@ export default {
   disclaimerTitle: 'Stai usando NC dai sorgenti!',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Stai usando NC dai sorgenti! È fantastico per un uso personale/non lucrativo.',
+  disclaimerText1: 'Stai usando Nephora Conductor dai sorgenti! È fantastico per un uso personale/non lucrativo.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: "Se sei un'azienda, è meglio utilizzarlo con il nostro supporto appliance + pro incluso:",

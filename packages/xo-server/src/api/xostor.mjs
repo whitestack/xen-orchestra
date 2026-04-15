@@ -263,7 +263,7 @@ export const create = defer(async function (
 create.description = 'Create a NDS storage'
 create.permission = 'admin'
 create.params = {
-  description: { type: 'string', optional: true, default: 'From NC-server' },
+  description: { type: 'string', optional: true, default: 'From Nephora Conductor-server' },
   disksByHost: { type: 'object' },
   force: { type: 'boolean', optional: true, default: false },
   ignoreFileSystems: { type: 'boolean', optional: true, default: false },

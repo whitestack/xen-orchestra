@@ -18,7 +18,7 @@ function constructPayload(format, data, type) {
         '@context': 'https://schema.org/extensions',
         themeColor: '6B63BF',
         summary: 'New notification from the Nephora-Conductor webhook plugin',
-        sections: [{ title: `NC ${type.toUpperCase()} notification`, facts }],
+        sections: [{ title: `Nephora Conductor ${type.toUpperCase()} notification`, facts }],
       })
     }
     default:
@@ -140,7 +140,7 @@ class XoServerHooks {
 }
 
 export const configurationSchema = ({ xo: { apiMethods } }) => ({
-  description: 'Bind NC API calls to HTTP requests.',
+  description: 'Bind Nephora Conductor API calls to HTTP requests.',
   type: 'object',
   properties: {
     hooks: {

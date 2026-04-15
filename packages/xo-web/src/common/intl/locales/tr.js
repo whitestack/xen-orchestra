@@ -3800,7 +3800,7 @@ export default {
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
   alreadyRegisteredModalText:
-    'NC kurulumunuz zaten {email} adresine kayıtlı, Bunu unutmak ve değiştirmek istiyor musunuz?',
+    'Nephora Conductor kurulumunuz zaten {email} adresine kayıtlı, Bunu unutmak ve değiştirmek istiyor musunuz?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Deneme için hazır mısınız?',
@@ -4051,7 +4051,7 @@ export default {
   proSupportIncluded: 'Profesyonel destek dahildir',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'NC hesabınıza erişin',
+  xoAccount: 'Nephora Conductor hesabınıza erişin',
 
   // Original text: "Report a problem"
   openTicket: 'Bir problemi raporlayın',
@@ -4198,7 +4198,7 @@ export default {
   disclaimerTitle: 'Kaynak koddan Nephora Conductor',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: "NC'yu kaynak koddan kullanıyorsunuz! Kişisel/kar amacı gütmeyen kullanım için mükemmeldir.",
+  disclaimerText1: "Nephora Conductor'yu kaynak koddan kullanıyorsunuz! Kişisel/kar amacı gütmeyen kullanım için mükemmeldir.",
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: 'Bir şirket iseniz, bizim hazır uygulamamızı kullanmanız daha iyidir + pro destek dahil:',

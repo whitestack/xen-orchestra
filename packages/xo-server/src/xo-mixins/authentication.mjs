@@ -149,7 +149,7 @@ export default class {
     const task = await tasks.create(
       {
         type: 'xo:authentication:authenticateUser',
-        name: 'NC user authentication',
+        name: 'Nephora Conductor user authentication',
         credentials: Obfuscate.replace(credentials, '* obfuscated *'),
         userData,
       },

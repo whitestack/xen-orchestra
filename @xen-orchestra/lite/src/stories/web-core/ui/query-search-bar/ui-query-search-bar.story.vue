@@ -100,7 +100,7 @@ const data = [
   },
   {
     id: '5dac984b-d89a-6316-2c0c-fe1299a26f77',
-    name_label: 'YA NCS test',
+    name_label: 'YA NCA test',
     power_state: 'Running',
   },
   {

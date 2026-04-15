@@ -32,7 +32,7 @@ function help() {
   return `Usage:
 
   $name --register [--expiresIn duration] <NC-Server URL> <username> [<password>]
-    Registers the NC instance to use.
+    Registers the Nephora Conductor instance to use.
 
     --expiresIn duration
       Can be used to change the validity duration of the

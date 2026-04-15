@@ -185,7 +185,7 @@ export default {
   aboutPage: 'درباره',
 
   // Original text: 'About NC {xoaPlan}'
-  aboutXoaPlan: 'درباره NC {xoaPlan}',
+  aboutXoaPlan: 'درباره Nephora Conductor {xoaPlan}',
 
   // Original text: 'New'
   newMenu: 'جدید',
@@ -4148,7 +4148,7 @@ export default {
   proSupportIncluded: 'شامل پشتیبانی حرفه ای',
 
   // Original text: 'Access your NC Account'
-  xoAccount: 'به حساب NC خود دسترسی پیدا کنید',
+  xoAccount: 'به حساب Nephora Conductor خود دسترسی پیدا کنید',
 
   // Original text: 'Report a problem'
   openTicket: 'گزارش یک مشکل',
@@ -4295,7 +4295,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor از منابع',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'شما از NC از منابع استفاده می کنید! این برای استفاده شخصی/غیرانتفاعی عالی است.',
+  disclaimerText1: 'شما از Nephora Conductor از منابع استفاده می کنید! این برای استفاده شخصی/غیرانتفاعی عالی است.',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2:

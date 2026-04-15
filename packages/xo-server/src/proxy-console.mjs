@@ -130,7 +130,7 @@ function proxyConsoleLegacy(ws, url, sessionId) {
 
       const onSend = error => {
         if (error) {
-          log.debug('error sending to the NC client:', { error })
+          log.debug('error sending to the Nephora Conductor client:', { error })
         }
       }
 
@@ -157,7 +157,7 @@ function proxyConsoleLegacy(ws, url, sessionId) {
 
       ws.on('error', error => {
         closed = true
-        log.debug('error from the NC client:', { error })
+        log.debug('error from the Nephora Conductor client:', { error })
 
         socket.end()
       })
@@ -169,7 +169,7 @@ function proxyConsoleLegacy(ws, url, sessionId) {
         .on('close', () => {
           if (!closed) {
             closed = true
-            log.debug('disconnected from the NC client')
+            log.debug('disconnected from the Nephora Conductor client')
           }
 
           socket.end()

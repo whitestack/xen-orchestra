@@ -97,7 +97,7 @@ disableMergeWorker = false
 #
 # https://en.wikipedia.org/wiki/File-system_permissions#Numeric_notation
 dirMode = 0o700
-snapshotNameLabelTpl = '[NC Backup {job.name}] {vm.name_label}'
+snapshotNameLabelTpl = '[Nephora Conductor Backup {job.name}] {vm.name_label}'
 
 # Delay for which backups listing on a remote is cached
 listingDebounce = '1 min'

@@ -5536,7 +5536,7 @@ export default {
   alreadyRegisteredModal: 'Заменить текущую регистрацию?',
 
   // Original text: "Your NC appliance is already registered to {email}, do you want to forget and replace this registration ?"
-  alreadyRegisteredModalText: 'Ваш NC уже зарегистрирован в {email}, вы хотите сменить регистрацию?',
+  alreadyRegisteredModalText: 'Ваш Nephora Conductor уже зарегистрирован в {email}, вы хотите сменить регистрацию?',
 
   // Original text: "Ready for trial?"
   trialReadyModal: 'Готовы к пробному периоду?',
@@ -5885,7 +5885,7 @@ export default {
   proSupportIncluded: 'Профессиональная поддержка включена',
 
   // Original text: "Access your NC Account"
-  xoAccount: 'Доступ к вашей учетной записи NC',
+  xoAccount: 'Доступ к вашей учетной записи Nephora Conductor',
 
   // Original text: "Report a problem"
   openTicket: 'Сообщить о проблеме',
@@ -6044,7 +6044,7 @@ export default {
   disclaimerTitle: 'Nephora Conductor из исходного кода',
 
   // Original text: "You are using NC from the sources! That's great for a personal/non-profit usage."
-  disclaimerText1: 'Вы используете NC из исходного кода! Отлично подходит для личного/некоммерческого использования',
+  disclaimerText1: 'Вы используете Nephora Conductor из исходного кода! Отлично подходит для личного/некоммерческого использования',
 
   // Original text: "If you are a company, it's better to use it with our appliance + pro support included:"
   disclaimerText2: undefined,
