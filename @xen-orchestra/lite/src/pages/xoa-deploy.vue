@@ -71,7 +71,7 @@
             </VtsInputWrapper>
             <VtsInputWrapper
               :label="t('deploy-xoa-custom-ntp-servers')"
-              learn-more-url="https://docs.xen-orchestra.com/xoa#setting-a-custom-ntp-server"
+              learn-more-url="https://whitestack.com/nephora-virtualization/nca#ntp-server"
             >
               <FormInput v-model="ntp" placeholder="xxx.xxx.xxx.xxx" />
             </VtsInputWrapper>
@@ -91,13 +91,13 @@
           <div class="row">
             <VtsInputWrapper
               :label="t('xoa-ip')"
-              learn-more-url="https://docs.xen-orchestra.com/xoa#network-configuration"
+              learn-more-url="https://whitestack.com/nephora-virtualization/nca#network-configuration"
             >
               <FormInput v-model="ip" :disabled="!requireIpConf" placeholder="xxx.xxx.xxx.xxx" />
             </VtsInputWrapper>
             <VtsInputWrapper
               :label="t('netmask')"
-              learn-more-url="https://docs.xen-orchestra.com/xoa#network-configuration"
+              learn-more-url="https://whitestack.com/nephora-virtualization/nca#network-configuration"
             >
               <FormInput v-model="netmask" :disabled="!requireIpConf" placeholder="255.255.255.0" />
             </VtsInputWrapper>
@@ -105,13 +105,13 @@
           <div class="row">
             <VtsInputWrapper
               :label="t('dns')"
-              learn-more-url="https://docs.xen-orchestra.com/xoa#network-configuration"
+              learn-more-url="https://whitestack.com/nephora-virtualization/nca#network-configuration"
             >
               <FormInput v-model="dns" :disabled="!requireIpConf" placeholder="8.8.8.8" />
             </VtsInputWrapper>
             <VtsInputWrapper
               :label="t('gateway')"
-              learn-more-url="https://docs.xen-orchestra.com/xoa#network-configuration"
+              learn-more-url="https://whitestack.com/nephora-virtualization/nca#network-configuration"
             >
               <FormInput v-model="gateway" :disabled="!requireIpConf" placeholder="xxx.xxx.xxx.xxx" />
             </VtsInputWrapper>
@@ -124,7 +124,7 @@
           </div>
           <div class="row">
             <VtsInputWrapper :label="t('xoa-download-url')">
-              <FormInput v-model="xoaDownloadUrl" required placeholder="http://download-xoa.whitestack.com" />
+              <FormInput v-model="xoaDownloadUrl" required placeholder="http://download-nca.whitestack.com" />
             </VtsInputWrapper>
           </div>
           <div class="row">
@@ -148,7 +148,7 @@
           </div>
         </FormSection>
 
-        <FormSection :label="t('xoa-admin-account')">
+        <!--FormSection :label="t('xoa-admin-account')">
           <div class="row">
             <VtsInputWrapper
               :label="t('admin-login')"
@@ -171,7 +171,7 @@
               <FormInput v-model="xoaPwdConfirm" type="password" required :placeholder="t('password')" />
             </VtsInputWrapper>
           </div>
-        </FormSection>
+        </FormSection-->
 
         <FormSection :label="t('xoa-ssh-account')">
           <div class="row">
@@ -179,7 +179,7 @@
           </div>
           <div class="row">
             <VtsInputWrapper :label="t('ssh-login')">
-              <FormInput value="xoa" placeholder="xoa" disabled />
+              <FormInput value="xoa" placeholder="nca" disabled />
             </VtsInputWrapper>
           </div>
           <div class="row">
@@ -394,7 +394,7 @@ async function deploy() {
       console.error('Missing NCA download credentials')
       return
     }
-    const [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://');
+    const [downloadUrlProtocol, downloadUrlDomain] = downloadUrl.split('://')
     downloadUrl = `${downloadUrlProtocol}://${xoaDownloadUser.value}:${xoaDownloadPass.value}@${downloadUrlDomain}`
   }
 
