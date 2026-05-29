@@ -4,14 +4,19 @@
     <UiTitle>{{ t('about') }}</UiTitle>
     <VtsColumns class="about-columns">
       <VtsQuickInfoColumn>
-        <div class="typo-h5">Xen Orchestra Lite</div>
+        <div class="typo-h5">Nephora Conductor Lite</div>
         <VtsQuickInfoColumn>
           <VtsQuickInfoRow :label="t('version')">
+            <template #value>
+              {{ WS_RELEASE }}
+            </template>
+          </VtsQuickInfoRow>
+          <!--VtsQuickInfoRow :label="t('version')">
             <template #value>
               {{ `v${xoLiteVersion}` }}
               <code v-if="xoLiteGitHead">{{ `(${xoLiteGitHead.slice(0, 5)})` }}</code>
             </template>
-          </VtsQuickInfoRow>
+          </VtsQuickInfoRow-->
           <!-- #TODO we dont have ofical documentation for xo-lite -->
           <!--
  <VtsQuickInfoRow :label="t('documentation')">
@@ -24,14 +29,14 @@
 -->
         </VtsQuickInfoColumn>
       </VtsQuickInfoColumn>
-      <VtsQuickInfoColumn>
+      <!--VtsQuickInfoColumn>
         <div class="typo-h5">XCP-ng</div>
         <VtsQuickInfoColumn>
           <VtsQuickInfoRow :label="t('version')">
             <template #value>{{ `v${xcpVersion}` }}</template>
           </VtsQuickInfoRow>
         </VtsQuickInfoColumn>
-      </VtsQuickInfoColumn>
+      </VtsQuickInfoColumn-->
     </VtsColumns>
     <UiTitle>{{ t('language') }}</UiTitle>
     <!-- for regular spacing using VtsQuickInfoRow even label template is not used for this -->
@@ -69,6 +74,7 @@ const { pool } = usePoolStore().subscribe()
 
 const { getByOpaqueRef: getHost } = useHostStore().subscribe()
 
+const WS_RELEASE = "hydron-1"
 const poolMaster = computed(() => (pool.value ? getHost(pool.value.master) : undefined))
 const xcpVersion = computed(() => poolMaster.value?.software_version.product_version)
 
