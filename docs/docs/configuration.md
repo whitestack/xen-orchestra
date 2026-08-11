@@ -17,7 +17,7 @@ user = 'nobody'
 group = 'nogroup'
 ```
 
-**Warning!** A non-privileged user requires the use of `sudo` to mount NFS shares. See [installation from the sources](installation.md#from-the-sources).
+**Warning!** A non-privileged user requires the use of `sudo` to mount NFS shares.
 
 ## HTTP listen address and port
 
@@ -55,13 +55,13 @@ redirectToHttps = true
 
 This should be written just before the `mount` option, inside the `http:` block.
 
-## Link to xo-web
+## Link to nc-web
 
-You shouldn't have to change this. It's the path where `xo-web` files are served by `xo-server`.
+You shouldn't have to change this. It's the path where `nc-web` files are served by `xo-server`.
 
 ```toml
 [http.mounts]
-'/' = '../xo-web/dist/'
+'/' = '../nc-web/dist/'
 ```
 
 ## Custom certificate authority
@@ -233,7 +233,7 @@ useForwardedHeaders = ['127.0.0.1']
 
 ### Apache
 
-As `xo-web` and `xo-server` communicate with _WebSockets_, you need to have the [`mod_proxy`](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html), [`mod_proxy_http`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_http.html), [`mod_proxy_wstunnel`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) and [`mod_rewrite`](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) modules enabled.
+As `nc-web` and `xo-server` communicate with _WebSockets_, you need to have the [`mod_proxy`](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html), [`mod_proxy_http`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_http.html), [`mod_proxy_wstunnel`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) and [`mod_rewrite`](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) modules enabled.
 
 Please use this configuration in this order or it will not work. Do not forget the trailing slashes:
 

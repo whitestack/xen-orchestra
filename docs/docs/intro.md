@@ -2,9 +2,7 @@
 slug: /
 ---
 
-# Nephora Conductor in a nutshell
-
-## Introduction
+# Introduction
 
 NC (Nephora Conductor) is a complete solution to visualize, manage, backup and delegate your NCE (or XenServer) infrastructure. **No agent** is required for it to work.
 

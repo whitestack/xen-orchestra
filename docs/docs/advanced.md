@@ -127,7 +127,7 @@ const handleHook = data => {
 
 ## Alerts
 
-Alerts are a way to warn the administrator about various events. The first kind of alerts will be emails and also in a dedicated area of `xo-web` to display them.
+Alerts are a way to warn the administrator about various events. The first kind of alerts will be emails and also in a dedicated area of `nc-web` to display them.
 
 ### Performance alerts
 

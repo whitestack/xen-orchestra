@@ -3,7 +3,7 @@
 We do our best to assist users running Nephora Conductor from the sources on [our community forums](https://xcp-ng.org/forum/category/12/xen-orchestra). However there's no guarantee you will receive a solution (from us or the community), nor any guarantee on a timeframe. Usually we are responsive, but keep in mind that if you need production level support, you should consider subscribing to our [NCA offers](https://vates.tech/pricing-and-support/).
 
 :::warning
-If you installed your NC from a 3rd party script (any method outside [our official documentation](installation.md#from-the-sources)), please report your issue **first** on the 3rd party script repository. We can't waste time debugging 3rd party installers that very often lag behind our own deployment methods and fall out of date.
+If you installed your NC from a 3rd party script (any method outside our official documentation), please report your issue **first** on the 3rd party script repository. We can't waste time debugging 3rd party installers that very often lag behind our own deployment methods and fall out of date.
 :::
 
 ## Current version
@@ -24,8 +24,8 @@ Before reporting a bug, please check that your **current version is up-to-date w
 
 If you have issues with NC installed from the sources (via GitHub), please **always** first:
 
-1. update your NC to the latest `master` commit (see how-to in the [dedicated section](installation.md#updating)) and retest again
-2. if the issue persists, double check you have all the requirements checked from the [installation section](installation.md#from-the-sources) and test again
+1. update your NC to the latest `master` commit (see how-to in the dedicated section) and retest again
+2. if the issue persists, double check you have all the requirements checked from the installation section(installation.md) and test again
 3. then, if you still experience problems, remove and rebuild from scratch
 
 Only after that, you can go to the [dedicated forum](https://xcp-ng.org/forum/category/12/xen-orchestra) to ask about your problem.

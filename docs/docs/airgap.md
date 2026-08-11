@@ -17,7 +17,7 @@ In this scenario, you will need a QA/pre-production NCE pool with Internet acces
 
 [Follow the standard procedure](installation) to deploy the NCA on your pool with Internet access.
 
-Make sure that your appliance is [properly registered](installation#registration) and [up-to-date](updater).
+Make sure that your appliance is properly registered and [up-to-date](updater).
 
 It's also good to take a quick look at [the NCA check](xoa#nca-check) to detect issues early.
 

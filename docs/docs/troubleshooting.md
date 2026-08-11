@@ -72,7 +72,7 @@ It will prompt you to set a new password. If you provide an email here that does
 
 ## Empty page after login
 
-This happens when your antivirus or firewall is blocking the websocket protocol. This is what we use to communicate between `xo-server` and `xo-web` (see the [architecture page](architecture.md)).
+This happens when your antivirus or firewall is blocking the websocket protocol. This is what we use to communicate between `xo-server` and `nc-web` (see the [architecture page](architecture.md)).
 
 The solution is to use **HTTPS**. When doing so, websockets will be encapsulated in the secured protocol, avoiding interception from your firewall or antivirus system.
 

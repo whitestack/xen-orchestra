@@ -12,7 +12,7 @@ Log in to your account and use the deploy form [available on this page](https://
 All the deploy code is within your browser, nothing is sent to our server!
 :::
 
-![](./assets/deploy_form.png)
+<!--![](./assets/deploy_form.png)-->
 
 ### First Login
 
@@ -27,6 +27,7 @@ Once you have started the VM, you can access the web UI by putting the IP you co
 - Default console/SSH credentials are not set, you need to set them [as described here](troubleshooting.md#set-or-recover-nca-vm-password).
   :::
 
+<!--
 ### Registration
 
 **The first thing** you need to do with your NCA is register. [Read the documentation on the page dedicated to the updater/register interface](updater.md#register).
@@ -81,7 +82,7 @@ Please consider using NCA before trying to play with the manual build, which can
 
 This installation has been validated against a fresh Debian 12 (Bookworm) x64 install. It should be nearly the same on other dpkg systems. For RPM based OS's, it should be close, as most of our dependencies come from NPM and not the OS itself.
 
-As you may have seen in other parts of the documentation, NC is composed of two parts: [xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/) and [xo-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
+As you may have seen in other parts of the documentation, NC is composed of two parts: [xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/) and [nc-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/nc-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
 
 ### Packages and Prerequisites
 
@@ -144,7 +145,7 @@ git clone -b master https://github.com/vatesfr/xen-orchestra
 ```
 
 :::tip
-`xo-server` and `xo-web` have been migrated to the [xen-orchestra](https://github.com/vatesfr/xen-orchestra) mono-repository - so you only need the single clone command above
+`xo-server` and `nc-web` have been migrated to the [xen-orchestra](https://github.com/vatesfr/xen-orchestra) mono-repository - so you only need the single clone command above
 :::
 
 ### Installing dependencies
@@ -400,3 +401,4 @@ You need to configure `sudo` to allow the user of your choice to run mount/umoun
 ```
 username ALL=(root)NOPASSWD: /bin/mount, /bin/umount, /bin/findmnt
 ```
+-->

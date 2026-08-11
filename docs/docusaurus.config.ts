@@ -74,7 +74,11 @@ const config: Config = {
       {
         docs: {
           routeBasePath: '/',
-          sidebarPath: './sidebars.ts'
+          sidebarPath: './sidebars.ts',
+          exclude: [
+            '**/support/**',
+            '**/project/**'
+          ]
         },
         blog: false,
         theme: {
@@ -88,16 +92,15 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/vates-xo-logo-smol-new-baseline.png',
     navbar: {
-      title: 'Nephora Conductor Documentation',
+      title: 'Nephora Conductor (NC)',
       logo: { alt: 'Nephora Conductor logo', src: 'img/logo.png', href: '/' },
       items: [
-        { href: 'https://customers.whitestack.com/nephora-conductor', label: 'Home', position: 'right' },
-        { href: '/', label: 'Documentation', position: 'right' },
+        { href: '/', label: 'Home', position: 'right' }
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} NCE Project, Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Nephora Conductor`,
     },
     prism: {
       theme: prismThemes.github,
