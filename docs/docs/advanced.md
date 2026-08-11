@@ -1,13 +1,13 @@
 # Advanced features
 
-This section is dedicated to all others Xen Orchestra "advanced features".
+This section is dedicated to all others Nephora Conductor "advanced features".
 
 ## Live Telemetry
 
 When you are working on your virtualized infrastructure, you might need a very detailed view on what's going on. From resource consumption analysis (CPU/RAM) to network traffic, but also storage, having a kind of very detailed dashboard per host can be really useful.
 
 :::tip
-This feature will be only available in XCP-ng+XOA. If you are a hardcore Citrix Hypervisor user, let us know if you want this.
+This feature will be only available in NCE+NCA. If you are a hardcore Citrix Hypervisor user, let us know if you want this.
 :::
 
 ### Enable Advanced Live Telemetry for a host
@@ -16,7 +16,7 @@ Go into the Advanced host view:
 
 ![](https://xen-orchestra.com/blog/content/images/2019/11/advancedenable.png)
 
-By clicking here, XOA will handle everything: installing netdata on the host, and configure a secured/encrypted streaming toward your XOA.
+By clicking here, NCA will handle everything: installing netdata on the host, and configure a secured/encrypted streaming toward your NCA.
 
 As soon it's installed, the button will now be replaced by a "Go to Advanced Live Telemetry". As soon you'll click on it, you'll be redirected to the netdata page of the host. If you have multiple host, you can access any of them directly from the top menu of the netdata UI.
 
@@ -27,7 +27,7 @@ IMPI info (power, temperatures, voltages, fans…):
 ![](https://xen-orchestra.com/blog/content/images/2019/11/ipmistats.png)
 
 :::tip
-This feature is only available in one-click in your XOA. However, all sources and packages to do it yourself are available!
+This feature is only available in one-click in your NCA. However, all sources and packages to do it yourself are available!
 :::
 
 Memory details:
@@ -42,9 +42,9 @@ Firewall:
 
 ### Disk Health Monitoring
 
-Xen Orchestra makes it easy to monitor disk health using a XAPI plugin for XCP-ng that leverages `smartctl`. You can check the status of your disks directly in the interface.
+Nephora Conductor makes it easy to monitor disk health using a XAPI plugin for NCE that leverages `smartctl`. You can check the status of your disks directly in the interface.
 
-- **Healthy Disks:** If all disks are in good condition, Xen Orchestra shows: **All disks are healthy ✅**.
+- **Healthy Disks:** If all disks are in good condition, Nephora Conductor shows: **All disks are healthy ✅**.
 - **Unhealthy Disks:** If any issues are detected, a warning icon appears, indicating how many disks are affected:
 
 ![](../static/img/disk-health-warning.png)
@@ -59,12 +59,12 @@ We need your feedback on this feature!
 
 The plugin "web-hooks" needs to be installed and loaded for this feature to work.
 
-You can trigger an HTTP POST request to a URL when a Xen Orchestra API method is called or when a backup job runs.
+You can trigger an HTTP POST request to a URL when a Nephora Conductor API method is called or when a backup job runs.
 
 - Go to Settings > Plugins > Web hooks
 - Add new hooks
 - For each hook, configure:
-  - Method: the XO API method that will trigger the HTTP request when called. For backup jobs, choose `backupNg.runJob`.
+  - Method: the NC API method that will trigger the HTTP request when called. For backup jobs, choose `backupNg.runJob`.
   - Type:
     - pre: the request will be sent when the method is called
     - post: the request will be sent after the method action is completed
@@ -73,7 +73,7 @@ You can trigger an HTTP POST request to a URL when a Xen Orchestra API method is
   - Wait for response: you can choose to wait for the web hook response before the method is actually called ("pre" hooks only). This can be useful if you need to automatically run some tasks before a certain method is called.
 - Save the plugin configuration
 
-From now on, a request will be sent to the corresponding URLs when a configured method is called by an XO client.
+From now on, a request will be sent to the corresponding URLs when a configured method is called by an NC client.
 
 ### Request content
 
@@ -152,7 +152,7 @@ Those alerts will be also stored and accessible in the web interface, and also l
 :construction_worker: This feature might be missing. We are investigating. :construction_worker:
 :::
 
-When your XOA detects new packages, you'll be notified by email.
+When your NCA detects new packages, you'll be notified by email.
 
 ### Backup alerts
 
@@ -250,9 +250,9 @@ When the power outage is over, all you need to do is:
 
 ## Terraform provider
 
-Terraform is a cloud/platform agnostic tool for building, changing, and versioning infrastructure. Terraform can manage existing and popular service providers as well as custom in-house solutions (like Xen Orchestra). It can manage resources through their entire lifecycle or even manage infrastructure it didn't initially create.
+Terraform is a cloud/platform agnostic tool for building, changing, and versioning infrastructure. Terraform can manage existing and popular service providers as well as custom in-house solutions (like Nephora Conductor). It can manage resources through their entire lifecycle or even manage infrastructure it didn't initially create.
 
-We sponsored a developer to build a [Xen Orchestra provider for Terraform](https://registry.terraform.io/providers/vatesfr/xenorchestra/latest), so you can use it as a central point for your whole virtualized infrastructure. The source code is [available on GitHub](https://github.com/vatesfr/terraform-provider-xenorchestra/), and contributions are welcome!
+We sponsored a developer to build a [Nephora Conductor provider for Terraform](https://registry.terraform.io/providers/vatesfr/xenorchestra/latest), so you can use it as a central point for your whole virtualized infrastructure. The source code is [available on GitHub](https://github.com/vatesfr/terraform-provider-xenorchestra/), and contributions are welcome!
 
 :::tip
 Don't miss [our blog post series about it](https://xen-orchestra.com/blog/author/ddelnano/), written by Dom Del Nano, the original developer of this provider!
@@ -262,7 +262,7 @@ It works with few steps:
 
 1. Install terraform
 2. Create a VM template for the new VM
-3. Provision the VM with terraform and its XO provider
+3. Provision the VM with terraform and its NC provider
 
 From there, you can even manage your existing resources with Terraform!
 
@@ -279,14 +279,14 @@ Synchronize your pools, VMs, network interfaces and IP addresses with your [Netb
 - `< 4.4`
 
 :::tip
-For safety, XO will not synchronize your pools if it detects a Netbox version that is not supported. If you wish to change that behavior, edit you `xo-server` configuration like so:
+For safety, NC will not synchronize your pools if it detects a Netbox version that is not supported. If you wish to change that behavior, edit you `xo-server` configuration like so:
 
 ```toml
 [netbox]
 checkNetboxVersion = false
 ```
 
-Please be aware that by doing this, a Netbox update might make XO delete some of your data in Netbox.
+Please be aware that by doing this, a Netbox update might make NC delete some of your data in Netbox.
 :::
 
 ### Netbox side
@@ -297,19 +297,19 @@ Please be aware that by doing this, a Netbox update might make XO delete some of
   - Manually create as many prefixes as needed for your infrastructure's IP addresses
 
 :::warning
-XO will try to find the right prefix for each IP address. If it can't find a prefix that fits, the IP address won't be synchronized.
+NC will try to find the right prefix for each IP address. If it can't find a prefix that fits, the IP address won't be synchronized.
 :::
 
 - Create permissions:
   - Go to Admin > Permissions > Add and create 2 permissions:
-    - "XO read" with action "Can view" enabled and object types:
+    - "NC read" with action "Can view" enabled and object types:
       - Extras > custom field
       - IPAM > prefix
-    - "XO read-write" with all 4 actions enabled and object types:
+    - "NC read-write" with all 4 actions enabled and object types:
       - DCIM > platform
       - Extras > tag
       - IPAM > IP address
-      - Tenancy > tenant (if you want to synchronize XO users with Netbox tenants)
+      - Tenancy > tenant (if you want to synchronize NC users with Netbox tenants)
       - Virtualization > cluster
       - Virtualization > cluster type
       - Virtualization > virtual machine
@@ -320,7 +320,7 @@ XO will try to find the right prefix for each IP address. If it can't find a pre
 - Create a Netbox user:
   - Go to Admin > Users > Add
   - Choose a username and a password
-  - Scroll down to Permissions and select the 2 permissions "XO read" and "XO read-write"
+  - Scroll down to Permissions and select the 2 permissions "NC read" and "NC read-write"
 - Create an API token:
   - Got to Admin > API Tokens > Add
   - Select the user you just created
@@ -334,7 +334,7 @@ For testing purposes, you can create an API token bound to a Netbox superuser ac
 - Create a UUID custom field:
   - Go to Customization > Custom Fields > Add
   - Select object types:
-    - Tenancy > tenant (if you want to synchronize XO users with Netbox tenants)
+    - Tenancy > tenant (if you want to synchronize NC users with Netbox tenants)
     - Virtualization > cluster
     - Virtualization > virtual machine
     - Virtualization > interface
@@ -346,14 +346,14 @@ For testing purposes, you can create an API token bound to a Netbox superuser ac
 In Netbox 2.x, custom fields can be created from the Admin panel > Custom fields > Add custom field.
 :::
 
-### In Xen Orchestra
+### In Nephora Conductor
 
-- Go to Xen Orchestra > Settings > Plugins > Netbox and fill out the configuration:
+- Go to Nephora Conductor > Settings > Plugins > Netbox and fill out the configuration:
   - Endpoint: the URL of your Netbox instance (e.g.: `https://netbox.company.net`)
   - Unauthorized certificate: only for HTTPS, enable this option if your Netbox instance uses a self-signed SSL certificate
   - Token: the token you generated earlier
   - Pools: the pools you wish to automatically synchronize with Netbox
-  - Synchronize users: enable this if you wish to synchronize XO users with Netbox tenants. Tenants will be assigned to the VMs the XO user _created_ within XO. Important: if you want to enable this feature, you also need to assign the custom field "uuid" that you created in the previous step to the type "Tenancy > tenant".
+  - Synchronize users: enable this if you wish to synchronize NC users with Netbox tenants. Tenants will be assigned to the VMs the NC user _created_ within NC. Important: if you want to enable this feature, you also need to assign the custom field "uuid" that you created in the previous step to the type "Tenancy > tenant".
   - Interval: the time interval (in hours) between 2 auto-synchronizations. Leave empty if you don't want to synchronize automatically.
 - Load the plugin (button next to the plugin's name)
 - Manual synchronization: if you correctly configured and loaded the plugin, a "Synchronize with Netbox" button will appear in every pool's Advanced tab, which allows you to manually synchronize it with Netbox
@@ -366,7 +366,7 @@ If you get a `403 Forbidden` error when testing the plugin, make sure you correc
 
 ### What are recipes?
 
-In Xen Orchestra, recipes are ready-to-use automation templates that make it easy to deploy complex infrastructures. You don’t need to configure each virtual machine manually. 
+In Nephora Conductor, recipes are ready-to-use automation templates that make it easy to deploy complex infrastructures. You don’t need to configure each virtual machine manually. 
 
 With just a few clicks, you can launch a complete multi-VM environment, where all nodes are automatically set up and connected.
 

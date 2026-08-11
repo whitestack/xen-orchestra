@@ -1,21 +1,21 @@
 # Troubleshooting
 
-This page recaps the actions you can perform if you have any problems with your XOA.
+This page recaps the actions you can perform if you have any problems with your NCA.
 
 :::warning
-If you have issues with XO installed from GitHub (not XOA), [please go to the dedicated section first!](community.md).
+If you have issues with NC installed from GitHub (not NCA), [please go to the dedicated section first!](community.md).
 :::
 
 ## Recommendation
 
-If you think you have a problem with your XOA, start by running the `xoa check` command in your terminal:
+If you think you have a problem with your NCA, start by running the `xoa check` command in your terminal:
 
 ```console
 $ xoa check
 ✔ Node version
 ✔ Disk space for /var
 ✔ Disk space for /
-✔ XOA version
+✔ NCA version
 ✔ xo-server config syntax
 ✔ Appliance registration
 ✔ Internet connectivity
@@ -41,34 +41,34 @@ Open a ticket for your issue in your [personal space](https://xen-orchestra.com/
 
 > Auto deploy failed. - No SR specified and Pool default SR is null
 
-It means you don't have a default SR set on the pool you are importing XOA on. To set a default SR, you must first find the SR UUID you want, with `xe sr-list`. When you have the UUID, you can set the default SR with: `xe pool-param-set uuid=<pool-uuid> default-SR=<sr-uuid>`. For the pool UUID, just press tab after `xe pool-param-set uuid=` and it will autofill your pool UUID. When this is done, re-enter the deploy script command and it will work!
+It means you don't have a default SR set on the pool you are importing NCA on. To set a default SR, you must first find the SR UUID you want, with `xe sr-list`. When you have the UUID, you can set the default SR with: `xe pool-param-set uuid=<pool-uuid> default-SR=<sr-uuid>`. For the pool UUID, just press tab after `xe pool-param-set uuid=` and it will autofill your pool UUID. When this is done, re-enter the deploy script command and it will work!
 
 ## Unreachable after boot
 
-XOA uses HVM mode. If your physical host doesn't support virtualization extensions, XOA won't work. To check if your XCP-ng/XenServer supports hardware assisted virtualization (HVM), you can enter this command in your host: `grep --color vmx /proc/cpuinfo`. If you don't have any result, it means XOA won't work on this hardware.
+NCA uses HVM mode. If your physical host doesn't support virtualization extensions, NCA won't work. To check if your NCE/XenServer supports hardware assisted virtualization (HVM), you can enter this command in your host: `grep --color vmx /proc/cpuinfo`. If you don't have any result, it means NCA won't work on this hardware.
 
-## Set or recover XOA VM password
+## Set or recover NCA VM password
 
-As no password is set for the xoa system user by default, you will need to set your own. This can be done via the XenStore data of the VM. The following is to be ran on your XCP-ng host:
+As no password is set for the xoa system user by default, you will need to set your own. This can be done via the XenStore data of the VM. The following is to be ran on your NCE host:
 
 ```sh
 xe vm-param-set uuid=<UUID> xenstore-data:vm-data/system-account-xoa-password=<password>
 ```
 
-Where UUID is the uuid of your XOA VM.
+Where UUID is the uuid of your NCA VM.
 
 Then you need to restart the VM.
 You can now login through SSH with the `xoa` username and password you defined in the previous command.
 
 ## Recover web login password
 
-If you have lost your password to log in to the XOA webpage, you can reset it. From the XOA CLI (for login/access info for the CLI, [see here](xoa.md#first-console-connection)), use the following command and insert the email/account you wish to recover:
+If you have lost your password to log in to the NCA webpage, you can reset it. From the NCA CLI (for login/access info for the CLI, [see here](xoa.md#first-console-connection)), use the following command and insert the email/account you wish to recover:
 
 ```sh
 sudo xo-server-recover-account youremail@here.com
 ```
 
-It will prompt you to set a new password. If you provide an email here that does not exist in XOA yet, it will create a new account using it, with admin permissions - you can use that new account to log in as well.
+It will prompt you to set a new password. If you provide an email here that does not exist in NCA yet, it will create a new account using it, with admin permissions - you can use that new account to log in as well.
 
 ## Empty page after login
 
@@ -78,10 +78,10 @@ The solution is to use **HTTPS**. When doing so, websockets will be encapsulated
 
 ## Migration issues
 
-By default, XOA has a static max memory set to 16GiB. Sometimes you can have trouble migrating with this error message:
+By default, NCA has a static max memory set to 16GiB. Sometimes you can have trouble migrating with this error message:
 
 ```
-"Failed","Migrating VM 'XOA' from '<origin_hostname>' to '<destination_hostname>'
+"Failed","Migrating VM 'NCA' from '<origin_hostname>' to '<destination_hostname>'
 Internal error: Xenops_interface.Internal_error("Domain.Xenguest_failure(\"Error while waiting for suspend notification: xenguest: xc_domain_save: [1] Save failed (0 = Success)\")")
 ```
 
@@ -89,9 +89,9 @@ In this case, it means you need to reduce the static max memory field to a lower
 
 ## Boot issues
 
-XOA is configured in HVM. It means you need hardware that supports HVM instructions (almost all hardware since 2011). If that's not the case, the symptom is this:
+NCA is configured in HVM. It means you need hardware that supports HVM instructions (almost all hardware since 2011). If that's not the case, the symptom is this:
 
-1. XOA VM starts for few seconds
+1. NCA VM starts for few seconds
 2. Then it shuts down
 
 Please check that you have enabled virtualization settings in your BIOS or upgrade your hardware.
@@ -104,7 +104,7 @@ For more information, refer to the [Logs](#logs) section on this page.
 
 ## Logs
 
-This section will explain how to check the XOA logs, and use them to detect issues.
+This section will explain how to check the NCA logs, and use them to detect issues.
 
 ### From the web interface
 
@@ -128,14 +128,14 @@ journalctl -u xoa-updater -f -n 50
 
 ## Configuration
 
-XOA is a virtual appliance running Debian with Xen Orchestra installed. If you have any problems, the first thing to do is to use our check service by running the `xoa check` command in a terminal:
+NCA is a virtual appliance running Debian with Nephora Conductor installed. If you have any problems, the first thing to do is to use our check service by running the `xoa check` command in a terminal:
 
 ```console
 $ xoa check
 ✔ Node version
 ✔ Disk space for /var
 ✔ Disk space for /
-✔ XOA version
+✔ NCA version
 ✔ xo-server config syntax
 ✔ Appliance registration
 ✔ Internet connectivity
@@ -145,13 +145,13 @@ If you have something completely different than that, or error messages, lost pa
 
 ### Network issues
 
-You can see your current network configuration by running `ifconfig` (default interface is called `enX0` or `eth0`). If you have an external firewall, please check that you allow the XOA's IP.
+You can see your current network configuration by running `ifconfig` (default interface is called `enX0` or `eth0`). If you have an external firewall, please check that you allow the NCA's IP.
 
 You can modify the IP configuration with `xoa network static` (for a static IP address) or `xoa network dhcp` to use DHCP.
 
 ### Stats not working
 
-If statistics (all VMs and hosts) are not showing for a specific pool, check if there is a _Backup network_ configured on your pool (setting is in the _Advanced_ tab of the pool) and make sure XO can access all hosts of the pool via this network.
+If statistics (all VMs and hosts) are not showing for a specific pool, check if there is a _Backup network_ configured on your pool (setting is in the _Advanced_ tab of the pool) and make sure NC can access all hosts of the pool via this network.
 
 ### Memory
 
@@ -173,7 +173,7 @@ FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memo
 1: node::Abort() [node]
 ```
 
-In that case, you need to increase the memory allocated to the XOA VM (from 2GB to 4GB or 8GB). Note that simply increasing the RAM for the VM is not enough. You must also edit the service file (`/etc/systemd/system/xo-server.service`) to increase the memory allocated to the xo-server process itself.
+In that case, you need to increase the memory allocated to the NCA VM (from 2GB to 4GB or 8GB). Note that simply increasing the RAM for the VM is not enough. You must also edit the service file (`/etc/systemd/system/xo-server.service`) to increase the memory allocated to the xo-server process itself.
 
 :::tip
 You should leave ~512MB for the debian OS itself. Meaning if your VM has 4096MB total RAM, you should use `3584` for the memory value below.
@@ -223,11 +223,11 @@ systemctl restart xo-server.service
 
 ### Ghost tasks
 
-If you have ghost tasks accumulating in your Xen Orchestra you can try the following actions in order:
+If you have ghost tasks accumulating in your Nephora Conductor you can try the following actions in order:
 
 1. refresh the web page
 1. disconnect and reconnect the Xen pool/server owning the tasks
-1. restart the XenAPI Toolstack of the XCP-ng/XenServer master
+1. restart the XenAPI Toolstack of the NCE/XenServer master
 1. restart xo-server
 
 ### Redownload and rebuild

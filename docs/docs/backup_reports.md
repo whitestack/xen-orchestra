@@ -1,6 +1,6 @@
 # Backup reports
 
-At the end of a backup job, you can configure Xen Orchestra to send backup reports directly by email, Slack or in Mattermost. It's up to you.
+At the end of a backup job, you can configure Nephora Conductor to send backup reports directly by email, Slack or in Mattermost. It's up to you.
 
 ## Email
 
@@ -34,7 +34,7 @@ That's it: your next scheduled job will be recapped in a message:
 
 ## Slack or Mattermost
 
-Xen Orchestra is able to send backup reports to Slack or Mattermost.
+Nephora Conductor is able to send backup reports to Slack or Mattermost.
 
 ### Plugin configuration
 

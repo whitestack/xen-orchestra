@@ -1,40 +1,40 @@
 # Architecture
 
-Xen Orchestra (XO) is software built with a server and clients, such as the web client `xo-web`, but also a CLI capable client, called `xo-cli`.
+Nephora Conductor (NC) is software built with a server and clients, such as the web client `xo-web`, but also a CLI capable client, called `xo-cli`.
 
 :::tip
-XO is totally agent-less: you don't have to install any program on your hosts to get it working!
+NC is totally agent-less: you don't have to install any program on your hosts to get it working!
 :::
 
-## XOA
+## NCA
 
-_Xen Orchestra Virtual Appliance_ (XOA) is a virtual machine with Xen Orchestra already installed, thus working out-of-the-box.
+_Nephora Conductor Virtual Appliance_ (NCA) is a virtual machine with Nephora Conductor already installed, thus working out-of-the-box.
 
-This is the easiest way to try Xen Orchestra quickly.
+This is the easiest way to try Nephora Conductor quickly.
 
-Your XOA is connected to all your hosts, or the pool master only if you are using Pools in XCP-ng/Citrix Hypervisor:
+Your NCA is connected to all your hosts, or the pool master only if you are using Pools in NCE/Citrix Hypervisor:
 
 ![](./assets/partner2.jpg)
 
-## Xen Orchestra (XO)
+## Nephora Conductor (NC)
 
 ![](./assets/xo-arch.jpg)
 
-Xen Orchestra itself is built as a modular solution. Each part has its role.
+Nephora Conductor itself is built as a modular solution. Each part has its role.
 
 ## xo-server (server)
 
-The core is "[xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/)" - a daemon dealing directly with XCP-ng/XenServer or XAPI capable hosts. This is where users are stored, and it's the center point for talking to your whole Xen infrastructure.
+The core is "[xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/)" - a daemon dealing directly with NCE/XenServer or XAPI capable hosts. This is where users are stored, and it's the center point for talking to your whole Xen infrastructure.
 
-XO-Server is the core of Xen Orchestra. Its central role opens a lot of possibilities versus other solutions - let's see why.
+NC-Server is the core of Nephora Conductor. Its central role opens a lot of possibilities versus other solutions - let's see why.
 
 ### Daemon mode
 
-As a daemon, XO-Server is always up. Because of this, it can listen and record every event occurring on your entire Xen infrastructure. Connections are always open and it can cache information before serving it to another client (CLI, Web or anything else).
+As a daemon, NC-Server is always up. Because of this, it can listen and record every event occurring on your entire Xen infrastructure. Connections are always open and it can cache information before serving it to another client (CLI, Web or anything else).
 
 ### Central point
 
-Contrary to XenCenter, each Xen Orchestra's client is connected to one XO-Server, and not all the Xen servers. With a traditional architecture:
+Contrary to XenCenter, each Nephora Conductor's client is connected to one NC-Server, and not all the Xen servers. With a traditional architecture:
 
 ![](./assets/without-xo.jpg)
 
@@ -50,17 +50,17 @@ Legacy interfaces use the "pull" model, requesting data every "x" seconds:
 
 It's **not scalable** and **slow**.
 
-Previously with XO < 3.4, we used events in the following way:
+Previously with NC < 3.4, we used events in the following way:
 
 ![](./assets/semievent.jpg)
 
-But the interface was still lagging behind the server. With XO 3.4 and beyond, we now have a full event system, allowing instant display of what's happening on your infrastructure:
+But the interface was still lagging behind the server. With NC 3.4 and beyond, we now have a full event system, allowing instant display of what's happening on your infrastructure:
 
 ![](./assets/fullevent.jpg)
 
 ### A proxy for your hosts
 
-XO-Server will act as a proxy for all your clients. This opens a lot of possibilities!
+NC-Server will act as a proxy for all your clients. This opens a lot of possibilities!
 
 #### Console proxy
 
@@ -94,7 +94,7 @@ To install a patch manually, it requires a lot of steps: find, download, extract
 
 ### Pluggable
 
-It's really easy to connect other modules to XO-server, and extend or adapt the solution to your needs (see XO-web and XO-cli for real examples).
+It's really easy to connect other modules to NC-server, and extend or adapt the solution to your needs (see NC-web and NC-cli for real examples).
 
 #### ACLs
 
@@ -104,17 +104,17 @@ It's really easy to connect other modules to XO-server, and extend or adapt the 
 
 ### NodeJS under the hood
 
-[NodeJS](https://en.wikipedia.org/wiki/Nodejs) is a software platform for scalable server-side and networking applications. It's famous for its efficiency, scalability and its asynchronous capabilities. Exactly what we need! Thus, XO-server is written in JavaScript.
+[NodeJS](https://en.wikipedia.org/wiki/Nodejs) is a software platform for scalable server-side and networking applications. It's famous for its efficiency, scalability and its asynchronous capabilities. Exactly what we need! Thus, NC-server is written in JavaScript.
 
 ## xo-web (web UI)
 
 The web interface is "[xo-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-web)" - it runs directly from your browser. The connection with `xo-server` is done via _WebSockets_.
 
-This is probably the first part of Xen Orchestra you'll see. The Web interface allows you to interact with your virtual infrastructure. As a module of XO-Web it facilitates everyday Xen administrator work, but also provides a solution to delegate parts of your infrastructure to other people.
+This is probably the first part of Nephora Conductor you'll see. The Web interface allows you to interact with your virtual infrastructure. As a module of NC-Web it facilitates everyday Xen administrator work, but also provides a solution to delegate parts of your infrastructure to other people.
 
 ![](./assets/visualizationdashboard.png)
 
-[Read the manage section](./manage.md) to discover what you can do in XO-web.
+[Read the manage section](./manage.md) to discover what you can do in NC-web.
 
 ### ReactJS
 
@@ -138,9 +138,9 @@ This CLI is mainly used as a debug tool, there's no 100% guarantee on its stabil
 $ xo-cli help
 Usage:
 
-  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] [--otp <otp>] <XO-Server URL> <username> [<password>]
-  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] --token <token> <XO-Server URL>
-    Registers the XO instance to use.
+  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] [--otp <otp>] <NC-Server URL> <username> [<password>]
+  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] --token <token> <NC-Server URL>
+    Registers the NC instance to use.
 
     --allowUnauthorized, --au
       Accept invalid certificate (e.g. self-signed).
@@ -156,7 +156,7 @@ Usage:
       An authentication token to use instead of username/password.
 
   xo-cli create-token <params>…
-    Create an authentication token for XO API.
+    Create an authentication token for NC API.
 
     <params>…
       Accept the same parameters as register, see its usage.
@@ -165,12 +165,12 @@ Usage:
     Remove stored credentials.
 
   xo-cli list-commands [--json] [<pattern>]...
-    Returns the list of available commands on the current XO instance.
+    Returns the list of available commands on the current NC instance.
 
     The patterns can be used to filter on command names.
 
   xo-cli list-objects [--<property>]… [<property>=<value>]...
-    Returns a list of XO objects.
+    Returns a list of NC objects.
 
     --<property>
       Restricts displayed properties to those listed.
@@ -179,7 +179,7 @@ Usage:
       Restricted displayed objects to those matching the patterns.
 
   xo-cli <command> [--json] [<name>=<value>]...
-    Executes a command on the current XO instance.
+    Executes a command on the current NC instance.
 
     --json
       Prints the result in JSON format.
@@ -276,7 +276,7 @@ Usage:
       xo-cli rest put vms/<vm id>/tags/<tag>
 ```
 
-#### Register your XO instance
+#### Register your NC instance
 
 ```console
 $ xo-cli register http://xo.my-company.net admin@admin.net admin
@@ -323,7 +323,7 @@ $ xo-cli server.add host=my.server.net username=root password=secret-password
 42
 ```
 
-The return value is the identifier of this new server in XO.
+The return value is the identifier of this new server in NC.
 
 Parameters (except `true` and `false` which are correctly parsed as
 booleans) are assumed to be strings. For other types, you may use JSON
@@ -345,7 +345,7 @@ xo-cli vm.export vm=a01667e0-8e29-49fc-a550-17be4226783c @=vm.xva
 xo-cli vm.import sr=60a6939e-8b0a-4352-9954-5bde44bcdf7d @=vm.xva
 ```
 
-> Note: `xo-cli` only supports the import of XVA files. It will not import OVA files. To import OVA images, you must use the XOA web UI or use `xo-upload-ova` [available here](https://github.com/vatesfr/xen-orchestra/blob/master/@xen-orchestra/upload-ova/README.md#xo-upload-ova).
+> Note: `xo-cli` only supports the import of XVA files. It will not import OVA files. To import OVA images, you must use the NCA web UI or use `xo-upload-ova` [available here](https://github.com/vatesfr/xen-orchestra/blob/master/@xen-orchestra/upload-ova/README.md#xo-upload-ova).
 
 ## API
 
@@ -363,7 +363,7 @@ If you need assistance on how to use it:
 
 ## Plugins
 
-Xen Orchestra plugins allow you to extend features without rewriting the core of the application.
+Nephora Conductor plugins allow you to extend features without rewriting the core of the application.
 
 You can see your installed plugins in "Settings" then the "Plugins" page:
 

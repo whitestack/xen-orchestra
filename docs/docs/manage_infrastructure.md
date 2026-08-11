@@ -1,10 +1,10 @@
 # Infrastructure management
 
-This section is related on how to manage your XCP-ng/Citrix Hypervisor infrastructure.
+This section is related on how to manage your NCE/Citrix Hypervisor infrastructure.
 
 ## Home view
 
-The home view is what you see when you access your Xen Orchestra URL. It displays all running VMs. This can be configured to your needs (see the "Filters section" below).
+The home view is what you see when you access your Nephora Conductor URL. It displays all running VMs. This can be configured to your needs (see the "Filters section" below).
 
 If you don't have any servers connected, you'll see a panel telling you to add a server:
 
@@ -12,7 +12,7 @@ If you don't have any servers connected, you'll see a panel telling you to add a
 
 ### Add a host
 
-Just click on "Add server", enter the IP of a XCP-ng/XenServer host (ideally the pool master if in a pool):
+Just click on "Add server", enter the IP of a NCE/XenServer host (ideally the pool master if in a pool):
 
 ![](./assets/xo5addserver.png)
 
@@ -20,7 +20,7 @@ After clicking on connect, the server is displayed as connected:
 
 ![](./assets/xo5connectedserver.png)
 
-Now go back to the Home view (or click on the "Xen Orchestra" title on the top left of the screen), you'll see the default home view of VM objects.
+Now go back to the Home view (or click on the "Nephora Conductor" title on the top left of the screen), you'll see the default home view of VM objects.
 
 ### VMs
 
@@ -69,12 +69,12 @@ All your pools are displayed here:
 You can also see missing patches in red.
 
 :::tip
-Did you know? Even a single XCP-ng/XenServer host is inside a pool!
+Did you know? Even a single NCE/XenServer host is inside a pool!
 :::
 
 ## Live filter search
 
-The idea is not just to provide a good search engine, but also a complete solution for managing all your XCP-ng/XenServer infrastructure. Ideally:
+The idea is not just to provide a good search engine, but also a complete solution for managing all your NCE/XenServer infrastructure. Ideally:
 
 - less clicks to see or do what you need
 - find a subset of interesting objects
@@ -82,7 +82,7 @@ The idea is not just to provide a good search engine, but also a complete soluti
 - sort your results for more pertinent insight
 
 :::tip
-Pro Tip: the URL of Xen Orchestra contains the search string, eg `home?s=power_state%3Arunning+`. You can share these URLs to your colleagues to share your search!
+Pro Tip: the URL of Nephora Conductor contains the search string, eg `home?s=power_state%3Arunning+`. You can share these URLs to your colleagues to share your search!
 :::
 
 ### Search examples
@@ -200,7 +200,7 @@ You can use the search field/filter with number comparisons:
 
 ### Available properties
 
-There isn't much documentation listing these (yet), but you can see all objects and their properties using `xo-cli list-objects`. You can then use these properties for search in XOA.
+There isn't much documentation listing these (yet), but you can see all objects and their properties using `xo-cli list-objects`. You can then use these properties for search in NCA.
 
 Take a look at [the documentation](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-cli#xo-cli) for xo-cli :)
 
@@ -223,7 +223,7 @@ Or in the home view:
 
 #### Select your Pool
 
-Because Xen Orchestra can be connected to multiple pools, you must select which one you want to create your VMs on:
+Because Nephora Conductor can be connected to multiple pools, you must select which one you want to create your VMs on:
 
 ![](./assets/xo5createonpool.png)
 
@@ -238,7 +238,7 @@ The next step is to select a template:
 ![](./assets/xo5createwithtemplate.png)
 
 :::tip
-What is a XCP-ng/XenServer template? It can be 2 things: first an "empty" template, meaning it contains only the configuration for your future VM, such as example settings (minimum disk size, RAM and CPU, BIOS settings if HVM etc.) Or it could be a previous VM you converted into a template: in this case, creating a VM will clone the existing disks.
+What is a NCE/XenServer template? It can be 2 things: first an "empty" template, meaning it contains only the configuration for your future VM, such as example settings (minimum disk size, RAM and CPU, BIOS settings if HVM etc.) Or it could be a previous VM you converted into a template: in this case, creating a VM will clone the existing disks.
 :::
 
 ##### Name and description
@@ -285,11 +285,11 @@ These templates will use PV configuration in order to boot: either from the righ
 
 Because there is already disks installed, you shouldn't have "Install settings" _per se_. But you can use our `config drive` setup if your template already has CloudInit installed!
 
-Please refer to the [XCP-ng CloudInit section](vm-templates.md#cloud-init) for more.
+Please refer to the [NCE CloudInit section](vm-templates.md#cloud-init) for more.
 
 #### Interfaces
 
-This is the network section of the VM configuration: in general, MAC field is kept empty (autogenerated from XCP-ng/XenServer). We also select the management network by default, but you can change it to reflect your own network configuration.
+This is the network section of the VM configuration: in general, MAC field is kept empty (autogenerated from NCE/XenServer). We also select the management network by default, but you can change it to reflect your own network configuration.
 
 #### Disks
 
@@ -311,27 +311,27 @@ In the advanced tab, you have extra options:
 
 ![](./assets/xo5vmadvanced.png)
 
-### XCP-ng/Citrix Hypervisor limitations
+### NCE/Citrix Hypervisor limitations
 
-- Each VM has a maximum vCPU number. This value can't be changed while the VM is running. You can reduce the number of vCPUs, but you can't assign more than the set max. In XO, while your VM is halted, set the max vCPUs you would need, then boot it. Now you can reduce it and then expand it later to this maximum.
+- Each VM has a maximum vCPU number. This value can't be changed while the VM is running. You can reduce the number of vCPUs, but you can't assign more than the set max. In NC, while your VM is halted, set the max vCPUs you would need, then boot it. Now you can reduce it and then expand it later to this maximum.
 - The same limitation applies to static RAM.
 
 You can learn more about XenServer [resource management on the Citrix Website](https://docs.citrix.com/en-us/citrix-hypervisor/system-requirements/configuration-limits.html).
 :::tip
-XCP-ng doesn't limit VMs to 32 vCPU
+NCE doesn't limit VMs to 32 vCPU
 :::
 
 ### VDI live migration
 
 Thanks to Xen Storage Motion, it's easy to move a VM disk from one storage location to another, while the VM is running! This feature can help you migrate from your local storage to a SAN, or just upgrade your SAN without any downtime.
 
-To do so: Access the Xen Orchestra page for your running VM, then enter the Disk tab. Long click on the current SR of the disk, and a drop down menu will be displayed with all compatible destinations. Just select one, that's all: the migration will start live!
+To do so: Access the Nephora Conductor page for your running VM, then enter the Disk tab. Long click on the current SR of the disk, and a drop down menu will be displayed with all compatible destinations. Just select one, that's all: the migration will start live!
 
 ![](./assets/xo5diskmigrate.png)
 
 #### Offline VDI migration
 
-Even though it's not currently supported in XCP-ng/XenServer, we can do it in Xen Orchestra. It's exactly the same process as a running VM.
+Even though it's not currently supported in NCE/XenServer, we can do it in Nephora Conductor. It's exactly the same process as a running VM.
 
 ### VM recovery
 
@@ -383,15 +383,15 @@ To add a restricted IP address:
    1. Choose your desired mode from that menu:
       ![](./assets/choose-vif-locking-mode.png)
     
-If Xen Orchestra knows the VM’s IP address — either through the guest agent or DHCP — it will automatically apply IP-level locking when the mode is enabled.
+If Nephora Conductor knows the VM’s IP address — either through the guest agent or DHCP — it will automatically apply IP-level locking when the mode is enabled.
 
 #### How do I automate VIF locking mode?
 
-If you’re automating things or working with scripts, you can also control VIF locking mode through the XO [command-line interface](architecture#xo-cli-cli). 
+If you’re automating things or working with scripts, you can also control VIF locking mode through the NC [command-line interface](architecture#xo-cli-cli). 
 
 ### VM high availability (HA)
 
-If you pool supports HA (must have shared storage), you can activate "HA". Read our blog post for more details on [VM high availability with XCP-ng/XenServer](https://xen-orchestra.com/blog/xenserver-and-vm-high-availability/).
+If you pool supports HA (must have shared storage), you can activate "HA". Read our blog post for more details on [VM high availability with NCE/XenServer](https://xen-orchestra.com/blog/xenserver-and-vm-high-availability/).
 
 #### Docker management
 
@@ -415,7 +415,7 @@ If one VM has for example, "Double", it will have double the priority on the Xen
 
 ### VM Copy
 
-VM copy allows you to make an export and an import via streaming. You can target any SR in your whole XCP-ng/XenServer infrastructure (even across different pools!)
+VM copy allows you to make an export and an import via streaming. You can target any SR in your whole NCE/XenServer infrastructure (even across different pools!)
 
 ### Snapshot management
 
@@ -426,12 +426,12 @@ You can create a snapshot with one click. It will be named automatically. After 
 - delete this snapshot
 
 :::tip
-By default, XOA will try to make a snapshot with quiesce. If the VM does not support it, it will fall back to the default snapshot system.
+By default, NCA will try to make a snapshot with quiesce. If the VM does not support it, it will fall back to the default snapshot system.
 :::
 
 ## VM import and export
 
-Xen Orchestra can import and export VM's in XVA format (XCP-ng/XenServer format) or import OVA files (OVF1 format).
+Nephora Conductor can import and export VM's in XVA format (NCE/XenServer format) or import OVA files (OVF1 format).
 
 :::tip
 We support OVA import from VirtualBox. Feel free to report issues with OVA from other virtualization platforms.
@@ -508,16 +508,16 @@ When this option is enabled, the VM won't be able to migrate to another host.
 
 ## Migrating from VMware with V2V
 
-XCP-ng is a type 1 hypervisor, similar to VMware ESXi.
+NCE is a type 1 hypervisor, similar to VMware ESXi.
 
-You can migrate your VM from VMware vSphere to a Vates environment (Xen Orchestra and XCP-ng), directly from Xen Orchestra. For this, we use V2V ("VMware to Vates").
+You can migrate your VM from VMware vSphere to a Vates environment (Nephora Conductor and NCE), directly from Nephora Conductor. For this, we use V2V ("VMware to Vates").
 
-To know more on using V2V in Xen Orchestra to migrate your environment from VMware, refer to the [XO V2V section in the XCP-ng documentation](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#xo-v2v).
+To know more on using V2V in Nephora Conductor to migrate your environment from VMware, refer to the [NC V2V section in the NCE documentation](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#xo-v2v).
 
 
 ## Hosts management
 
-Outside updates (see next section), you can also do host management via Xen Orchestra. Basic operations are supported, like reboot, shutdown and so on.
+Outside updates (see next section), you can also do host management via Nephora Conductor. Basic operations are supported, like reboot, shutdown and so on.
 
 But there's also some specific things, like Maintenance mode.
 
@@ -544,19 +544,19 @@ You can easily adjust the control domain memory under the Advanced tab of a host
 
 ![](./assets/dom0memory.png)
 
-There is more information about Dom0 memory management in the [XCP-ng Documentation](https://docs.xcp-ng.org/guides/dom0-memory/)
+There is more information about Dom0 memory management in the [NCE Documentation](https://docs.xcp-ng.org/guides/dom0-memory/)
 
 ## Pool and host updates
 
-Xen Orchestra is here to help you to manage all your pools and hosts updates. Note there's a difference on updates between XCP-ng and Citrix Hypervisor, since they are not using the same mechanism. However, the view on available updates and updating is very similar.
+Nephora Conductor is here to help you to manage all your pools and hosts updates. Note there's a difference on updates between NCE and Citrix Hypervisor, since they are not using the same mechanism. However, the view on available updates and updating is very similar.
 
 :::tip
-Updates can be called both "patches" or "updates", it doesn't matter. Updates are distributed via an ISO file containing RPMs for Citrix Hypervisor, while in XCP-ng they are just traditional RPMs hosted in a central repository and its mirrors, like a regular Linux distribution.
+Updates can be called both "patches" or "updates", it doesn't matter. Updates are distributed via an ISO file containing RPMs for Citrix Hypervisor, while in NCE they are just traditional RPMs hosted in a central repository and its mirrors, like a regular Linux distribution.
 :::
 
 ### Available updates
 
-You'll be notified by Xen Orchestra directly in the main XO menu (on the left), with a yellow triangle:
+You'll be notified by Nephora Conductor directly in the main NC menu (on the left), with a yellow triangle:
 
 ![](./assets/availableupdates.png)
 
@@ -568,26 +568,26 @@ You can also see how many updates to do in the Home/Pool view for your pools, an
 
 You can also see the available updates in the Dashboard view.
 
-### XCP-ng
+### NCE
 
-On XCP-ng, there's multiple way to update your pools and hosts.
+On NCE, there's multiple way to update your pools and hosts.
 
 :::details ⚙️ How it works
-Xen Orchestra will request a plugin, bundled and hosted within your XCP-ng hosts. This plugin will query the status of updates. Then, when the update will be apply, it's also the plugin that will download and apply them. So unlike with Citrix Hypervisor, Xen Orchestra will not fetch or download updates, but it will order the host to do it by itself. Be sure that your host(s) can access the update repositories.
+Nephora Conductor will request a plugin, bundled and hosted within your NCE hosts. This plugin will query the status of updates. Then, when the update will be apply, it's also the plugin that will download and apply them. So unlike with Citrix Hypervisor, Nephora Conductor will not fetch or download updates, but it will order the host to do it by itself. Be sure that your host(s) can access the update repositories.
 :::
 
 #### Rolling Pool Updates (RPU)
 
-Also known as RPU, **this is the advised way to update your pool**. By just clicking on one button, Xen Orchestra will automatically move VMs around, apply updates and reboot the hosts, without any service interruption. The following button is available in the **Pool** view of the **Patches** tab:
+Also known as RPU, **this is the advised way to update your pool**. By just clicking on one button, Nephora Conductor will automatically move VMs around, apply updates and reboot the hosts, without any service interruption. The following button is available in the **Pool** view of the **Patches** tab:
 
 ![](./assets/rpubutton.png)
 
 :::tip
-This powerful and fully automated mechanism requires some prerequisites: all your VMs disks must be on a one (or more) shared storage. Also, high-availability will be automatically disabled, as the XO load balancer plugin and backup jobs. Everything will be enabled back when it's done!
+This powerful and fully automated mechanism requires some prerequisites: all your VMs disks must be on a one (or more) shared storage. Also, high-availability will be automatically disabled, as the NC load balancer plugin and backup jobs. Everything will be enabled back when it's done!
 :::
 
 :::warning
-XO will restart the hosts one by one and wait for each host to be up and running before continuing. However, if the host takes too much time to boot, the RPU will fail with an error. By default, XO will wait up to 20 minutes before failing. You can change that value in your `xo-server` config:
+NC will restart the hosts one by one and wait for each host to be up and running before continuing. However, if the host takes too much time to boot, the RPU will fail with an error. By default, NC will wait up to 20 minutes before failing. You can change that value in your `xo-server` config:
 
 ```toml
 [xapiOptions]
@@ -634,14 +634,14 @@ We do NOT recommend to install updates to individual hosts. Obviously except if 
 ### XenServer/Citrix Hypervisor
 
 :::details ⚙️ How it works
-Xen Orchestra will directly request a specific XML, hosted by Citrix. It will be analyzed and compared to the patch level on your hosts. If there's available/missing updates, XO will download it directly, then send it to the pool, and finally ask the pool to apply it. In that scenario, you should check if Xen Orchestra can access outside to get those updates.
+Nephora Conductor will directly request a specific XML, hosted by Citrix. It will be analyzed and compared to the patch level on your hosts. If there's available/missing updates, NC will download it directly, then send it to the pool, and finally ask the pool to apply it. In that scenario, you should check if Nephora Conductor can access outside to get those updates.
 :::
 
 #### Pool updates
 
 It's recommended to apply patches from the entire pool, to be sure all your hosts are at the same patch level.
 
-When you click on "Install all patches", XOA will do all of the following automatically:
+When you click on "Install all patches", NCA will do all of the following automatically:
 
 - fetch all missing patches from Citrix servers
 - unzip them
@@ -656,7 +656,7 @@ If you are behind a proxy, please update your `xo-server` configuration to add a
 
 #### Host updates
 
-As for XCP-ng, we do NOT recommend to install updates to individual hosts. Please install patches for the whole pool, even if it's a single host.
+As for NCE, we do NOT recommend to install updates to individual hosts. Please install patches for the whole pool, even if it's a single host.
 
 ## Pool Management
 
@@ -665,29 +665,29 @@ As specified in the [documentation](https://xcp-ng.org/docs/requirements.html#po
 :::
 
 :::warning
-- Even with matching CPU vendors, in the case of different CPU models, XCP-ng/Citrix Hypervisor will "level" down to use the CPU having the least instructions.
-- All the hosts in a pool must run the same XCP-ng version.
+- Even with matching CPU vendors, in the case of different CPU models, NCE/Citrix Hypervisor will "level" down to use the CPU having the least instructions.
+- All the hosts in a pool must run the same NCE version.
 :::
 
 ### Creating a pool
 
-First you should add your new host to XOA by going to New > Server as described in [the relevant chapter](manage_infrastructure.md#add-a-host).
+First you should add your new host to NCA by going to New > Server as described in [the relevant chapter](manage_infrastructure.md#add-a-host).
 
-When you add your host to XOA a pool will automatically be created for it, taking the host name as the default pool name. The pool name can be edited to match your needs.
+When you add your host to NCA a pool will automatically be created for it, taking the host name as the default pool name. The pool name can be edited to match your needs.
 
 To edit the name of your pool go to Home > Pools and long click on the pool name to edit it.
 
 ### Adding a host to an existing pool
 
-If you need to add a new host to a pool, first you need to add your new host to your XOA by going to New > Server as described in [the relevant chapter](manage_infrastructure.md#add-a-host).
+If you need to add a new host to a pool, first you need to add your new host to your NCA by going to New > Server as described in [the relevant chapter](manage_infrastructure.md#add-a-host).
 
 Then you need to add the new host to the desired pool. Navigate to Home > Pools, and click on the desired pool. Then in the top right, click the Add Hosts button and select your new host.
 
 ### Adding an existing pool
 
-If your hosts are already in a pool you only need to add your pool master host to XOA, the slaves will be added automatically.
+If your hosts are already in a pool you only need to add your pool master host to NCA, the slaves will be added automatically.
 ::: danger
-Don't add pool slaves to your XOA server list! XOA will automatically find them from the master you add.
+Don't add pool slaves to your NCA server list! NCA will automatically find them from the master you add.
 :::
 
 ### Remove a host from an existing pool
@@ -711,7 +711,7 @@ The primary goals are to improve redundancy —so that a single cable or interfa
 
 #### Supported bond types
 
-Xen Orchestra supports the following bond types:
+Nephora Conductor supports the following bond types:
 
 - **Active / Active (Balance-SLB)**  
   - Does **not** require switch awareness (no LACP needed)
@@ -742,12 +742,12 @@ Xen Orchestra supports the following bond types:
 6. Set the **Bond mode** to **LACP**.
 7. Leave the **MTU** field blank. This will work as-is in most cases.
 8. Click **Create network**.
-    XO will then create the bond on the host(s):
+    NC will then create the bond on the host(s):
     ![Newly-created bond](./assets/bond1.png)
 
 :::tip
 - If applied to a pool, the bond is created across all pool members, so make sure all your pool members are cabled and configured on the switch side for LACP!
-- If the host’s management interface resides on one of the selected interfaces, XO will **automatically migrate the management interface** on top of the new bond (e.g., if management was on `eth0` and the bond consists of `eth0` + `eth1`).
+- If the host’s management interface resides on one of the selected interfaces, NC will **automatically migrate the management interface** on top of the new bond (e.g., if management was on `eth0` and the bond consists of `eth0` + `eth1`).
 :::
 
 #### Adding VLANs on top of bonds
@@ -783,13 +783,13 @@ This way, you can do whatever is needed on the storage, and when done, re-enable
 
 ### Reclaim free space
 
-If your SAN supports it, Xen Orchestra can instruct your XCP-ng host to send a trim command to perform some cleaning.
+If your SAN supports it, Nephora Conductor can instruct your NCE host to send a trim command to perform some cleaning.
 
 ![](./assets/xo5reclaimfree.png)
 
 ## Visualizations
 
-Visualizations can help you to understand your XCP-ng/XenServer infrastructure, as well as correlate events and detect bottlenecks.
+Visualizations can help you to understand your NCE/XenServer infrastructure, as well as correlate events and detect bottlenecks.
 
 :::tip
 :construction_worker: This section needs to be completed: screenshots and how-to :construction_worker:
@@ -807,7 +807,7 @@ You can also update all your hosts (install missing patches) from this page.
 
 ### Parallel Coordinates
 
-A Parallel Coordinates visualization helps to detect proportions in a hierarchical environment. In a XCP-ng/XenServer environment, it's especially useful if you want to see useful information from a large amount of data.
+A Parallel Coordinates visualization helps to detect proportions in a hierarchical environment. In a NCE/XenServer environment, it's especially useful if you want to see useful information from a large amount of data.
 
 ![](./assets/parralelcoordinates.png)
 
@@ -861,7 +861,7 @@ List of VMs with missing or outdated guest tools. It's best practice to [install
 
 ### Alarms
 
-This sections details the alerts coming from XCP-ng/XenServer hosts. More information can be found on [this page](advanced#alerts).
+This sections details the alerts coming from NCE/XenServer hosts. More information can be found on [this page](advanced#alerts).
 
 ### Heatmap
 
@@ -877,7 +877,7 @@ This is the place to compare metrics on comparable objects (VMs to VMs, hosts to
 
 ### Usage reports
 
-Xen Orchestra lets you monitor the usage of some or all of your resources by sending regular reports via email.
+Nephora Conductor lets you monitor the usage of some or all of your resources by sending regular reports via email.
 
 To receive reports, you first need to enable the **usage-report** plugin:
 
@@ -924,17 +924,17 @@ We do not offer support for issues arising from the use of software RAID for you
 
 ### Setup instructions
 
-For detailed instructions on setting up a software RAID storage for your VMs, refer to the [Guides](https://docs.xcp-ng.org/guides/software-RAID-SR/) section in the XCP-ng documentation.
+For detailed instructions on setting up a software RAID storage for your VMs, refer to the [Guides](https://docs.xcp-ng.org/guides/software-RAID-SR/) section in the NCE documentation.
 
 ### Troubleshooting
 
-If you encounter issues with your software RAID array, you can find answers regarding disk replacement at the [Troubleshooting](https://docs.xcp-ng.org/troubleshooting/storage/disk-failure-softwaire-RAID/#%EF%B8%8F-disk-replacement-with-software-raid) section in the XCP-ng documentation.
+If you encounter issues with your software RAID array, you can find answers regarding disk replacement at the [Troubleshooting](https://docs.xcp-ng.org/troubleshooting/storage/disk-failure-softwaire-RAID/#%EF%B8%8F-disk-replacement-with-software-raid) section in the NCE documentation.
 
 ### Monitoring software RAID health
 
 #### Checking RAID status
 
-Xen Orchestra allows you to monitor the health of your software RAID arrays directly from the interface.
+Nephora Conductor allows you to monitor the health of your software RAID arrays directly from the interface.
 
 To check the status reported by `mdadm`, go to the **Host → Advanced** section. You'll get a clear, real-time view of your RAID array’s condition:
 
@@ -948,16 +948,16 @@ If a host has a degraded software RAID array, a red warning triangle will appear
 
 ## Docker support
 
-This allows you to enjoy Docker containers displayed directly in Xen Orchestra.
+This allows you to enjoy Docker containers displayed directly in Nephora Conductor.
 
 ### Prerequisites
 
 - XenServer 6.5 or higher
-- Plugin installation (for Citrix Hypervisor, it's included in XCP-ng)
+- Plugin installation (for Citrix Hypervisor, it's included in NCE)
 
 ### Docker plugin installation
 
-This first step is needed until Docker is supported natively in the XCP-ng/XenServer API (XAPI).
+This first step is needed until Docker is supported natively in the NCE/XenServer API (XAPI).
 
 :::tip
 The plugin should be installed on every host you will be using, even if they are on the same pool.
@@ -1010,5 +1010,5 @@ xscontainer-prepare-vm -v <VM_UUID> -u <username>
 ```
 
 :::tip
-Because "prepare-vm" is not exposed outside of the Dom0 (yet?), we can't use Xen Orchestra to give you a one-click solution as of now.
+Because "prepare-vm" is not exposed outside of the Dom0 (yet?), we can't use Nephora Conductor to give you a one-click solution as of now.
 :::

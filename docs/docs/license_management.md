@@ -2,7 +2,7 @@
 
 This section will cover the license management system for commercial editions of our products.
 
-## Activate a Xen Orchestra license
+## Activate a Nephora Conductor license
 
 1. After the [purchase](purchase.md), all your available licenses will be visible in the license section of your appliance.
 
@@ -14,13 +14,13 @@ This section will cover the license management system for commercial editions of
 
 ![](./assets/activate-confirm.png)
 
-## Rebind XO license
+## Rebind NC license
 
 :::warning
 A license can only be bind to a single appliance at the same time, rebind your license will unbind the license from any other appliance.
 :::
 
-To rebind your Xen Orchestra appliance, you simply need to connect on the **appliance on which you want to bind the license** and click on the rebind option (Move license to this XOA button) in the license section
+To rebind your Nephora Conductor appliance, you simply need to connect on the **appliance on which you want to bind the license** and click on the rebind option (Move license to this NCA button) in the license section
 
 ![](./assets/rebind-screen.png)
 

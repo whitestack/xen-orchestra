@@ -1,4 +1,4 @@
-# Migrate to new XOA
+# Migrate to new NCA
 
 ### Deploy new appliance
 

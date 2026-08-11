@@ -1,21 +1,21 @@
 # Users
 
 :::tip
-For system users (in XOA), please refer to [XOA section](xoa.md). Here, we are only talking about users in Xen Orchestra application
+For system users (in NCA), please refer to [NCA section](xoa.md). Here, we are only talking about users in Nephora Conductor application
 :::
 
-There are 2 types of XO users:
+There are 2 types of NC users:
 
 - **admins**, with all rights on all connected resources
 - **users**, with no rights by default
 
 ## Authentication
 
-Xen Orchestra supports various types of user authentication, internal or even external thanks to the usage of the [Passport library](http://passportjs.org/).
+Nephora Conductor supports various types of user authentication, internal or even external thanks to the usage of the [Passport library](http://passportjs.org/).
 
 :::tip
 Any account created by an external authentication process (LDAP, SSO...) will be a **user** without any permission.
-Also, you don't have to create an external user by yourself: it will be created automatically in Xen Orchestra after its first connection.
+Also, you don't have to create an external user by yourself: it will be created automatically in Nephora Conductor after its first connection.
 :::
 
 ### Built-in
@@ -31,7 +31,7 @@ By default, a _user_ won't have any permissions. At the opposite, an _admin_ wil
 
 ### LDAP
 
-XO currently supports connections to LDAP directories, like _Open LDAP_ or _Active Directory_.
+NC currently supports connections to LDAP directories, like _Open LDAP_ or _Active Directory_.
 
 1. **Access the Plugin**:
    1. Navigate to the **Settings → Plugins** screen.
@@ -55,7 +55,7 @@ Still, here is a list of common filters:
 - `'(cn={{name}})'`, `'(sAMAccountName={{name}})'`, `'(sAMAccountName={{name}}@<domain>)'` or even `'(userPrincipalName={{name}})'` are widely used for _Active Directory_.\
   Please check with your AD Admin to find the right one.
 
-Once configured, users can authenticate using their LDAP credentials. Upon a successful initial login, the user's account will appear in the XO user list.
+Once configured, users can authenticate using their LDAP credentials. Upon a successful initial login, the user's account will appear in the NC user list.
 
 #### Group Synchronization
 
@@ -75,8 +75,8 @@ The LDAP plugin allows for the synchronization of user groups.
 2. **Basic group settings**:
    - **Base** and **Filter**: Similar to the user configuration. The plugin needs an entry point in the directory and a filter to find the groups.
    - **ID attribute**: The attribute used by the plugin to uniquely identify each group. The ID attribute must be unique across groups and not change over time.\
-      On each synchronization, the plugin will compare LDAP groups with XO groups, then try to match them based on this attribute and create or update XO groups if necessary.
-   - **Display name attribute**: Set the attribute used as the group's name in Xen Orchestra.
+      On each synchronization, the plugin will compare LDAP groups with NC groups, then try to match them based on this attribute and create or update NC groups if necessary.
+   - **Display name attribute**: Set the attribute used as the group's name in Nephora Conductor.
 3. **Members mapping**:
 
 This part of the configuration is used to determine which LDAP users belong to which LDAP groups.
@@ -109,7 +109,7 @@ The plugin needs to know that Bruce Wayne is part of the **heroes** group. To do
 - **Group attribute**: the name of the _group_ attribute that is used to list users within a group. In this example, it would be `member`.
 - **User attribute**: the name of the _user_ attribute that is used to reference users in groups. In this example, it would be `uid` since `347`, `348`, etc. are user `uid`s.
 
-Save the configuration and you're good to go. From now on, every time an LDAP user logs into XO, the plugin will automatically create or update that user's groups and add them to those groups.
+Save the configuration and you're good to go. From now on, every time an LDAP user logs into NC, the plugin will automatically create or update that user's groups and add them to those groups.
 
 **Importing all groups manually**
 
@@ -148,13 +148,13 @@ If users can authenticate but group memberships are not reflected:
 
 2. Verify that the **Group Attribute** and **User Attribute** in the plugin configuration match the corresponding attributes in your LDAP directory.
 3. Ensure that the **ID Attribute** for both users and groups is unique and correctly specified.
-4. Check XO logs for any synchronization errors and adjust configurations accordingly.
+4. Check NC logs for any synchronization errors and adjust configurations accordingly.
 
 ### OpenID Connect
 
 #### Overview
 
-The OpenID Connect (OIDC) plugin (`auth-oidc`) allows Xen Orchestra to integrate with identity providers that support the OIDC protocol.
+The OpenID Connect (OIDC) plugin (`auth-oidc`) allows Nephora Conductor to integrate with identity providers that support the OIDC protocol.
 
 In this section, you'll learn:
 
@@ -169,17 +169,17 @@ In this section, you'll learn:
 
 ##### Log In with OpenID Connect
 
-On the Xen Orchestra login page, click **Sign in with OpenID Connect**
+On the Nephora Conductor login page, click **Sign in with OpenID Connect**
 
 ![OpenID Connect sign in](./assets/openid-connect-signin-button.png)
 
-You’ll be redirected to the login page of your internal portal. Once authenticated on it, you will be redirected to the Xen Orchestra home page.
+You’ll be redirected to the login page of your internal portal. Once authenticated on it, you will be redirected to the Nephora Conductor home page.
 
 #### Administrator Guide
 
 ##### Set Up the OpenID Connect Plugin
 
-You can set up the `auth-oidc` plugin directly in Xen Orchestra:
+You can set up the `auth-oidc` plugin directly in Nephora Conductor:
 
 1. Go to **Settings** → **Plugins**.
 2. Find the `auth-oidc` plugin in the list.
@@ -203,13 +203,13 @@ To access advanced options:
 1. Once everything is configured, click **Save configuration**.
 2. Toggle the switch next to the `auth-oidc` plugin name to enable it. This will:
    - Activate the plugin immediately.
-   - Ensure it loads automatically when the Xen Orchestra server restarts.
+   - Ensure it loads automatically when the Nephora Conductor server restarts.
 
 ### SAML
 
 This plugin allows SAML users to authenticate to Xen-Orchestra.
 
-The first time a user signs in, XO will create a new XO user with the same identifier.
+The first time a user signs in, NC will create a new NC user with the same identifier.
 
 #### Configuration
 
@@ -231,11 +231,11 @@ Use the screenshots below as a reference as how to setup SAML with Google Worksp
 4. Give your app a name and optionally a description.
 5. To see how the fields should be filled out, refer to the screenshots below.
 
-> Note: Right now even when the authorization is successful, you will be redirected to the `https://xo.company.net/signin` page. However, just browse directly into the bare URL `https://xo.company.net`, and you'll now be logged in and can use the XO-dashboard.
+> Note: Right now even when the authorization is successful, you will be redirected to the `https://xo.company.net/signin` page. However, just browse directly into the bare URL `https://xo.company.net`, and you'll now be logged in and can use the NC-dashboard.
 
-> If you get a certificate error. Try to add a newline at the bottom of the Certificate field in Xen Orchestra.
+> If you get a certificate error. Try to add a newline at the bottom of the Certificate field in Nephora Conductor.
 
-The first login will create the user inside XO, as a non-privileged user. An administrator then has to promote the user to the appropriate group. (XO: Settings/Users).
+The first login will create the user inside NC, as a non-privileged user. An administrator then has to promote the user to the appropriate group. (NC: Settings/Users).
 
 ![](./assets/saml-googleworkspace1.png)
 
@@ -244,19 +244,19 @@ Also make sure to adjust the SAML attribute mapping in the Google Workspace conf
 
 ### GitHub
 
-This plugin allows any GitHub user to authenticate to Xen Orchestra.
+This plugin allows any GitHub user to authenticate to Nephora Conductor.
 
-The first time a user signs in, XO will create a new XO user with the same identifier (i.e. GitHub name), with _user_ permissions. An existing admin will need to apply the appropriate permissions for your environment.
+The first time a user signs in, NC will create a new NC user with the same identifier (i.e. GitHub name), with _user_ permissions. An existing admin will need to apply the appropriate permissions for your environment.
 
 First you need to configure a new app in your GitHub account. Go to your GitHub settings > "Developer Settings" > "OAuth Apps" > "New OAuth App".
 
 1. Name your GitHub application under "Application Name".
-2. Enter your Xen Orchestra URL (or IP) under "Homepage URL"
+2. Enter your Nephora Conductor URL (or IP) under "Homepage URL"
 3. Add your "Authorization callback URL" (for example, https://homepageUrl/signin/github/callback)
 
 ![](./assets/auth-github-form.png)
 
-When you get your Client ID and your Client secret, you can configure them in the GitHub Plugin inside the "Settings/Plugins" view of Xen Orchestra.
+When you get your Client ID and your Client secret, you can configure them in the GitHub Plugin inside the "Settings/Plugins" view of Nephora Conductor.
 
 ![](./assets/auth-github-secret.png)
 
@@ -268,7 +268,7 @@ Be sure to activate the plugin after you save the configuration (button on top).
 
 This plugin allows Google users to authenticate to Xen-Orchestra.
 
-The first time a user signs in, XO will create a new XO user with the same identifier, without any permissions.
+The first time a user signs in, NC will create a new NC user with the same identifier, without any permissions.
 
 #### Creating the Google project
 
@@ -285,7 +285,7 @@ Get your client ID and client secret:
 
 ![](./assets/auth-google-client-id-secret.png)
 
-#### Configure the XO plugin
+#### Configure the NC plugin
 
 In Settings, then Plugins, expand the Google plugin details and configure it with the information from the Google Console:
 
@@ -302,7 +302,7 @@ ACLs are permissions that apply to preexisting objects, like users and groups.
 
 ### Who can manage ACLs?
 
-Only a super admin (XO administrator) can manage ACLs.
+Only a super admin (NC administrator) can manage ACLs.
 
 ### How can I view and edit ACLs?
 
@@ -393,7 +393,7 @@ To create a new set of resources to delegate, go to the "Self Service" section i
 Only an admin can create a set of resources
 :::
 
-To allow people to create VMs as they want, we need to give them a _part_ of your XCP-ng/XenServer resources (disk space, CPUs, RAM). You can call this "general quotas" if you like. But you first need to decide which resources will be used.
+To allow people to create VMs as they want, we need to give them a _part_ of your NCE/XenServer resources (disk space, CPUs, RAM). You can call this "general quotas" if you like. But you first need to decide which resources will be used.
 
 In this example below, we'll create a set called **"sandbox"** with:
 
@@ -463,11 +463,11 @@ Now, your authorized users can create VMs with their SSH keys, grow template dis
 
 ## Audit log
 
-XO Audit Log is a plugin that records all important actions performed by users and provides the administrators an overview of each action. This gives them an idea of the users behavior regarding their infrastructure in order to track suspicious activities.
+NC Audit Log is a plugin that records all important actions performed by users and provides the administrators an overview of each action. This gives them an idea of the users behavior regarding their infrastructure in order to track suspicious activities.
 
 ### How does it work?
 
-XO Audit Log listens to important actions performed by users and stores them in the XOA database using the [hash chain structure](https://en.wikipedia.org/wiki/Hash_chain).
+NC Audit Log listens to important actions performed by users and stores them in the NCA database using the [hash chain structure](https://en.wikipedia.org/wiki/Hash_chain).
 
 ### Trustability of the records
 

@@ -4,7 +4,7 @@
 Formerly known as Continuous replication
 :::
 
-This feature is an incremental replication system for your XCP-ng or Xenserver VMs **without any storage vendor lock-in**. You can replicate a VM every _X_ minutes/hours to any storage repository. It could be to a distant XCP-ng or XenServer host or just another local storage target.
+This feature is an incremental replication system for your NCE or Xenserver VMs **without any storage vendor lock-in**. You can replicate a VM every _X_ minutes/hours to any storage repository. It could be to a distant NCE or XenServer host or just another local storage target.
 
 This feature covers multiple objectives:
 
@@ -42,7 +42,7 @@ To protect the replication, we removed the possibility to boot your copied VM di
 
 ## Manual initial seed
 
-**If you can't transfer the first backup through your network because it's too large**, you can make a seed locally. In order to do this, follow this procedure (until we make it accessible directly in XO).
+**If you can't transfer the first backup through your network because it's too large**, you can make a seed locally. In order to do this, follow this procedure (until we make it accessible directly in NC).
 
 :::tip
 This is **only** if you need to make the initial copy without making the whole transfer through your network. Otherwise, **you don't need this**.
@@ -82,9 +82,9 @@ DO not start this VM or it will break the Incremental Replication job! You can r
 
 ### Set up metadata
 
-The XOA backup system requires metadata to correctly associate the source snapshot and the target VM to the backup job. We're going to use the `xo-cr-seed` utility to help us set them up.
+The NCA backup system requires metadata to correctly associate the source snapshot and the target VM to the backup job. We're going to use the `xo-cr-seed` utility to help us set them up.
 
-First install the tool (all the following is done from the XOA VM CLI):
+First install the tool (all the following is done from the NCA VM CLI):
 
 ```sh
 sudo npm i -g --unsafe-perm @xen-orchestra/cr-seed-cli
@@ -106,7 +106,7 @@ $ xo-cr-seed https://root:password@xen1.company.tld 4a21c1cd-e8bd-4466-910a-f752
 ```
 
 :::warning
-If the username or the password for your XCP-ng/XenServer hosts contains special characters, they must use [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding).
+If the username or the password for your NCE/XenServer hosts contains special characters, they must use [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding).
 
 An easy way to do this with Node in command line:
 

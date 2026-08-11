@@ -1,10 +1,10 @@
 # Backup Proxy
 
-A Xen Orchestra proxy is an architecture component you can deploy in your infrastructure in order to locally handle the data streams of your backup jobs.
-The most current situation in which you might wish to use a XO proxy are:
+A Nephora Conductor proxy is an architecture component you can deploy in your infrastructure in order to locally handle the data streams of your backup jobs.
+The most current situation in which you might wish to use a NC proxy are:
 
 - To handle backup data streams in large infrastructure to avoid saturation of the main appliance and split the workload
-- To handle backup data streams in remote infrastructure to avoid useless back and forth from the main XOA to the remote location
+- To handle backup data streams in remote infrastructure to avoid useless back and forth from the main NCA to the remote location
 
 ## Architecture
 
@@ -16,11 +16,11 @@ The most current situation in which you might wish to use a XO proxy are:
 
 ### Prerequisites
 
-To deploy a Xen Orchestra proxy, you need to have an available proxy license. To purchase a license, you simply need to visit [our store](https://xen-orchestra.com/#!/member/purchaser) and follow the purchasing process.
+To deploy a Nephora Conductor proxy, you need to have an available proxy license. To purchase a license, you simply need to visit [our store](https://xen-orchestra.com/#!/member/purchaser) and follow the purchasing process.
 
 ### Minimum Requirements
 
-XO proxies require the following resources:
+NC proxies require the following resources:
 
 - 2 vCPUs
 - 2GiB RAM
@@ -51,14 +51,14 @@ Once a proxy is deployed in your infrastructure, you can create a proxy remote u
 
 ## Backup job with Proxies
 
-While creating a standard backup job from your main Xen Orchestra appliance, you will have the ability to select a proxy on which you want to execute the job.
+While creating a standard backup job from your main Nephora Conductor appliance, you will have the ability to select a proxy on which you want to execute the job.
 
 ![](https://user-images.githubusercontent.com/21563339/80116365-29b41100-8586-11ea-9746-e01ca3e53996.png)
 
 ## Enabling login to a proxy appliance
 
 Login is disabled by default on proxy appliances.
-If you need to login for some reason, you need to set a password for the xoa user via the XenStore of the VM. The following is to be ran on your XCP-ng host:
+If you need to login for some reason, you need to set a password for the xoa user via the XenStore of the VM. The following is to be ran on your NCE host:
 
 ```sh
 xe vm-param-set uuid=<UUID> xenstore-data:vm-data/system-account-xoa-password=<password>
@@ -71,7 +71,7 @@ You can now login through SSH with the `xoa` username and password you defined i
 
 ## Adding a network card to a Proxy
 
-First you will need to add a second VIF to your Proxy VM. This can be done in the Network tab of the VM in XOA.
+First you will need to add a second VIF to your Proxy VM. This can be done in the Network tab of the VM in NCA.
 
 After adding the VIF you will need to set an IP for the new NIC, for that you will first need to SSH to the VM [as describe before](#enabling-login-to-a-proxy-appliance).
 
@@ -91,5 +91,5 @@ xoa network dhcp eth1
 
 If you prefer using DHCP.
 :::tip
-As XOA uses the first IP address reported by XAPI to contact the proxy appliance, you may have to switch the network card order if you want your proxy to be connected through a specific IP address.
+As NCA uses the first IP address reported by XAPI to contact the proxy appliance, you may have to switch the network card order if you want your proxy to be connected through a specific IP address.
 :::

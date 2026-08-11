@@ -1,12 +1,12 @@
 # Purchase
 
-With a subscription, you'll have both Pro Support and XOA Appliance with various features (depending on XOA Edition).
+With a subscription, you'll have both Pro Support and NCA Appliance with various features (depending on NCA Edition).
 
 :::tip
-To find which XOA Edition fits your needs, please read the [feature matrix page](https://xen-orchestra.com/#!/featuresmatrix) on Xen Orchestra website.
+To find which NCA Edition fits your needs, please read the [feature matrix page](https://xen-orchestra.com/#!/featuresmatrix) on Nephora Conductor website.
 :::
 
-You can buy XOA in multiple ways, depending on your needs. Click on the following links for more documentation:
+You can buy NCA in multiple ways, depending on your needs. Click on the following links for more documentation:
 
 - [for your company (direct purchase)](purchase.md#direct-purchase)
 - [through your purchase department (purchaser)](purchase.md#via-your-purchase-departement)
@@ -14,7 +14,7 @@ You can buy XOA in multiple ways, depending on your needs. Click on the followin
 
 ## Direct purchase
 
-This is the easiest purchase option: you can buy XOA with your registered email account on [https://xen-orchestra.com](https://xen-orchestra.com).
+This is the easiest purchase option: you can buy NCA with your registered email account on [https://xen-orchestra.com](https://xen-orchestra.com).
 
 ### Choose your edition
 
@@ -90,7 +90,7 @@ Typically, you will provide two contacts:
 
 ![](./assets/purchase-menu.jpg)
 
-Now, you just have to pick the edition of Xen Orchestra you want to purchase for your IT team.
+Now, you just have to pick the edition of Nephora Conductor you want to purchase for your IT team.
 
 2. On the first payment screen, after you choose the plan and the subscription method. You can select the option "Buy for another account"
 
@@ -126,7 +126,7 @@ You can ask for an automatic quote on our website via the pricing page or direct
 
 Choose the plan you want, the years of commitment that suits you, then fill out the information required (it should be prefilled with your account information).
 
-If you want to purchase XO using the quote you receive, you just have to enter the quote number into the purchase menu, on your personal account page.
+If you want to purchase NC using the quote you receive, you just have to enter the quote number into the purchase menu, on your personal account page.
 
 ## Edit your card information
 
@@ -136,7 +136,7 @@ If you choose a Stripe payment, you can always edit the credit card information 
 
 ## Upgrade your plan
 
-If you want to upgrade your active plan to a higher version of Xen Orchestra, you can do it from your **personal space**.
+If you want to upgrade your active plan to a higher version of Nephora Conductor, you can do it from your **personal space**.
 
 ### Step by step
 

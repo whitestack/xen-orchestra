@@ -1,6 +1,6 @@
 # Backup strategy guide
 
-This guide explains how to design and implement a backup strategy in Xen Orchestra.  
+This guide explains how to design and implement a backup strategy in Nephora Conductor.  
 
 Instead of a simple list of questions and answers, it walks you through **key decisions** and **best practices** before, during, and after setting up backups.
 
@@ -30,7 +30,7 @@ This part explains the terminology of backup types and features.
 
 ## What should I do before setting up my backup?
 
-Before creating your first backup job in Xen Orchestra, consider the following:
+Before creating your first backup job in Nephora Conductor, consider the following:
 
 ### Remote
 Choose and configure your remote storage.  
@@ -58,7 +58,7 @@ Determine how long backups should be kept. This depends on:
 
 ## What kind of backup should I set up?
 
-Below are the main backup and replication types available in Xen Orchestra.
+Below are the main backup and replication types available in Nephora Conductor.
 
 ### Full backup
 **Pros:**
@@ -189,7 +189,7 @@ Below are the main backup and replication types available in Xen Orchestra.
 
 ### VM restore
 - Restore a VM to the same host/pool or another location.
-- When restoring, Xen Orchestra can attempt a **differential restore**, which reuses the current VM disk to speed up the process.
+- When restoring, Nephora Conductor can attempt a **differential restore**, which reuses the current VM disk to speed up the process.
 
 ### File restore
 - Access individual files within a VM backup  
@@ -222,7 +222,7 @@ To prevent backup duplication, do not mix long-term retention with multiple sche
 
 ## Putting it all together
 
-When designing your backup strategy with Xen Orchestra:
+When designing your backup strategy with Nephora Conductor:
 1. Assess criticality and resources.  
 2. Choose backup types that match your RPO/RTO goals.  
 3. Configure remotes and test them.  
@@ -232,25 +232,25 @@ When designing your backup strategy with Xen Orchestra:
 
 ---
 
-## How to ensure XOA is always available
+## How to ensure NCA is always available
 
-Making sure XOA is always available should be a top priority for every administrator. Here’s how you can maximize its reliability:
+Making sure NCA is always available should be a top priority for every administrator. Here’s how you can maximize its reliability:
 
-Since XOA runs as a virtual machine, you can apply standard VM protection measures:
+Since NCA runs as a virtual machine, you can apply standard VM protection measures:
 - Back up regularly (full or incremental).
 - Replicate the VM (full disaster recovery or incremental replication).
 - Take snapshots for quick rollback if needed.
 
-### Specific steps for the XOA VM
-- **Back up XO backup metadata:** This is the most efficient way to ensure you can quickly restore your XOA environment. If you lose your XOA VM: download and install a new XOA, restore the XO backup metadata, and you’ll be able to restore all other backups and settings.
-- Use the **XO Config** feature to back up your XOA settings. This lets you restore them to any XOA VM if necessary.
+### Specific steps for the NCA VM
+- **Back up NC backup metadata:** This is the most efficient way to ensure you can quickly restore your NCA environment. If you lose your NCA VM: download and install a new NCA, restore the NC backup metadata, and you’ll be able to restore all other backups and settings.
+- Use the **NC Config** feature to back up your NCA settings. This lets you restore them to any NCA VM if necessary.
 
-### Managing the loss of your XOA VM
+### Managing the loss of your NCA VM
 
-If you lose the host running your XOA VM:
-- **If the XOA VM was on shared storage**, you can restart it on another host in your pool.
-- **If the XOA VM was stored locally** or your host was alone in its pool, deploy a new XOA VM. You can do this proactively, as there’s no limit to the number of XOA VMs in your infrastructure. Register the new VM with the same Vates account, update it, and migrate your XOA license from the old VM if needed.
-- **If you are running XCP-ng 8.3**, you can use XO-lite by connecting to your master host’s IP address to manage your VMs.
+If you lose the host running your NCA VM:
+- **If the NCA VM was on shared storage**, you can restart it on another host in your pool.
+- **If the NCA VM was stored locally** or your host was alone in its pool, deploy a new NCA VM. You can do this proactively, as there’s no limit to the number of NCA VMs in your infrastructure. Register the new VM with the same Vates account, update it, and migrate your NCA license from the old VM if needed.
+- **If you are running NCE 8.3**, you can use NC-lite by connecting to your master host’s IP address to manage your VMs.
 
 :::warning
 Avoid using multiple XOAs to back up the same VMs, as this can cause backup failures.

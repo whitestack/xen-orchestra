@@ -1,12 +1,12 @@
 # VM Templates
 
-Virtual machine templates in Xen Orchestra make it easy to deploy new VMs by providing a ready-to-use configuration with predefined hardware specs and settings. Instead of manually setting up each VM from scratch, you can use templates to speed up deployment and keep things consistent.
+Virtual machine templates in Nephora Conductor make it easy to deploy new VMs by providing a ready-to-use configuration with predefined hardware specs and settings. Instead of manually setting up each VM from scratch, you can use templates to speed up deployment and keep things consistent.
 
-![Overview of the Template screen in Xen Orchestra](./assets/template-menu.png)
+![Overview of the Template screen in Nephora Conductor](./assets/template-menu.png)
 
 ## Creating Templates
 
-There are a few ways to create a VM template in Xen Orchestra:
+There are a few ways to create a VM template in Nephora Conductor:
 
 ### From an Existing VM
 
@@ -40,19 +40,19 @@ To know more on VM creation, read the [Infrastructure Management → VM Creation
 
 ## Viewing Template Properties
 
-### From Xen Orchestra
+### From Nephora Conductor
 
-To check a template’s settings in Xen Orchestra:
+To check a template’s settings in Nephora Conductor:
 
 1. Head to the **Home → Templates** section.
 2. Check the box next to the template(s) you want to inspect.
 3. Click the hamburger button at the corresponding line to see details like CPU, RAM, and template tags.
 
-![Basic template details from the Xen Orchestra UI](./assets/template-details-ui.png)
+![Basic template details from the Nephora Conductor UI](./assets/template-details-ui.png)
 
 ### From the REST API
 
-If you need more technical details that aren’t shown in the UI, you can use the Xen Orchestra API to dig deeper.
+If you need more technical details that aren’t shown in the UI, you can use the Nephora Conductor API to dig deeper.
 
 To know more on the REST API, read [its documentation](https://github.com/vatesfr/xen-orchestra/blob/master/packages/xo-server/docs/rest-api.md).
 
@@ -82,7 +82,7 @@ Need to delete a template? Here’s how:
 Before deleting a template, make sure to find and remove any attached disks. Otherwise, you'll end up with orphaned VDIs.
 :::
 
-1. In Xen Orchestra, open the template, go to **Home → Templates** section.
+1. In Nephora Conductor, open the template, go to **Home → Templates** section.
 2. Check the box next to the template(s) you want to copy.
 3. Click the trash can icon in the header and confirm the deletion.
 
@@ -94,12 +94,12 @@ VMs include a parameter to enable Viridian extensions.
 
 Viridian is a codename for [Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-overview), a native hypervisor developed by Microsoft that allows the creation of virtual machines on x86-64 systems running Windows.
 
-Viridian extensions —referred to as "Viridian enlightenments" by Microsoft— are used by any "recent" Windows OS to work properly. Consequently, the Viridian setting in Xen Orchestra is typically enabled by default for all Windows templates from Windows 2012 onwards.
+Viridian extensions —referred to as "Viridian enlightenments" by Microsoft— are used by any "recent" Windows OS to work properly. Consequently, the Viridian setting in Nephora Conductor is typically enabled by default for all Windows templates from Windows 2012 onwards.
 
 ### Step-by-step guide
 
 :::warning
-We strongly advise to create Windows templates by starting from a built-in Windows template, as the Viridian setting in Xen Orchestra is only relevant for those.
+We strongly advise to create Windows templates by starting from a built-in Windows template, as the Viridian setting in Nephora Conductor is only relevant for those.
 :::
 
 #### Templates based on built-in Windows templates
@@ -112,12 +112,12 @@ A list of VMs appears.
 The VM details screen appears.
 3. Click the **Advanced** tab to show more settings for your VM.
 4. In the **Xen settings** section, scroll to the end and activate the **Viridian** toggle switch:
-   ![Location of the Viridian toggle in XO](./assets/viridian-extensions.png)
+   ![Location of the Viridian toggle in NC](./assets/viridian-extensions.png)
    Viridian extensions are now enabled for your VM. You can now safely use this VM to create your Windows template.
 
 #### Enabling Viridian for other non-Windows VM templates
 
-To enable Viridian enlightenments for other non-Windows VM templates, follow the instructions detailed in the **Virtual Machines (VMs)** section of the [XCP-ng technical documentation](https://docs.xcp-ng.org/vms/).
+To enable Viridian enlightenments for other non-Windows VM templates, follow the instructions detailed in the **Virtual Machines (VMs)** section of the [NCE technical documentation](https://docs.xcp-ng.org/vms/).
 
 ## Cloud-init and Cloudbase-init
 
@@ -140,7 +140,7 @@ This means that you can easily customize your VM when you create it from a compa
 
 ### Cloudbase-init (Windows)
 
-As of release 5.101, Xen Orchestra also supports Cloudbase-init. This tool provides equivalent functionality to Cloud-init but is specifically designed for Windows virtual machines.
+As of release 5.101, Nephora Conductor also supports Cloudbase-init. This tool provides equivalent functionality to Cloud-init but is specifically designed for Windows virtual machines.
 
 ### Requirements
 
@@ -148,7 +148,7 @@ You only need to use a template of a VM with Cloud-init (for Linux VMs) or Cloud
 [Check this blog post to learn how to install CloudInit](https://xen-orchestra.com/blog/centos-cloud-template-for-xenserver/).
 
 :::tip
-In XOA 5.31, we changed the Cloud-init config drive type from [OpenStack](https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) to the [NoCloud](https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html) type. This will allow us to pass network configuration to VMs in the future. For 99% of users, including default cloud-init installs, this change will have no effect. However if you have previously modified your cloud-init installation in a VM template to only look for `openstack` drive types (for instance with the `datasource_list` setting in `/etc/cloud/cloud.cfg`) you need to modify it to also look for `nocloud`.
+In NCA 5.31, we changed the Cloud-init config drive type from [OpenStack](https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) to the [NoCloud](https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html) type. This will allow us to pass network configuration to VMs in the future. For 99% of users, including default cloud-init installs, this change will have no effect. However if you have previously modified your cloud-init installation in a VM template to only look for `openstack` drive types (for instance with the `datasource_list` setting in `/etc/cloud/cloud.cfg`) you need to modify it to also look for `nocloud`.
 :::
 
 ### Example: How to create a Cloudbase-init template with Windows Server?

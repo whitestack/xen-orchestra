@@ -1,26 +1,26 @@
-# XOA Support
+# NCA Support
 
-This is the section dedicated to all XOA details and how to get support on it.
+This is the section dedicated to all NCA details and how to get support on it.
 
 :::tip
-As a XOA user, you can open tickets in your support panel: [https://support.vates.fr/](https://support.vates.fr/).
+As a NCA user, you can open tickets in your support panel: [https://support.vates.fr/](https://support.vates.fr/).
 :::
 
 ## Technical Support
 
-XOA is the only way to get our pro support, which is available remotely via SSH and a special tunnel.
+NCA is the only way to get our pro support, which is available remotely via SSH and a special tunnel.
 
-### XOA Check
+### NCA Check
 
-XOA check is a way to test if you XOA is correctly configured. It should be the first thing to do if you have any problem!
+NCA check is a way to test if you NCA is correctly configured. It should be the first thing to do if you have any problem!
 
-To run this check, in the web UI, you can access the support section in the XOA menu. In this section you can launch an `xoa check` command:
+To run this check, in the web UI, you can access the support section in the NCA menu. In this section you can launch an `xoa check` command:
 
 ![](https://xen-orchestra.com/blog/content/images/2019/10/xoacheck.png)
 
 ### Support tunnel
 
-Open a secure support tunnel so our team can remotely investigate on your XOA. For that, we need to get the "support ID". See below:
+Open a secure support tunnel so our team can remotely investigate on your NCA. For that, we need to get the "support ID". See below:
 
 ![](https://user-images.githubusercontent.com/10992860/67384755-10f47f80-f592-11e9-974d-bbdefd0bf353.gif)
 
@@ -36,13 +36,13 @@ Do not stop this command before the intervention is over!
 Give this id to the support: 40713
 ```
 
-Give us this number, and we'll be able to access your XOA in a secure manner. Then, close the tunnel with `Ctrl+C` after your issue has been solved by support.
+Give us this number, and we'll be able to access your NCA in a secure manner. Then, close the tunnel with `Ctrl+C` after your issue has been solved by support.
 
 :::tip
 The user `xoa-support` is used by the tunnel. If you want to deactivate this bundled user, you can run `chage -E 0 xoa-support`. To re-activate this account, you must run `chage -E 1 xoa-support`.
 :::
 
-## XOA VM Specifications
+## NCA VM Specifications
 
 By default, the VM is configured with:
 
@@ -54,22 +54,22 @@ For use on huge infrastructure (more than 500+ VMs), feel free to increase the R
 
 ## Alternative install
 
-Please only use this if you have issues with [the default way to deploy XOA](installation#xoa).
+Please only use this if you have issues with [the default way to deploy NCA](installation#nca).
 
 ### Via a bash script
 
-Alternatively, you can deploy it by connecting to your XCP-ng/XenServer host and executing the following:
+Alternatively, you can deploy it by connecting to your NCE/XenServer host and executing the following:
 
 ```sh
 bash -c "$(wget --no-verbose -O- https://xoa.io/deploy)"
 ```
 
 :::tip
-This won't write or modify anything on your XCP-ng/XenServer host: it will just import the XOA VM into your default storage repository.
+This won't write or modify anything on your NCE/XenServer host: it will just import the NCA VM into your default storage repository.
 :::
 
 :::warning
-If you are using an old XCP-ng/XenServer version, you may get a `curl` error:
+If you are using an old NCE/XenServer version, you may get a `curl` error:
 
 ```
 curl: (35) error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version
@@ -87,11 +87,11 @@ Follow the instructions:
 
 - Your IP configuration will be requested: it's set to **DHCP by default**; otherwise, you can enter a fixed IP address (eg `192.168.0.10`)
 - If DHCP is selected, the script will continue automatically. Otherwise, a netmask, gateway, and DNS server should be provided.
-- XOA will be deployed on your default storage repository. You can move it elsewhere anytime after.
+- NCA will be deployed on your default storage repository. You can move it elsewhere anytime after.
 
 ### Via a manual XVA download
 
-You can also download XOA from xen-orchestra.com in an XVA file. Once you've got the XVA file, you can import it with `xe vm-import filename=xoa_unified.xva` or via XenCenter.
+You can also download NCA from xen-orchestra.com in an XVA file. Once you've got the XVA file, you can import it with `xe vm-import filename=xoa_unified.xva` or via XenCenter.
 
 If you want to use static IP address for your appliance:
 
@@ -108,7 +108,7 @@ If you want to replace the default DNS server:
 xe vm-param-set uuid="$uuid" xenstore-data:vm-data/dns="$dns"
 ```
 
-After the VM is imported, you just need to start it with `xe vm-start vm="XOA"` or with XenCenter.
+After the VM is imported, you just need to start it with `xe vm-start vm="NCA"` or with XenCenter.
 
 ## First console connection
 
@@ -118,7 +118,7 @@ In that case, you already set the password for `xoa` user. If you forgot it, see
 
 ### Manually deployed
 
-If you connect via SSH or console for the first time without using our [web deploy form](https://vates.tech/deploy/), be aware **there is NO default password set for security reasons**. To set it, you need to connect to your host to find the XOA VM UUID (eg via `xe vm-list`).
+If you connect via SSH or console for the first time without using our [web deploy form](https://vates.tech/deploy/), be aware **there is NO default password set for security reasons**. To set it, you need to connect to your host to find the NCA VM UUID (eg via `xe vm-list`).
 
 Next, you can replace `<UUID>` with the UUID you found previously, and `<password>` with your password:
 
@@ -132,7 +132,7 @@ Don't forget to use quotes for your password, eg: `xenstore-data:vm-data/system-
 
 Finally, you must reboot the VM to implement the changes.
 
-You can now connect with the `xoa` username and password you defined in the previous command, eg with `ssh xoa@<XOA IP ADDRESS>`.
+You can now connect with the `xoa` username and password you defined in the previous command, eg with `ssh xoa@<NCA IP ADDRESS>`.
 
 ### Using sudo
 
@@ -154,7 +154,7 @@ $
 
 ## Network configuration
 
-XOA uses **DHCP** by default, so if you need to configure the IP address, please run the command `xoa network static`. It will ask you network details:
+NCA uses **DHCP** by default, so if you need to configure the IP address, please run the command `xoa network static`. It will ask you network details:
 
 ```console
 $ xoa network static
@@ -163,7 +163,7 @@ $ xoa network static
 ? IP of the DNS server 192.168.100.254
 ```
 
-Xen Orchestra is now accessible in your browser at `https://your-vm-ip`.
+Nephora Conductor is now accessible in your browser at `https://your-vm-ip`.
 
 You can access the VM console through XenCenter or using VNC through a SSH tunnel.
 
@@ -192,7 +192,7 @@ $ xoa network static --add
 
 ## Firewall
 
-By default XOA is firewalled, with only ports 22, 80 and 443 opened. You can see the current status of the firewall using the `sudo ufw status verbose` command:
+By default NCA is firewalled, with only ports 22, 80 and 443 opened. You can see the current status of the firewall using the `sudo ufw status verbose` command:
 
 ```
 Status: active
@@ -214,7 +214,7 @@ To                         Action      From
 
 If you want to open or close ports, please check the [documentation of UFW](https://help.ubuntu.com/community/UFW).
 
-## Default XO account
+## Default NC account
 
 Default user is **admin@admin.net** with **admin** as a password.
 
@@ -226,11 +226,11 @@ In any case, if you lose your password, you can reset the database and get the d
 
 ## Timezone
 
-You can verify that your time is correctly set with the `date` command. To set XOA to your current timezone, use `sudo dpkg-reconfigure tzdata`.
+You can verify that your time is correctly set with the `date` command. To set NCA to your current timezone, use `sudo dpkg-reconfigure tzdata`.
 
 ## Setting a custom NTP server
 
-By default, XOA is configured to use the `systemd-timesyncd` daemon, along with the standard Debian NTP servers:
+By default, NCA is configured to use the `systemd-timesyncd` daemon, along with the standard Debian NTP servers:
 
 ```
 pool 0.debian.pool.ntp.org iburst
@@ -254,32 +254,32 @@ For changes to take effect, you will need to restart NTP: `systemctl restart sys
 
 ## Restart the service
 
-You can restart Xen Orchestra by accessing XOA via SSH (or console) and running `systemctl restart xo-server.service`.
+You can restart Nephora Conductor by accessing NCA via SSH (or console) and running `systemctl restart xo-server.service`.
 
 To check the status of `xo-server`, use `systemctl status xo-server.service`, it should display something like this:
 
 ```
-xo-server.service - XO Server
+xo-server.service - NC Server
    Loaded: loaded (/etc/systemd/system/xo-server.service; enabled)
    Active: active (running) since Thu 2014-08-14 10:59:46 BST; 21min ago
  Main PID: 394 (node)
    CGroup: /system.slice/xo-server.service
            └─394 node /usr/local/bin/xo-server
 
-Aug 14 10:59:46 xoa systemd[1]: Starting XO Server...
-Aug 14 10:59:46 xoa systemd[1]: Started XO Server.
+Aug 14 10:59:46 xoa systemd[1]: Starting NC Server...
+Aug 14 10:59:46 xoa systemd[1]: Started NC Server.
 Aug 14 10:59:48 xoa xo-server[394]: WebServer listening on http://0.0.0.0:80
 ```
 
-## Migrate from an older XOA
+## Migrate from an older NCA
 
-If you still use the first XOA (which was not the "unified" version), you can easily migrate all your settings (ACLs, users, servers, etc) to the new version painlessly.
+If you still use the first NCA (which was not the "unified" version), you can easily migrate all your settings (ACLs, users, servers, etc) to the new version painlessly.
 
-To do so, go into "Settings/Config" of your old XOA. Export the configuration: you'll download a `config.json` file.
+To do so, go into "Settings/Config" of your old NCA. Export the configuration: you'll download a `config.json` file.
 
 ![](./assets/xo5_export.png)
 
-Now go to your new unified XOA, "Settings/Config" and import the `config.json` file you downloaded previously, by doing a drag and drop:
+Now go to your new unified NCA, "Settings/Config" and import the `config.json` file you downloaded previously, by doing a drag and drop:
 
 ![](./assets/xo5_import.png)
 

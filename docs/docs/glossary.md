@@ -12,5 +12,5 @@
 - VDI: Virtual Disk Image
 - VIF: Virtual Network Interface
 - VM: Virtual Machine
-- XO: Xen Orchestra
-- XOA: Xen Orchestra Appliance
+- NC: Nephora Conductor
+- NCA: Nephora Conductor Appliance

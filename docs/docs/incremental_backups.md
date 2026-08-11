@@ -23,7 +23,7 @@ You can imagine making your first initial key(complete) backup during a weekend,
 
 So, if you want to rollback your VM to a previous state, the cost is only one snapshot on your SR (far less than the [rolling snapshot](rolling_snapshots.md) mechanism).
 
-Even if you lost your whole SR or VM, XOA will restore your VM entirely and automatically, at any date of backup.
+Even if you lost your whole SR or VM, NCA will restore your VM entirely and automatically, at any date of backup.
 
 You can even imagine using this to backup more often! Because deltas will be smaller, and will **always be deltas**.
 
@@ -79,7 +79,7 @@ NBD must also be enabled on the network used to transfer the backups: select the
 
 ![](./assets/nbd-connection.png)
 
-This will securely transfer encrypted data from the host to the XOA.
+This will securely transfer encrypted data from the host to the NCA.
 When creating or editing an incremental (previously known as delta) backup and replication for this pool in the future, you have the option to enable NBD in the Advanced settings, and use multiple connections per VDI.
 
 ![](./assets/nbd-backup-settings.png)
@@ -88,7 +88,7 @@ After the job is completed, you can verify whether NBD was used for the transfer
 
 ![](./assets/nbd-backup-log.png)
 
-To learn more about the evolution of this feature across various XO releases, check out our blog posts for versions [5.76](https://xen-orchestra.com/blog/xen-orchestra-5-76/), [5.81](https://xen-orchestra.com/blog/xen-orchestra-5-81/), [5.82](https://xen-orchestra.com/blog/xen-orchestra-5-82/), and [5.86](https://xen-orchestra.com/blog/xen-orchestra-5-86/).
+To learn more about the evolution of this feature across various NC releases, check out our blog posts for versions [5.76](https://xen-orchestra.com/blog/xen-orchestra-5-76/), [5.81](https://xen-orchestra.com/blog/xen-orchestra-5-81/), [5.82](https://xen-orchestra.com/blog/xen-orchestra-5-82/), and [5.86](https://xen-orchestra.com/blog/xen-orchestra-5-86/).
 
 ## Understanding large deltas
 

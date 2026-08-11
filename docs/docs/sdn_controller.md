@@ -1,6 +1,6 @@
 # SDN Controller
 
-The SDN Controller enables a user to **create pool-wide and cross-pool private networks** and more. It's available as a Xen Orchestra plugin (included in XOA Premium).
+The SDN Controller enables a user to **create pool-wide and cross-pool private networks** and more. It's available as a Nephora Conductor plugin (included in NCA Premium).
 
 ## Global Private Networks
 

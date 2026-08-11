@@ -40,7 +40,7 @@ export default {
     },
     {
       type: 'category',
-      label: 'Xen Orchestra',
+      label: 'Nephora Conductor',
       collapsible: true,
       collapsed: true,
       items: [

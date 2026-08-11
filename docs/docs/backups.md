@@ -1,6 +1,6 @@
 # Concepts
 
-This section is dedicated to all general concepts about Xen Orchestra backups.
+This section is dedicated to all general concepts about Nephora Conductor backups.
 
 ## Interface
 
@@ -17,10 +17,10 @@ A successful backup task will be displayed in green, a faulty one in red. You ca
 You also have a filter to search anything related to these logs.
 
 :::tip
-Logs are not "live" tasks. If you restart XOA during a backup, the log associated with the job will stay in orange (in progress), because it wasn't finished. It will stay forever unfinished because the job was cut in the middle.
+Logs are not "live" tasks. If you restart NCA during a backup, the log associated with the job will stay in orange (in progress), because it wasn't finished. It will stay forever unfinished because the job was cut in the middle.
 :::
 
-#### Send XO logs to an external syslog server
+#### Send NC logs to an external syslog server
 
 ##### About syslog
 
@@ -36,9 +36,9 @@ Here's an example:
 
 `<34>Jun 24 14:32:01 server1 CRON[1234]: (root) CMD (/usr/bin/backup.sh)`
 
-##### Using Syslog with Xen Orchestra
+##### Using Syslog with Nephora Conductor
 
-You can send all your XO logs to an external syslog server.
+You can send all your NC logs to an external syslog server.
 
 To enable syslog, add this to your configuration file: 
 
@@ -60,7 +60,7 @@ Each backups' job execution is identified by a `runId`. You can find this `runId
 
 ## Backup Encryption
 
-Xen Orchestra ensures robust data security for backups stored remotely, by leveraging advanced encryption algorithms. Here's a closer look at how encryption works and the technology behind it:
+Nephora Conductor ensures robust data security for backups stored remotely, by leveraging advanced encryption algorithms. Here's a closer look at how encryption works and the technology behind it:
 
 ### Authentication
 
@@ -82,7 +82,7 @@ Encryption is opt-in and requires configuring an encryption key on the remote.
 
 ### `ChaCha20-Poly1305`
 
-To improve flexibility and performance, Xen Orchestra will transition to the [`ChaCha20-Poly1305`](https://en.wikipedia.org/wiki/ChaCha20-Poly1305) encryption algorithm by February 2025. This update addresses the file size limitations of `AES-256-GCM` while maintaining a high level of security and compliance with ANSSI guidelines.
+To improve flexibility and performance, Nephora Conductor will transition to the [`ChaCha20-Poly1305`](https://en.wikipedia.org/wiki/ChaCha20-Poly1305) encryption algorithm by February 2025. This update addresses the file size limitations of `AES-256-GCM` while maintaining a high level of security and compliance with ANSSI guidelines.
 
 Backup repositories that were encrypted with `AES-256-GCM` will remain accessible, to ensure a smooth transition.
 
@@ -94,7 +94,7 @@ Backup repositories that were encrypted with `AES-256-GCM` will remain accessibl
 
 Currently, backups use the [`AES-256-GCM`](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption algorithm. While this is a highly secure option, it does have a file size limitation of 64 GiB. This isn't an issue when working with incremental backups, as the data is split into smaller blocks, making it fully compatible with any remote (S3-compatible or file-based). 
 
-Full backups create one file per backup with all the data, that can go over 64 GB, even when using XCP-ng zstd encryption.
+Full backups create one file per backup with all the data, that can go over 64 GB, even when using NCE zstd encryption.
 
 #### Compliance
 
@@ -125,7 +125,7 @@ The disks marked with `[NOBAK]` will be now ignored in all following backups.
 
 Automating your backups is key to ensuring the safety and recoverability of your virtual machines.
 
-By scheduling regular backups, you protect your infrastructure from accidental deletions, system failures, or data corruption. Xen Orchestra lets you easily set up flexible schedules for your backup jobs, making sure they run automatically at times and frequencies that work best for you.
+By scheduling regular backups, you protect your infrastructure from accidental deletions, system failures, or data corruption. Nephora Conductor lets you easily set up flexible schedules for your backup jobs, making sure they run automatically at times and frequencies that work best for you.
 
 ### Viewing schedules for a backup job
 
@@ -156,7 +156,7 @@ To set up a schedule for a backup job:
 |-----------------------|-------------|
 | **Name**              | A label to identify your schedule. Useful when managing multiple jobs. |
 | **Pool retention** | Number of snapshots to keep for pool metadata. Older snapshots beyond this count will be automatically removed. |
-| **XO retention** | Number of snapshots to keep for XO metadata. Older snapshots beyond this count will be automatically removed. | |
+| **NC retention** | Number of snapshots to keep for NC metadata. Older snapshots beyond this count will be automatically removed. | |
 | **Replication retention** | Number of replicated snapshots to keep. Older snapshots beyond this count will be automatically removed. |
 | **Health check**      | If enabled, a VM [health check](#backup-health-check) is performed after the backup to detect issues early (e.g., boot errors). |
 | **Force full backup** | Forces a full backup at every run, even if incremental backups are enabled. |
@@ -220,12 +220,12 @@ It means any VMs on "Lab Pool" with the "prod" tag will be backed up.
 ## RAM Enabled backup
 
 :::tip
-This feature is **only compatible** with XCP-ng 8.0 or more recent. Citrix Hypervisor didn't yet merge our changes, despite we contributed to their code directly.
+This feature is **only compatible** with NCE 8.0 or more recent. Citrix Hypervisor didn't yet merge our changes, despite we contributed to their code directly.
 :::
 
 ![](https://xen-orchestra.com/blog/content/images/2020/03/REB.png)
 
-XCP-ng modified XAPI is now able to create VMs in a `Suspended` state with a `suspend_VDI` property set. When a VM is suspended, all of its memory contents are written into a disk called `suspend_VDI`. When the VM is restored, the `suspend_VDI` is read to recreate the memory of the VM. Once the resuming is done it's as if the VM was never suspended.
+NCE modified XAPI is now able to create VMs in a `Suspended` state with a `suspend_VDI` property set. When a VM is suspended, all of its memory contents are written into a disk called `suspend_VDI`. When the VM is restored, the `suspend_VDI` is read to recreate the memory of the VM. Once the resuming is done it's as if the VM was never suspended.
 
 ### Use cases
 
@@ -257,10 +257,10 @@ In order to use this functionality, the CPU of the host the VM is restored on sh
 ## Consistent backup
 
 :::warning
-This feature is being deprecated in XCP-ng and Citrix Hypervisor. It's now replaced by RAM enabled backup!
+This feature is being deprecated in NCE and Citrix Hypervisor. It's now replaced by RAM enabled backup!
 :::
 
-All backup types rely on snapshots. But what about data consistency? By default, Xen Orchestra will try to take a **quiesced snapshot** every time a snapshot is done (and fall back to normal snapshots if it's not possible).
+All backup types rely on snapshots. But what about data consistency? By default, Nephora Conductor will try to take a **quiesced snapshot** every time a snapshot is done (and fall back to normal snapshots if it's not possible).
 
 Snapshots of Windows VMs can be quiesced (especially MS SQL or Exchange services) after you have installed Xen Tools in your VMs. However, [there is an extra step to install the VSS provider on windows](https://xen-orchestra.com/blog/xenserver-quiesce-snapshots/). A quiesced snapshot means the operating system will be notified and the cache will be flushed to disks. This way, your backups will always be consistent.
 
@@ -280,7 +280,7 @@ To add a _remote_, go to the **Settings/Remotes** menu.
 
 Supported remote types:
 
-- Local (any folder in XOA filesystem)
+- Local (any folder in NCA filesystem)
 - NFS
 - SMB (CIFS)
 
@@ -292,7 +292,7 @@ Supported remote types:
 
 ### NFS
 
-On your NFS server, authorize XOA's IP address and permissions for subfolders. That's all!
+On your NFS server, authorize NCA's IP address and permissions for subfolders. That's all!
 
 ### SMB
 
@@ -319,19 +319,19 @@ PATH TO BACKUP is only needed if you have subfolders in your share.
 ### Local
 
 :::warning
-**This is for advanced users**. Using the local XOA filesystem without extra mounts/disks will **use the default system disk of XOA**.
+**This is for advanced users**. Using the local NCA filesystem without extra mounts/disks will **use the default system disk of NCA**.
 :::
 
 If you need to mount an unsupported store (FTP for example), you can always do it manually:
 
-1. mount your remote store inside the XOA filesystem manually, e.g in `/media/myStore`
+1. mount your remote store inside the NCA filesystem manually, e.g in `/media/myStore`
 2. in the web interface, select a "local" store and point it to your `/media/myStore` folder.
 
 Any Debian Linux mount point could be supported this way, until we add further options directly in the web interface.
 
 ### Amazon S3
 
-Xen Orchestra supports Amazon S3 storage and other S3-compatible providers, so you can back up your data to a variety of cloud storage services.
+Nephora Conductor supports Amazon S3 storage and other S3-compatible providers, so you can back up your data to a variety of cloud storage services.
 
 :::warning
 - Not all S3-compatible providers adhere perfectly to Amazon S3 standards. Make sure to test your setup before trusting it with critical backups.
@@ -342,7 +342,7 @@ Xen Orchestra supports Amazon S3 storage and other S3-compatible providers, so y
 
 ## Restore a backup
 
-All your scheduled backups are accessible in the "Restore" view in the backup section of Xen Orchestra.
+All your scheduled backups are accessible in the "Restore" view in the backup section of Nephora Conductor.
 
 1. Search the VM Name and click on the blue button with a white arrow
 2. Choose the backup you want to restore
@@ -358,7 +358,7 @@ Differential restores come in handy when you need to restore a VM to a storage u
 
 ### How it works
 
-Instead of performing a full restore, Xen Orchestra leverages the existing VM disk or snapshot as a foundation and restores only the differential data to a new disk. This method significantly cuts down on restore time, especially for large VMs. For instance, with a transfer rate of 60 MiB/s and a 200 GiB VM, a typical restore would take around an hour. However, with a differential restore, even a 600 GiB disk can be restored in just minutes.
+Instead of performing a full restore, Nephora Conductor leverages the existing VM disk or snapshot as a foundation and restores only the differential data to a new disk. This method significantly cuts down on restore time, especially for large VMs. For instance, with a transfer rate of 60 MiB/s and a 200 GiB VM, a typical restore would take around an hour. However, with a differential restore, even a 600 GiB disk can be restored in just minutes.
 
 Most importantly, this process prioritizes **data integrity**. The original VM disk remains untouched throughout the restore; we simply read from the latest snapshot to use it as a foundation for creating the new VM and disk.
 
@@ -422,17 +422,17 @@ Citrix Hypervisor uses Gzip compression, which is:
 - space efficient
 - consumes less bandwidth (helpful if your NFS share is far away)
 
-However, XCP-ng is using `zstd`, which is far better.
+However, NCE is using `zstd`, which is far better.
 
 :::tip
-If you have compression on your NFS share (or destination filesystem like ZFS), you can disable compression in Xen Orchestra.
+If you have compression on your NFS share (or destination filesystem like ZFS), you can disable compression in Nephora Conductor.
 :::
 
 ## Add a disk for local backups
 
-If you want to use XOA to locally store all your backups, you need to attach a large disk to it. This can be done live.
+If you want to use NCA to locally store all your backups, you need to attach a large disk to it. This can be done live.
 
-First, after your disk is attached to XOA, you'll have to find the new disk name with `fdisk -l`. It's probably `xvdb`.
+First, after your disk is attached to NCA, you'll have to find the new disk name with `fdisk -l`. It's probably `xvdb`.
 
 Then, create a filesystem on it:
 
@@ -442,7 +442,7 @@ mkfs.ext4 /dev/xvdb
 
 If you already have backups done, you can move them to the new disk. The orignal backups folder is in `/var/lib/xoa-backups`.
 
-To make the mount point persistent in XOA, edit the `/etc/fstab` file, and add:
+To make the mount point persistent in NCA, edit the `/etc/fstab` file, and add:
 
 ```
 /dev/xvdb /var/lib/xoa-backups ext4 defaults 0 0
@@ -452,28 +452,28 @@ This way, without modifying your previous scheduled snapshot, they will be writt
 
 ## HA behavior
 
-Replicated VMs HA are taken into account by XCP-ng. To avoid the resultant troubles, HA will be disabled from the replicated VMs and a tag indicating this change will be added.
+Replicated VMs HA are taken into account by NCE. To avoid the resultant troubles, HA will be disabled from the replicated VMs and a tag indicating this change will be added.
 
 ![](./assets/disabled-dr-ha-tag.png)
 ![](./assets/disabled-cr-ha-tag.png)
 
 :::tip
-The tag won't be automatically removed by XO on the replicated VMs, even if HA is re-enabled.
+The tag won't be automatically removed by NC on the replicated VMs, even if HA is re-enabled.
 :::
 
 ## Backup Concurrency
 
-Xen Orchestra 5.20 introduces new tools to manage backup concurrency. Below is an overview of the backup process and ways you can control concurrency in your own environment.
+Nephora Conductor 5.20 introduces new tools to manage backup concurrency. Below is an overview of the backup process and ways you can control concurrency in your own environment.
 
 ### Backup process
 
 #### 1. Snapshot creation
 
-When you perform a backup in XCP-ng/XenServer, the first operation performed is to "freeze" the data at a specific time - this is done by **making a snapshot**. This operation is pretty quick, only a few seconds in general. However it uses a lot of I/O on your storage, therefore more I/O activity means longer times to snapshot. Still, the order of magnitude is seconds per VM.
+When you perform a backup in NCE/XenServer, the first operation performed is to "freeze" the data at a specific time - this is done by **making a snapshot**. This operation is pretty quick, only a few seconds in general. However it uses a lot of I/O on your storage, therefore more I/O activity means longer times to snapshot. Still, the order of magnitude is seconds per VM.
 
 #### 2. Export
 
-Xen Orchestra will fetch the content of the snapshot made in step 1. This operation can be very long, obviously depending on the size of the snapshot to export: exporting 1TiB of data will take far longer than exporting 1GiB!
+Nephora Conductor will fetch the content of the snapshot made in step 1. This operation can be very long, obviously depending on the size of the snapshot to export: exporting 1TiB of data will take far longer than exporting 1GiB!
 
 #### 3. Snapshot removal
 
@@ -499,7 +499,7 @@ The first purely sequential strategy will lead to the fact that: **you can't pre
 If you need your backup to be done at a specific time you should consider creating a specific backup task for this VM.
 :::
 
-Strategy number 2 is to parallelise: all the snapshots will be taken at 3 AM. However **it's risky without limits**: it means potentially doing 50 snapshots or more at once on the same storage. **Since XCP-ng/XenServer doesn't have a queue**, it will try to do all of them at once. This is also prone to race conditions and could cause crashes on your storage.
+Strategy number 2 is to parallelise: all the snapshots will be taken at 3 AM. However **it's risky without limits**: it means potentially doing 50 snapshots or more at once on the same storage. **Since NCE/XenServer doesn't have a queue**, it will try to do all of them at once. This is also prone to race conditions and could cause crashes on your storage.
 
 By default the _parallel strategy_ is, on paper, the most logical one. But you need to be careful and give it some limits on concurrency.
 
@@ -507,7 +507,7 @@ By default the _parallel strategy_ is, on paper, the most logical one. But you n
 High concurrency could impact your dom0 and network performances.
 :::
 
-You should be aware of your hardware limitation when defining the best concurrency for your XCP-ng infrastructure, never put concurrency too high or you could impact your VMs performances.
+You should be aware of your hardware limitation when defining the best concurrency for your NCE infrastructure, never put concurrency too high or you could impact your VMs performances.
 The best way to define the best concurrency for you is by increasing it slowly and watching the result on backup time.
 
 So to summarize, if you set your concurrency at 6 and you have 20 Vms to backup the process will be the following:
@@ -536,7 +536,7 @@ Just a refresher/summary: You can select multiple backup methods for the same jo
 - Full: _Backup_ and _Disaster Recovery_ (DR)
 - Deltas: _Delta Backup_ and _Continuous Replication_ (CR)
 
-The Full and Delta options are mutually exclusive; Rolling Snapshots are compatible with both. The Backup and Delta Backup go to a remote Target (e.g, NFS); DR and CR back up to another XCP-ng storage repository (i.e., not the one on which the VM's being backed up reside). In the Schedule configuration, you will have the option to select the number of "Backup Retention" if your backup includes a _Backup_ (or _Delta Backup_); you will have the option to select the number "Replication Retention" if you have selected _DR_ or _CR_ in the backup configuration.
+The Full and Delta options are mutually exclusive; Rolling Snapshots are compatible with both. The Backup and Delta Backup go to a remote Target (e.g, NFS); DR and CR back up to another NCE storage repository (i.e., not the one on which the VM's being backed up reside). In the Schedule configuration, you will have the option to select the number of "Backup Retention" if your backup includes a _Backup_ (or _Delta Backup_); you will have the option to select the number "Replication Retention" if you have selected _DR_ or _CR_ in the backup configuration.
 
 ### Rolling Snapshots
 
@@ -564,11 +564,11 @@ It is often a good idea to configure retention of older backups with decreasing 
 - a weekly backup on Sunday (retaining 4)
 - a monthly backup (retaining 12)
 
-Again, all of these can be assigned to the same backup job. Note that if you do a weekly and a monthly backup, at some point, these will fall on the same day. Xen Orchestra is designed to fail gracefully (with an error message) if a backup job for a VM is already running. For this reason, you will want to set the time on the monthly job to run before the weekly job so that if one fails, it will be the weekly rather than the monthly one; if the weekly one fails, the monthly will be there for that spot in the retention plan; if the monthly one fails, the weekly one will only be retained for 4 weeks, and then there will be a gap in the monthly retention.
+Again, all of these can be assigned to the same backup job. Note that if you do a weekly and a monthly backup, at some point, these will fall on the same day. Nephora Conductor is designed to fail gracefully (with an error message) if a backup job for a VM is already running. For this reason, you will want to set the time on the monthly job to run before the weekly job so that if one fails, it will be the weekly rather than the monthly one; if the weekly one fails, the monthly will be there for that spot in the retention plan; if the monthly one fails, the weekly one will only be retained for 4 weeks, and then there will be a gap in the monthly retention.
 
 ### Long-term Backup Retention with GFS Strategy
 
-Xen Orchestra supports the **Grandfather-Father-Son (GFS)** backup retention strategy, providing an efficient way to manage long-term backups. Backups are organized into daily, weekly, and monthly intervals, optimizing storage while keeping important recovery points over time.
+Nephora Conductor supports the **Grandfather-Father-Son (GFS)** backup retention strategy, providing an efficient way to manage long-term backups. Backups are organized into daily, weekly, and monthly intervals, optimizing storage while keeping important recovery points over time.
 
 #### FAQ
 
@@ -578,14 +578,14 @@ Xen Orchestra supports the **Grandfather-Father-Son (GFS)** backup retention str
 - **Is GFS retention applied globally or per repository?**\
   GFS retention is applied on a per-repository basis, allowing you to manage retention independently for different storage locations.
 
-- **How does Xen Orchestra decide which backups to retain?**\
+- **How does Nephora Conductor decide which backups to retain?**\
   The oldest backup within each retention period (daily, weekly, or monthly) is preserved. For example, the first backup of the week is saved as the weekly backup.
 
 :::warning
 - **Definition of a week:**\
 The start of the week is computed with the timezone set in the schedule.
 - **What GFS isn't:**\
-GFS in Xen Orchestra stands for Grandfather-Father-Son. It's a backup strategy, and is not related to the file system called GFS2 (or Global File System 2), supported by XenServer.
+GFS in Nephora Conductor stands for Grandfather-Father-Son. It's a backup strategy, and is not related to the file system called GFS2 (or Global File System 2), supported by XenServer.
 - GFS retention is defined per schedule. For example, if a backup has two schedules, two independent GFS backups will be created.
 :::
 
@@ -604,11 +604,11 @@ The section called **Long-term retention of backups** appears.
 - **Yearly backups** (Grandfather): The number of monthly backups to keep.
 5. Click the **Save** button.
 
-During each backup run, Xen Orchestra evaluates existing backups and removes any excess backups based on the configured policy.
+During each backup run, Nephora Conductor evaluates existing backups and removes any excess backups based on the configured policy.
 
-### Implementation in Xen Orchestra
+### Implementation in Nephora Conductor
 
-To enable GFS retention, configure the settings in the backup job's "Retention" section. During each backup run, Xen Orchestra evaluates existing backups and removes any excess backups based on the configured policy.
+To enable GFS retention, configure the settings in the backup job's "Retention" section. During each backup run, Nephora Conductor evaluates existing backups and removes any excess backups based on the configured policy.
 
 ## Backup Health Check
 
@@ -618,7 +618,7 @@ Backup health check ensures the backups are ready to be restored.
 
 #### Check for boot
 
-XO will restore the VM, either by downloading it for a delta/full backup or by cloning it for a disaster recovery or continuous replication and then wait for the guest tools to be loaded before the end of a timeout of 10 minutes (boot + guest tools).
+NC will restore the VM, either by downloading it for a delta/full backup or by cloning it for a disaster recovery or continuous replication and then wait for the guest tools to be loaded before the end of a timeout of 10 minutes (boot + guest tools).
 
 A VM without guest tools will fail its health check.
 
@@ -626,7 +626,7 @@ The restored VM is then deleted.
 
 #### Execute a script
 
-If a VM has the tag **xo-backup-healthcheck-xenstore** during a backup health check, then XO will wait for a script to change the value of the xenstore `vm-data/xo-backup-health-check` key to be either `success` or `failure`.
+If a VM has the tag **xo-backup-healthcheck-xenstore** during a backup health check, then NC will wait for a script to change the value of the xenstore `vm-data/xo-backup-health-check` key to be either `success` or `failure`.
 
 In case of `failure`, it will mark the health check as failed, and will show the (optional) message contained in `vm-data/xo-backup-health-check-error`
 

@@ -1,6 +1,6 @@
 # Contributing
 
-XO is an Open Source project released under the [AGPL v3](http://www.gnu.org/licenses/agpl-3.0-standalone.html) license, contributions are therefore very welcome.
+NC is an Open Source project released under the [AGPL v3](http://www.gnu.org/licenses/agpl-3.0-standalone.html) license, contributions are therefore very welcome.
 
 ## Bug reports
 
@@ -12,7 +12,7 @@ Before creating an issue, please take a look [into this section](community.md) f
 
 ## Translations
 
-[Help us translate Xen Orchestra in more languages!](http://translate.vates.tech/engage/xen-orchestra/)
+[Help us translate Nephora Conductor in more languages!](http://translate.vates.tech/engage/xen-orchestra/)
 
 ## Documentation / Code
 
@@ -28,8 +28,8 @@ Please, do explain:
 The best way to propose a change to the documentation or code is
 to create a [GitHub pull request](https://help.github.com/articles/using-pull-requests/).
 
-1. Fork the [Xen Orchestra repository](https://github.com/vatesfr/xen-orchestra) using the Fork button
-2. Follow [the documentation](installation.md#from-the-sources) to install and run Xen Orchestra from the sources
+1. Fork the [Nephora Conductor repository](https://github.com/vatesfr/xen-orchestra) using the Fork button
+2. Follow [the documentation](installation.md#from-the-sources) to install and run Nephora Conductor from the sources
 3. Create a branch for your work
 4. Edit the source files
 5. Add a summary of your changes to `CHANGELOG.unreleased.md`, if your changes do not relate to an existing changelog item and update the list of packages that must be released to take your changes into account
@@ -67,7 +67,7 @@ This helps new people to contribute.
 
 - backup
 - GUI
-- upstream: not a XO issue → link to the upstream issue and monitor progress
+- upstream: not a NC issue → link to the upstream issue and monitor progress
 
 **Severity**
 

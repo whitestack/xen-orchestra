@@ -1,12 +1,12 @@
 # Installation
 
 :::tip
-If you want to deploy an XOA in an airgapped infrastructure, refer to the [dedicated documentation](airgap.md).
+If you want to deploy an NCA in an airgapped infrastructure, refer to the [dedicated documentation](airgap.md).
 :::
 
-## XOA
+## NCA
 
-Log in to your account and use the deploy form [available on this page](https://vates.tech/deploy/).
+Log in to your account and use the deploy form [available on this page](https://nephora-conductor.whitestack.com/deploy/).
 
 :::tip
 All the deploy code is within your browser, nothing is sent to our server!
@@ -18,26 +18,26 @@ All the deploy code is within your browser, nothing is sent to our server!
 
 Once you have started the VM, you can access the web UI by putting the IP you configured during deployment into your web browser. If you did not configure an IP or are unsure, try one of the following methods to find it:
 
-- Run `xe vm-list params=name-label,networks | grep -A 1 XOA` on your host
+- Run `xe vm-list params=name-label,networks | grep -A 1 NCA` on your host
 - Check your router's DHCP leases for an `xoa` lease
 
 :::tip
 
 - Default Web UI credentials are `admin@admin.net` / `admin`
-- Default console/SSH credentials are not set, you need to set them [as described here](troubleshooting.md#set-or-recover-xoa-vm-password).
+- Default console/SSH credentials are not set, you need to set them [as described here](troubleshooting.md#set-or-recover-nca-vm-password).
   :::
 
 ### Registration
 
-**The first thing** you need to do with your XOA is register. [Read the documentation on the page dedicated to the updater/register interface](updater.md#register).
+**The first thing** you need to do with your NCA is register. [Read the documentation on the page dedicated to the updater/register interface](updater.md#register).
 
 :::tip
-We don't generate virtual appliances every month (unlike XO code itself). It's very likely you'll need to update Xen Orchestra after the initial deploy. You need to register to do so!
+We don't generate virtual appliances every month (unlike NC code itself). It's very likely you'll need to update Nephora Conductor after the initial deploy. You need to register to do so!
 :::
 
 ### Trial
 
-In your current Free XOA, register it in the "Updates" view in the main menu:
+In your current Free NCA, register it in the "Updates" view in the main menu:
 
 ![](./assets/xo5updatemenu.png)
 
@@ -60,12 +60,12 @@ In this update view, you can see when your trial will end:
 ![](./assets/xo5trialend.png)
 
 :::tip
-Don't worry! XOA will still work after the trial: you'll be forced to downgrade to Free version, but you won't lose any configuration data.
+Don't worry! NCA will still work after the trial: you'll be forced to downgrade to Free version, but you won't lose any configuration data.
 :::
 
-### More on XOA
+### More on NCA
 
-You can get all the info you want on XOA in its [dedicated section](xoa.md).
+You can get all the info you want on NCA in its [dedicated section](xoa.md).
 
 ![](../static/img/logo.png)
 
@@ -76,18 +76,18 @@ We don't provide pro support for this installation method. We cannot guarantee a
 :::
 
 :::tip
-Please consider using XOA before trying to play with the manual build, which can be difficult if you are not used to NodeJS and NPM.
+Please consider using NCA before trying to play with the manual build, which can be difficult if you are not used to NodeJS and NPM.
 :::
 
 This installation has been validated against a fresh Debian 12 (Bookworm) x64 install. It should be nearly the same on other dpkg systems. For RPM based OS's, it should be close, as most of our dependencies come from NPM and not the OS itself.
 
-As you may have seen in other parts of the documentation, XO is composed of two parts: [xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/) and [xo-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
+As you may have seen in other parts of the documentation, NC is composed of two parts: [xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/) and [xo-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
 
 ### Packages and Prerequisites
 
 #### NodeJS
 
-XO requires [Node.js](https://en.wikipedia.org/wiki/Node.js), **please always use [latest LTS](https://github.com/nodejs/release?tab=readme-ov-file#release-schedule)**.
+NC requires [Node.js](https://en.wikipedia.org/wiki/Node.js), **please always use [latest LTS](https://github.com/nodejs/release?tab=readme-ov-file#release-schedule)**.
 
 We'll consider at this point that you've got a working node on your box. E.g:
 
@@ -106,7 +106,7 @@ See [this page](https://yarnpkg.com/en/docs/install#debian-stable) for instructi
 
 #### Packages
 
-XO needs the following packages to be installed. Redis is used as a database by XO.
+NC needs the following packages to be installed. Redis is used as a database by NC.
 
 For example, on Debian/Ubuntu:
 
@@ -137,7 +137,7 @@ PONG
 
 ### Fetching the Code
 
-You need to use the `git` source code manager to fetch the code. Ideally, you should run XO as a non-root user, and if you choose to, you need to set up `sudo` to be able to mount NFS remotes. As your chosen non-root (or root) user, run the following:
+You need to use the `git` source code manager to fetch the code. Ideally, you should run NC as a non-root user, and if you choose to, you need to set up `sudo` to be able to mount NFS remotes. As your chosen non-root (or root) user, run the following:
 
 ```sh
 git clone -b master https://github.com/vatesfr/xen-orchestra
@@ -149,7 +149,7 @@ git clone -b master https://github.com/vatesfr/xen-orchestra
 
 ### Installing dependencies
 
-Now that you have the code, you can enter the `xen-orchestra` directory and use `yarn` to install other dependencies. Then finally build it using `yarn build`. Be sure to run `yarn` commands as the same user you will be using to run Xen Orchestra:
+Now that you have the code, you can enter the `xen-orchestra` directory and use `yarn` to install other dependencies. Then finally build it using `yarn build`. Be sure to run `yarn` commands as the same user you will be using to run Nephora Conductor:
 
 ```sh
 cd xen-orchestra
@@ -177,7 +177,7 @@ WebServer listening on localhost:80
 [INFO] Default user: "admin@admin.net" with password "admin"
 ```
 
-### Running XO
+### Running NC
 
 The only part you need to launch is xo-server, which is quite easy to do. From the `xen-orchestra/packages/xo-server` directory, run the following:
 
@@ -200,7 +200,7 @@ yarn
 yarn build
 ```
 
-Then restart Xen Orchestra if it was running.
+Then restart Nephora Conductor if it was running.
 
 ### Always Running
 
@@ -211,11 +211,11 @@ Then restart Xen Orchestra if it was running.
 ```sh
 yarn global add forever
 
-# Run the below as the user owning XO
+# Run the below as the user owning NC
 forever start dist/cli.mjs
 ```
 
-- Or you can use [forever-service](https://github.com/zapty/forever-service) to install XO as a system service, so it starts automatically at boot. Run the following as root:
+- Or you can use [forever-service](https://github.com/zapty/forever-service) to install NC as a system service, so it starts automatically at boot. Run the following as root:
 
 ```sh
 yarn global add forever
@@ -224,7 +224,7 @@ yarn global add forever-service
 # Be sure to edit the path below to where your install is located!
 cd /home/username/xen-orchestra/packages/xo-server/
 
-# Change the username below to the user owning XO
+# Change the username below to the user owning NC
 forever-service install orchestra -r username -s dist/cli.mjs
 ```
 
@@ -251,7 +251,7 @@ Create the following file `/etc/systemd/system/xo-server.service` containing the
 
 ```ini
 [Unit]
-Description=XO Server
+Description=NC Server
 After=network-online.target
 
 [Service]
@@ -283,16 +283,16 @@ systemctl status xo-server
 
 ### Banner and warnings
 
-You probably noticed a banner and some warnings when using XO "from the sources": no pro support, no QA performed, etc. But why? We don't sell any licenses, just the turnkey appliance with QA/support and extra services. And we don't sell that to individuals, only companies.
+You probably noticed a banner and some warnings when using NC "from the sources": no pro support, no QA performed, etc. But why? We don't sell any licenses, just the turnkey appliance with QA/support and extra services. And we don't sell that to individuals, only companies.
 
-However, there's no way to discriminate if this "from the sources" version is used by a company or an individual. Remember that we have no control where or when XO from the sources is running on premise, nor how many people use it.
+However, there's no way to discriminate if this "from the sources" version is used by a company or an individual. Remember that we have no control where or when NC from the sources is running on premise, nor how many people use it.
 
-That's why we have to notify these companies about XOA: it's better to run XO with XOA in production. So as a home user, just ignore it. Also, removing this with your own scripts that you distribute might hurt XO and the [XCP-ng project](https://xcp-ng.org). Indeed, since XOA is our main revenue stream for both projects, this banner is important to get the attention of companies potentially interested by that, driving revenue helping us to develop our fully Open Source products further/faster. We are not Facebook or Google with their giant ad revenue, and each dollar/euro earned by selling support is **directly and 100% invested into XO or XCP-ng**.
+That's why we have to notify these companies about NCA: it's better to run NC with NCA in production. So as a home user, just ignore it. Also, removing this with your own scripts that you distribute might hurt NC and the [NCE project](https://xcp-ng.org). Indeed, since NCA is our main revenue stream for both projects, this banner is important to get the attention of companies potentially interested by that, driving revenue helping us to develop our fully Open Source products further/faster. We are not Facebook or Google with their giant ad revenue, and each dollar/euro earned by selling support is **directly and 100% invested into NC or NCE**.
 
-As a home user, you can support the XO project in a lot of ways: spreading the word, giving your feedback, finding bugs and ultimately contribute to the code. Keeping this banner is also a way to support us!
+As a home user, you can support the NC project in a lot of ways: spreading the word, giving your feedback, finding bugs and ultimately contribute to the code. Keeping this banner is also a way to support us!
 
 :::tip
-Exceptional individual contributors are awarded with a free XOA Premium subscription. If you think you deserve it, feel free to contact us!
+Exceptional individual contributors are awarded with a free NCA Premium subscription. If you think you deserve it, feel free to contact us!
 :::
 
 ### Troubleshooting

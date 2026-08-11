@@ -2,7 +2,7 @@
 
 ## 📌 Introduction
 
-Xen Orchestra 5.110 introduced a new migration backend for moving virtual machines from VMware to Vates (V2V). This replaces the old NFS-based method and now uses `nbdkit` alongside VMware’s VDDK libraries, delivering improved performance and reliability.
+Nephora Conductor 5.110 introduced a new migration backend for moving virtual machines from VMware to Vates (V2V). This replaces the old NFS-based method and now uses `nbdkit` alongside VMware’s VDDK libraries, delivering improved performance and reliability.
 
 This guide walks you through the entire migration process:
 
@@ -41,13 +41,13 @@ Performance gains can be significant, though results depend on the environment:
 
 - **In the best case**, when using VMs with many snapshots or mostly empty disks, migrations can be up to 100 times faster. In our high-performance lab, we measured around 150 MB/s per disk and up to 500 MB/s total, which means an infrastructure with 10 TB of data could be migrated in a single day, with less than five minutes of downtime per VM.
 
-- **In less favorable situations**, such as a fully allocated disk with no snapshots and a powered-off VM, improvements are smaller, mainly due to compression between XO and ESXi. In general, the limiting factor is the import speed on the XCP-ng side, which scales well until the storage is saturated. Most of the transfer occurs while the VM is running, so production data remains safe. 
+- **In less favorable situations**, such as a fully allocated disk with no snapshots and a powered-off VM, improvements are smaller, mainly due to compression between NC and ESXi. In general, the limiting factor is the import speed on the NCE side, which scales well until the storage is saturated. Most of the transfer occurs while the VM is running, so production data remains safe. 
 
-## 👨‍🍳 Preparing the XO environment
+## 👨‍🍳 Preparing the NC environment
 
-### Update Xen Orchestra 
+### Update Nephora Conductor 
 
-Make sure your Xen Orchestra instance is up to date. The import page now includes an automatic check that highlights errors and warnings before migration. Errors must be resolved, and warnings should be addressed when possible.
+Make sure your Nephora Conductor instance is up to date. The import page now includes an automatic check that highlights errors and warnings before migration. Errors must be resolved, and warnings should be addressed when possible.
 
 ![](./assets/import-prerequisite-check.png)
 
@@ -63,7 +63,7 @@ Install the following dependencies:
 :::warning
 This procedure requires an active Internet connection and has only been tested on Debian 12 and 13.
 
-In the future, we plan to include the latest libraries directly in XOA.
+In the future, we plan to include the latest libraries directly in NCA.
 :::
 
 To install `nbdinfo` on Debian:
@@ -96,14 +96,14 @@ You can compile `nbdkit` and `libnbd` from source on GitLab, but the correct dep
 ##### Installing VDDK
 
 1. Download the VMware Virtual Disk Development Kit (VDDK) from the [Broadcom developer portal](https://developer.broadcom.com/sdks/vmware-virtual-disk-development-kit-vddk/9.0?ref=xen-orchestra.com). 
-2. Select the *tar.gz* archive, then drag and drop it directly into the Xen Orchestra interface:
+2. Select the *tar.gz* archive, then drag and drop it directly into the Nephora Conductor interface:
 ![Import screen showing a VDDK import dialog](./assets/upload_vddk.png)
 An **install button** will appear.
 3. Click the button: 
 ![Button to confirm the installation of an uploaded VDDK archive](./assets/install_vddk_button.png)
 The installation should take just a few seconds.
 Once the installation is done, a **transfer form** will appear.:
-![Form for transfering a VM from VMware to Xen Orchestra](./assets/vddk_transfer_form.png)
+![Form for transfering a VM from VMware to Nephora Conductor](./assets/vddk_transfer_form.png)
 :::warning
 Filling in this form and clicking the **Connect** button will start the VM import. However, make sure your VMware environment is ready! 
 
@@ -117,7 +117,7 @@ Read [Preparing the VMware Environment](#-preparing-the-vmware-environment) to k
 Before starting the migration, make sure your VMware environment meets the following conditions:
 
 #### Network
-XO must be able to connect to the vsphere/esxi through the port running the web UI (default port: 443) and vddk (default port: 902). At the time of writing, there is no solution to select one network or another. If possible, keep one single network path from XO to VMware.
+NC must be able to connect to the vsphere/esxi through the port running the web UI (default port: 443) and vddk (default port: 902). At the time of writing, there is no solution to select one network or another. If possible, keep one single network path from NC to VMware.
 
 #### VMware disk support
 
@@ -144,7 +144,7 @@ The following VMware disk types are not supporetd:
 - Encrypted virtual disks (unless you have the correct credentials)
 
 :::warning
-Starting with Xen Orchestra 5.110, NFS-based migration and VSAN exports are no longer available.
+Starting with Nephora Conductor 5.110, NFS-based migration and VSAN exports are no longer available.
 :::
 
 ### Step-by-step procedure 
@@ -185,20 +185,20 @@ Before making the final switch, **run a test migration first**. This lets you ca
 
 ### Perform the first migration attempt
 
-1. **Start the V2V migration** in Xen Orchestra, without enabling the `Stop Source` option.\
+1. **Start the V2V migration** in Nephora Conductor, without enabling the `Stop Source` option.\
     This will transfer the VM data up to the snapshot named `vm without tools`. 
     :::tip
     You can safely close your browser while the migration runs.
     :::
 2. **Monitor the migration progress** using one of these methods:
-    - Check the VM status in Xen Orchestra (it should show `importing...`).
+    - Check the VM status in Nephora Conductor (it should show `importing...`).
     - Follow the disk transfer progress indicators.
 
 ### Testing the migrated VM
 
 Once the migration is complete:
 
-1. Start the migrated VM copy on your XCP-ng environment. 
+1. Start the migrated VM copy on your NCE environment. 
 
 :::tip
 - Use an **isolated network** to avoid IP conflicts.
@@ -222,7 +222,7 @@ Once you’ve finished your checks and taken notes, delete the test VM. This wil
 ### Run the production migration
 When you're ready for the final migration:
 - Shut down the source VM completely.
-- Start the V2V migration in Xen Orchestra with the `Stop Source` option enabled.\
+- Start the V2V migration in Nephora Conductor with the `Stop Source` option enabled.\
     This ensures the final sync happens while the VM is powered off, and prevents any inconsistencies.
 
 ### Post-migration tasks
@@ -245,16 +245,16 @@ Ensure `nbdkit` and `nbdinfo` are up to date. Older versions can cause compatibi
 Make sure no active snapshots remain on the source VM. Snapshots can disrupt migration consistency.
 
 - **Verify destination storage**\
-Confirm the XCP-ng storage repository has enough free space for the migrated VM.
+Confirm the NCE storage repository has enough free space for the migrated VM.
 
 - **Test network connectivity**\
-Ensure stable network connectivity between the VMware environment, Xen Orchestra, and XCP-ng hosts.
+Ensure stable network connectivity between the VMware environment, Nephora Conductor, and NCE hosts.
 
 - **Retry with cold migration**\
 If warm migration fails, power off the VM, remove all snapshots, and try again.
 
 ## ❓ Need more help?
-For additional details and alternative methods, see the [XCP-ng migration guide](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#ova).
+For additional details and alternative methods, see the [NCE migration guide](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#ova).
 
 ## 🚀 Boosting migration performance
 Migration speed depends on several factors. By identifying bottlenecks and optimizing your setup, you can significantly improve performance.
@@ -263,31 +263,31 @@ Migration speed depends on several factors. By identifying bottlenecks and optim
 The V2V migration process can be slowed down by:
 
 - XAPI ingestion speed limits
-- Network throughput between Xen Orchestra and VMware
-- Network throughput between Xen Orchestra and the XCP-ng host
+- Network throughput between Nephora Conductor and VMware
+- Network throughput between Nephora Conductor and the NCE host
 - ESXi host export speed
 
 ### Optimizing network performance
 For the best results:
 
-#### Xen Orchestra to XCP-ng connection
-    - Run Xen Orchestra directly within the target XCP-ng pool to reduce network hops and latency.
+#### Nephora Conductor to NCE connection
+    - Run Nephora Conductor directly within the target NCE pool to reduce network hops and latency.
     - Use the highest available bandwidth, ideally 10Gbps or faster.
 
-#### Xen Orchestra to VMware connection
+#### Nephora Conductor to VMware connection
 Ensure a dedicated 10Gbps+ connection with low latency to your vCenter or ESXi hosts.
 
 ### Storage recommendations
 
-Use **fast SSD storage** for both the XCP-ng storage repository and Xen Orchestra’s working directory.
+Use **fast SSD storage** for both the NCE storage repository and Nephora Conductor’s working directory.
 This speeds up the initial migration and enables smoother live migrations afterward.
 
 ### CPU and compute resources
 
 If CPU becomes a bottleneck:
 
-- **Allocate high-performance CPUs** to your Xen Orchestra appliance.
-- For large environments, consider **parallel migrations** using multiple Xen Orchestra instances —but balance this with your network capacity.
+- **Allocate high-performance CPUs** to your Nephora Conductor appliance.
+- For large environments, consider **parallel migrations** using multiple Nephora Conductor instances —but balance this with your network capacity.
 
 ### Migration strategy
 

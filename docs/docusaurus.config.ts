@@ -3,15 +3,15 @@ import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'Xen Orchestra | XO Documentation',
-  tagline: 'Discover how to use Xen Orchestra',
+  title: 'Nephora Conductor',
+  tagline: 'Discover how to use Nephora Conductor',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
   // Set the production url of your site here
-  url: 'https://docs.xen-orchestra.com/',
+  url: 'https://docs.whitestack.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/nephora-conductor/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -74,10 +74,7 @@ const config: Config = {
       {
         docs: {
           routeBasePath: '/',
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/vatesfr/xen-orchestra/tree/master/docs',
+          sidebarPath: './sidebars.ts'
         },
         blog: false,
         theme: {
@@ -91,72 +88,16 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/vates-xo-logo-smol-new-baseline.png',
     navbar: {
-      title: 'Xen Orchestra Documentation',
-      logo: { alt: 'Xen Orchestra logo', src: 'img/logo.png', href: '/' },
+      title: 'Nephora Conductor Documentation',
+      logo: { alt: 'Nephora Conductor logo', src: 'img/logo.png', href: '/' },
       items: [
-        { href: 'https://xen-orchestra.com', label: 'Home', position: 'right' },
-        { href: 'https://xen-orchestra.com/blog/', label: 'Blog', position: 'right' },
+        { href: 'https://customers.whitestack.com/nephora-conductor', label: 'Home', position: 'right' },
         { href: '/', label: 'Documentation', position: 'right' },
-        { href: 'https://github.com/vatesfr/xen-orchestra', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Learn',
-          items: [
-            {
-              label: 'Introduction',
-              href: '/',
-            },
-            {
-              label: 'Installation',
-              href: '/installation',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Forum',
-              href: 'https://xcp-ng.org/forum',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/Hr98F6wRvx',
-            },
-          ],
-        },
-        {
-          title: 'Pro Support',
-          items: [
-            {
-              label: 'Vates Stack',
-              href: 'https://vates.tech',
-            },
-            {
-              label: 'Contact us',
-              href: 'https://vates.tech/contact',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'News',
-              href: 'https://xen-orchestra.com/blog/',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/vatesfr/xen-orchestra',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} XCP-ng Project, Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} NCE Project, Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,16 +1,16 @@
 # Configuration
 
-Once Xen Orchestra is installed, you can configure some parameters in the configuration file. Let's see how to do that.
+Once Nephora Conductor is installed, you can configure some parameters in the configuration file. Let's see how to do that.
 
 :::tip
 The configuration file is located at `/etc/xo-server/config.toml`.
 :::
 
-If you need to do any configuration on the system itself (firewall, SSH…), check the [XOA dedicated section](xoa.md).
+If you need to do any configuration on the system itself (firewall, SSH…), check the [NCA dedicated section](xoa.md).
 
-## User to run XO-server as
+## User to run NC-server as
 
-By default, XO-server runs as 'root'. You can change that by uncommenting these lines and choose whatever user/group you want:
+By default, NC-server runs as 'root'. You can change that by uncommenting these lines and choose whatever user/group you want:
 
 ```toml
 user = 'nobody'
@@ -21,7 +21,7 @@ group = 'nogroup'
 
 ## HTTP listen address and port
 
-By default, XO-server listens on all addresses (0.0.0.0) and runs on port 80. If you need to, you can change this in the `# Basic HTTP` section:
+By default, NC-server listens on all addresses (0.0.0.0) and runs on port 80. If you need to, you can change this in the `# Basic HTTP` section:
 
 ```toml
 hostname = '0.0.0.0'
@@ -30,7 +30,7 @@ port = 80
 
 ## HTTPS and certificates
 
-XO-server can also run in HTTPS (you can run HTTP and HTTPS at the same time) - just modify what's needed in the `# Basic HTTPS` section, this time with the certificates/keys you need and their path:
+NC-server can also run in HTTPS (you can run HTTP and HTTPS at the same time) - just modify what's needed in the `# Basic HTTPS` section, this time with the certificates/keys you need and their path:
 
 ```toml
 hostname = '0.0.0.0'
@@ -66,9 +66,9 @@ You shouldn't have to change this. It's the path where `xo-web` files are served
 
 ## Custom certificate authority
 
-If you use certificates signed by an in-house CA for your XCP-ng or XenServer hosts, and want to have Xen Orchestra connect to them without rejection, you can use the [`NODE_EXTRA_CA_CERTS`](https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file) environment variable.
+If you use certificates signed by an in-house CA for your NCE or XenServer hosts, and want to have Nephora Conductor connect to them without rejection, you can use the [`NODE_EXTRA_CA_CERTS`](https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file) environment variable.
 
-To enable this option in your XOA, create `/etc/systemd/system/xo-server.service.d/ca.conf` with the following content:
+To enable this option in your NCA, create `/etc/systemd/system/xo-server.service.d/ca.conf` with the following content:
 
 ```ini
 [Service]
@@ -82,7 +82,7 @@ systemctl daemon-reload
 systemctl restart xo-server.service
 ```
 
-> For XO Proxy, the process is almost the same except the file to create is `/etc/systemd/system/xo-proxy.service.d/ca.conf` and the service to restart is `xo-proxy.service`.
+> For NC Proxy, the process is almost the same except the file to create is `/etc/systemd/system/xo-proxy.service.d/ca.conf` and the service to restart is `xo-proxy.service`.
 
 ### Let's Encrypt support
 
@@ -92,13 +92,13 @@ systemctl restart xo-server.service
 
 :::tip
 
-Although Let's Encrypt is the most popular free public certificate authority (CA), XOA supports other CAs as well.
+Although Let's Encrypt is the most popular free public certificate authority (CA), NCA supports other CAs as well.
 
 :::
 
 #### What can it do for me?
 
-Xen Orchestra Appliance (XOA) can **automatically request and renew HTTPS certificates from Let's Encrypt**. This lets you use a free, publicly trusted certificate instead of manually installing your own or relying on self-signed ones.
+Nephora Conductor Appliance (NCA) can **automatically request and renew HTTPS certificates from Let's Encrypt**. This lets you use a free, publicly trusted certificate instead of manually installing your own or relying on self-signed ones.
 
 :::tip
 
@@ -108,7 +108,7 @@ Let's Encrypt will automatically renew your certificate **30 days** before expir
 
 #### Prerequisites
 
-In order for XOA to work with Let's Encrypt, follow these prerequisites:
+In order for NCA to work with Let's Encrypt, follow these prerequisites:
 
 - Make sure your server is listening on HTTP on **port 80** and on **HTTPS 443**.
 
@@ -159,18 +159,18 @@ acmeEmail = 'admin@my.domain.net'
 
 #### How do I use Let's Encrypt?
 
-To configure your XOA with Let's Encrypt:
+To configure your NCA with Let's Encrypt:
 
-1. In the HTTPS section of your XO configuration file, add the following entry:
+1. In the HTTPS section of your NC configuration file, add the following entry:
     - `autoCert = true`
     - `acmeDomain = example.org`
-2. Add an entry following this pattern: `acmeDomain = EXAMPLE`, where EXAMPLE is a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) (FQDN) that points to your XOA environment.
+2. Add an entry following this pattern: `acmeDomain = EXAMPLE`, where EXAMPLE is a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) (FQDN) that points to your NCA environment.
 3. Load the FQDN in your browser.\
 After a few seconds, the certificate will be automatically generated and installed
 
 ## Redis server
 
-For advanced usage, you can customize the way XO connect to Redis:
+For advanced usage, you can customize the way NC connect to Redis:
 
 ```toml
 # Connection to the Redis server.
@@ -213,9 +213,9 @@ httpProxy = 'http://username:password@proxyAddress:port'
 
 ## Reverse proxy
 
-If you don't want to have Xen Orchestra exposed directly outside, or just integrating it with your existing infrastructure, you can use a Reverse Proxy.
+If you don't want to have Nephora Conductor exposed directly outside, or just integrating it with your existing infrastructure, you can use a Reverse Proxy.
 
-First of all you need to allow Xen Orchestra to use `X-Forwarded-*` headers to determine the IP addresses of clients:
+First of all you need to allow Nephora Conductor to use `X-Forwarded-*` headers to determine the IP addresses of clients:
 
 ```toml
 [http]
@@ -259,7 +259,7 @@ location /[<path>] {
   proxy_set_header        X-Forwarded-Proto $scheme;
 
   # Proxy configuration
-  proxy_pass http://<XOA ip address>[:<port>]/;
+  proxy_pass http://<NCA ip address>[:<port>]/;
 
   proxy_http_version 1.1;
   proxy_set_header Connection "upgrade";
