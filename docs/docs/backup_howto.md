@@ -204,7 +204,7 @@ The file restore feature includes the following constraints:
 
 :::tip
 For **advanced scenarios**, you can use the `fuse-vhd` helper script to manually mount backup chains as raw disks and perform partition discovery:
- [View fuse-vhd on GitHub](https://github.com/vatesfr/xen-orchestra/tree/master/%40vates/fuse-vhd).
+ [View fuse-vhd on GitHub](https://github.com/whitestack/xen-orchestra/tree/master/%40vates/fuse-vhd).
 :::
 
 ---

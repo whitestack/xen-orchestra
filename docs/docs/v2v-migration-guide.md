@@ -143,9 +143,9 @@ The following VMware disk types are not supporetd:
 - Physical compatibility mode RDMs
 - Encrypted virtual disks (unless you have the correct credentials)
 
-:::warning
+<!-- :::warning
 Starting with Nephora Conductor 5.110, NFS-based migration and VSAN exports are no longer available.
-:::
+::: -->
 
 ### Step-by-step procedure 
 
@@ -253,8 +253,8 @@ Ensure stable network connectivity between the VMware environment, Nephora Condu
 - **Retry with cold migration**\
 If warm migration fails, power off the VM, remove all snapshots, and try again.
 
-## ❓ Need more help?
-For additional details and alternative methods, see the [NCE migration guide](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#ova).
+<!-- ## ❓ Need more help?
+For additional details and alternative methods, see the [NCE migration guide](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#ova). -->
 
 ## 🚀 Boosting migration performance
 Migration speed depends on several factors. By identifying bottlenecks and optimizing your setup, you can significantly improve performance.

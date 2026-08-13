@@ -32,10 +32,10 @@ You can also check the system logs, [as explained here](#cli).
 ## Backup issues
 
 If you're having issues with your backups, check out the [Backup troubleshooting](backup_troubleshooting) page.
-
+<!-- 
 ## Didn't find a solution?
 
-Open a ticket for your issue in your [personal space](https://xen-orchestra.com/#!/member/support).
+Open a ticket for your issue in your [personal space](https://xen-orchestra.com/#!/member/support). -->
 
 ## Deploy error
 
@@ -72,7 +72,8 @@ It will prompt you to set a new password. If you provide an email here that does
 
 ## Empty page after login
 
-This happens when your antivirus or firewall is blocking the websocket protocol. This is what we use to communicate between `xo-server` and `nc-web` (see the [architecture page](architecture.md)).
+This happens when your antivirus or firewall is blocking the websocket protocol. This is what we use to communicate between `xo-server` and `xo-web`.
+ <!-- (see the [architecture page](architecture.md)). -->
 
 The solution is to use **HTTPS**. When doing so, websockets will be encapsulated in the secured protocol, avoiding interception from your firewall or antivirus system.
 
@@ -120,11 +121,11 @@ journalctl -u xo-server -f -n 50
 
 This will return the 50 last lines and tail the file. If you have an error message in your application, start this command and try to reproduce the issue. You'll see clearly what the problem is.
 
-You can also filter for the updater program:
+<!-- You can also filter for the updater program:
 
 ```sh
 journalctl -u xoa-updater -f -n 50
-```
+``` -->
 
 ## Configuration
 
@@ -226,11 +227,11 @@ systemctl restart xo-server.service
 If you have ghost tasks accumulating in your Nephora Conductor you can try the following actions in order:
 
 1. refresh the web page
-1. disconnect and reconnect the Xen pool/server owning the tasks
-1. restart the XenAPI Toolstack of the NCE/XenServer master
+1. disconnect and reconnect the pool/server owning the tasks
+1. restart the Toolstack of the NCE/XenServer master
 1. restart xo-server
 
-### Redownload and rebuild
+<!-- ### Redownload and rebuild
 
 If a package disappears due to a build problem or human error, you can redownload them using the updater:
 
@@ -239,7 +240,7 @@ If a package disappears due to a build problem or human error, you can redownloa
 
 :::tip
 We'll have a `xoa-updater --force-reinstall` option soon, to do this automatically
-:::
+::: -->
 
 ### Reset configuration
 

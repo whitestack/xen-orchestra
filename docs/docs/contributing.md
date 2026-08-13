@@ -4,7 +4,7 @@ NC is an Open Source project released under the [AGPL v3](http://www.gnu.org/lic
 
 ## Bug reports
 
-You can [open bug reports here](https://github.com/vatesfr/xen-orchestra/issues) (issues, enhancements, ideas etc.).
+You can [open bug reports here](https://github.com/whitestack/xen-orchestra/issues) (issues, enhancements, ideas etc.).
 
 :::tip
 Before creating an issue, please take a look [into this section](community.md) for more details.
@@ -28,12 +28,12 @@ Please, do explain:
 The best way to propose a change to the documentation or code is
 to create a [GitHub pull request](https://help.github.com/articles/using-pull-requests/).
 
-1. Fork the [Nephora Conductor repository](https://github.com/vatesfr/xen-orchestra) using the Fork button
+1. Fork the [Nephora Conductor repository](https://github.com/whitestack/xen-orchestra) using the Fork button
 2. Follow [the documentation](installation.md) to install and run Nephora Conductor from the sources
 3. Create a branch for your work
 4. Edit the source files
 5. Add a summary of your changes to `CHANGELOG.unreleased.md`, if your changes do not relate to an existing changelog item and update the list of packages that must be released to take your changes into account
-6. [Create a pull request](https://github.com/vatesfr/xen-orchestra/compare) for this branch against the `master` branch
+6. [Create a pull request](https://github.com/whitestack/xen-orchestra/compare) for this branch against the `master` branch
 7. Push into the branch until the pull request is ready to merge
 8. Avoid unnecessary merges: keep you branch up to date by regularly rebasing `git rebase origin/master`
 9. When ready to merge, clean up the history (reorder commits, squash some of them together, rephrase messages): `git rebase -i origin/master`

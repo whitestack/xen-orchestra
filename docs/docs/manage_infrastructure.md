@@ -200,9 +200,9 @@ You can use the search field/filter with number comparisons:
 
 ### Available properties
 
-There isn't much documentation listing these (yet), but you can see all objects and their properties using `nc-cli list-objects`. You can then use these properties for search in NCA.
+There isn't much documentation listing these (yet), but you can see all objects and their properties using `xo-cli list-objects`. You can then use these properties for search in NCA.
 
-Take a look at [the documentation](https://github.com/vatesfr/xen-orchestra/tree/master/packages/nc-cli#nc-cli) for nc-cli :)
+Take a look at [the documentation](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-cli#xo-cli) for xo-cli :)
 
 Example: to search by the Xen Tools status:
 
@@ -387,7 +387,7 @@ If Nephora Conductor knows the VM’s IP address — either through the guest ag
 
 #### How do I automate VIF locking mode?
 
-If you’re automating things or working with scripts, you can also control VIF locking mode through the NC [command-line interface](architecture#nc-cli-cli). 
+If you’re automating things or working with scripts, you can also control VIF locking mode through the NC [command-line interface](architecture#xo-cli-cli). 
 
 ### VM high availability (HA)
 
@@ -512,7 +512,7 @@ NCE is a type 1 hypervisor, similar to VMware ESXi.
 
 You can migrate your VM from VMware vSphere to a Vates environment (Nephora Conductor and NCE), directly from Nephora Conductor. For this, we use V2V ("VMware to Vates").
 
-To know more on using V2V in Nephora Conductor to migrate your environment from VMware, refer to the [NC V2V section in the NCE documentation](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#xo-v2v).
+<!-- To know more on using V2V in Nephora Conductor to migrate your environment from VMware, refer to the [NC V2V section in the NCE documentation](https://docs.xcp-ng.org/installation/migrate-to-xcp-ng/#xo-v2v). -->
 
 
 ## Hosts management
@@ -544,7 +544,7 @@ You can easily adjust the control domain memory under the Advanced tab of a host
 
 ![](./assets/dom0memory.png)
 
-There is more information about Dom0 memory management in the [NCE Documentation](https://docs.xcp-ng.org/guides/dom0-memory/)
+<!-- There is more information about Dom0 memory management in the [NCE Documentation](https://docs.xcp-ng.org/guides/dom0-memory/) -->
 
 ## Pool and host updates
 
@@ -648,7 +648,7 @@ When you click on "Install all patches", NCA will do all of the following automa
 - upload them
 - apply them in the correct order
 
-You can see [more screenshots here](https://xen-orchestra.com/blog/hotfix-xs70e004-for-xenserver-7-0).
+<!-- You can see [more screenshots here](https://xen-orchestra.com/blog/hotfix-xs70e004-for-xenserver-7-0). -->
 
 :::tip
 If you are behind a proxy, please update your `xo-server` configuration to add a proxy server, as [explained in the appropriate section](configuration.md#proxy-for-updates-and-patches).
@@ -661,7 +661,7 @@ As for NCE, we do NOT recommend to install updates to individual hosts. Please i
 ## Pool Management
 
 :::danger
-As specified in the [documentation](https://xcp-ng.org/docs/requirements.html#pool-requirements) your pool shouldn't consist of hosts from different CPU vendors.
+As specified in the documentation your pool shouldn't consist of hosts from different CPU vendors.
 :::
 
 :::warning
@@ -833,7 +833,9 @@ Hover over the storage you want to select and click on the disk icon to set it a
 
 ### Unhealthy VDIs
 
-If your infrastructure works properly, this view should be empty. If not, the causes of unhealthy VDIs can be numerous and we recommend you [open a support ticket](https://help.vates.tech/kb/en-us/8-technical-support/15-open-a-support-ticket).
+If your infrastructure works properly, this view should be empty. If not, the causes of unhealthy VDIs can be numerous and we recommend you contact support.
+
+<!-- (https://help.vates.tech/kb/en-us/8-technical-support/15-open-a-support-ticket). -->
 
 ### Orphan VDIs
 
@@ -841,7 +843,9 @@ Orphan VDIs are disks not associated with a VM. If you're sure you don't need it
 
 ### VDIs attached to Control Domain
 
-Having VDIs attached to the control domain during a backup job is normal, but not when it's finished. You can detach them by clicking on the Forget button, this will remove the virtual cable between the host and the disk without removing the disk. If the problem occurs on a regular basis, we recommend you [open a support ticket](https://help.vates.tech/kb/en-us/8-technical-support/15-open-a-support-ticket).
+Having VDIs attached to the control domain during a backup job is normal, but not when it's finished. You can detach them by clicking on the Forget button, this will remove the virtual cable between the host and the disk without removing the disk. If the problem occurs on a regular basis, we recommend you contact support.
+
+<!-- (https://help.vates.tech/kb/en-us/8-technical-support/15-open-a-support-ticket). -->
 
 ### Orphaned VM snapshot
 
@@ -857,7 +861,9 @@ Machines with the same MAC addresses on a network will result in unexpected beha
 
 ### Guest Tools status
 
-List of VMs with missing or outdated guest tools. It's best practice to [install the guest tools](https://xcp-ng.org/docs/guests.html#guest-tools) for every VM.
+List of VMs with missing or outdated guest tools. It's best practice to install the guest tools for every VM.
+
+<!-- (https://xcp-ng.org/docs/guests.html#guest-tools) for every VM. -->
 
 ### Alarms
 
@@ -922,13 +928,13 @@ We do not offer support for issues arising from the use of software RAID for you
 
 :::
 
-### Setup instructions
+<!-- ### Setup instructions
 
 For detailed instructions on setting up a software RAID storage for your VMs, refer to the [Guides](https://docs.xcp-ng.org/guides/software-RAID-SR/) section in the NCE documentation.
 
 ### Troubleshooting
 
-If you encounter issues with your software RAID array, you can find answers regarding disk replacement at the [Troubleshooting](https://docs.xcp-ng.org/troubleshooting/storage/disk-failure-softwaire-RAID/#%EF%B8%8F-disk-replacement-with-software-raid) section in the NCE documentation.
+If you encounter issues with your software RAID array, you can find answers regarding disk replacement at the [Troubleshooting](https://docs.xcp-ng.org/troubleshooting/storage/disk-failure-softwaire-RAID/#%EF%B8%8F-disk-replacement-with-software-raid) section in the NCE documentation. -->
 
 ### Monitoring software RAID health
 

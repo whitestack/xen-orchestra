@@ -82,7 +82,7 @@ Please consider using NCA before trying to play with the manual build, which can
 
 This installation has been validated against a fresh Debian 12 (Bookworm) x64 install. It should be nearly the same on other dpkg systems. For RPM based OS's, it should be close, as most of our dependencies come from NPM and not the OS itself.
 
-As you may have seen in other parts of the documentation, NC is composed of two parts: [xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/) and [nc-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/nc-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
+As you may have seen in other parts of the documentation, NC is composed of two parts: [xo-server](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-server/) and [xo-web](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-web/). They can be installed separately, even on different machines, but for the sake of simplicity we will set them up together.
 
 ### Packages and Prerequisites
 
@@ -141,11 +141,11 @@ PONG
 You need to use the `git` source code manager to fetch the code. Ideally, you should run NC as a non-root user, and if you choose to, you need to set up `sudo` to be able to mount NFS remotes. As your chosen non-root (or root) user, run the following:
 
 ```sh
-git clone -b master https://github.com/vatesfr/xen-orchestra
+git clone -b master https://github.com/whitestack/xen-orchestra
 ```
 
 :::tip
-`xo-server` and `nc-web` have been migrated to the [xen-orchestra](https://github.com/vatesfr/xen-orchestra) mono-repository - so you only need the single clone command above
+`xo-server` and `xo-web` have been migrated to the [xen-orchestra](https://github.com/whitestack/xen-orchestra) mono-repository - so you only need the single clone command above
 :::
 
 ### Installing dependencies

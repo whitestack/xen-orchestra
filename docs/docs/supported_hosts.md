@@ -2,7 +2,7 @@
 
 This section lists all supported hosts where Nephora Conductor can connect to.
 
-Nephora Conductor is designed to work exclusively on [NCE](https://xcp-ng.org/) and [Citrix Hypervisor](https://www.citrix.com/products/citrix-hypervisor/) (formerly XenServer).
+Nephora Conductor is designed to work exclusively on [NCE](https://customers.whitestack.com/view/nephora-compute-engine) and [Citrix Hypervisor](https://www.citrix.com/products/citrix-hypervisor/) (formerly XenServer).
 
 Nephora Conductor should be fully functional with any version of these two virtualization platforms. However, to benefit from the best support quality, our product is tested to work the best with the versions displayed with a ✅.
 
@@ -25,7 +25,7 @@ Nephora Conductor should be fully functional with any version of these two virtu
 - Citrix Hypervisor 8.0 ✅ ☠️
 - XenServer 7.6 ✅ ☠️
 - XenServer 7.5 ✅ ☠️
-  - [VDI I/O error](https://bugs.xenserver.org/browse/XSO-873), waiting for Citrix to release our fix
+<!--  - [VDI I/O error](https://bugs.xenserver.org/browse/XSO-873), waiting for Citrix to release our fix -->
 - XenServer 7.4 ✅ ☠️
 - XenServer 7.3 ✅ ☠️
 - XenServer 7.2 ❎ ☠️
@@ -41,11 +41,12 @@ Nephora Conductor should be fully functional with any version of these two virtu
   - Basic administration features only, **no official support**
 
 :::warning
-Backup restore for large VM disks (>1TiB usage) is [broken on old XenServer versions](https://bugs.xenserver.org/browse/XSO-868) (except 7.1 LTS up-to-date and superior to 7.6).
+Backup restore for large VM disks (>1TiB usage) is broken on old XenServer versions
+(except 7.1 LTS up-to-date and superior to 7.6).
 :::
 
 ## Others
 
 If you installed Xen hypervisor from your usual Linux distribution, it won't work. Nephora Conductor is **agent-less** and communicate to the host directly using XAPI toolstack. Without this toolstack, it's not possible to make Xen and NC communicate.
 
-See more details in [architecture section](architecture.md).
+<!-- See more details in [architecture section](architecture.md). -->

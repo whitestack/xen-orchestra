@@ -1,8 +1,8 @@
 # REST API
 
-We originally developed [our existing API](architecture.md#api) to be used between the Web UI `nc-web` and the server backend, `xo-server`. That's why it's a JSON-RPC API connected via websockets, allowing us to update objects live in the browser. This is perfect for our usage, but a bit complicated for others.
+We originally developed our existing API to be used between the Web UI `xo-web` and the server backend, `xo-server`. That's why it's a JSON-RPC API connected via websockets, allowing us to update objects live in the browser. This is perfect for our usage, but a bit complicated for others.
 
-Also, this API wasn't meant to be public, but over the years some users have expressed a desire to be able to use it for their own purposes. This led us to add more tooling around it, like `nc-cli` and to answer specific requests.
+Also, this API wasn't meant to be public, but over the years some users have expressed a desire to be able to use it for their own purposes. This led us to add more tooling around it, like `xo-cli` and to answer specific requests.
 
 For these reasons we decided to build a new API. Not an evolution of the current one, but 100% new. It is meant to be public and [REST-like](https://en.wikipedia.org/wiki/Representational_state_transfer). So a simple curl command can request it.
 
@@ -39,10 +39,10 @@ curl -b \
     https://xo.company.lan/rest/v0/
 ```
 
-You can use `nc-cli` to create an authentication token:
+You can use `xo-cli` to create an authentication token:
 
 ```bash
-$ nc-cli create-token xoa.company.lan admin@admin.net
+$ xo-cli create-token xoa.company.lan admin@admin.net
 Password: ********
 Successfully logged with admin@admin.net
 Authentication token created

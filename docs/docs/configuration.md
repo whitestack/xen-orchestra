@@ -55,13 +55,13 @@ redirectToHttps = true
 
 This should be written just before the `mount` option, inside the `http:` block.
 
-## Link to nc-web
+## Link to xo-web
 
-You shouldn't have to change this. It's the path where `nc-web` files are served by `xo-server`.
+You shouldn't have to change this. It's the path where `xo-web` files are served by `xo-server`.
 
 ```toml
 [http.mounts]
-'/' = '../nc-web/dist/'
+'/' = '../xo-web/dist/'
 ```
 
 ## Custom certificate authority
@@ -192,7 +192,7 @@ For advanced usage, you can customize the way NC connect to Redis:
 #  del = '3dda29ad-3015-44f9-b13b-fa570de92489'
 #  srem = '3fd758c9-5610-4e9d-a058-dbf4cb6d8bf0'
 ```
-
+<!-- 
 ## Proxy for updates and patches
 
 To check if your hosts are up-to-date, we need to access `https://updates.ops.xenserver.com/xenserver/updates.xml`.
@@ -210,6 +210,7 @@ You can add this at the end of your config file:
 
 httpProxy = 'http://username:password@proxyAddress:port'
 ```
+-->
 
 ## Reverse proxy
 
@@ -233,7 +234,7 @@ useForwardedHeaders = ['127.0.0.1']
 
 ### Apache
 
-As `nc-web` and `xo-server` communicate with _WebSockets_, you need to have the [`mod_proxy`](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html), [`mod_proxy_http`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_http.html), [`mod_proxy_wstunnel`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) and [`mod_rewrite`](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) modules enabled.
+As `xo-web` and `xo-server` communicate with _WebSockets_, you need to have the [`mod_proxy`](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html), [`mod_proxy_http`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_http.html), [`mod_proxy_wstunnel`](http://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) and [`mod_rewrite`](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) modules enabled.
 
 Please use this configuration in this order or it will not work. Do not forget the trailing slashes:
 
@@ -267,7 +268,7 @@ location /[<path>] {
 
   proxy_redirect default;
 
-  # Issue https://github.com/vatesfr/xen-orchestra/issues/1471
+  # Issue https://github.com/whitestack/xen-orchestra/issues/1471
   proxy_read_timeout 1800; # Error will be only every 30m
 
   # For the VM import feature, this size must be larger than the file we want to upload.

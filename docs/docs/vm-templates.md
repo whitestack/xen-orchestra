@@ -54,7 +54,7 @@ To check a template’s settings in Nephora Conductor:
 
 If you need more technical details that aren’t shown in the UI, you can use the Nephora Conductor API to dig deeper.
 
-To know more on the REST API, read [its documentation](https://github.com/vatesfr/xen-orchestra/blob/master/packages/xo-server/docs/rest-api.md).
+To know more on the REST API, read [its documentation](https://github.com/whitestack/xen-orchestra/blob/master/packages/xo-server/docs/rest-api.md).
 
 All collections are listed when you run `GET /rest/v0`, including the `vm-templates` collection:
 

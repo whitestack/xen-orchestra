@@ -13,7 +13,7 @@ With Nephora Conductor from the sources, you can check your current commit hash 
 ![](./assets/commitversion.png)
 
 :::tip
-You can compare this hash to the current commit list in [our GitHub repository](https://github.com/vatesfr/xen-orchestra/commits/master).
+You can compare this hash to the current commit list in [our GitHub repository](https://github.com/whitestack/xen-orchestra/commits/master).
 :::
 
 ## Report a bug
@@ -39,7 +39,7 @@ If you want a consistent and tested solution for using Nephora Conductor, we str
 The best way to submit a feature request is to:
 
 1. Ask on the forum first, explaining **why you need it**.
-2. If the discussion is fruitful, we might ask you to [create the request on our GitHub repository](https://github.com/vatesfr/xen-orchestra/issues/new/choose) and choose "Feature request".
+2. If the discussion is fruitful, we might ask you to [create the request on our GitHub repository](https://github.com/whitestack/xen-orchestra/issues/new/choose) and choose "Feature request".
 3. Wait for the feature to be released!
 
 :::tip

@@ -1,7 +1,7 @@
 # NCA Support
 
 This is the section dedicated to all NCA details and how to get support on it.
-
+<!-- 
 :::tip
 As a NCA user, you can open tickets in your support panel: [https://support.vates.fr/](https://support.vates.fr/).
 :::
@@ -41,7 +41,7 @@ Give us this number, and we'll be able to access your NCA in a secure manner. Th
 :::tip
 The user `xoa-support` is used by the tunnel. If you want to deactivate this bundled user, you can run `chage -E 0 xoa-support`. To re-activate this account, you must run `chage -E 1 xoa-support`.
 :::
-
+-->
 ## NCA VM Specifications
 
 By default, the VM is configured with:
@@ -60,14 +60,18 @@ Please only use this if you have issues with [the default way to deploy NCA](ins
 
 Alternatively, you can deploy it by connecting to your NCE/XenServer host and executing the following:
 
+First, download the script from the [Whitestack downloads site](https://customers.whitestack.com/downloads/nephora-conductor?file=deploy).
+
+Then run the script:
 ```sh
-bash -c "$(wget --no-verbose -O- https://xoa.io/deploy)"
+bash -c deploy
 ```
 
 :::tip
 This won't write or modify anything on your NCE/XenServer host: it will just import the NCA VM into your default storage repository.
 :::
 
+<!--
 :::warning
 If you are using an old NCE/XenServer version, you may get a `curl` error:
 
@@ -80,7 +84,7 @@ It means that the secure HTTPS protocol is not supported, you can bypass this us
 ```sh
 bash -c "$(wget --no-verbose -O- https://xoa.io/deploy)"
 ```
-
+-->
 :::
 
 Follow the instructions:
@@ -91,7 +95,7 @@ Follow the instructions:
 
 ### Via a manual XVA download
 
-You can also download NCA from xen-orchestra.com in an XVA file. Once you've got the XVA file, you can import it with `xe vm-import filename=xoa_unified.xva` or via XenCenter.
+You can also download NCA from [customers.whitestack.com](https://customers.whitestack.com/downloads/nephora-conductor) in an XVA file. Once you've got the XVA file, you can import it with `xe vm-import filename=xoa_unified.xva` or via XenCenter.
 
 If you want to use static IP address for your appliance:
 
@@ -112,13 +116,13 @@ After the VM is imported, you just need to start it with `xe vm-start vm="NCA"` 
 
 ## First console connection
 
-### Deployed with the [web deploy form](https://vates.tech/deploy/)
+### Deployed with the [web deploy form](https://nephora-conductor.whitestack.com/deploy//)
 
-In that case, you already set the password for `xoa` user. If you forgot it, see below.
+In that case, you already set the password for `nca` user. If you forgot it, see below.
 
 ### Manually deployed
 
-If you connect via SSH or console for the first time without using our [web deploy form](https://vates.tech/deploy/), be aware **there is NO default password set for security reasons**. To set it, you need to connect to your host to find the NCA VM UUID (eg via `xe vm-list`).
+If you connect via SSH or console for the first time without using our [web deploy form](https://nephora-conductor.whitestack.com/deploy//), be aware **there is NO default password set for security reasons**. To set it, you need to connect to your host to find the NCA VM UUID (eg via `xe vm-list`).
 
 Next, you can replace `<UUID>` with the UUID you found previously, and `<password>` with your password:
 
@@ -132,7 +136,7 @@ Don't forget to use quotes for your password, eg: `xenstore-data:vm-data/system-
 
 Finally, you must reboot the VM to implement the changes.
 
-You can now connect with the `xoa` username and password you defined in the previous command, eg with `ssh xoa@<NCA IP ADDRESS>`.
+You can now connect with the `nca` username and password you defined in the previous command, eg with `ssh nca@<NCA IP ADDRESS>`.
 
 ### Using sudo
 
@@ -148,7 +152,7 @@ Administrator. It usually boils down to these three things:
     #2) Think before you type.
     #3) With great power comes great responsibility.
 
-[sudo] password for xoa:
+[sudo] password for nca:
 $
 ```
 
@@ -165,7 +169,7 @@ $ xoa network static
 
 Nephora Conductor is now accessible in your browser at `https://your-vm-ip`.
 
-You can access the VM console through XenCenter or using VNC through a SSH tunnel.
+You can access the VM console through NCE or using VNC through a SSH tunnel.
 
 If you want to go back in DHCP, just run `xoa network dhcp`
 

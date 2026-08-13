@@ -63,10 +63,6 @@ const config: Config = {
     ],
   ],
   scripts: [
-    {
-      src: '/js/matomo.js',
-      async: true,
-    },
   ],
   presets: [
     [
@@ -100,7 +96,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Nephora Conductor`,
+      copyright: `Copyright © ${new Date().getFullYear()} Whitestack`,
     },
     prism: {
       theme: prismThemes.github,

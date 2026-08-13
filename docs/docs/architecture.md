@@ -1,6 +1,6 @@
 # Architecture
 
-Nephora Conductor (NC) is software built with a server and clients, such as the web client `nc-web`, but also a CLI capable client, called `nc-cli`.
+Nephora Conductor (NC) is software built with a server and clients, such as the web client `xo-web`, but also a CLI capable client, called `xo-cli`.
 
 :::tip
 NC is totally agent-less: you don't have to install any program on your hosts to get it working!
@@ -24,7 +24,7 @@ Nephora Conductor itself is built as a modular solution. Each part has its role.
 
 ## xo-server (server)
 
-The core is "[xo-server](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-server/)" - a daemon dealing directly with NCE/XenServer or XAPI capable hosts. This is where users are stored, and it's the center point for talking to your whole Xen infrastructure.
+The core is "[xo-server](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-server/)" - a daemon dealing directly with NCE/XenServer or XAPI capable hosts. This is where users are stored, and it's the center point for talking to your whole Xen infrastructure.
 
 NC-Server is the core of Nephora Conductor. Its central role opens a lot of possibilities versus other solutions - let's see why.
 
@@ -106,9 +106,9 @@ It's really easy to connect other modules to NC-server, and extend or adapt the 
 
 [NodeJS](https://en.wikipedia.org/wiki/Nodejs) is a software platform for scalable server-side and networking applications. It's famous for its efficiency, scalability and its asynchronous capabilities. Exactly what we need! Thus, NC-server is written in JavaScript.
 
-## nc-web (web UI)
+## xo-web (web UI)
 
-The web interface is "[nc-web](https://github.com/vatesfr/xen-orchestra/tree/master/packages/nc-web)" - it runs directly from your browser. The connection with `xo-server` is done via _WebSockets_.
+The web interface is "[xo-web](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-web)" - it runs directly from your browser. The connection with `xo-server` is done via _WebSockets_.
 
 This is probably the first part of Nephora Conductor you'll see. The Web interface allows you to interact with your virtual infrastructure. As a module of NC-Web it facilitates everyday Xen administrator work, but also provides a solution to delegate parts of your infrastructure to other people.
 
@@ -122,11 +122,11 @@ We stay consistent from the back-end to the front-end with one main language: [R
 
 ![](./assets/react_js.png)
 
-## nc-cli (CLI)
+## xo-cli (CLI)
 
-"[nc-cli](https://github.com/vatesfr/xen-orchestra/tree/master/packages/nc-cli)" is a module allowing you to send commands directly from the command line.
+"[xo-cli](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-cli)" is a module allowing you to send commands directly from the command line.
 
-Thanks to introspection, `nc-cli` will detect all the available features exposed in the `xo-server` API.
+Thanks to introspection, `xo-cli` will detect all the available features exposed in the `xo-server` API.
 
 :::warning
 This CLI is mainly used as a debug tool, there's no 100% guarantee on its stability. Use it only if you really know what you do.
@@ -135,11 +135,11 @@ This CLI is mainly used as a debug tool, there's no 100% guarantee on its stabil
 ### Usage
 
 ```console
-$ nc-cli help
+$ xo-cli help
 Usage:
 
-  nc-cli register [--allowUnauthorized] [--expiresIn <duration>] [--otp <otp>] <NC-Server URL> <username> [<password>]
-  nc-cli register [--allowUnauthorized] [--expiresIn <duration>] --token <token> <NC-Server URL>
+  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] [--otp <otp>] <NC-Server URL> <username> [<password>]
+  xo-cli register [--allowUnauthorized] [--expiresIn <duration>] --token <token> <NC-Server URL>
     Registers the NC instance to use.
 
     --allowUnauthorized, --au
@@ -155,21 +155,21 @@ Usage:
     --token <token>
       An authentication token to use instead of username/password.
 
-  nc-cli create-token <params>…
+  xo-cli create-token <params>…
     Create an authentication token for NC API.
 
     <params>…
       Accept the same parameters as register, see its usage.
 
-  nc-cli unregister
+  xo-cli unregister
     Remove stored credentials.
 
-  nc-cli list-commands [--json] [<pattern>]...
+  xo-cli list-commands [--json] [<pattern>]...
     Returns the list of available commands on the current NC instance.
 
     The patterns can be used to filter on command names.
 
-  nc-cli list-objects [--<property>]… [<property>=<value>]...
+  xo-cli list-objects [--<property>]… [<property>=<value>]...
     Returns a list of NC objects.
 
     --<property>
@@ -178,20 +178,20 @@ Usage:
     <property>=<value>
       Restricted displayed objects to those matching the patterns.
 
-  nc-cli <command> [--json] [<name>=<value>]...
+  xo-cli <command> [--json] [<name>=<value>]...
     Executes a command on the current NC instance.
 
     --json
       Prints the result in JSON format.
 
-  nc-cli rest del <resource>
+  xo-cli rest del <resource>
     Delete the resource.
 
     Examples:
-      nc-cli rest del tasks/<task id>
-      nc-cli rest del vms/<vm id>/tags/<tag>
+      xo-cli rest del tasks/<task id>
+      xo-cli rest del vms/<vm id>/tags/<tag>
 
-  nc-cli rest get <collection> [fields=<fields>] [filter=<filter>] [limit=<limit>]
+  xo-cli rest get <collection> [fields=<fields>] [filter=<filter>] [limit=<limit>]
     List objects in a REST API collection.
 
     <collection>
@@ -212,11 +212,11 @@ Usage:
       Maximum number of objects to list, e.g. `limit=10`
 
     Examples:
-      nc-cli rest get
-      nc-cli rest get tasks filter='status:pending'
-      nc-cli rest get vms fields=name_label,power_state
+      xo-cli rest get
+      xo-cli rest get tasks filter='status:pending'
+      xo-cli rest get vms fields=name_label,power_state
 
-  nc-cli rest get [--output <file>] <object> [wait | wait=result]
+  xo-cli rest get [--output <file>] <object> [wait | wait=result]
     Show an object from the REST API.
 
     --output <file>
@@ -235,10 +235,10 @@ Usage:
       If the object is a task, waits for it to be finished before returning.
 
     Examples:
-      nc-cli rest get vms/<VM UUID>
-      nc-cli rest get tasks/<task id>/actions wait=result
+      xo-cli rest get vms/<VM UUID>
+      xo-cli rest get tasks/<task id>/actions wait=result
 
-  nc-cli rest patch <object> <name>=<value>...
+  xo-cli rest patch <object> <name>=<value>...
     Update properties of an object (not all properties are writable).
 
     <object>
@@ -248,9 +248,9 @@ Usage:
       Properties to update on the object
 
     Examples:
-      nc-cli rest patch vms/<VM UUID> name_label='My VM' name_description='Its description
+      xo-cli rest patch vms/<VM UUID> name_label='My VM' name_description='Its description
 
-  nc-cli rest post <action> <name>=<value>...
+  xo-cli rest post <action> <name>=<value>...
     Execute an action.
 
     <action>
@@ -260,10 +260,10 @@ Usage:
       Parameters to pass to the action
 
     Examples:
-      nc-cli rest post tasks/<task id>/actions/abort
-      nc-cli rest post vms/<VM UUID>/actions/snapshot name_label='My snapshot'
+      xo-cli rest post tasks/<task id>/actions/abort
+      xo-cli rest post vms/<VM UUID>/actions/snapshot name_label='My snapshot'
 
-  nc-cli rest put <collection>/<item id> <name>=<value>...
+  xo-cli rest put <collection>/<item id> <name>=<value>...
     Put a item in a collection
 
     <collection>/<item id>
@@ -273,13 +273,13 @@ Usage:
       Properties of the item
 
     Examples:
-      nc-cli rest put vms/<vm id>/tags/<tag>
+      xo-cli rest put vms/<vm id>/tags/<tag>
 ```
 
 #### Register your NC instance
 
 ```console
-$ nc-cli register http://xo.my-company.net admin@admin.net admin
+$ xo-cli register http://xo.my-company.net admin@admin.net admin
 Successfully logged with admin@admin.net
 ```
 
@@ -290,36 +290,36 @@ Note: only a token will be saved in the configuration file.
 Prints all objects:
 
 ```sh
-nc-cli list-objects
+xo-cli list-objects
 ```
 
 It is possible to filter on object properties, for instance to print
 all VM templates:
 
 ```sh
-nc-cli list-objects type=VM-template
+xo-cli list-objects type=VM-template
 ```
 
 #### List available commands
 
 ```sh
-nc-cli list-commands
+xo-cli list-commands
 ```
 
 Commands can be filtered using patterns:
 
 ```sh
-nc-cli list-commands '{user,group}.*'
+xo-cli list-commands '{user,group}.*'
 ```
 
 #### Execute a command
 
-The same syntax is used for all commands: `nc-cli <command> <param name>=<value>...`
+The same syntax is used for all commands: `xo-cli <command> <param name>=<value>...`
 
 E.g., adding a new server:
 
 ```console
-$ nc-cli server.add host=my.server.net username=root password=secret-password
+$ xo-cli server.add host=my.server.net username=root password=secret-password
 42
 ```
 
@@ -330,26 +330,26 @@ booleans) are assumed to be strings. For other types, you may use JSON
 encoding by prefixing with `json:`:
 
 ```sh
-nc-cli foo.bar baz='json:[1, 2, 3]'
+xo-cli foo.bar baz='json:[1, 2, 3]'
 ```
 
 ##### VM export
 
 ```sh
-nc-cli vm.export vm=a01667e0-8e29-49fc-a550-17be4226783c @=vm.xva
+xo-cli vm.export vm=a01667e0-8e29-49fc-a550-17be4226783c @=vm.xva
 ```
 
 ##### VM import
 
 ```sh
-nc-cli vm.import sr=60a6939e-8b0a-4352-9954-5bde44bcdf7d @=vm.xva
+xo-cli vm.import sr=60a6939e-8b0a-4352-9954-5bde44bcdf7d @=vm.xva
 ```
 
-> Note: `nc-cli` only supports the import of XVA files. It will not import OVA files. To import OVA images, you must use the NCA web UI or use `xo-upload-ova` [available here](https://github.com/vatesfr/xen-orchestra/blob/master/@xen-orchestra/upload-ova/README.md#xo-upload-ova).
+> Note: `xo-cli` only supports the import of XVA files. It will not import OVA files. To import OVA images, you must use the NCA web UI or use `xo-upload-ova` [available here](https://github.com/whitestack/xen-orchestra/blob/master/@xen-orchestra/upload-ova/README.md#xo-upload-ova).
 
 ## API
 
-Our web UI (`nc-web`) and CLI (`nc-cli`) both talk to `xo-server` via the same API. This API works in a kind of "connected mode", using JSON-RPC through websockets, in a way where we can subscribe to any events to always stay up-to-date on the client side.
+Our web UI (`xo-web`) and CLI (`xo-cli`) both talk to `xo-server` via the same API. This API works in a kind of "connected mode", using JSON-RPC through websockets, in a way where we can subscribe to any events to always stay up-to-date on the client side.
 
 :::warning
 However, this API was initially meant to only be private. Also, as it's JSON-RPC inside websockets, it's not trivial to use. If you want to make calls in an easy fashion, you should take a look at our [REST API](restapi.md).
@@ -357,8 +357,8 @@ However, this API was initially meant to only be private. Also, as it's JSON-RPC
 
 If you need assistance on how to use it:
 
-1. Try to use [nc-cli](./architecture.md#nc-cli-cli) first. You'll learn all the available calls
-2. A good intro can be find within [xo-lib](https://github.com/vatesfr/xen-orchestra/tree/master/packages/xo-lib#xo-lib-)
+1. Try to use [xo-cli](./architecture.md#xo-cli-cli) first. You'll learn all the available calls
+2. A good intro can be find within [xo-lib](https://github.com/whitestack/xen-orchestra/tree/master/packages/xo-lib#xo-lib-)
 3. Create a support ticket asking us for precise call you want to make, we'll help you!
 
 ## Plugins
