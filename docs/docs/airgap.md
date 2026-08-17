@@ -61,7 +61,7 @@ For details on the steps, refer to the [_Deployment_ section](#deployment).
 
 ## Physical air gap only
 
-In this scenario, you are deploying directly without any prior Internet access. Vates can provide you with pre-registered XOAs that can be deployed directly in your offline environment, eliminating the need for any initial Internet connection. If you have an air gap subscription, our team will build it on-demand for you and provide a dedicated link for download.
+In this scenario, you are deploying directly without any prior Internet access. Vates can provide you with pre-registered NCAs that can be deployed directly in your offline environment, eliminating the need for any initial Internet connection. If you have an air gap subscription, our team will build it on-demand for you and provide a dedicated link for download.
 
 Please [contact us](https://vates.tech/contact) if you need more details.
 

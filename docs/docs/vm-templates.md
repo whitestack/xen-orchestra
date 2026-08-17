@@ -115,9 +115,9 @@ The VM details screen appears.
    ![Location of the Viridian toggle in NC](./assets/viridian-extensions.png)
    Viridian extensions are now enabled for your VM. You can now safely use this VM to create your Windows template.
 
-#### Enabling Viridian for other non-Windows VM templates
+<!-- #### Enabling Viridian for other non-Windows VM templates
 
-To enable Viridian enlightenments for other non-Windows VM templates, follow the instructions detailed in the **Virtual Machines (VMs)** section of the [NCE technical documentation](https://docs.xcp-ng.org/vms/).
+To enable Viridian enlightenments for other non-Windows VM templates, follow the instructions detailed in the **Virtual Machines (VMs)** section of the [NCE technical documentation](https://docs.xcp-ng.org/vms/). -->
 
 ## Cloud-init and Cloudbase-init
 
@@ -145,7 +145,7 @@ As of release 5.101, Nephora Conductor also supports Cloudbase-init. This tool p
 ### Requirements
 
 You only need to use a template of a VM with Cloud-init (for Linux VMs) or Cloudbase-init (for Windows VMs) installed inside it.
-[Check this blog post to learn how to install CloudInit](https://xen-orchestra.com/blog/centos-cloud-template-for-xenserver/).
+<!-- [Check this blog post to learn how to install CloudInit](https://xen-orchestra.com/blog/centos-cloud-template-for-xenserver/). -->
 
 :::tip
 In NCA 5.31, we changed the Cloud-init config drive type from [OpenStack](https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) to the [NoCloud](https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html) type. This will allow us to pass network configuration to VMs in the future. For 99% of users, including default cloud-init installs, this change will have no effect. However if you have previously modified your cloud-init installation in a VM template to only look for `openstack` drive types (for instance with the `datasource_list` setting in `/etc/cloud/cloud.cfg`) you need to modify it to also look for `nocloud`.
@@ -159,7 +159,7 @@ Refer to the [Windows Templates with Cloudbase-init: Step-by-step Guide & Best P
 
 1. Create a VM with e.g. 2 CPU, 8 GiB of RAM, 10 GiB of disk space, and install Ubuntu 22.04 LTS on it.
 2. Upon reboot, `apt update` and `apt upgrade` the machine.
-3. Install the [Guest Tools](https://docs.xcp-ng.org/vms/#%EF%B8%8F-guest-tools).
+3. Install the [Guest Tools](https://github.com/xenserver/xe-guest-utilities).
 4. Install the "cloud-initramfs-growroot" so that the VM can apply a Cloud Config:
    ```sh
    sudo apt install cloud-initramfs-growroot

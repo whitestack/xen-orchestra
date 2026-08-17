@@ -39,7 +39,7 @@ In the end, this message is a **protection mechanism preventing damage to your S
 
 Just remember this: **a coalesce should happen every time a snapshot is removed**.
 
-> You can read more on this on our dedicated blog post regarding [NCE/XenServer coalesce detection](https://xen-orchestra.com/blog/xenserver-coalesce-detection-in-xen-orchestra/).
+<!-- > You can read more on this on our dedicated blog post regarding [NCE/XenServer coalesce detection](https://xen-orchestra.com/blog/xenserver-coalesce-detection-in-xen-orchestra/). -->
 
 ### Troubleshooting a constant VDI Chain Protection message (NCE/XenServer failure to coalesce)
 
@@ -78,11 +78,11 @@ Workarounds:
 
 This message appears when the previous replicated VM has been deleted on the target side which breaks the replication. To reset the process it's necessary to delete VM snapshot related to this CR job on the original VM. The name of this snapshot is: `XO_DELTA_EXPORT: <name label of target SR> (<UUID of target SR>)`
 
-## LICENSE_RESTRICTION
+<!-- ## LICENSE_RESTRICTION
 
 `LICENSE_RESTRICTION (PCI_device_for_auto_update)` message appears when you try to do a backup/snapshot from a VM that was previously on a host with an **active commercial XenServer license** but is now on a host with a free edition of XenServer/Citrix Hypervisor.
 
-To solve it, you have to change a parameter in your VM. `xe vm-param-set has-vendor-device=false uuid=<VM_UUID>`.
+To solve it, you have to change a parameter in your VM. `xe vm-param-set has-vendor-device=false uuid=<VM_UUID>`. -->
 
 ## ENOSPC: no space left on device
 
@@ -98,7 +98,9 @@ Edit your job and try to see matching VMs or check if your pool is connected to 
 
 ## Error: SR_OPERATION_NOT_SUPPORTED
 
-This error can be caused by leaving any removable device (such as USB storage) attached to the VM that you are backing up or snapshotting, detach the device and retry. This can also be caused if you created a VM disk using the [RAW format](https://xcp-ng.org/docs/storage.html#using-raw-format).
+This error can be caused by leaving any removable device (such as USB storage) attached to the VM that you are backing up or snapshotting, detach the device and retry. This can also be caused if you created a VM disk using the RAW format.
+
+<!-- (https://xcp-ng.org/docs/storage.html#using-raw-format). -->
 
 ## Error: Lock file is already being held
 

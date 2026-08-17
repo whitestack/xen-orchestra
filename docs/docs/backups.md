@@ -262,7 +262,7 @@ This feature is being deprecated in NCE and Citrix Hypervisor. It's now replaced
 
 All backup types rely on snapshots. But what about data consistency? By default, Nephora Conductor will try to take a **quiesced snapshot** every time a snapshot is done (and fall back to normal snapshots if it's not possible).
 
-Snapshots of Windows VMs can be quiesced (especially MS SQL or Exchange services) after you have installed Xen Tools in your VMs. However, [there is an extra step to install the VSS provider on windows](https://xen-orchestra.com/blog/xenserver-quiesce-snapshots/). A quiesced snapshot means the operating system will be notified and the cache will be flushed to disks. This way, your backups will always be consistent.
+Snapshots of Windows VMs can be quiesced (especially MS SQL or Exchange services) after you have installed Xen Tools in your VMs. However, there is an extra step to install the VSS provider on windows. A quiesced snapshot means the operating system will be notified and the cache will be flushed to disks. This way, your backups will always be consistent.
 
 To see if you have quiesced snapshots for a VM, just go into its snapshot tab, then the "info" icon means it is a quiesced snapshot:
 
@@ -405,7 +405,7 @@ You can also restore specific files and directories inside a VM. It works with a
 ### Restore a file
 
 1. Go to the **Backup → File restore** section:
-   ![](https://xen-orchestra.com/blog/content/images/2016/12/filelevelrestore1.png)
+   ![](./assets/filelevelrestore1.png)
 2. Choose the VM whose files you want to restore and click the **Restore** icon at the corresponding line.
 3. Follow the instructions as shown below:
    ![](../static/img/vm-files-restore.png)
@@ -548,7 +548,7 @@ Snapshots are not backups. They help to roll back to a previous state, but all s
 
 Vates recommends keeping the Rolling Snapshots retention to a minimum; if you check **Dashboard → Health**, you'll see a table for 'Too Many Snapshots', which shows VMs that have more than 5 snapshots saved. This includes the snapshots used for any kind of backup, not simply the rolling snapshots.
 
-To know more, read this [blog article](https://xen-orchestra.com/blog/xen-orchestra-4-2/#schedulerollingsnapshots).
+<!-- To know more, read this [blog article](https://xen-orchestra.com/blog/xen-orchestra-4-2/#schedulerollingsnapshots). -->
 
 ### Retention of Backups and CR/DR
 

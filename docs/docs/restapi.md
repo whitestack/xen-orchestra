@@ -429,6 +429,6 @@ The Swagger UI doesn't just provide documentation of available endpoints. It als
 
 As we continue the migration process, the documentation will expand and improve. Our goal is that once everything is fully transitioned, `/rest/v0` will automatically redirect to the docs.
 
-## Ongoing Improvements
+<!-- ## Ongoing Improvements
 
-We are actively working on enhancing and expanding the REST API with new features and capabilities. If you have specific use cases, ideas, or feedback that you would like to share, feel free to participate in the discussion on our [Nephora Conductor forum](https://xcp-ng.org/forum/category/12/xen-orchestra).
+We are actively working on enhancing and expanding the REST API with new features and capabilities. If you have specific use cases, ideas, or feedback that you would like to share, feel free to participate in the discussion on our [Nephora Conductor forum](https://xcp-ng.org/forum/category/12/xen-orchestra). -->

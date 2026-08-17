@@ -18,7 +18,7 @@ This feature covers multiple objectives:
 
 If you lose your main pool, you can start the copy on the other side, with very recent data.
 
-![](https://xen-orchestra.com/blog/content/images/2016/01/replication.png)
+![](./assets/replication.png)
 
 :::warning
 It is normal that you can't boot the copied VM directly: we protect it. The normal workflow is to make a clone and then work on it.

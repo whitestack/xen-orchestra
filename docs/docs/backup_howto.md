@@ -253,5 +253,5 @@ If you lose the host running your NCA VM:
 - **If you are running NCE 8.3**, you can use NC-lite by connecting to your master host’s IP address to manage your VMs.
 
 :::warning
-Avoid using multiple XOAs to back up the same VMs, as this can cause backup failures.
+Avoid using multiple NCAs to back up the same VMs, as this can cause backup failures.
 :::

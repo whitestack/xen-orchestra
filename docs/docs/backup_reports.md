@@ -36,9 +36,9 @@ That's it: your next scheduled job will be recapped in a message:
 
 Nephora Conductor is able to send backup reports to Slack or Mattermost.
 
-### Plugin configuration
+<!-- ### Plugin configuration
 
-Like all other xo-server plugins, it can be configured directly via the web interface, see [the plugin documentation](architecture#plugins).
+Like all other xo-server plugins, it can be configured directly via the web interface, see [the plugin documentation](architecture#plugins). -->
 
 ### Generate the Webhook
 

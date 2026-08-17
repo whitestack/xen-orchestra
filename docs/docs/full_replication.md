@@ -10,11 +10,11 @@ In this guide we'll only see the technical aspect of DR, which is a small part o
 
 We strongly encourage you to read some literature on this topic. Basically, you should be able to recover from a major disaster within an appropriate amount of time and minimal acceptable data loss.
 
-To avoid a potentially very long import process (restoring all your backup VMs), we implemented a streaming feature. [Streaming allows exporting and importing at the same time](https://xen-orchestra.com/blog/vm-streaming-export-in-xenserver/).
+<!-- To avoid a potentially very long import process (restoring all your backup VMs), we implemented a streaming feature. [Streaming allows exporting and importing at the same time](https://xen-orchestra.com/blog/vm-streaming-export-in-xenserver/). -->
 
 **The goal is to have your DR VMs ready to boot on a dedicated host. This also provides a way to check if you export was successful (if the VM boots).**
 
-![](https://xen-orchestra.com/blog/content/images/2015/10/newsolution.png)
+![](./assets/newsolution.png)
 
 ## Schedule a DR task
 

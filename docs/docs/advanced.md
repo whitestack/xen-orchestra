@@ -14,7 +14,7 @@ This feature will be only available in NCE+NCA. If you are a hardcore Citrix Hyp
 
 Go into the Advanced host view:
 
-![](https://xen-orchestra.com/blog/content/images/2019/11/advancedenable.png)
+![](./assets/advancedenable.png)
 
 By clicking here, NCA will handle everything: installing netdata on the host, and configure a secured/encrypted streaming toward your NCA.
 
@@ -24,7 +24,7 @@ As soon it's installed, the button will now be replaced by a "Go to Advanced Liv
 
 IMPI info (power, temperatures, voltages, fans…):
 
-![](https://xen-orchestra.com/blog/content/images/2019/11/ipmistats.png)
+![](./assets/ipmistats.png)
 
 :::tip
 This feature is only available in one-click in your NCA. However, all sources and packages to do it yourself are available!
@@ -32,11 +32,11 @@ This feature is only available in one-click in your NCA. However, all sources an
 
 Memory details:
 
-![](https://xen-orchestra.com/blog/content/images/2019/11/memorystats.png)
+![](./assets/memorystats.png)
 
 Firewall:
 
-![](https://xen-orchestra.com/blog/content/images/2019/11/firewallstats.png)
+![](./assets/firewallstats.png)
 
 ## Hardware Monitoring
 
@@ -248,13 +248,13 @@ When the power outage is over, all you need to do is:
 1.  Start your host.
 2.  All your VMs can be resumed, your RAM is preserved and therefore your VMs will be in the exact same state as they were before the power outage.
 
-## Terraform provider
+<!-- ## Terraform provider
 
 Terraform is a cloud/platform agnostic tool for building, changing, and versioning infrastructure. Terraform can manage existing and popular service providers as well as custom in-house solutions (like Nephora Conductor). It can manage resources through their entire lifecycle or even manage infrastructure it didn't initially create.
 
 We sponsored a developer to build a [Nephora Conductor provider for Terraform](https://registry.terraform.io/providers/vatesfr/xenorchestra/latest), so you can use it as a central point for your whole virtualized infrastructure.
 
- <!-- The source code is [available on GitHub](https://github.com/vatesfr/terraform-provider-xenorchestra/), and contributions are welcome! -->
+ The source code is [available on GitHub](https://github.com/vatesfr/terraform-provider-xenorchestra/), and contributions are welcome!
 
 :::tip
 Don't miss [our blog post series about it](https://xen-orchestra.com/blog/author/ddelnano/), written by Dom Del Nano, the original developer of this provider!
@@ -266,7 +266,7 @@ It works with few steps:
 2. Create a VM template for the new VM
 3. Provision the VM with terraform and its NC provider
 
-From there, you can even manage your existing resources with Terraform!
+From there, you can even manage your existing resources with Terraform! -->
 
 ## Netbox
 

@@ -150,7 +150,7 @@ If users can authenticate but group memberships are not reflected:
 3. Ensure that the **ID Attribute** for both users and groups is unique and correctly specified.
 4. Check NC logs for any synchronization errors and adjust configurations accordingly.
 
-### OpenID Connect
+<!-- ### OpenID Connect
 
 #### Overview
 
@@ -293,7 +293,7 @@ In Settings, then Plugins, expand the Google plugin details and configure it wit
 
 Be sure to activate the plugin after you save the configuration (button on top).
 
-You can now connect with your Google account in the login page.
+You can now connect with your Google account in the login page. -->
 
 ## ACLs
 
@@ -491,4 +491,4 @@ Now, the audit plugin will record users' actions and upload the last record in t
 
 ## Debugging
 
-If you can't log in, please [check the logs of `xo-server`](https://docs.xen-orchestra.com/troubleshooting#logs).
+If you can't log in, please [check the logs of `xo-server`](troubleshooting.md#logs).

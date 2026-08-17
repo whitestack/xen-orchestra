@@ -14,9 +14,9 @@ The most current situation in which you might wish to use a NC proxy are:
 
 ## Deployment
 
-### Prerequisites
+<!-- ### Prerequisites
 
-To deploy a Nephora Conductor proxy, you need to have an available proxy license. To purchase a license, you simply need to visit [our store](https://xen-orchestra.com/#!/member/purchaser) and follow the purchasing process.
+To deploy a Nephora Conductor proxy, you need to have an available proxy license. To purchase a license, you simply need to visit [our store](https://xen-orchestra.com/#!/member/purchaser) and follow the purchasing process. -->
 
 ### Minimum Requirements
 

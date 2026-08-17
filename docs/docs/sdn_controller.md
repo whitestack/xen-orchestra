@@ -8,9 +8,9 @@ Interconnect your VMs and hosts within a dedicated and secured private network, 
 
 ![](./assets/gpn.png)
 
-### How does it work?
+<!-- ### How does it work?
 
-Please read the [dedicated devblog on the SDN Controller](https://xen-orchestra.com/blog/xo-sdn-controller/) and its [extension for cross-pool private networks](https://xen-orchestra.com/blog/devblog-3-extending-the-sdn-controller/).
+Please read the [dedicated devblog on the SDN Controller](https://xen-orchestra.com/blog/xo-sdn-controller/) and its [extension for cross-pool private networks](https://xen-orchestra.com/blog/devblog-3-extending-the-sdn-controller/). -->
 
 :::warning
 As VxLAN and GRE are protocols using extra encapsulation, they require extra bits on a network packet. If you create a Global Private Network with a default MTU at `1500`, you won't be able to use it "as is" in your VMs, unless you configure a smaller MTU for each virtual interface, in your VM operating system (eg: `1400`).
@@ -42,7 +42,8 @@ In the network creation view:
 
 ### Configuration
 
-Like all other xo-server plugins, it can be configured directly via the web interface, see [the plugin documentation](architecture#plugins).
+Like all other xo-server plugins, it can be configured directly via the web interface.
+ <!-- see [the plugin documentation](architecture#plugins). -->
 
 The plugin's configuration contains:
 
@@ -67,7 +68,7 @@ The plugin's configuration contains:
 
 > Warning: only works for VIFs attached to the physical host's management network (no bond nor VLAN).
 
-Please see the [devblog about OpenFlow rules](https://xen-orchestra.com/blog/vms-vif-network-traffic-control/).
+<!-- Please see the [devblog about OpenFlow rules](https://xen-orchestra.com/blog/vms-vif-network-traffic-control/). -->
 
 This feature requires the OpenFlow port to be opened
 
